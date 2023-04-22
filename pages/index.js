@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -26,7 +26,9 @@ export default function Home() {
           </thead>
           <tbody>
             <tr>
-              <th><i className="bi bi-currency-dollar"></i></th>
+              <th>
+                <i className="bi bi-currency-dollar"></i>
+              </th>
               <td></td>
               <td></td>
               <td></td>
@@ -34,25 +36,33 @@ export default function Home() {
           </tbody>
           <tbody>
             <tr>
-              <th><i className="bi bi-bezier2"></i></th>
+              <th>
+                <i className="bi bi-bezier2"></i>
+              </th>
               <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
-              <th><i className="bi bi-box-seam"></i></th>
+              <th>
+                <i className="bi bi-box-seam"></i>
+              </th>
               <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
-              <th><i className="bi bi-hdd-rack"></i></th>
+              <th>
+                <i className="bi bi-hdd-rack"></i>
+              </th>
               <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
-              <th><i className="bi bi-battery-half"></i></th>
+              <th>
+                <i className="bi bi-battery-half"></i>
+              </th>
               <td></td>
               <td></td>
               <td></td>
@@ -60,19 +70,25 @@ export default function Home() {
           </tbody>
           <tbody>
             <tr>
-              <th><i className="bi bi-motherboard"></i></th>
+              <th>
+                <i className="bi bi-motherboard"></i>
+              </th>
               <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
-              <th><i className="bi bi-boombox"></i></th>
+              <th>
+                <i className="bi bi-boombox"></i>
+              </th>
               <td></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
-              <th><i className="bi bi-truck-front"></i></th>
+              <th>
+                <i className="bi bi-truck-front"></i>
+              </th>
               <td></td>
               <td></td>
               <td></td>
@@ -81,5 +97,5 @@ export default function Home() {
         </table>
       </main>
     </>
-  )
+  );
 }
