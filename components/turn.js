@@ -1,6 +1,6 @@
 import styles from "@/styles/Turn.module.css";
 
-export default function Turn() {
+export default function Turn({ id }) {
   return (
     <div class={`${styles.table}`}>
       <div class={`${styles.thead}`}>

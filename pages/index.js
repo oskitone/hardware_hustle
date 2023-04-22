@@ -16,7 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Turn />
+        {[...Array(12)].map((e, i) => (
+          <Turn key={i} id={i + 1} />
+        ))}
       </main>
     </>
   );

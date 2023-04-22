@@ -1,43 +1,41 @@
-.table {
-  width: 400px;
+.tbody {
+  margin: 0 0 0.5em;
 }
 
-.tbody {
-  margin: 0 0 10px;
+.tbody:last-of-type {
+  margin-bottom: 0;
 }
 
 .tr {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2em repeat(3, 1fr);
 }
 
 .iconCol {
-  width: 50px;
-  font-size: 1.4rem;
+  font-size: 1.4em;
 }
 
-.th,
 .td {
-  padding: 5px 15px;
+  padding: 0 1em;
 }
 
 .thead .th {
-  padding-left: 0;
   text-align: center;
   font-weight: bold;
+  padding: 0 0 0.25em;
 }
 
 .thead .th,
 .tbody .td {
-  width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .td {
-  border: 1px solid rgb(var(--foreground-rgb));
+  border: 1px solid rgb(var(--grid-rgb));
   margin: 0 0 -1px -1px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
 }
 
 .topLeft {

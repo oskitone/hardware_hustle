@@ -1,0 +1,5 @@
+.main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 2em;
+}
