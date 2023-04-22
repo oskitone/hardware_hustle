@@ -15,86 +15,86 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Buy</th>
-              <th>Make</th>
-              <th>Sell</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>
+        <div className="table">
+          <div className="thead">
+            <div className="tr">
+              <div className="icon-col"></div>
+              <div className="th">Buy</div>
+              <div className="th">Make</div>
+              <div className="th">Sell</div>
+            </div>
+          </div>
+          <div className="tbody">
+            <div className="tr">
+              <div className="th icon-col">
                 <i className="bi bi-currency-dollar"></i>
-              </th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <th>
+              </div>
+              <div className="td top-left bottom-left">2</div>
+              <div class="td"></div>
+              <div className="td top-right bottom-right">41</div>
+            </div>
+          </div>
+          <div className="tbody">
+            <div className="tr">
+              <div className="th icon-col">
                 <i className="bi bi-bezier2"></i>
-              </th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>
+              </div>
+              <div class="td top-left">5</div>
+              <div class="td">3</div>
+              <div class="td top-right"></div>
+            </div>
+            <div className="tr">
+              <div className="th icon-col">
                 <i className="bi bi-box-seam"></i>
-              </th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>
+              </div>
+              <div class="td">2</div>
+              <div class="td">1</div>
+              <div class="td"></div>
+            </div>
+            <div className="tr">
+              <div className="th icon-col">
                 <i className="bi bi-hdd-rack"></i>
-              </th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>
+              </div>
+              <div class="td">3</div>
+              <div class="td">2</div>
+              <div class="td"></div>
+            </div>
+            <div className="tr">
+              <div className="th icon-col">
                 <i className="bi bi-battery-half"></i>
-              </th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <th>
+              </div>
+              <div class="td bottom-left">1</div>
+              <div class="td">0</div>
+              <div class="td bottom-right"></div>
+            </div>
+          </div>
+          <div className="tbody">
+            <div className="tr">
+              <div className="th icon-col">
                 <i className="bi bi-motherboard"></i>
-              </th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>
+              </div>
+              <div class="td top-left"></div>
+              <div class="td">1</div>
+              <div class="td top-right">0</div>
+            </div>
+            <div className="tr">
+              <div className="th icon-col">
                 <i className="bi bi-boombox"></i>
-              </th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>
+              </div>
+              <div class="td">2</div>
+              <div class="td"></div>
+              <div class="td"></div>
+            </div>
+            <div className="tr">
+              <div className="th icon-col">
                 <i className="bi bi-truck-front"></i>
-              </th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+              </div>
+              <div class="td bottom-left">1</div>
+              <div class="td">2</div>
+              <div class="td bottom-right">1</div>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   );

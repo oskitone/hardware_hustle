@@ -7,6 +7,8 @@
 
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
+
+  --fillet: 4px;
 }
 
 * {
@@ -37,18 +39,61 @@ a {
   }
 }
 
-/* TODO: move into *.module.css */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  text-align: left;
+/* TODO: tidy and move into *.module.css */
+.table {
+  width: 400px;
 }
 
-th,
-td {
-  padding: 5px 10px;
+.tbody {
+  margin: 0 0 10px;
 }
 
-td {
-  border: 1px solid #ccc;
+.tr {
+  display: flex;
+}
+
+.icon-col {
+  width: 50px;
+  font-size: 1.4rem;
+}
+
+.th,
+.td {
+  padding: 5px 15px;
+}
+
+.thead .th {
+  padding-left: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.thead .th,
+.tbody .td {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.td {
+  border: 1px solid rgb(var(--foreground-rgb));
+  margin: 0 0 -1px -1px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.td.top-left {
+  border-top-left-radius: var(--fillet);
+}
+
+.td.top-right {
+  border-top-right-radius: var(--fillet);
+}
+
+.td.bottom-left {
+  border-bottom-left-radius: var(--fillet);
+}
+
+.td.bottom-right {
+  border-bottom-right-radius: var(--fillet);
 }
