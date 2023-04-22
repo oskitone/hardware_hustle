@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Turn from "components/turn";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
@@ -15,86 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <div className="table">
-          <div className="thead">
-            <div className="tr">
-              <div className="icon-col"></div>
-              <div className="th">Buy</div>
-              <div className="th">Make</div>
-              <div className="th">Sell</div>
-            </div>
-          </div>
-          <div className="tbody">
-            <div className="tr">
-              <div className="th icon-col">
-                <i className="bi bi-currency-dollar"></i>
-              </div>
-              <div className="td top-left bottom-left">2</div>
-              <div class="td"></div>
-              <div className="td top-right bottom-right">41</div>
-            </div>
-          </div>
-          <div className="tbody">
-            <div className="tr">
-              <div className="th icon-col">
-                <i className="bi bi-bezier2"></i>
-              </div>
-              <div class="td top-left">5</div>
-              <div class="td">3</div>
-              <div class="td top-right"></div>
-            </div>
-            <div className="tr">
-              <div className="th icon-col">
-                <i className="bi bi-box-seam"></i>
-              </div>
-              <div class="td">2</div>
-              <div class="td">1</div>
-              <div class="td"></div>
-            </div>
-            <div className="tr">
-              <div className="th icon-col">
-                <i className="bi bi-hdd-rack"></i>
-              </div>
-              <div class="td">3</div>
-              <div class="td">2</div>
-              <div class="td"></div>
-            </div>
-            <div className="tr">
-              <div className="th icon-col">
-                <i className="bi bi-battery-half"></i>
-              </div>
-              <div class="td bottom-left">1</div>
-              <div class="td">0</div>
-              <div class="td bottom-right"></div>
-            </div>
-          </div>
-          <div className="tbody">
-            <div className="tr">
-              <div className="th icon-col">
-                <i className="bi bi-motherboard"></i>
-              </div>
-              <div class="td top-left"></div>
-              <div class="td">1</div>
-              <div class="td top-right">0</div>
-            </div>
-            <div className="tr">
-              <div className="th icon-col">
-                <i className="bi bi-boombox"></i>
-              </div>
-              <div class="td">2</div>
-              <div class="td"></div>
-              <div class="td"></div>
-            </div>
-            <div className="tr">
-              <div className="th icon-col">
-                <i className="bi bi-truck-front"></i>
-              </div>
-              <div class="td bottom-left">1</div>
-              <div class="td">2</div>
-              <div class="td bottom-right">1</div>
-            </div>
-          </div>
-        </div>
+        <Turn />
       </main>
     </>
   );
