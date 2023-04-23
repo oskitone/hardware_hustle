@@ -1,0 +1,21 @@
+.page {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+
+  width: calc(11in - var(--print-margin) * 2);
+  height: calc(8.5in - var(--print-margin) * 2);
+
+  font-size: 14px;
+
+  margin: 2em auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+}
+
+@media print {
+  .page {
+    margin: 0;
+  }
+}
