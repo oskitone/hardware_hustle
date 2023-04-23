@@ -17,6 +17,7 @@
 
 .td {
   padding: 0 1em;
+  overflow: hidden;
 }
 
 .thead .th {
