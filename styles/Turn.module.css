@@ -36,6 +36,7 @@
   border: 1px solid rgb(var(--grid-rgb));
   margin: 0 0 -1px -1px;
   font-family: var(--font-mono);
+  position: relative;
 }
 
 .topLeft {
@@ -52,4 +53,19 @@
 
 .bottomRight {
   border-bottom-right-radius: var(--fillet);
+}
+
+.final {
+  border-color: rgb(var(--foreground-rgb));
+  z-index: 1; /* pop over negative margin */
+}
+
+.carryover:before {
+  content: "";
+  background: rgb(var(--grid-rgb));
+  position: absolute;
+  top: calc(50% - 1px / 2);
+  left: 1em;
+  height: 1px;
+  width: calc(100% - 1em * 2);
 }
