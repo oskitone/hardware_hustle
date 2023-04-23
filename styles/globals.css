@@ -9,6 +9,8 @@
 
   --grid-rgb: 170, 170, 170;
   --fillet: 4px;
+
+  --print-margin: 0.25in;
 }
 
 * {
@@ -22,29 +24,22 @@ html {
   background: rgb(var(--offpaper-rgb));
 }
 
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  width: calc(11in - var(--print-margin) * 2);
+  height: calc(8.5in - var(--print-margin) * 2);
+  font-size: 14px;
+  margin: 2em auto;
+}
+
 @media print {
   html {
     color: rgb(var(--foreground-rgb));
     background: none;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  width: 8in;
-  height: 10.5in;
-  margin: auto;
-  font-size: 14px;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  body {
+    margin: 0;
   }
 }
