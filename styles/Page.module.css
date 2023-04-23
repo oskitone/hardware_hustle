@@ -8,10 +8,6 @@
   font-size: 14px;
 
   margin: 2em auto;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2em;
 }
 
 @media print {

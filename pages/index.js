@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Page from "components/page";
-import Turn from "components/turn";
+import TurnGrid from "components/turn-grid";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,9 +16,7 @@ export default function Home() {
       </Head>
       <main className={`${inter.className}`}>
         <Page>
-          {[...Array(12)].map((e, i) => (
-            <Turn key={i} id={i + 1} />
-          ))}
+          <TurnGrid />
         </Page>
       </main>
     </>

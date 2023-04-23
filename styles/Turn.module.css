@@ -1,3 +1,8 @@
+.turn {
+  height: fit-content;
+}
+
+.thead .th,
 .tbody {
   margin: 0 0 0.5em;
 }
@@ -8,11 +13,11 @@
 
 .tr {
   display: grid;
-  grid-template-columns: 2em repeat(3, 1fr);
+  grid-template-columns: calc(1.25em + 0.5em) repeat(3, 1fr);
 }
 
 .iconCol {
-  font-size: 1.4em;
+  font-size: 1.25em;
 }
 
 .td {
@@ -23,7 +28,7 @@
 .thead .th {
   text-align: center;
   font-weight: bold;
-  padding: 0 0 0.25em;
+  line-height: 1;
 }
 
 .thead .th,

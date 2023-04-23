@@ -2,7 +2,7 @@ import styles from "@/styles/Turn.module.css";
 
 export default function Turn({ id }) {
   return (
-    <div class={`${styles.table}`}>
+    <div class={`${styles.turn}`}>
       <div class={`${styles.thead}`}>
         <div class={`${styles.tr}`}>
           <div class={`${styles.iconCol}`}></div>
@@ -24,6 +24,22 @@ export default function Turn({ id }) {
           <div
             contentEditable
             class={`${styles.td} ${styles.topRight} ${styles.bottomRight} ${styles.final}`}
+          ></div>
+        </div>
+      </div>
+      <div class={`${styles.tbody}`}>
+        <div class={`${styles.tr}`}>
+          <div class={`${styles.th} ${styles.iconCol}`}>
+            <i className="bi bi-clock-history"></i>
+          </div>
+          <div
+            contentEditable
+            class={`${styles.td} ${styles.topLeft} ${styles.bottomLeft}`}
+          ></div>
+          <div class={`${styles.td}`}></div>
+          <div
+            contentEditable
+            class={`${styles.td} ${styles.topRight} ${styles.bottomRight}`}
           ></div>
         </div>
       </div>
