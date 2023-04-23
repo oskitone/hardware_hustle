@@ -1,0 +1,24 @@
+.rules h1,
+.rules h2,
+.rules h3,
+.rules table {
+  margin: 0 0 1em;
+}
+
+.rules table {
+  text-align: left;
+  table-layout: fixed;
+}
+
+.rules tr > *:nth-child(1) {
+  width: 6em;
+}
+
+.rules tr > *:nth-child(2) {
+  width: 6em;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 6em auto;
+}
