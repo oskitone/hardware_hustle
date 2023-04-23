@@ -14,4 +14,8 @@
   .page {
     margin: 0;
   }
+
+  .page:not(:last-of-type) {
+    page-break-after: always;
+  }
 }
