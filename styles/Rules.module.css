@@ -6,22 +6,18 @@
 }
 
 .rules h1 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .rules h2 {
-  font-size: 1.5em;
-}
-
-.rules h3 {
-  font-size: 1em;
-  writing-mode: tb-rl;
-  padding: 0.5em 0.25em;
-  color: rgb(var(--background-rgb));
-  background: rgb(var(--foreground-rgb));
+  font-size: 1.25em;
 }
 
 .rules h1,
+.actions {
+  margin: 0 0 calc(var(--default-font-size) * 2);
+}
+
 .rules h2 {
   margin: 0 0 var(--default-font-size);
 }
@@ -45,4 +41,12 @@
   display: grid;
   grid-template-columns: min-content max-content;
   grid-gap: 1em;
+}
+
+.actions h3 {
+  font-size: 1em;
+  writing-mode: tb-rl;
+  padding: 0.5em 0.25em;
+  color: rgb(var(--background-rgb));
+  background: rgb(var(--foreground-rgb));
 }

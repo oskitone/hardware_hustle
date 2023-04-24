@@ -28,23 +28,27 @@
 }
 
 .thead .th {
-  text-align: center;
   font-weight: bold;
   line-height: 1;
+  text-transform: uppercase;
 }
 
-.thead .th,
-.tbody .td {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.id {
+  text-align: center;
+  padding-right: 0.5em;
+  font-size: 0.85em;
 }
 
 .td {
   border: 1px solid rgb(var(--grid-rgb));
   margin: 0 0 -1px -1px;
   font-family: var(--font-mono);
-  position: relative;
+
+  position: relative; /* for carrover line containment */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .topLeft {
