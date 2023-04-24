@@ -8,10 +8,26 @@ export default function Rules() {
       title: ["Buy"],
       head: ["", "Time", "Cost"],
       body: [
-        [<Icon id="A" />, "0hr", "$1"],
-        [<Icon id="B" />, "1hr", "$2"],
-        [<Icon id="C" />, "2hr", "$3"],
-        [<Icon id="D" />, "3hr", "$4"],
+        [
+          <Icon id="A" />,
+          <Icon id="time" suffix="0" />,
+          <Icon id="money" suffix="1" />,
+        ],
+        [
+          <Icon id="B" />,
+          <Icon id="time" suffix="1" />,
+          <Icon id="money" suffix="2" />,
+        ],
+        [
+          <Icon id="C" />,
+          <Icon id="time" suffix="2" />,
+          <Icon id="money" suffix="3" />,
+        ],
+        [
+          <Icon id="D" />,
+          <Icon id="time" suffix="3" />,
+          <Icon id="money" suffix="4" />,
+        ],
       ],
     },
     {
@@ -20,21 +36,21 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
-          "2hr",
+          <Icon id="time" suffix="2" />,
           <>
             <Icon id="A" /> <Icon id="B" />
           </>,
         ],
         [
           <Icon id="ABC" />,
-          "3hr",
+          <Icon id="time" suffix="3" />,
           <>
             <Icon id="A" /> <Icon id="B" /> <Icon id="C" />
           </>,
         ],
         [
           <Icon id="ABCD" />,
-          "4hr",
+          <Icon id="time" suffix="4" />,
           <>
             <Icon id="A" /> <Icon id="B" /> <Icon id="C" /> <Icon id="D" />
           </>,
@@ -46,9 +62,21 @@ export default function Rules() {
       title: "Sell",
       head: ["", "Time", "Price"],
       body: [
-        [<Icon id="AB" />, "1hr", "$12"],
-        [<Icon id="ABC" />, "2hr", "$18"],
-        [<Icon id="ABCD" />, "3hr", "$30"],
+        [
+          <Icon id="AB" />,
+          <Icon id="time" suffix="1" />,
+          <Icon id="money" suffix="12" />,
+        ],
+        [
+          <Icon id="ABC" />,
+          <Icon id="time" suffix="2" />,
+          <Icon id="money" suffix="18" />,
+        ],
+        [
+          <Icon id="ABCD" />,
+          <Icon id="time" suffix="3" />,
+          <Icon id="money" suffix="30" />,
+        ],
       ],
     },
   ];

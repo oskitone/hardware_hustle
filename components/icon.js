@@ -14,7 +14,12 @@ export default function Icon({ id, prefix, suffix }) {
   return (
     <span className="icon">
       {prefix}
+
       <i className={`bi ${className}`}></i>
+
+      {/* Time icon needs a little breathing room */}
+      {suffix && id == "time" && " "}
+
       {suffix}
     </span>
   );
