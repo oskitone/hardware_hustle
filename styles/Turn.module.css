@@ -27,12 +27,14 @@
   height: 1.5em;
 }
 
+/* TODO: reduce margin */
 .thead .th {
   font-weight: bold;
   line-height: 1;
   text-transform: uppercase;
 }
 
+/* TODO: style or ditch */
 .id {
   text-align: center;
   padding-right: 0.5em;
@@ -74,7 +76,7 @@
 
 .carryover:before {
   content: "";
-  background: rgb(var(--grid-rgb));
+  background: rgb(var(--carryover-rgb));
   position: absolute;
   top: calc(50% - 1px / 2);
   left: 1em;
