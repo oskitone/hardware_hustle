@@ -11,6 +11,8 @@
   --fillet: 4px;
 
   --print-margin: 0.18in;
+
+  --default-font-size: 14px;
 }
 
 * {
@@ -22,6 +24,8 @@
 html {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--offpaper-rgb));
+
+  font-size: var(--default-font-size);
 }
 
 @media print {
