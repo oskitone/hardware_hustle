@@ -25,12 +25,11 @@
 .rules table {
   text-align: left;
   table-layout: fixed;
-  font-size: 0.85em;
   line-height: 1;
 }
 
 .rules tr > *:nth-child(1) {
-  width: 5em;
+  width: 2em;
 }
 
 .rules tr > *:nth-child(2) {

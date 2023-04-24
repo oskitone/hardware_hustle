@@ -1,34 +1,54 @@
+import Icon from "components/icon";
+
 import styles from "@/styles/Rules.module.css";
 
 export default function Rules() {
   const ACTIONS = [
     {
       title: ["Buy"],
-      head: ["Part", "Time", "Cost"],
+      head: ["", "Time", "Cost"],
       body: [
-        ["A", "0hr", "$1"],
-        ["B", "1hr", "$2"],
-        ["C", "2hr", "$3"],
-        ["D", "3hr", "$4"],
+        [<Icon id="A" />, "0hr", "$1"],
+        [<Icon id="B" />, "1hr", "$2"],
+        [<Icon id="C" />, "2hr", "$3"],
+        [<Icon id="D" />, "3hr", "$4"],
       ],
     },
     {
       title: "Make",
-      head: ["Widget", "Time", "Parts"],
+      head: ["", "Time", "Parts"],
       body: [
-        ["AB", "2hr", "A, B"],
-        ["ABC", "3hr", "A, B, C"],
-        ["ABCD", "4hr", "A, B, C, D"],
+        [
+          <Icon id="AB" />,
+          "2hr",
+          <>
+            <Icon id="A" /> <Icon id="B" />
+          </>,
+        ],
+        [
+          <Icon id="ABC" />,
+          "3hr",
+          <>
+            <Icon id="A" /> <Icon id="B" /> <Icon id="C" />
+          </>,
+        ],
+        [
+          <Icon id="ABCD" />,
+          "4hr",
+          <>
+            <Icon id="A" /> <Icon id="B" /> <Icon id="C" /> <Icon id="D" />
+          </>,
+        ],
       ],
     },
 
     {
       title: "Sell",
-      head: ["Widget", "Time", "Price"],
+      head: ["", "Time", "Price"],
       body: [
-        ["AB", "1hr", "$12"],
-        ["ABC", "2hr", "$18"],
-        ["ABCD", "3hr", "$30"],
+        [<Icon id="AB" />, "1hr", "$12"],
+        [<Icon id="ABC" />, "2hr", "$18"],
+        [<Icon id="ABCD" />, "3hr", "$30"],
       ],
     },
   ];

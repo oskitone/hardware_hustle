@@ -1,3 +1,5 @@
+import Icon from "components/icon";
+
 import styles from "@/styles/Turn.module.css";
 
 export default function Turn({ id }) {
@@ -14,7 +16,7 @@ export default function Turn({ id }) {
       <div class={`${styles.tbody}`}>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-currency-dollar"></i>
+            <Icon id="money" />
           </div>
           <div
             contentEditable
@@ -30,7 +32,7 @@ export default function Turn({ id }) {
       <div class={`${styles.tbody}`}>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-clock-history"></i>
+            <Icon id="time" />
           </div>
           <div
             contentEditable
@@ -46,7 +48,7 @@ export default function Turn({ id }) {
       <div class={`${styles.tbody}`}>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-bezier2"></i>
+            <Icon id="A" />
           </div>
           <div contentEditable class={`${styles.td} ${styles.topLeft}`}></div>
           <div contentEditable class={`${styles.td}`}></div>
@@ -57,7 +59,7 @@ export default function Turn({ id }) {
         </div>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-box-seam"></i>
+            <Icon id="B" />
           </div>
           <div contentEditable class={`${styles.td}`}></div>
           <div contentEditable class={`${styles.td}`}></div>
@@ -68,7 +70,7 @@ export default function Turn({ id }) {
         </div>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-hdd-rack"></i>
+            <Icon id="C" />
           </div>
           <div contentEditable class={`${styles.td}`}></div>
           <div contentEditable class={`${styles.td}`}></div>
@@ -79,7 +81,7 @@ export default function Turn({ id }) {
         </div>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-battery-half"></i>
+            <Icon id="D" />
           </div>
           <div
             contentEditable
@@ -95,7 +97,7 @@ export default function Turn({ id }) {
       <div class={`${styles.tbody}`}>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-motherboard"></i>
+            <Icon id="AB" />
           </div>
           <div
             class={`${styles.td} ${styles.topLeft} ${styles.carryover}`}
@@ -108,7 +110,7 @@ export default function Turn({ id }) {
         </div>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-boombox"></i>
+            <Icon id="ABC" />
           </div>
           <div class={`${styles.td} ${styles.carryover}`}></div>
           <div contentEditable class={`${styles.td}`}></div>
@@ -116,7 +118,7 @@ export default function Turn({ id }) {
         </div>
         <div class={`${styles.tr}`}>
           <div class={`${styles.th} ${styles.iconCol}`}>
-            <i className="bi bi-truck-front"></i>
+            <Icon id="ABCD" />
           </div>
           <div
             class={`${styles.td} ${styles.bottomLeft} ${styles.carryover}`}
