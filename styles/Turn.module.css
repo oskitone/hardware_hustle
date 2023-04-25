@@ -34,13 +34,6 @@
   text-transform: uppercase;
 }
 
-/* TODO: style or ditch */
-.id {
-  text-align: center;
-  padding-right: 0.5em;
-  font-size: 0.85em;
-}
-
 .td {
   border: 1px solid rgb(var(--grid-rgb));
   margin: 0 0 -1px -1px;
@@ -74,7 +67,7 @@
   z-index: 1; /* pop over negative margin */
 }
 
-.carryover:before {
+.carryOver:before {
   content: "";
   background: rgb(var(--carryover-rgb));
   position: absolute;
