@@ -71,6 +71,10 @@
   text-align: center;
 }
 
+.icons td:first-of-type * {
+  font-size: 1.1em;
+}
+
 .actions tr:last-of-type td {
   padding-bottom: 0;
 }

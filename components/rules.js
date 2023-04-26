@@ -115,7 +115,12 @@ export default function Rules() {
             <h3>
               {i + 1} {action.title}
             </h3>
-            <table class={classnames({ [styles.text]: action.text })}>
+            <table
+              class={classnames({
+                [styles.icons]: !action.text,
+                [styles.text]: action.text,
+              })}
+            >
               <tbody>
                 {action.body.map((columns) => (
                   <tr>
