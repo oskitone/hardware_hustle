@@ -2,8 +2,10 @@
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 
-  width: calc(11in - var(--print-margin) * 2);
-  height: calc(8.5in - var(--print-margin) * 2);
+  width: 11in;
+  height: 8.5in;
+
+  padding: var(--print-margin);
 
   margin: 2em auto;
 
