@@ -65,6 +65,44 @@ export function Cell({
 }
 
 export default function Turn({ id }) {
+  const BODIES = [
+    {
+      rowIcons: ["money"],
+      columns: [
+        { carryOver: false, plus: false, minus: true },
+        { carryOver: true, plus: false, minus: false },
+        { carryOver: false, plus: true, minus: false },
+      ],
+    },
+    {
+      rowIcons: ["time"],
+      columns: [
+        { carryOver: false, plus: false, minus: false },
+        { carryOver: false, plus: true, minus: false },
+        { carryOver: false, plus: true, minus: false },
+      ],
+    },
+    {
+      rowIcons: ["A", "B", "C", "D"],
+      columns: [
+        { carryOver: false, plus: true, minus: false },
+        { carryOver: false, plus: false, minus: true },
+        { carryOver: true, plus: false, minus: false },
+      ],
+    },
+    {
+      rowIcons: ["AB", "ABC", "ABCD"],
+      columns: [
+        { carryOver: true, plus: false, minus: false },
+        { carryOver: false, plus: true, minus: false },
+        { carryOver: false, plus: false, minus: true },
+      ],
+    },
+  ];
+
+  const CARRYOVER_COLUMNS = [[], [1], [2], [0]];
+  const PLUS_COLUMNS = [[2], [1, 2], [0], [1]];
+
   return (
     <div class={`${styles.turn}`}>
       <Head>
@@ -76,77 +114,37 @@ export default function Turn({ id }) {
           <Cell head>EOD</Cell>
         </Row>
       </Head>
-      <Body>
-        <Row>
-          <Cell icon="money" />
-          <Cell minus topLeft bottomLeft />
-          <Cell carryOver />
-          <Cell plus />
-          <Cell equals topRight bottomRight />
-        </Row>
-      </Body>
-      <Body>
-        <Row>
-          <Cell icon="time" />
-          <Cell topLeft bottomLeft />
-          <Cell plus />
-          <Cell plus />
-          <Cell equals topRight bottomRight />
-        </Row>
-      </Body>
-      <Body>
-        <Row>
-          <Cell icon="A" />
-          <Cell plus topLeft />
-          <Cell minus />
-          <Cell carryOver />
-          <Cell equals topRight />
-        </Row>
-        <Row>
-          <Cell icon="B" />
-          <Cell plus />
-          <Cell minus />
-          <Cell carryOver />
-          <Cell equals />
-        </Row>
-        <Row>
-          <Cell icon="C" />
-          <Cell plus />
-          <Cell minus />
-          <Cell carryOver />
-          <Cell equals />
-        </Row>
-        <Row>
-          <Cell icon="D" />
-          <Cell plus bottomLeft />
-          <Cell minus />
-          <Cell carryOver />
-          <Cell equals bottomRight />
-        </Row>
-      </Body>
-      <Body>
-        <Row>
-          <Cell icon="AB" />
-          <Cell topLeft carryOver />
-          <Cell plus />
-          <Cell minus />
-          <Cell equals topRight />
-        </Row>
-        <Row>
-          <Cell icon="ABC" />
-          <Cell carryOver />
-          <Cell plus />
-          <Cell minus />
-          <Cell equals />
-        </Row>
-        <Row>
-          <Cell icon="ABCD" />
-          <Cell bottomLeft carryOver />
-          <Cell plus />
-          <Cell minus />
-          <Cell equals bottomRight />
-        </Row>
-      </Body>
+      {BODIES.map((body, i) => (
+        <Body>
+          {body.rowIcons.map((icon, ii) => (
+            <Row>
+              <Cell icon={icon} />
+              <Cell
+                topLeft={ii == 0}
+                bottomLeft={ii == body.rowIcons.length - 1}
+                carryOver={body.columns[0].carryOver}
+                plus={body.columns[0].plus}
+                minus={body.columns[0].minus}
+              />
+              <Cell
+                carryOver={body.columns[1].carryOver}
+                plus={body.columns[1].plus}
+                minus={body.columns[1].minus}
+              />
+              <Cell
+                carryOver={body.columns[2].carryOver}
+                plus={body.columns[2].plus}
+                minus={body.columns[2].minus}
+              />
+              <Cell
+                topRight={ii == 0}
+                bottomRight={ii == body.rowIcons.length - 1}
+                equals
+              />
+            </Row>
+          ))}
+        </Body>
+      ))}
     </div>
   );
 }
