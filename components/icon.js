@@ -16,7 +16,7 @@ export default function Icon({ id, prefix, suffix }) {
   }[id];
 
   return (
-    <span className="icon">
+    <span title={id}>
       {prefix && `${prefix} `}
       <i className={`bi ${className}`}></i>
       {suffix && ` ${suffix}`}
