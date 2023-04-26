@@ -36,24 +36,22 @@ export default function Rules() {
           <Icon id="AB" />,
           <Icon id="time" prefix="-" suffix="2" />,
           <>
-            -
-            <Icon id="A" /> <Icon id="B" />
+            <Icon prefix="-" id="A" /> <Icon id="B" />
           </>,
         ],
         [
           <Icon id="ABC" />,
           <Icon id="time" prefix="-" suffix="3" />,
           <>
-            -
-            <Icon id="A" /> <Icon id="B" /> <Icon id="C" />
+            <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
           </>,
         ],
         [
           <Icon id="ABCD" />,
           <Icon id="time" prefix="-" suffix="4" />,
           <>
-            -
-            <Icon id="A" /> <Icon id="B" /> <Icon id="C" /> <Icon id="D" />
+            <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />{" "}
+            <Icon id="D" />
           </>,
         ],
       ],
