@@ -13,7 +13,7 @@
 
 .tr {
   display: grid;
-  grid-template-columns: calc(1.25em + 0.5em) repeat(3, 1fr);
+  grid-template-columns: calc(1.25em + 0.5em) repeat(4, 1fr);
 }
 
 .iconCol {
@@ -32,6 +32,8 @@
   font-weight: bold;
   line-height: 1;
   text-transform: uppercase;
+  text-align: center;
+  font-size: 0.85em;
 }
 
 .td {

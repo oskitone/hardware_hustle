@@ -31,11 +31,15 @@
 }
 
 .rules tr > *:nth-child(1) {
-  width: 2em;
+  width: 2.5em;
 }
 
 .rules tr > *:nth-child(2) {
-  width: 4em;
+  width: 3em;
+}
+
+.rules tr > *:last-of-type {
+  width: auto;
 }
 
 .actions {
@@ -45,9 +49,13 @@
 }
 
 .actions h3 {
-  font-size: 1em;
+  font-size: 0.85em;
   writing-mode: tb-rl;
   padding: 0.5em 0.25em;
   color: rgb(var(--background-rgb));
   background: rgb(var(--foreground-rgb));
+}
+
+.actions td {
+  vertical-align: baseline;
 }

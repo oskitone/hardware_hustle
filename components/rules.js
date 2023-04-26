@@ -61,7 +61,6 @@ export default function Rules() {
 
     {
       title: "Sell",
-      head: ["", "Time", "Price"],
       body: [
         [
           <Icon id="AB" />,
@@ -80,13 +79,26 @@ export default function Rules() {
         ],
       ],
     },
+
+    {
+      title: "EOD",
+      body: [
+        [
+          "13+",
+          <>
+            Burnout
+            <br />
+            Lose next turn
+          </>,
+        ],
+        ["5-", "+1 skill point"],
+      ],
+    },
   ];
 
   return (
     <div class={`${styles.rules}`}>
       <h1>Hardware Hustle</h1>
-
-      <h2>Actions</h2>
 
       <div class={`${styles.actions}`}>
         {ACTIONS.map((action) => (
