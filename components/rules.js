@@ -11,22 +11,22 @@ export default function Rules() {
       body: [
         [
           <Icon id="A" />,
-          <Icon id="time" prefix="-" suffix="0" />,
+          <Icon id="time" prefix="-" suffix="1" />,
           <Icon id="money" prefix="-" suffix="1" />,
         ],
         [
           <Icon id="B" />,
-          <Icon id="time" prefix="-" suffix="1" />,
+          <Icon id="time" prefix="-" suffix="2" />,
           <Icon id="money" prefix="-" suffix="2" />,
         ],
         [
           <Icon id="C" />,
-          <Icon id="time" prefix="-" suffix="2" />,
+          <Icon id="time" prefix="-" suffix="3" />,
           <Icon id="money" prefix="-" suffix="3" />,
         ],
         [
           <Icon id="D" />,
-          <Icon id="time" prefix="-" suffix="3" />,
+          <Icon id="time" prefix="-" suffix="4" />,
           <Icon id="money" prefix="-" suffix="4" />,
         ],
       ],
@@ -64,17 +64,17 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
-          <Icon id="time" prefix="-" suffix="1" />,
-          <Icon id="money" prefix="+" suffix="12" />,
+          <Icon id="time" prefix="-" suffix="3" />,
+          <Icon id="money" prefix="+" suffix="9" />,
         ],
         [
           <Icon id="ABC" />,
-          <Icon id="time" prefix="-" suffix="2" />,
+          <Icon id="time" prefix="-" suffix="4" />,
           <Icon id="money" prefix="+" suffix="18" />,
         ],
         [
           <Icon id="ABCD" />,
-          <Icon id="time" prefix="-" suffix="3" />,
+          <Icon id="time" prefix="-" suffix="5" />,
           <Icon id="money" prefix="+" suffix="30" />,
         ],
       ],
@@ -87,16 +87,15 @@ export default function Rules() {
         [
           <>&#62;12</>,
           <>
-            <Icon id="roll" /> &#8805; <Icon id="time" />
-            -12
+            <Icon id="time" suffix="-12" /> &#8805; <Icon id="roll" />
             <br />
             <em>Lose next turn</em>
           </>,
         ],
         [
-          <>&#60;5</>,
+          <>&#60; 6</>,
           <>
-            <Icon id="roll" /> &#8804; <Icon id="time" />
+            <Icon id="roll" /> &#62; <Icon id="time" />
             <br />
             <em>Add a skill point</em>
           </>,
@@ -131,7 +130,7 @@ export default function Rules() {
         ))}
       </div>
 
-      <h2>Skills</h2>
+      <h2>Skill Points</h2>
       <div class={styles.skillPoints}>
         <table>
           <tbody>
