@@ -1,8 +1,20 @@
 import classnames from "classnames";
-import { Cell } from "components/turn";
+import TurnGrid from "components/turn-grid";
 import Icon from "components/icon";
 
 import styles from "@/styles/Rules.module.css";
+
+function SkillPointsSelector() {
+  return (
+    <div class={styles.skillPointsSelector}>
+      {[...Array(7)].map((e, i) => (
+        <span class={classnames(styles.option, { [styles.selected]: i == 0 })}>
+          <Icon id={i} />
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function Rules() {
   const ACTIONS = [
@@ -142,43 +154,19 @@ export default function Rules() {
             <tr>
               <td>Buy</td>
               <td>
-                {[...Array(6)].map((e, i) => (
-                  <Cell
-                    inline
-                    topLeft={i == 0}
-                    bottomLeft={i == 0}
-                    topRight={i == 6 - 1}
-                    bottomRight={i == 6 - 1}
-                  />
-                ))}
+                <SkillPointsSelector />
               </td>
             </tr>
             <tr>
               <td>Make</td>
               <td>
-                {[...Array(6)].map((e, i) => (
-                  <Cell
-                    inline
-                    topLeft={i == 0}
-                    bottomLeft={i == 0}
-                    topRight={i == 6 - 1}
-                    bottomRight={i == 6 - 1}
-                  />
-                ))}
+                <SkillPointsSelector />
               </td>
             </tr>
             <tr>
               <td>Sell</td>
               <td>
-                {[...Array(6)].map((e, i) => (
-                  <Cell
-                    inline
-                    topLeft={i == 0}
-                    bottomLeft={i == 0}
-                    topRight={i == 6 - 1}
-                    bottomRight={i == 6 - 1}
-                  />
-                ))}
+                <SkillPointsSelector />
               </td>
             </tr>
           </tbody>
