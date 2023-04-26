@@ -64,17 +64,38 @@
   border-bottom-right-radius: var(--fillet);
 }
 
-.final {
+.equals {
   border-color: rgb(var(--foreground-rgb));
-  z-index: 1; /* pop over negative margin */
 }
 
 .carryOver:before {
   content: "";
-  background: rgb(var(--carryover-rgb));
+  background: rgb(var(--grid-rgb));
   position: absolute;
   top: calc(50% - 1px / 2);
-  left: 0.5em;
+  left: 2px;
   height: 1px;
-  width: calc(100% - 0.5em * 2);
+  width: calc(100% - 2px * 2);
+}
+
+.plus:before,
+.minus:before,
+.equals:before {
+  position: absolute;
+  left: 0.2em;
+  pointer-events: none;
+  font-size: 0.75em;
+  color: rgb(var(--grid-rgb));
+}
+
+.plus:before {
+  content: "+";
+}
+
+.minus:before {
+  content: "-";
+}
+
+.equals:before {
+  content: "=";
 }

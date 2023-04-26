@@ -22,8 +22,11 @@ function Cell({
   head,
 
   carryOver,
-  final,
   eod,
+
+  plus,
+  minus,
+  equals,
 
   topLeft,
   topRight,
@@ -40,8 +43,11 @@ function Cell({
         [styles.th]: head,
 
         [styles.carryOver]: carryOver,
-        [styles.final]: final,
         [styles.eod]: eod,
+
+        [styles.plus]: plus,
+        [styles.minus]: minus,
+        [styles.equals]: equals,
 
         [styles.topLeft]: topLeft,
         [styles.topRight]: topRight,
@@ -70,72 +76,72 @@ export default function Turn({ id }) {
       <Body>
         <Row>
           <Cell icon="money" />
-          <Cell topLeft bottomLeft />
+          <Cell minus topLeft bottomLeft />
           <Cell carryOver />
-          <Cell />
-          <Cell topRight bottomRight final />
+          <Cell plus />
+          <Cell equals topRight bottomRight />
         </Row>
       </Body>
       <Body>
         <Row>
           <Cell icon="time" />
           <Cell topLeft bottomLeft />
-          <Cell />
-          <Cell />
-          <Cell topRight bottomRigh final />
+          <Cell plus />
+          <Cell plus />
+          <Cell equals topRight bottomRight />
         </Row>
       </Body>
       <Body>
         <Row>
           <Cell icon="A" />
-          <Cell topLeft />
-          <Cell />
+          <Cell plus topLeft />
+          <Cell minus />
           <Cell carryOver />
-          <Cell topRight final />
+          <Cell equals topRight />
         </Row>
         <Row>
           <Cell icon="B" />
-          <Cell />
-          <Cell />
+          <Cell plus />
+          <Cell minus />
           <Cell carryOver />
-          <Cell final />
+          <Cell equals />
         </Row>
         <Row>
           <Cell icon="C" />
-          <Cell />
-          <Cell />
+          <Cell plus />
+          <Cell minus />
           <Cell carryOver />
-          <Cell final />
+          <Cell equals />
         </Row>
         <Row>
           <Cell icon="D" />
-          <Cell bottomLeft />
-          <Cell />
+          <Cell plus bottomLeft />
+          <Cell minus />
           <Cell carryOver />
-          <Cell bottomRight final />
+          <Cell equals bottomRight />
         </Row>
       </Body>
       <Body>
         <Row>
           <Cell icon="AB" />
           <Cell topLeft carryOver />
-          <Cell />
-          <Cell />
-          <Cell topRight final />
+          <Cell plus />
+          <Cell minus />
+          <Cell equals topRight />
         </Row>
         <Row>
           <Cell icon="ABC" />
           <Cell carryOver />
-          <Cell />
-          <Cell />
-          <Cell final />
+          <Cell plus />
+          <Cell minus />
+          <Cell equals />
         </Row>
         <Row>
           <Cell icon="ABCD" />
           <Cell bottomLeft carryOver />
-          <Cell />
-          <Cell />
-          <Cell bottomRight final />
+          <Cell plus />
+          <Cell minus />
+          <Cell equals bottomRight />
         </Row>
       </Body>
     </div>
