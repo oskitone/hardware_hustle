@@ -15,11 +15,12 @@ function Row({ children }) {
   return <div class={`${styles.tr}`}>{children}</div>;
 }
 
-function Cell({
+export function Cell({
   icon,
   children,
 
   head,
+  inline,
 
   carryOver,
   eod,
@@ -41,6 +42,7 @@ function Cell({
       className={classnames({
         [styles.td]: !head && !icon,
         [styles.th]: head,
+        [styles.inline]: inline,
 
         [styles.icon]: !!icon,
         [styles.carryOver]: carryOver,

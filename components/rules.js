@@ -1,4 +1,5 @@
 import classnames from "classnames";
+import { Cell } from "components/turn";
 import Icon from "components/icon";
 
 import styles from "@/styles/Rules.module.css";
@@ -89,7 +90,7 @@ export default function Rules() {
             <Icon id="roll" /> &#8805; <Icon id="time" />
             -12
             <br />
-            Lose next turn
+            <em>Lose next turn</em>
           </>,
         ],
         [
@@ -97,7 +98,7 @@ export default function Rules() {
           <>
             <Icon id="roll" /> &#8804; <Icon id="time" />
             <br />
-            Add a skill point
+            <em>Add a skill point</em>
           </>,
         ],
       ],
@@ -105,13 +106,16 @@ export default function Rules() {
   ];
 
   return (
-    <div class={`${styles.rules}`}>
+    <div class={styles.rules}>
       <h1>Hardware Hustle</h1>
 
-      <div class={`${styles.actions}`}>
-        {ACTIONS.map((action) => (
+      <h2>Actions</h2>
+      <div class={styles.actions}>
+        {ACTIONS.map((action, i) => (
           <>
-            <h3>{action.title}</h3>
+            <h3>
+              {i + 1} {action.title}
+            </h3>
             <table class={classnames({ [styles.text]: action.text })}>
               <tbody>
                 {action.body.map((columns) => (
@@ -126,6 +130,58 @@ export default function Rules() {
           </>
         ))}
       </div>
+
+      <h2>Skills</h2>
+      <div class={styles.skillPoints}>
+        <table>
+          <tbody>
+            <tr>
+              <td>Buy</td>
+              <td>
+                {[...Array(6)].map((e, i) => (
+                  <Cell
+                    inline
+                    topLeft={i == 0}
+                    bottomLeft={i == 0}
+                    topRight={i == 6 - 1}
+                    bottomRight={i == 6 - 1}
+                  />
+                ))}
+              </td>
+            </tr>
+            <tr>
+              <td>Make</td>
+              <td>
+                {[...Array(6)].map((e, i) => (
+                  <Cell
+                    inline
+                    topLeft={i == 0}
+                    bottomLeft={i == 0}
+                    topRight={i == 6 - 1}
+                    bottomRight={i == 6 - 1}
+                  />
+                ))}
+              </td>
+            </tr>
+            <tr>
+              <td>Sell</td>
+              <td>
+                {[...Array(6)].map((e, i) => (
+                  <Cell
+                    inline
+                    topLeft={i == 0}
+                    bottomLeft={i == 0}
+                    topRight={i == 6 - 1}
+                    bottomRight={i == 6 - 1}
+                  />
+                ))}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer class={styles.footer}>CC BY-SA 4.0 Oskitone</footer>
     </div>
   );
 }

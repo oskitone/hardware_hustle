@@ -16,7 +16,8 @@
 }
 
 .rules h1,
-.actions {
+.actions,
+.skillPoints {
   margin: 0 0 calc(var(--default-font-size) * 2);
 }
 
@@ -34,7 +35,7 @@
 }
 
 .rules tr > *:nth-child(2) {
-  width: 3em;
+  width: 3.5em;
 }
 
 .rules tr > *:last-of-type {
@@ -44,7 +45,7 @@
 .actions {
   display: grid;
   grid-template-columns: min-content max-content;
-  grid-gap: 1em;
+  grid-gap: 0.5em 0.5em;
 }
 
 .actions h3 {
@@ -57,15 +58,29 @@
 
 .actions td {
   vertical-align: baseline;
-  padding: 0 0 0.15em;
+  padding: 0 1em 0.15em 0;
   line-height: 1;
 }
 
 .text td {
   line-height: 1.2;
-  padding: 0 0 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.actions td:first-of-type {
+  text-align: center;
 }
 
 .actions tr:last-of-type td {
   padding-bottom: 0;
+}
+
+.skillPoints td {
+  padding: 0 1em 0.15em 0;
+}
+
+.actions em,
+.footer {
+  font-weight: 100;
+  font-size: 0.85em;
 }

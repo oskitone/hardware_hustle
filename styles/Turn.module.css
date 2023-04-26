@@ -22,6 +22,12 @@
   height: 1.5em;
 }
 
+.td.inline {
+  padding: 0;
+  min-width: 1.5em;
+  display: inline-block;
+}
+
 .thead .th {
   font-weight: bold;
   line-height: 0.75;
