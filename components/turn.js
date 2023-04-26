@@ -56,15 +56,6 @@ function Cell({
 }
 
 export default function Turn({ id }) {
-  const BODIES = [
-    ["money"],
-    ["time"],
-    ["A", "B", "C", "D"],
-    ["AB", "ABC", "ABCD"],
-  ];
-
-  const CARRYOVER_COLUMNS = [undefined, [1], [2], [0]];
-
   return (
     <div class={`${styles.turn}`}>
       <Head>
@@ -76,28 +67,77 @@ export default function Turn({ id }) {
           <Cell head>EOD</Cell>
         </Row>
       </Head>
-      {BODIES.map((row, i) => (
-        <Body>
-          {row.map((icon, ii) => (
-            <Row>
-              <Cell icon={icon} />
-              <Cell
-                topLeft={ii == 0}
-                bottomLeft={ii == row.length - 1}
-                carryOver={CARRYOVER_COLUMNS[i] == 0}
-              />
-              <Cell carryOver={CARRYOVER_COLUMNS[i] == 1} />
-              <Cell carryOver={CARRYOVER_COLUMNS[i] == 2} />
-              <Cell
-                topRight={ii == 0}
-                bottomRight={ii == row.length - 1}
-                carryOver={CARRYOVER_COLUMNS[i] == 3}
-                final
-              />
-            </Row>
-          ))}
-        </Body>
-      ))}
+      <Body>
+        <Row>
+          <Cell icon="money" />
+          <Cell topLeft bottomLeft />
+          <Cell carryOver />
+          <Cell />
+          <Cell topRight bottomRight final />
+        </Row>
+      </Body>
+      <Body>
+        <Row>
+          <Cell icon="time" />
+          <Cell topLeft bottomLeft />
+          <Cell />
+          <Cell />
+          <Cell topRight bottomRigh final />
+        </Row>
+      </Body>
+      <Body>
+        <Row>
+          <Cell icon="A" />
+          <Cell topLeft />
+          <Cell />
+          <Cell carryOver />
+          <Cell topRight final />
+        </Row>
+        <Row>
+          <Cell icon="B" />
+          <Cell />
+          <Cell />
+          <Cell carryOver />
+          <Cell final />
+        </Row>
+        <Row>
+          <Cell icon="C" />
+          <Cell />
+          <Cell />
+          <Cell carryOver />
+          <Cell final />
+        </Row>
+        <Row>
+          <Cell icon="D" />
+          <Cell bottomLeft />
+          <Cell />
+          <Cell carryOver />
+          <Cell bottomRight final />
+        </Row>
+      </Body>
+      <Body>
+        <Row>
+          <Cell icon="AB" />
+          <Cell topLeft carryOver />
+          <Cell />
+          <Cell />
+          <Cell topRight final />
+        </Row>
+        <Row>
+          <Cell icon="ABC" />
+          <Cell carryOver />
+          <Cell />
+          <Cell />
+          <Cell final />
+        </Row>
+        <Row>
+          <Cell icon="ABCD" />
+          <Cell bottomLeft carryOver />
+          <Cell />
+          <Cell />
+          <Cell bottomRight final />
+        </Row>
+      </Body>
     </div>
   );
 }
