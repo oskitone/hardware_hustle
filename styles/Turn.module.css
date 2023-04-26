@@ -72,7 +72,7 @@
   background: rgb(var(--carryover-rgb));
   position: absolute;
   top: calc(50% - 1px / 2);
-  left: 1em;
+  left: 0.5em;
   height: 1px;
-  width: calc(100% - 1em * 2);
+  width: calc(100% - 0.5em * 2);
 }
