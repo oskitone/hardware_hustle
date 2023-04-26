@@ -42,6 +42,7 @@ function Cell({
         [styles.td]: !head && !icon,
         [styles.th]: head,
 
+        [styles.icon]: !!icon,
         [styles.carryOver]: carryOver,
         [styles.eod]: eod,
 

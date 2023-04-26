@@ -16,11 +16,6 @@
   grid-template-columns: calc(1.25em + 0.5em) repeat(4, 1fr);
 }
 
-.iconCol {
-  font-size: 1.25em;
-  line-height: 1;
-}
-
 .td {
   padding: 0 1em;
   overflow: hidden;
@@ -66,6 +61,11 @@
 
 .equals {
   border-color: rgb(var(--foreground-rgb));
+}
+
+.icon {
+  font-size: 1.25em;
+  line-height: 1;
 }
 
 .carryOver:before {
