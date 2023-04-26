@@ -11,6 +11,8 @@ export default function Icon({ id, prefix, suffix }) {
     AB: "bi-speaker",
     ABC: "bi-boombox",
     ABCD: "bi-motherboard",
+
+    roll: "bi-dice-5",
   }[id];
 
   return (

@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import Icon from "components/icon";
 
 import styles from "@/styles/Rules.module.css";
@@ -5,7 +6,7 @@ import styles from "@/styles/Rules.module.css";
 export default function Rules() {
   const ACTIONS = [
     {
-      title: ["Buy"],
+      title: "Buy",
       body: [
         [
           <Icon id="A" />,
@@ -80,16 +81,25 @@ export default function Rules() {
 
     {
       title: "EOD",
+      text: true,
       body: [
         [
-          "13+",
+          <>&#62;12</>,
           <>
-            Burnout
+            <Icon id="roll" /> &#8805; <Icon id="time" />
+            -12
             <br />
             Lose next turn
           </>,
         ],
-        ["5-", "+1 skill point"],
+        [
+          <>&#60;5</>,
+          <>
+            <Icon id="roll" /> &#8804; <Icon id="time" />
+            <br />
+            Add a skill point
+          </>,
+        ],
       ],
     },
   ];
@@ -102,7 +112,7 @@ export default function Rules() {
         {ACTIONS.map((action) => (
           <>
             <h3>{action.title}</h3>
-            <table>
+            <table class={classnames({ [styles.text]: action.text })}>
               <tbody>
                 {action.body.map((columns) => (
                   <tr>
