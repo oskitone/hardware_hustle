@@ -22,10 +22,9 @@
   height: 1.5em;
 }
 
-/* TODO: reduce margin */
 .thead .th {
   font-weight: bold;
-  line-height: 1;
+  line-height: 0.75;
   text-transform: uppercase;
   text-align: center;
   font-size: 0.85em;
