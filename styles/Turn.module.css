@@ -4,7 +4,7 @@
 
 .thead .th,
 .tbody {
-  margin-bottom: 0.5em;
+  margin: 0 0 0.5em;
 }
 
 .tbody:last-of-type {
@@ -71,10 +71,6 @@
   border-color: rgb(var(--foreground-rgb));
 }
 
-.standAlone {
-  margin-right: 0.5em;
-}
-
 .carryOver:before {
   content: "";
   background: rgb(var(--grid-rgb));
@@ -85,11 +81,24 @@
   width: calc(100% - 2px * 2);
 }
 
-.prefix:before {
-  content: attr(prefix);
+.plus:before,
+.minus:before,
+.equals:before {
   position: absolute;
   left: 0.2em;
   pointer-events: none;
   font-size: 0.75em;
   color: rgb(var(--grid-rgb));
+}
+
+.plus:before {
+  content: "+";
+}
+
+.minus:before {
+  content: "-";
+}
+
+.equals:before {
+  content: "=";
 }
