@@ -93,7 +93,7 @@ export default function Rules() {
     },
 
     {
-      title: "EOD",
+      title: "ZZZ",
       text: true,
       body: [
         [
