@@ -9,7 +9,7 @@ function SkillPointsSelector() {
     <div class={styles.skillPointsSelector}>
       {[...Array(7)].map((e, i) => (
         <span class={classnames(styles.option, { [styles.selected]: i == 0 })}>
-          <Icon id={i} />
+          {i}
         </span>
       ))}
     </div>
@@ -23,22 +23,22 @@ export default function Rules() {
       body: [
         [
           <Icon id="A" />,
-          <Icon id="time" prefix="-" suffix="1" />,
+          <Icon id="time" prefix="-" suffix="0" />,
           <Icon id="money" prefix="-" suffix="1" />,
         ],
         [
           <Icon id="B" />,
-          <Icon id="time" prefix="-" suffix="2" />,
+          <Icon id="time" prefix="-" suffix="1" />,
           <Icon id="money" prefix="-" suffix="2" />,
         ],
         [
           <Icon id="C" />,
-          <Icon id="time" prefix="-" suffix="3" />,
+          <Icon id="time" prefix="-" suffix="2" />,
           <Icon id="money" prefix="-" suffix="3" />,
         ],
         [
           <Icon id="D" />,
-          <Icon id="time" prefix="-" suffix="4" />,
+          <Icon id="time" prefix="-" suffix="3" />,
           <Icon id="money" prefix="-" suffix="4" />,
         ],
       ],
@@ -48,21 +48,21 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
-          <Icon id="time" prefix="-" suffix="2" />,
+          <Icon id="time" prefix="-" suffix="1" />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" />
           </>,
         ],
         [
           <Icon id="ABC" />,
-          <Icon id="time" prefix="-" suffix="3" />,
+          <Icon id="time" prefix="-" suffix="2" />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
           </>,
         ],
         [
           <Icon id="ABCD" />,
-          <Icon id="time" prefix="-" suffix="4" />,
+          <Icon id="time" prefix="-" suffix="3" />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />{" "}
             <Icon id="D" />
@@ -76,17 +76,17 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
-          <Icon id="time" prefix="-" suffix="3" />,
+          <Icon id="time" prefix="-" suffix="2" />,
           <Icon id="money" prefix="+" suffix="9" />,
         ],
         [
           <Icon id="ABC" />,
-          <Icon id="time" prefix="-" suffix="4" />,
+          <Icon id="time" prefix="-" suffix="3" />,
           <Icon id="money" prefix="+" suffix="18" />,
         ],
         [
           <Icon id="ABCD" />,
-          <Icon id="time" prefix="-" suffix="5" />,
+          <Icon id="time" prefix="-" suffix="4" />,
           <Icon id="money" prefix="+" suffix="30" />,
         ],
       ],
@@ -97,19 +97,19 @@ export default function Rules() {
       text: true,
       body: [
         [
-          <>&#62;12</>,
+          <Icon id="time" suffix="<6" />,
           <>
-            <Icon id="time" suffix="-12" /> &#8805; <Icon id="roll" />
-            <br />
-            <em>Lose next turn</em>
+            <h4>Research</h4>
+            <em>Add a skill point</em>
           </>,
         ],
         [
-          <>&#60; 6</>,
+          <Icon id="time" suffix=">12" />,
           <>
-            <Icon id="roll" /> &#62; <Icon id="time" />
-            <br />
-            <em>Add a skill point</em>
+            <h4>Burnout</h4>
+            <em>
+              <Icon id="roll" /> = 0, all next turn
+            </em>
           </>,
         ],
       ],
@@ -121,6 +121,11 @@ export default function Rules() {
       <h1>Hardware Hustle</h1>
 
       <h2>Actions</h2>
+
+      <p class={styles.description}>
+        Roll <Icon id="roll" /> for max available <Icon id="time" />
+      </p>
+
       <div class={styles.actions}>
         {ACTIONS.map((action, i) => (
           <>
@@ -148,23 +153,34 @@ export default function Rules() {
       </div>
 
       <h2>Skill Points</h2>
+
       <div class={styles.skillPoints}>
+        <p class={styles.description}>
+          Decreases <Icon id="time" /> Action cost
+        </p>
+
         <table>
           <tbody>
             <tr>
-              <td>Buy</td>
+              <th>
+                <h4>Buy</h4>
+              </th>
               <td>
                 <SkillPointsSelector />
               </td>
             </tr>
             <tr>
-              <td>Make</td>
+              <th>
+                <h4>Make</h4>
+              </th>
               <td>
                 <SkillPointsSelector />
               </td>
             </tr>
             <tr>
-              <td>Sell</td>
+              <th>
+                <h4>Sell</h4>
+              </th>
               <td>
                 <SkillPointsSelector />
               </td>

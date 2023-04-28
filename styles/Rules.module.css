@@ -1,6 +1,7 @@
 .rules h1,
 .rules h2,
-.rules h3 {
+.rules h3,
+.rules h4 {
   text-transform: uppercase;
   line-height: 1;
 }
@@ -21,8 +22,14 @@
   margin: 0 0 calc(var(--default-font-size) * 2);
 }
 
+.description {
+  margin: 0 0 calc(var(--default-font-size) / 2);
+  font-weight: 100;
+  font-size: 0.85em;
+}
+
 .rules h2 {
-  margin: 0 0 var(--default-font-size);
+  margin: 0 0 calc(var(--default-font-size) / 4);
 }
 
 .rules table {
@@ -31,7 +38,7 @@
 }
 
 .rules tr > *:nth-child(1) {
-  width: 2.5em;
+  width: 4em;
 }
 
 .rules tr > *:nth-child(2) {
@@ -60,6 +67,8 @@
   vertical-align: baseline;
   padding: 0 1em 0.15em 0;
   line-height: 1;
+  white-space: nowrap;
+  font-size: 0.85em;
 }
 
 .text td {
@@ -72,14 +81,14 @@
 }
 
 .icons td:first-of-type * {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .actions tr:last-of-type td {
   padding-bottom: 0;
 }
 
-.skillPoints td {
+.skillPoints th {
   padding: 0 1em 0 0;
 }
 
@@ -95,7 +104,7 @@
 
 .skillPointsSelector .option {
   font-size: 1em;
-  margin: 0 0.25em 0 0;
+  margin: 0 0.5em 0 0;
   position: relative;
 }
 
@@ -103,12 +112,12 @@
   content: "";
 
   position: absolute;
-  top: calc(50% - 1.6em / 2);
-  left: calc(50% - 1.6em / 2);
+  top: calc(50% - 1em / 2);
+  left: calc(50% - 1em / 2);
 
-  width: 1.6em;
-  height: 1.6em;
+  width: 1em;
+  height: 1em;
 
-  outline: 1px solid rgb(var(--foreground-rgb));
+  outline: 1px dashed rgb(var(--foreground-rgb));
   border-radius: 50%;
 }
