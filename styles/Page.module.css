@@ -8,7 +8,9 @@
   padding: var(--print-margin);
 
   margin: 2em auto;
+}
 
+.split {
   display: grid;
   grid-template-columns: 25% auto;
   grid-gap: 2em;
@@ -18,8 +20,8 @@
   .page {
     margin: 0;
 
-    width: 100%;
-    height: 100%;
+    /* HACK: removes errant blank interim pages */
+    height: calc(8.5in - 2px);
   }
 
   .page:not(:last-of-type) {

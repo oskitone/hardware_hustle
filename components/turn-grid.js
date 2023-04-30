@@ -2,12 +2,10 @@ import Turn from "components/turn";
 
 import styles from "@/styles/TurnGrid.module.css";
 
-const TURNS_COUNT = 9;
-
-export default function TurnGrid({ children }) {
+export default function TurnGrid({ count }) {
   return (
     <div class={`${styles.turnGrid}`}>
-      {[...Array(TURNS_COUNT)].map((e, i) => (
+      {[...Array(count)].map((e, i) => (
         <Turn key={i} id={i} />
       ))}
     </div>
