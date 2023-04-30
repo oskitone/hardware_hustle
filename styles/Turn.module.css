@@ -37,7 +37,7 @@
 }
 
 .td {
-  border: 1px solid rgb(var(--grid-rgb));
+  border: 1px solid rgb(var(--foreground-rgb));
   margin: 0 0 -1px -1px;
 
   position: relative; /* for carrover line containment */
@@ -70,14 +70,8 @@
   border-color: rgb(var(--foreground-rgb));
 }
 
-.carryOver:before {
-  content: "";
+.carryOver {
   background: rgb(var(--carryover-rgb));
-  position: absolute;
-  top: calc(50% - 1px / 2);
-  left: 2px;
-  height: 1px;
-  width: calc(100% - 2px * 2);
 }
 
 .plus:before,
