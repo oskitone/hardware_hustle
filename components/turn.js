@@ -65,12 +65,13 @@ export function Cell({
 }
 
 export default function Turn({ id }) {
-  const COLUMNS = ["Buy", "Make", "Sell", "EOD"];
+  const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
   const BODIES = [
     {
       rows: ["money"],
       columns: [
+        {},
         { minus: true },
         { carryOver: true },
         { plus: true },
@@ -79,11 +80,18 @@ export default function Turn({ id }) {
     },
     {
       rows: ["time"],
-      columns: [{}, { plus: true }, { plus: true }, { equals: true }],
+      columns: [
+        {},
+        { plus: true },
+        { plus: true },
+        { plus: true },
+        { equals: true },
+      ],
     },
     {
       rows: ["A", "B", "C", "D"],
       columns: [
+        {},
         { plus: true },
         { minus: true },
         { carryOver: true },
@@ -93,6 +101,7 @@ export default function Turn({ id }) {
     {
       rows: ["AB", "ABC", "ABCD"],
       columns: [
+        {},
         { carryOver: true },
         { plus: true },
         { minus: true },

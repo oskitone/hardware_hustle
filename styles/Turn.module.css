@@ -13,7 +13,7 @@
 
 .tr {
   display: grid;
-  grid-template-columns: calc(1em + 0.5em) repeat(4, 1fr);
+  grid-template-columns: calc(1em + 0.5em) repeat(5, 1fr);
 }
 
 .td {
