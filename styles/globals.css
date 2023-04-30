@@ -1,13 +1,10 @@
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
   --offpaper-rgb: 220, 220, 220;
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
 
   --grid-rgb: 170, 170, 170;
+  --carryover-rgb: 210, 210, 210;
 
   --fillet: 4px;
 

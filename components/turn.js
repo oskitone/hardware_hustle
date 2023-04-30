@@ -142,7 +142,9 @@ export default function Turn({ id }) {
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}
                       bottomLeft={isLastRow && isFirstColumn}
-                      carryOver={column.carryOver}
+                      carryOver={
+                        column.carryOver || (id !== 0 && isFirstColumn)
+                      }
                       plus={column.plus}
                       minus={column.minus}
                       equals={column.equals}
