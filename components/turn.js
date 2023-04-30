@@ -71,7 +71,7 @@ export default function Turn({ id }) {
     {
       rows: ["money"],
       columns: [
-        {},
+        { startValue: 12 },
         { minus: true },
         { carryOver: true },
         { plus: true },
@@ -81,7 +81,7 @@ export default function Turn({ id }) {
     {
       rows: ["time"],
       columns: [
-        {},
+        { startValue: 0 },
         { plus: true },
         { plus: true },
         { plus: true },
@@ -91,7 +91,7 @@ export default function Turn({ id }) {
     {
       rows: ["A", "B", "C", "D"],
       columns: [
-        {},
+        { startValue: 0 },
         { plus: true },
         { minus: true },
         { carryOver: true },
@@ -101,7 +101,7 @@ export default function Turn({ id }) {
     {
       rows: ["AB", "ABC", "ABCD"],
       columns: [
-        {},
+        { startValue: 0 },
         { carryOver: true },
         { plus: true },
         { minus: true },
@@ -137,6 +137,7 @@ export default function Turn({ id }) {
 
                   return (
                     <Cell
+                      children={id == 0 && isFirstColumn && column.startValue}
                       topLeft={isFirstRow && isFirstColumn}
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}

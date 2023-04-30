@@ -8,7 +8,7 @@ export default function TurnGrid({ children }) {
   return (
     <div class={`${styles.turnGrid}`}>
       {[...Array(TURNS_COUNT)].map((e, i) => (
-        <Turn key={i} id={i + 1} />
+        <Turn key={i} id={i} />
       ))}
     </div>
   );
