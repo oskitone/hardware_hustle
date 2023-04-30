@@ -65,84 +65,83 @@ export function Cell({
 }
 
 export default function Turn({ id }) {
+  const COLUMNS = ["Buy", "Make", "Sell", "EOD"];
+
   const BODIES = [
     {
-      rowIcons: ["money"],
+      rows: ["money"],
       columns: [
-        { carryOver: false, plus: false, minus: true },
-        { carryOver: true, plus: false, minus: false },
-        { carryOver: false, plus: true, minus: false },
+        { minus: true },
+        { carryOver: true },
+        { plus: true },
+        { equals: true },
       ],
     },
     {
-      rowIcons: ["time"],
+      rows: ["time"],
+      columns: [{}, { plus: true }, { plus: true }, { equals: true }],
+    },
+    {
+      rows: ["A", "B", "C", "D"],
       columns: [
-        { carryOver: false, plus: false, minus: false },
-        { carryOver: false, plus: true, minus: false },
-        { carryOver: false, plus: true, minus: false },
+        { plus: true },
+        { minus: true },
+        { carryOver: true },
+        { equals: true },
       ],
     },
     {
-      rowIcons: ["A", "B", "C", "D"],
+      rows: ["AB", "ABC", "ABCD"],
       columns: [
-        { carryOver: false, plus: true, minus: false },
-        { carryOver: false, plus: false, minus: true },
-        { carryOver: true, plus: false, minus: false },
-      ],
-    },
-    {
-      rowIcons: ["AB", "ABC", "ABCD"],
-      columns: [
-        { carryOver: true, plus: false, minus: false },
-        { carryOver: false, plus: true, minus: false },
-        { carryOver: false, plus: false, minus: true },
+        { carryOver: true },
+        { plus: true },
+        { minus: true },
+        { equals: true },
       ],
     },
   ];
-
-  const CARRYOVER_COLUMNS = [[], [1], [2], [0]];
-  const PLUS_COLUMNS = [[2], [1, 2], [0], [1]];
 
   return (
     <div class={`${styles.turn}`}>
       <Head>
         <Row>
           <Cell head />
-          <Cell head>Buy</Cell>
-          <Cell head>Make</Cell>
-          <Cell head>Sell</Cell>
-          <Cell head>EOD</Cell>
+          {COLUMNS.map((column) => (
+            <Cell head>{column}</Cell>
+          ))}
         </Row>
       </Head>
-      {BODIES.map((body, i) => (
+
+      {BODIES.map((body, bodyI) => (
         <Body>
-          {body.rowIcons.map((icon, ii) => (
-            <Row>
-              <Cell icon={icon} />
-              <Cell
-                topLeft={ii == 0}
-                bottomLeft={ii == body.rowIcons.length - 1}
-                carryOver={body.columns[0].carryOver}
-                plus={body.columns[0].plus}
-                minus={body.columns[0].minus}
-              />
-              <Cell
-                carryOver={body.columns[1].carryOver}
-                plus={body.columns[1].plus}
-                minus={body.columns[1].minus}
-              />
-              <Cell
-                carryOver={body.columns[2].carryOver}
-                plus={body.columns[2].plus}
-                minus={body.columns[2].minus}
-              />
-              <Cell
-                topRight={ii == 0}
-                bottomRight={ii == body.rowIcons.length - 1}
-                equals
-              />
-            </Row>
-          ))}
+          {body.rows.map((icon, rowI) => {
+            const isFirstRow = rowI == 0;
+            const isLastRow = rowI == body.rows.length - 1;
+
+            return (
+              <Row>
+                <Cell icon={icon} />
+
+                {body.columns.map((column, columnI) => {
+                  const isFirstColumn = columnI == 0;
+                  const isLastColumn = columnI == body.columns.length - 1;
+
+                  return (
+                    <Cell
+                      topLeft={isFirstRow && isFirstColumn}
+                      topRight={isFirstRow && isLastColumn}
+                      bottomRight={isLastRow && isLastColumn}
+                      bottomLeft={isLastRow && isFirstColumn}
+                      carryOver={column.carryOver}
+                      plus={column.plus}
+                      minus={column.minus}
+                      equals={column.equals}
+                    />
+                  );
+                })}
+              </Row>
+            );
+          })}
         </Body>
       ))}
     </div>
