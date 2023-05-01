@@ -97,27 +97,3 @@
   font-weight: 100;
   font-size: 0.85em;
 }
-
-.skillPointsSelector {
-  display: flex;
-}
-
-.skillPointsSelector .option {
-  font-size: 1em;
-  margin: 0 0.5em 0 0;
-  position: relative;
-}
-
-.skillPointsSelector .selected:before {
-  content: "";
-
-  position: absolute;
-  top: calc(50% - 1em / 2);
-  left: calc(50% - 1em / 2);
-
-  width: 1em;
-  height: 1em;
-
-  outline: 1px dashed rgb(var(--foreground-rgb));
-  border-radius: 50%;
-}

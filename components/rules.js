@@ -1,20 +1,9 @@
 import classnames from "classnames";
+import PointSelector from "components/point-selector";
 import TurnGrid from "components/turn-grid";
 import Icon from "components/icon";
 
 import styles from "@/styles/Rules.module.css";
-
-function SkillPointsSelector() {
-  return (
-    <div class={styles.skillPointsSelector}>
-      {[...Array(7)].map((e, i) => (
-        <span class={classnames(styles.option, { [styles.selected]: i == 0 })}>
-          {i}
-        </span>
-      ))}
-    </div>
-  );
-}
 
 export default function Rules() {
   const ACTIONS = [
@@ -166,7 +155,7 @@ export default function Rules() {
                 <h4>Buy</h4>
               </th>
               <td>
-                <SkillPointsSelector />
+                <PointSelector options={[0, 1, 2, 3, 4, 5, 6]} value={0} />
               </td>
             </tr>
             <tr>
@@ -174,7 +163,7 @@ export default function Rules() {
                 <h4>Make</h4>
               </th>
               <td>
-                <SkillPointsSelector />
+                <PointSelector options={[0, 1, 2, 3, 4, 5, 6]} value={0} />
               </td>
             </tr>
             <tr>
@@ -182,7 +171,7 @@ export default function Rules() {
                 <h4>Sell</h4>
               </th>
               <td>
-                <SkillPointsSelector />
+                <PointSelector options={[0, 1, 2, 3, 4, 5, 6]} value={0} />
               </td>
             </tr>
           </tbody>
