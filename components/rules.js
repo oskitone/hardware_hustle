@@ -86,19 +86,21 @@ export default function Rules() {
       text: true,
       body: [
         [
-          <Icon id="time" suffix="> 6" />,
+          <>
+            <Icon id="time" /> &gt; <Icon id="roll" />
+          </>,
           <>
             <h4>Research</h4>
-            <em>Add a skill point</em>
+            <em>Add Skill Point</em>
           </>,
         ],
         [
-          <Icon id="time" suffix="< 0" />,
+          <>
+            <Icon id="time" /> &lt; <Icon id="roll" />
+          </>,
           <>
             <h4>Burnout</h4>
-            <em>
-              <Icon id="roll" /> = 0, all next turn
-            </em>
+            <em>Lose next turn</em>
           </>,
         ],
       ],
