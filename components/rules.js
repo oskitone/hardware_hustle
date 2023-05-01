@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import PointSelector from "components/point-selector";
-import TurnGrid from "components/turn-grid";
+import LineInput from "components/line-input";
 import Icon from "components/icon";
 
 import styles from "@/styles/Rules.module.css";
@@ -110,6 +110,8 @@ export default function Rules() {
   return (
     <div class={styles.rules}>
       <h1>Hardware Hustle</h1>
+
+      <LineInput title={"Name / Date"} className={styles.LineInput} />
 
       <h2>Actions</h2>
 

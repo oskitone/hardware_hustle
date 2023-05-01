@@ -18,7 +18,8 @@
 
 .rules h1,
 .actions,
-.skillPoints {
+.skillPoints,
+.LineInput {
   margin: 0 0 calc(var(--default-font-size) * 2);
 }
 

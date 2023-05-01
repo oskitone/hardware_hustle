@@ -1,0 +1,14 @@
+.LineInput {
+  flex: 1;
+}
+
+.title {
+  font-weight: 100;
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+.input {
+  height: 1em;
+  border-bottom: 1px solid rgb(var(--foreground-rgb));
+}
