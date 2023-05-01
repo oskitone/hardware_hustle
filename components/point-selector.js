@@ -2,6 +2,8 @@ import classnames from "classnames";
 
 import styles from "@/styles/PointSelector.module.css";
 
+// TODO: prefix icon
+
 export default function PointSelector({ options, value }) {
   return (
     <div class={styles.pointSelector}>

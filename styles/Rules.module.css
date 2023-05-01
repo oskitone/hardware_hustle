@@ -22,19 +22,14 @@
   margin: 0 0 calc(var(--default-font-size) * 2);
 }
 
-.description {
-  margin: 0 0 calc(var(--default-font-size) / 2);
-  font-weight: 100;
-  font-size: 0.85em;
-}
-
 .rules h2 {
-  margin: 0 0 calc(var(--default-font-size) / 4);
+  margin: 0 0 var(--default-font-size);
 }
 
 .rules table {
   text-align: left;
   table-layout: fixed;
+  height: min-content;
 }
 
 .rules tr > *:nth-child(1) {
@@ -42,7 +37,7 @@
 }
 
 .rules tr > *:nth-child(2) {
-  width: 3.5em;
+  width: 6.5em; /* eyeballed */
 }
 
 .rules tr > *:last-of-type {
@@ -64,16 +59,14 @@
 }
 
 .actions td {
-  vertical-align: baseline;
-  padding: 0 1em 0.15em 0;
   line-height: 1;
   white-space: nowrap;
-  font-size: 0.85em;
 }
 
 .text td {
+  vertical-align: baseline;
   line-height: 1.2;
-  padding-bottom: 0.3em;
+  padding-bottom: 0.25em;
 }
 
 .actions td:first-of-type {

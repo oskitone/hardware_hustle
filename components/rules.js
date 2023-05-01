@@ -12,23 +12,23 @@ export default function Rules() {
       body: [
         [
           <Icon id="A" />,
-          <Icon id="time" prefix="-" suffix="0" />,
           <Icon id="money" prefix="-" suffix="1" />,
+          <PointSelector options={[0]} value={0} />,
         ],
         [
           <Icon id="B" />,
-          <Icon id="time" prefix="-" suffix="1" />,
           <Icon id="money" prefix="-" suffix="2" />,
+          <PointSelector options={[1, 0]} value={1} />,
         ],
         [
           <Icon id="C" />,
-          <Icon id="time" prefix="-" suffix="2" />,
           <Icon id="money" prefix="-" suffix="3" />,
+          <PointSelector options={[2, 1, 0]} value={2} />,
         ],
         [
           <Icon id="D" />,
-          <Icon id="time" prefix="-" suffix="3" />,
           <Icon id="money" prefix="-" suffix="4" />,
+          <PointSelector options={[3, 2, 1, 0]} value={3} />,
         ],
       ],
     },
@@ -37,25 +37,25 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
-          <Icon id="time" prefix="-" suffix="1" />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" />
           </>,
+          <PointSelector options={[1, 0]} value={1} />,
         ],
         [
           <Icon id="ABC" />,
-          <Icon id="time" prefix="-" suffix="2" />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
           </>,
+          <PointSelector options={[2, 1, 0]} value={2} />,
         ],
         [
           <Icon id="ABCD" />,
-          <Icon id="time" prefix="-" suffix="3" />,
           <>
-            <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />{" "}
+            <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
             <Icon id="D" />
           </>,
+          <PointSelector options={[3, 2, 1, 0]} value={3} />,
         ],
       ],
     },
@@ -65,18 +65,18 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
-          <Icon id="time" prefix="-" suffix="2" />,
           <Icon id="money" prefix="+" suffix="9" />,
+          <PointSelector options={[2, 1, 0]} value={2} />,
         ],
         [
           <Icon id="ABC" />,
-          <Icon id="time" prefix="-" suffix="3" />,
           <Icon id="money" prefix="+" suffix="18" />,
+          <PointSelector options={[3, 2, 1, 0]} value={3} />,
         ],
         [
           <Icon id="ABCD" />,
-          <Icon id="time" prefix="-" suffix="4" />,
           <Icon id="money" prefix="+" suffix="30" />,
+          <PointSelector options={[4, 3, 2, 1, 0]} value={4} />,
         ],
       ],
     },
@@ -111,10 +111,6 @@ export default function Rules() {
 
       <h2>Actions</h2>
 
-      <p class={styles.description}>
-        Roll <Icon id="roll" /> for max available <Icon id="time" />
-      </p>
-
       <div class={styles.actions}>
         {ACTIONS.map((action, i) => (
           <>
@@ -144,10 +140,6 @@ export default function Rules() {
       <h2>Skill Points</h2>
 
       <div class={styles.skillPoints}>
-        <p class={styles.description}>
-          Decreases <Icon id="time" /> Action cost
-        </p>
-
         <table>
           <tbody>
             <tr>
