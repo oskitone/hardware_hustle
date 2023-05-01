@@ -71,6 +71,7 @@
 }
 
 .carryOver {
+  /* TODO: this is indiscernible on some displays */
   background: rgb(var(--carryover-rgb));
 }
 

@@ -86,14 +86,14 @@ export default function Rules() {
       text: true,
       body: [
         [
-          <Icon id="time" suffix="<6" />,
+          <Icon id="time" suffix="> 6" />,
           <>
             <h4>Research</h4>
             <em>Add a skill point</em>
           </>,
         ],
         [
-          <Icon id="time" suffix=">12" />,
+          <Icon id="time" suffix="< 0" />,
           <>
             <h4>Burnout</h4>
             <em>

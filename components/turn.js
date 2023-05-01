@@ -64,6 +64,9 @@ export function Cell({
   );
 }
 
+const STARTING_MONEY_VALUE = 12;
+const TIME_VALUE = 12;
+
 export default function Turn({ id }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
@@ -71,7 +74,7 @@ export default function Turn({ id }) {
     {
       rows: ["money"],
       columns: [
-        { startValue: 12 },
+        { startValue: STARTING_MONEY_VALUE },
         { minus: true },
         { carryOver: true },
         { plus: true },
@@ -81,10 +84,10 @@ export default function Turn({ id }) {
     {
       rows: ["time"],
       columns: [
-        { startValue: 0 },
-        { plus: true },
-        { plus: true },
-        { plus: true },
+        { startValue: TIME_VALUE },
+        { minus: true },
+        { minus: true },
+        { minus: true },
         { equals: true },
       ],
     },
@@ -110,6 +113,17 @@ export default function Turn({ id }) {
     },
   ];
 
+  // TODO: pretty hacky!
+  const getValue = (id, rowIcon, column, isFirstColumn) => {
+    if (id == 0 && isFirstColumn) {
+      return column.startValue;
+    }
+
+    if (id > 0 && isFirstColumn && rowIcon == "time") {
+      return column.startValue;
+    }
+  };
+
   return (
     <div class={`${styles.turn}`}>
       <Head>
@@ -123,13 +137,13 @@ export default function Turn({ id }) {
 
       {BODIES.map((body, bodyI) => (
         <Body>
-          {body.rows.map((icon, rowI) => {
+          {body.rows.map((rowIcon, rowI) => {
             const isFirstRow = rowI == 0;
             const isLastRow = rowI == body.rows.length - 1;
 
             return (
               <Row>
-                <Cell icon={icon} />
+                <Cell icon={rowIcon} />
 
                 {body.columns.map((column, columnI) => {
                   const isFirstColumn = columnI == 0;
@@ -137,14 +151,12 @@ export default function Turn({ id }) {
 
                   return (
                     <Cell
-                      children={id == 0 && isFirstColumn && column.startValue}
+                      children={getValue(id, rowIcon, column, isFirstColumn)}
                       topLeft={isFirstRow && isFirstColumn}
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}
                       bottomLeft={isLastRow && isFirstColumn}
-                      carryOver={
-                        column.carryOver || (id !== 0 && isFirstColumn)
-                      }
+                      carryOver={column.carryOver}
                       plus={column.plus}
                       minus={column.minus}
                       equals={column.equals}
