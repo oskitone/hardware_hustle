@@ -64,17 +64,14 @@ export function Cell({
   );
 }
 
-const STARTING_MONEY_VALUE = 12;
-const TIME_VALUE = 12;
-
-export default function Turn({ id }) {
+export default function Turn({ id, startingValues }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
   const BODIES = [
     {
       rows: ["money"],
       columns: [
-        { startValue: STARTING_MONEY_VALUE },
+        {},
         { minus: true },
         { carryOver: true },
         { plus: true },
@@ -84,7 +81,7 @@ export default function Turn({ id }) {
     {
       rows: ["time"],
       columns: [
-        { startValue: TIME_VALUE },
+        {},
         { minus: true },
         { minus: true },
         { minus: true },
@@ -94,7 +91,7 @@ export default function Turn({ id }) {
     {
       rows: ["A", "B", "C", "D"],
       columns: [
-        { startValue: 0 },
+        {},
         { plus: true },
         { minus: true },
         { carryOver: true },
@@ -104,7 +101,7 @@ export default function Turn({ id }) {
     {
       rows: ["AB", "ABC", "ABCD"],
       columns: [
-        { startValue: 0 },
+        {},
         { carryOver: true },
         { plus: true },
         { minus: true },
@@ -112,17 +109,6 @@ export default function Turn({ id }) {
       ],
     },
   ];
-
-  // TODO: pretty hacky!
-  const getValue = (id, rowIcon, column, isFirstColumn) => {
-    if (id == 0 && isFirstColumn) {
-      return column.startValue;
-    }
-
-    if (id > 0 && isFirstColumn && rowIcon == "time") {
-      return column.startValue;
-    }
-  };
 
   return (
     <div class={`${styles.turn}`}>
@@ -151,7 +137,7 @@ export default function Turn({ id }) {
 
                   return (
                     <Cell
-                      children={getValue(id, rowIcon, column, isFirstColumn)}
+                      children={isFirstColumn && startingValues[rowIcon]}
                       topLeft={isFirstRow && isFirstColumn}
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}
