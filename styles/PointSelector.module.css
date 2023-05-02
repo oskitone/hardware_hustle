@@ -9,7 +9,7 @@
 .option {
   font-size: 0.85em;
   height: var(--default-font-size);
-  width: calc(var(--default-font-size) * 1.5);
+  width: calc(var(--default-font-size) * 1.25);
 
   margin: 0 -1px 0 0;
 

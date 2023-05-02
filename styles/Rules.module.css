@@ -18,28 +18,16 @@
 
 .rules h1,
 .actions,
-.skillPoints,
 .LineInput {
-  margin: 0 0 calc(var(--default-font-size) * 2);
+  margin: 0 0 calc(var(--default-font-size) * 1.5);
 }
 
 .rules h2 {
   margin: 0 0 var(--default-font-size);
 }
 
-.rules table {
+.actions th {
   text-align: left;
-  table-layout: fixed;
-  height: min-content;
-}
-
-.actions {
-  display: grid;
-  grid-template-columns: min-content max-content;
-  grid-gap: 0.5em 0.5em;
-}
-
-.actions h3 {
   font-size: 0.85em;
   writing-mode: tb-rl;
   padding: 0.5em 0.25em;
@@ -49,33 +37,14 @@
 
 .actions td {
   line-height: 1;
+  padding: 0 0 0.25em 0.5em;
   white-space: nowrap;
-  padding: 0 0.5em 0 0;
 }
 
-.text td {
-  vertical-align: baseline;
-  line-height: 1.2;
-  padding-bottom: 0.25em;
+.actions .gutter {
+  height: 0.5em;
 }
 
-.actions td:first-of-type {
-  text-align: center;
-}
-
-.icons td:first-of-type * {
-  font-size: 1.2em;
-}
-
-.actions tr:last-of-type td {
-  padding-bottom: 0;
-}
-
-.skillPoints th {
-  padding: 0 1em 0 0;
-}
-
-.actions em,
 .footer {
   font-weight: 100;
   font-size: 0.85em;

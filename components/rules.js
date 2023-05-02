@@ -12,23 +12,23 @@ export default function Rules() {
       body: [
         [
           <Icon id="A" />,
-          <Icon id="money" prefix="-" suffix="1" />,
           <PointSelector icon="time" options={[0]} value={0} />,
+          <Icon id="money" prefix="-" suffix="1" />,
         ],
         [
           <Icon id="B" />,
-          <Icon id="money" prefix="-" suffix="2" />,
           <PointSelector icon="time" options={[1, 0]} value={1} />,
+          <Icon id="money" prefix="-" suffix="2" />,
         ],
         [
           <Icon id="C" />,
-          <Icon id="money" prefix="-" suffix="3" />,
           <PointSelector icon="time" options={[2, 1, 0]} value={2} />,
+          <Icon id="money" prefix="-" suffix="3" />,
         ],
         [
           <Icon id="D" />,
-          <Icon id="money" prefix="-" suffix="4" />,
           <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
+          <Icon id="money" prefix="-" suffix="4" />,
         ],
       ],
     },
@@ -37,25 +37,25 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
+          <PointSelector icon="time" options={[1, 0]} value={1} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" />
           </>,
-          <PointSelector icon="time" options={[1, 0]} value={1} />,
         ],
         [
           <Icon id="ABC" />,
+          <PointSelector icon="time" options={[2, 1, 0]} value={2} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
           </>,
-          <PointSelector icon="time" options={[2, 1, 0]} value={2} />,
         ],
         [
           <Icon id="ABCD" />,
+          <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
             <Icon id="D" />
           </>,
-          <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
         ],
       ],
     },
@@ -65,43 +65,18 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
-          <Icon id="money" prefix="+" suffix="9" />,
+          <Icon id="money" prefix="+" suffix="5" />,
           <PointSelector icon="time" options={[2, 1, 0]} value={2} />,
         ],
         [
           <Icon id="ABC" />,
-          <Icon id="money" prefix="+" suffix="18" />,
+          <Icon id="money" prefix="+" suffix="20" />,
           <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
         ],
         [
           <Icon id="ABCD" />,
-          <Icon id="money" prefix="+" suffix="30" />,
+          <Icon id="money" prefix="+" suffix="40" />,
           <PointSelector icon="time" options={[4, 3, 2, 1, 0]} value={4} />,
-        ],
-      ],
-    },
-
-    {
-      title: "PM",
-      text: true,
-      body: [
-        [
-          <>
-            <Icon id="time" /> &gt; <Icon id="roll" />
-          </>,
-          <>
-            <h4>Research</h4>
-            <em>Add Skill Point</em>
-          </>,
-        ],
-        [
-          <>
-            <Icon id="time" /> &lt; <Icon id="roll" />
-          </>,
-          <>
-            <h4>Burnout</h4>
-            <em>Lose next turn</em>
-          </>,
         ],
       ],
     },
@@ -113,66 +88,42 @@ export default function Rules() {
 
       <LineInput title={"Name / Date"} className={styles.LineInput} />
 
-      <h2>Actions</h2>
-
       <div class={styles.actions}>
-        {ACTIONS.map((action, i) => (
-          <>
-            <h3>
-              {i + 1} {action.title}
-            </h3>
-            <table
-              class={classnames({
-                [styles.icons]: !action.text,
-                [styles.text]: action.text,
-              })}
-            >
+        <table class={styles.icons}>
+          {ACTIONS.map((action, actionI) => (
+            <>
               <tbody>
-                {action.body.map((columns) => (
+                {action.body.map((columns, bodyI) => (
                   <tr>
+                    {bodyI == 0 && (
+                      <th rowspan={action.body.length}>
+                        <h3>{action.title}</h3>
+                      </th>
+                    )}
+
                     {columns.map((column) => (
                       <td>{column}</td>
                     ))}
                   </tr>
                 ))}
+                {actionI !== action.body.length - 1 && (
+                  <tr>
+                    <td class={styles.gutter} />
+                  </tr>
+                )}
               </tbody>
-            </table>
-          </>
-        ))}
-      </div>
-
-      <h2>Skill Points</h2>
-
-      <div class={styles.skillPoints}>
-        <table>
-          <tbody>
-            <tr>
-              <th>
-                <h4>Buy</h4>
-              </th>
-              <td>
-                <PointSelector options={[0, 1, 2, 3, 4, 5, 6]} value={0} />
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <h4>Make</h4>
-              </th>
-              <td>
-                <PointSelector options={[0, 1, 2, 3, 4, 5, 6]} value={0} />
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <h4>Sell</h4>
-              </th>
-              <td>
-                <PointSelector options={[0, 1, 2, 3, 4, 5, 6]} value={0} />
-              </td>
-            </tr>
-          </tbody>
+            </>
+          ))}
         </table>
       </div>
+
+      {/* TODO: bring back */}
+      {/* <Icon id="time" /> &gt; <Icon id="roll" />
+      <h4>Research</h4>
+      <em>Add Skill Point</em>
+      <Icon id="time" /> &lt; <Icon id="roll" />
+      <h4>Burnout</h4>
+      <em>Lose next turn</em> */}
 
       <footer class={styles.footer}>CC BY-SA 4.0 Oskitone</footer>
     </div>
