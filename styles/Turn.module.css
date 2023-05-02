@@ -71,13 +71,8 @@
 }
 
 .carryOver {
-  background: repeating-linear-gradient(
-    -45deg,
-    rgb(var(--carryover-rgb)),
-    rgb(var(--carryover-rgb)) 2px,
-    transparent 2px,
-    transparent calc(2px * 2)
-  );
+  /* TODO: this is indiscernible on some displays */
+  background: rgb(var(--carryover-rgb));
 }
 
 .plus:before,
