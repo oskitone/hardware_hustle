@@ -112,29 +112,31 @@ export default function Rules() {
               </tr>
             </tbody>
           ))}
-          <tr>
-            <th rowspan={2}>
-              <h3>PM</h3>
-            </th>
-            <td>
-              <Icon id="time" />
-            </td>
-            <td colspan={2}>
-              &gt; <Icon id="roll" />
-              <span class={styles.description}>
-                Research: -1 <Icon id="time" /> cost
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <Icon id="time" />
-            </td>
-            <td colspan={2}>
-              &lt; <Icon id="roll" />
-              <span class={styles.description}>Burnout: lost next turn</span>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <th rowspan={2}>
+                <h3>PM</h3>
+              </th>
+              <td>
+                <Icon id="time" />
+              </td>
+              <td colspan={2}>
+                &gt; <Icon id="roll" />
+                <span class={styles.description}>
+                  Research: -1 <Icon id="time" /> cost
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Icon id="time" />
+              </td>
+              <td colspan={2}>
+                &lt; <Icon id="roll" />
+                <span class={styles.description}>Burnout: lost next turn</span>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
