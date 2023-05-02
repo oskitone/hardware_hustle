@@ -5,11 +5,13 @@
 }
 
 .pointSelector .option {
-  font-size: 1em;
-  height: 1em;
-  width: 1em;
+  font-size: 0.85em;
+  height: var(--default-font-size);
+  width: calc(var(--default-font-size) * 1.5);
 
-  margin: 0 0.1em 0 0;
+  margin: 0 -1px 0 0;
+
+  border: 1px solid rgb(var(--point-selector-outline-rgb));
 
   display: flex;
   align-items: center;
@@ -28,6 +30,6 @@
   width: 1.25em;
   height: 1.25em;
 
-  outline: 1px dashed rgb(var(--foreground-rgb));
+  outline: 1px solid rgb(var(--foreground-rgb));
   border-radius: 50%;
 }
