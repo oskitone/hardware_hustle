@@ -91,39 +91,50 @@ export default function Rules() {
       <div class={styles.actions}>
         <table class={styles.icons}>
           {ACTIONS.map((action, actionI) => (
-            <>
-              <tbody>
-                {action.body.map((columns, bodyI) => (
-                  <tr>
-                    {bodyI == 0 && (
-                      <th rowspan={action.body.length}>
-                        <h3>{action.title}</h3>
-                      </th>
-                    )}
+            <tbody>
+              {action.body.map((columns, bodyI) => (
+                <tr>
+                  {bodyI == 0 && (
+                    <th rowspan={action.body.length}>
+                      <h3>{action.title}</h3>
+                    </th>
+                  )}
 
-                    {columns.map((column) => (
-                      <td>{column}</td>
-                    ))}
-                  </tr>
-                ))}
-                {actionI !== action.body.length - 1 && (
-                  <tr>
-                    <td class={styles.gutter} />
-                  </tr>
-                )}
-              </tbody>
-            </>
+                  {columns.map((column) => (
+                    <td>{column}</td>
+                  ))}
+                </tr>
+              ))}
+              <tr>
+                <td class={styles.gutter} />
+              </tr>
+            </tbody>
           ))}
+          <tr>
+            <th rowspan={2}>
+              <h3>PM</h3>
+            </th>
+            <td>
+              <Icon id="time" />
+            </td>
+            <td colspan={2}>
+              &gt; <Icon id="roll" />
+              <span class={styles.description}>
+                Research: -1 <Icon id="time" /> cost
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Icon id="time" />
+            </td>
+            <td colspan={2}>
+              &lt; <Icon id="roll" />
+              <span class={styles.description}>Burnout: lost next turn</span>
+            </td>
+          </tr>
         </table>
       </div>
-
-      {/* TODO: bring back */}
-      {/* <Icon id="time" /> &gt; <Icon id="roll" />
-      <h4>Research</h4>
-      <em>Add Skill Point</em>
-      <Icon id="time" /> &lt; <Icon id="roll" />
-      <h4>Burnout</h4>
-      <em>Lose next turn</em> */}
 
       <footer class={styles.footer}>CC BY-SA 4.0 Oskitone</footer>
     </div>

@@ -1,7 +1,6 @@
 .rules h1,
 .rules h2,
-.rules h3,
-.rules h4 {
+.rules h3 {
   text-transform: uppercase;
   line-height: 1;
 }
@@ -45,6 +44,11 @@
   height: 0.5em;
 }
 
+.description {
+  margin-left: 0.5em;
+}
+
+.description,
 .footer {
   font-weight: 100;
   font-size: 0.85em;
