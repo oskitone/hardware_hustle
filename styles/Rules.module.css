@@ -1,3 +1,16 @@
+.rules {
+  display: flex;
+  flex-direction: column;
+}
+
+.rules > * {
+  flex-grow: 0;
+}
+
+.Graph {
+  flex-grow: 1;
+}
+
 .rules h1,
 .rules h2,
 .rules h3 {

@@ -1,8 +1,11 @@
 .graph {
   line-height: 1;
 
+  padding: 0.5em 0.5ch;
+
   display: grid;
   grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr min-content;
   grid-gap: 0.25em;
 }
 
@@ -30,7 +33,7 @@
 }
 
 .area {
-  height: 218px;
+  min-height: 218px;
   position: relative;
   border: 1px solid rgb(var(--foreground-rgb));
   border-radius: var(--fillet);
