@@ -1,7 +1,9 @@
 import classnames from "classnames";
-import PointSelector from "components/point-selector";
-import LineInput from "components/line-input";
+
+import Graph from "components/graph";
 import Icon from "components/icon";
+import LineInput from "components/line-input";
+import PointSelector from "components/point-selector";
 
 import styles from "@/styles/Rules.module.css";
 
@@ -135,6 +137,13 @@ export default function Rules() {
           </tr>
         </table>
       </div>
+
+      <Graph
+        turnCount={9}
+        valueMax={100}
+        valueStep={10}
+        className={styles.Graph}
+      />
 
       <footer class={styles.footer}>CC BY-SA 4.0 Oskitone</footer>
     </div>
