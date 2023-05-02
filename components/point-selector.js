@@ -1,12 +1,14 @@
 import classnames from "classnames";
 
+import Icon from "components/icon";
+
 import styles from "@/styles/PointSelector.module.css";
 
-// TODO: prefix icon
-
-export default function PointSelector({ options, value }) {
+export default function PointSelector({ icon, options, value }) {
   return (
     <div class={styles.pointSelector}>
+      {icon && <Icon id={icon} className={styles.icon} />}
+
       {options.map((option, i) => (
         <span
           class={classnames(styles.option, {

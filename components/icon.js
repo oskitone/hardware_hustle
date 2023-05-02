@@ -1,5 +1,5 @@
-export default function Icon({ id, prefix, suffix }) {
-  const className = {
+export default function Icon({ id, prefix, suffix, className }) {
+  const iconClassName = {
     money: "bi-piggy-bank",
     time: "bi-stopwatch",
 
@@ -18,7 +18,7 @@ export default function Icon({ id, prefix, suffix }) {
   return (
     <span title={id}>
       {prefix && `${prefix} `}
-      <i className={`bi ${className}`}></i>
+      <i className={`${className} bi ${iconClassName}`}></i>
       {suffix && ` ${suffix}`}
     </span>
   );

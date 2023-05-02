@@ -1,10 +1,12 @@
 .pointSelector {
   display: flex;
-
-  font-size: 0.85em;
 }
 
-.pointSelector .option {
+.icon {
+  margin-right: 0.25em;
+}
+
+.option {
   font-size: 0.85em;
   height: var(--default-font-size);
   width: calc(var(--default-font-size) * 1.5);
@@ -20,7 +22,7 @@
   position: relative;
 }
 
-.pointSelector .selected:before {
+.selected:before {
   content: "";
 
   position: absolute;

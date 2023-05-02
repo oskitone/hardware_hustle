@@ -13,22 +13,22 @@ export default function Rules() {
         [
           <Icon id="A" />,
           <Icon id="money" prefix="-" suffix="1" />,
-          <PointSelector options={[0]} value={0} />,
+          <PointSelector icon="time" options={[0]} value={0} />,
         ],
         [
           <Icon id="B" />,
           <Icon id="money" prefix="-" suffix="2" />,
-          <PointSelector options={[1, 0]} value={1} />,
+          <PointSelector icon="time" options={[1, 0]} value={1} />,
         ],
         [
           <Icon id="C" />,
           <Icon id="money" prefix="-" suffix="3" />,
-          <PointSelector options={[2, 1, 0]} value={2} />,
+          <PointSelector icon="time" options={[2, 1, 0]} value={2} />,
         ],
         [
           <Icon id="D" />,
           <Icon id="money" prefix="-" suffix="4" />,
-          <PointSelector options={[3, 2, 1, 0]} value={3} />,
+          <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
         ],
       ],
     },
@@ -40,14 +40,14 @@ export default function Rules() {
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" />
           </>,
-          <PointSelector options={[1, 0]} value={1} />,
+          <PointSelector icon="time" options={[1, 0]} value={1} />,
         ],
         [
           <Icon id="ABC" />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
           </>,
-          <PointSelector options={[2, 1, 0]} value={2} />,
+          <PointSelector icon="time" options={[2, 1, 0]} value={2} />,
         ],
         [
           <Icon id="ABCD" />,
@@ -55,7 +55,7 @@ export default function Rules() {
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
             <Icon id="D" />
           </>,
-          <PointSelector options={[3, 2, 1, 0]} value={3} />,
+          <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
         ],
       ],
     },
@@ -66,17 +66,17 @@ export default function Rules() {
         [
           <Icon id="AB" />,
           <Icon id="money" prefix="+" suffix="9" />,
-          <PointSelector options={[2, 1, 0]} value={2} />,
+          <PointSelector icon="time" options={[2, 1, 0]} value={2} />,
         ],
         [
           <Icon id="ABC" />,
           <Icon id="money" prefix="+" suffix="18" />,
-          <PointSelector options={[3, 2, 1, 0]} value={3} />,
+          <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
         ],
         [
           <Icon id="ABCD" />,
           <Icon id="money" prefix="+" suffix="30" />,
-          <PointSelector options={[4, 3, 2, 1, 0]} value={4} />,
+          <PointSelector icon="time" options={[4, 3, 2, 1, 0]} value={4} />,
         ],
       ],
     },
