@@ -65,18 +65,18 @@ export default function Rules() {
       body: [
         [
           <Icon id="AB" />,
-          <Icon id="money" prefix="+" suffix="5" />,
           <PointSelector icon="time" options={[2, 1, 0]} value={2} />,
+          <Icon id="money" prefix="+" suffix="5" />,
         ],
         [
           <Icon id="ABC" />,
-          <Icon id="money" prefix="+" suffix="20" />,
           <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
+          <Icon id="money" prefix="+" suffix="20" />,
         ],
         [
           <Icon id="ABCD" />,
-          <Icon id="money" prefix="+" suffix="40" />,
           <PointSelector icon="time" options={[4, 3, 2, 1, 0]} value={4} />,
+          <Icon id="money" prefix="+" suffix="40" />,
         ],
       ],
     },
