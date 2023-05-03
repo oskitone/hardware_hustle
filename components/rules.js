@@ -123,7 +123,7 @@ export default function Rules() {
               <td colspan={2}>
                 &gt; <Icon id="roll" />
                 <span class={styles.description}>
-                  Research: -1 <Icon id="time" /> cost
+                  Research: Reduce Action <Icon id="time" />
                 </span>
               </td>
             </tr>
@@ -133,7 +133,7 @@ export default function Rules() {
               </td>
               <td colspan={2}>
                 &lt; <Icon id="roll" />
-                <span class={styles.description}>Burnout: lost next turn</span>
+                <span class={styles.description}>Burnout: Lose next turn</span>
               </td>
             </tr>
           </tbody>
