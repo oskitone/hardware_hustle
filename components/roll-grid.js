@@ -4,7 +4,7 @@ import styles from "@/styles/RollGrid.module.css";
 const MIN = 1;
 const MAX = 6;
 
-const roll = () => MAX + Math.round(Math.random() * (MIN - MAX));
+const roll = () => MAX + Math.floor(Math.random() * (MIN - MAX) + 1);
 
 export default function RollGrid({ columns, rows }) {
   const [isClient, setIsClient] = useState();
