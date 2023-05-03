@@ -22,18 +22,36 @@
   height: 1.5em;
 }
 
-.td.inline {
-  padding: 0;
-  min-width: 1.5em;
-  display: inline-block;
-}
-
-.thead .th {
+.th {
   font-weight: bold;
   line-height: 0.75;
   text-transform: uppercase;
   text-align: center;
   font-size: 0.85em;
+}
+
+.day {
+  position: relative;
+  font-weight: inherit;
+}
+
+.day span {
+  position: absolute;
+
+  background: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-rgb));
+
+  width: 2em;
+  height: 1.5em;
+  line-height: 1.5em;
+  border-radius: calc(var(--fillet) * 2);
+
+  left: calc(50% - (0.5em / 2));
+  top: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+
+  z-index: 0;
 }
 
 .td {

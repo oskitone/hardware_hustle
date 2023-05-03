@@ -20,7 +20,7 @@ export function Cell({
   children,
 
   head,
-  inline,
+  day,
 
   carryOver,
   eod,
@@ -42,7 +42,7 @@ export function Cell({
       className={classnames({
         [styles.td]: !head && !icon,
         [styles.th]: head,
-        [styles.inline]: inline,
+        [styles.day]: day,
 
         [styles.icon]: !!icon,
         [styles.carryOver]: carryOver,
@@ -114,7 +114,9 @@ export default function Turn({ id, startingValues }) {
     <div class={`${styles.turn}`}>
       <Head>
         <Row>
-          <Cell head />
+          <Cell head day={true}>
+            <span>{id + 1}</span>
+          </Cell>
           {COLUMNS.map((column) => (
             <Cell head>{column}</Cell>
           ))}
