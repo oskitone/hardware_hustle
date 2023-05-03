@@ -117,22 +117,16 @@ export default function Rules() {
               <th rowspan={2}>
                 <h3>PM</h3>
               </th>
-              <td>
-                <Icon id="time" />
-              </td>
-              <td colspan={2}>
-                &gt; <Icon id="roll" />
+              <td colspan={3}>
+                <Icon id="time" /> &gt; <Icon id="roll" />
                 <span class={styles.description}>
                   Research: Reduce Action <Icon id="time" />
                 </span>
               </td>
             </tr>
             <tr>
-              <td>
-                <Icon id="time" />
-              </td>
-              <td colspan={2}>
-                &lt; <Icon id="roll" />
+              <td colspan={3}>
+                <Icon id="time" /> &lt; 0
                 <span class={styles.description}>Burnout: Lose next turn</span>
               </td>
             </tr>
