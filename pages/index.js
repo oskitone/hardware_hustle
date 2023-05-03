@@ -23,8 +23,8 @@ export default function Home() {
           <TurnGrid
             count={9}
             startingValues={{
-              money: [20],
-              time: [16, 16, 14, 12, 12, 12, 8, 6, 4],
+              money: [10],
+              time: [14, 12, 12, 9, 9, 9, 6, 6, 6],
               A: [0],
               B: [0],
               C: [0],
