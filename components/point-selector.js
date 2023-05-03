@@ -5,6 +5,16 @@ import Icon from "components/icon";
 import styles from "@/styles/PointSelector.module.css";
 
 export default function PointSelector({ icon, options, value }) {
+  let hasSelection = false;
+  const isSelected = (option) => {
+    if (option == value && !hasSelection) {
+      hasSelection = true;
+      return true;
+    }
+
+    return false;
+  };
+
   return (
     <div class={styles.pointSelector}>
       {icon && <Icon id={icon} className={styles.icon} />}
@@ -12,7 +22,7 @@ export default function PointSelector({ icon, options, value }) {
       {options.map((option, i) => (
         <span
           class={classnames(styles.option, {
-            [styles.selected]: option == value,
+            [styles.selected]: isSelected(option),
           })}
         >
           {option}
