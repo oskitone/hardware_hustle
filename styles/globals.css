@@ -7,6 +7,9 @@
 
   --point-selector-outline-rgb: 160, 160, 160;
 
+  --graph-line-primary-rgb: 180, 180, 180;
+  --graph-line-secondary-rgb: 230, 230, 230;
+
   --fillet: 4px;
 
   --print-margin: 0.5in;

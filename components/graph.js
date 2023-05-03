@@ -24,7 +24,7 @@ export default function Graph({ turnCount, valueMax, valueStep, className }) {
         ))}
       </div>
       <div class={styles.area}>
-        <Lines count={Y_AXIS.length * 2 - 1} axisClassname={styles.y} />
+        <Lines count={Y_AXIS.length} axisClassname={styles.y} />
         <Lines count={X_AXIS.length} axisClassname={styles.x} />
       </div>
       <div class={styles.corner}></div>

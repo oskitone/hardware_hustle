@@ -143,7 +143,7 @@ export default function Rules() {
       <Graph
         turnCount={9}
         valueMax={100}
-        valueStep={10}
+        valueStep={5}
         className={styles.Graph}
       />
 

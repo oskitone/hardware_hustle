@@ -59,7 +59,11 @@
 .line {
   width: 100%;
   height: 100%;
-  background: rgb(var(--point-selector-outline-rgb));
+  background: rgb(var(--graph-line-primary-rgb));
+}
+
+.lines.y .line:nth-child(2n) {
+  background: rgb(var(--graph-line-secondary-rgb));
 }
 
 .lines .line:first-of-type,
