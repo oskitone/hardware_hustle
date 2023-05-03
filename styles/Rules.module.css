@@ -19,9 +19,11 @@
 }
 
 .rules h1 {
-  font-size: 2.5em;
+  /* Eyeballed to fit on one line */
+  font-size: 1.78em;
   font-weight: 900;
-  line-height: 0.85;
+  line-height: 0.78;
+  letter-spacing: -0.025em;
 }
 
 .rules h2 {
