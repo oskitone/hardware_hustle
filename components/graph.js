@@ -19,8 +19,11 @@ export default function Graph({ turnCount, valueMax, valueStep, className }) {
   return (
     <div class={`${className} ${styles.graph}`}>
       <div class={`${styles.axis} ${styles.y}`}>
-        {Y_AXIS.map((label) => (
-          <div class={styles.yLabel}>{label}</div>
+        {Y_AXIS.map((label, i) => (
+          <div class={styles.yLabel}>
+            {label}
+            {i == 0 && "+"}
+          </div>
         ))}
       </div>
       <div class={styles.area}>
