@@ -79,16 +79,6 @@ export default function Turn({ id, startingValues }) {
       ],
     },
     {
-      rows: ["time"],
-      columns: [
-        {},
-        { minus: true },
-        { minus: true },
-        { minus: true },
-        { equals: true },
-      ],
-    },
-    {
       rows: ["A", "B", "C", "D"],
       columns: [
         {},
@@ -104,6 +94,16 @@ export default function Turn({ id, startingValues }) {
         {},
         { carryOver: true },
         { plus: true },
+        { minus: true },
+        { equals: true },
+      ],
+    },
+    {
+      rows: ["time"],
+      columns: [
+        {},
+        { minus: true },
+        { minus: true },
         { minus: true },
         { equals: true },
       ],
