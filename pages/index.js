@@ -20,7 +20,20 @@ export default function Home() {
       <main className={`${font.className}`}>
         <Page split>
           <Rules />
-          <TurnGrid count={9} />
+          <TurnGrid
+            count={9}
+            startingValues={{
+              money: [20],
+              time: [16, 16, 14, 12, 12, 12, 8, 6, 4],
+              A: [0],
+              B: [0],
+              C: [0],
+              D: [0],
+              AB: [0],
+              ABC: [0],
+              ABCD: [0],
+            }}
+          />
         </Page>
         <Page>
           <RollGrid columns={35} rows={25} />
