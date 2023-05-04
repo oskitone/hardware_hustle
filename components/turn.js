@@ -1,3 +1,4 @@
+import { isUndefined } from "lodash";
 import classnames from "classnames";
 import Icon from "components/icon";
 
@@ -28,6 +29,7 @@ export function Cell({
   plus,
   minus,
   equals,
+  follow,
 
   topLeft,
   topRight,
@@ -51,6 +53,7 @@ export function Cell({
         [styles.plus]: plus,
         [styles.minus]: minus,
         [styles.equals]: equals,
+        [styles.follow]: follow,
 
         [styles.topLeft]: topLeft,
         [styles.topRight]: topRight,
@@ -148,6 +151,9 @@ export default function Turn({ id, startingValues }) {
                       plus={column.plus}
                       minus={column.minus}
                       equals={column.equals}
+                      follow={
+                        isFirstColumn && isUndefined(startingValues[rowIcon])
+                      }
                     />
                   );
                 })}

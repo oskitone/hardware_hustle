@@ -95,7 +95,9 @@
 
 .plus:before,
 .minus:before,
-.equals:before {
+.equals:before,
+.follow:before {
+  font-family: monospace;
   position: absolute;
   left: 0.2em;
   pointer-events: none;
@@ -113,4 +115,8 @@
 
 .equals:before {
   content: "=";
+}
+
+.follow:before {
+  content: "⇢";
 }
