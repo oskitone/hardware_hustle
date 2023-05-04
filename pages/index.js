@@ -9,6 +9,18 @@ import { Open_Sans } from "next/font/google";
 const font = Open_Sans({ subsets: ["latin"] });
 
 export default function Home() {
+  const startingValues = {
+    money: [10],
+    time: [14, 12, 12, 9, 9, 9, 6, 6, 6],
+    A: [0],
+    B: [0],
+    C: [0],
+    D: [0],
+    AB: [0],
+    ABC: [0],
+    ABCD: [0],
+  };
+
   return (
     <>
       <Head>
@@ -19,21 +31,8 @@ export default function Home() {
       </Head>
       <main className={`${font.className}`}>
         <Page split>
-          <Rules />
-          <TurnGrid
-            count={9}
-            startingValues={{
-              money: [10],
-              time: [14, 12, 12, 9, 9, 9, 6, 6, 6],
-              A: [0],
-              B: [0],
-              C: [0],
-              D: [0],
-              AB: [0],
-              ABC: [0],
-              ABCD: [0],
-            }}
-          />
+          <Rules startingValues={startingValues} />
+          <TurnGrid count={9} startingValues={startingValues} />
         </Page>
         <Page>
           <RollGrid columns={35} rows={25} />

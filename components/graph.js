@@ -2,8 +2,14 @@ import { range } from "lodash";
 
 import styles from "@/styles/Graph.module.css";
 
-export default function Graph({ turnCount, valueMax, valueStep, className }) {
-  const X_AXIS = range(1, turnCount + 1);
+export default function Graph({
+  turnCount,
+  values,
+  valueMax,
+  valueStep,
+  className,
+}) {
+  const X_AXIS = range(0, turnCount + 1);
   const Y_AXIS = range(valueMax, 0 - 1, -valueStep);
 
   function Lines({ count, axisClassname }) {
@@ -29,6 +35,15 @@ export default function Graph({ turnCount, valueMax, valueStep, className }) {
       <div class={styles.area}>
         <Lines count={Y_AXIS.length} axisClassname={styles.y} />
         <Lines count={X_AXIS.length} axisClassname={styles.x} />
+        {values.map((value, i) => (
+          <div
+            class={styles.value}
+            style={{
+              bottom: `${value}%`,
+              left: `${(i / turnCount) * 100}%`,
+            }}
+          />
+        ))}
       </div>
       <div class={styles.corner}></div>
       <div class={`${styles.axis} ${styles.x}`}>

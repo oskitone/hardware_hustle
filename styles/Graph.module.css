@@ -78,3 +78,14 @@
 .lines.y .line {
   height: 1px;
 }
+
+.value {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+  margin: calc(5px / -2);
+
+  background: rgb(var(--foreground-rgb));
+  border-radius: 50%;
+}

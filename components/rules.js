@@ -7,7 +7,7 @@ import PointSelector from "components/point-selector";
 
 import styles from "@/styles/Rules.module.css";
 
-export default function Rules() {
+export default function Rules({ startingValues }) {
   const ACTIONS = [
     {
       title: "Buy",
@@ -138,6 +138,7 @@ export default function Rules() {
         turnCount={9}
         valueMax={100}
         valueStep={5}
+        values={startingValues.money}
         className={styles.Graph}
       />
 
