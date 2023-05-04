@@ -14,22 +14,22 @@ export default function Rules({ startingValues }) {
       body: [
         [
           <Icon id="A" />,
-          <PointSelector icon="time" options={[0, 0, 0, 0, 0]} value={0} />,
+          <PointSelector icon="time" options={[0, 0, 0, 0]} value={0} />,
           <Icon id="money" prefix="-" suffix="1" />,
         ],
         [
           <Icon id="B" />,
-          <PointSelector icon="time" options={[1, 0, 0, 0, 0]} value={1} />,
+          <PointSelector icon="time" options={[1, 0, 0, 0]} value={1} />,
           <Icon id="money" prefix="-" suffix="2" />,
         ],
         [
           <Icon id="C" />,
-          <PointSelector icon="time" options={[2, 1, 0, 0, 0]} value={2} />,
+          <PointSelector icon="time" options={[2, 1, 0, 0]} value={2} />,
           <Icon id="money" prefix="-" suffix="3" />,
         ],
         [
           <Icon id="D" />,
-          <PointSelector icon="time" options={[3, 2, 1, 0, 0]} value={3} />,
+          <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
           <Icon id="money" prefix="-" suffix="4" />,
         ],
       ],
@@ -39,21 +39,21 @@ export default function Rules({ startingValues }) {
       body: [
         [
           <Icon id="AB" />,
-          <PointSelector icon="time" options={[1, 0, 0, 0, 0]} value={1} />,
+          <PointSelector icon="time" options={[1, 0, 0, 0]} value={1} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" />
           </>,
         ],
         [
           <Icon id="ABC" />,
-          <PointSelector icon="time" options={[2, 1, 0, 0, 0]} value={2} />,
+          <PointSelector icon="time" options={[2, 1, 0, 0]} value={2} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
           </>,
         ],
         [
           <Icon id="ABCD" />,
-          <PointSelector icon="time" options={[3, 2, 1, 0, 0]} value={3} />,
+          <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
             <Icon id="D" />
@@ -67,17 +67,17 @@ export default function Rules({ startingValues }) {
       body: [
         [
           <Icon id="AB" />,
-          <PointSelector icon="time" options={[2, 1, 0, 0, 0]} value={2} />,
+          <PointSelector icon="time" options={[2, 1, 0, 0]} value={2} />,
           <Icon id="money" prefix="+" suffix="6" />,
         ],
         [
           <Icon id="ABC" />,
-          <PointSelector icon="time" options={[3, 2, 1, 0, 0]} value={3} />,
+          <PointSelector icon="time" options={[3, 2, 1, 0]} value={3} />,
           <Icon id="money" prefix="+" suffix="18" />,
         ],
         [
           <Icon id="ABCD" />,
-          <PointSelector icon="time" options={[4, 3, 2, 1, 0]} value={4} />,
+          <PointSelector icon="time" options={[4, 3, 2, 1]} value={4} />,
           <Icon id="money" prefix="+" suffix="40" />,
         ],
       ],
