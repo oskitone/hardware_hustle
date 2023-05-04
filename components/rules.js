@@ -118,7 +118,7 @@ export default function Rules() {
                 <h3>PM</h3>
               </th>
               <td colspan={3}>
-                <Icon id="time" /> &gt; <Icon id="roll" />
+                <Icon id="time" /> &gt;= <Icon id="roll" />
                 <span class={styles.description}>
                   Research: Reduce Action <Icon id="time" />
                 </span>
