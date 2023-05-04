@@ -12,8 +12,8 @@
   .sheet {
     margin: 0;
 
-    /* HACK: removes errant blank interim sheets */
-    height: calc(var(--print-sheet-height) - 2px);
+    /* Rely on Page for height */
+    height: auto;
   }
 
   .sheet:not(:last-of-type) {
