@@ -11,7 +11,7 @@ const font = Open_Sans({ subsets: ["latin"] });
 export default function Home() {
   const startingValues = {
     money: [10],
-    time: [14, 12, 12, 9, 9, 9, 6, 6, 6],
+    time: [12, 12, 12, 8, 8, 8, 6, 4, 4],
     A: [0],
     B: [0],
     C: [0],
