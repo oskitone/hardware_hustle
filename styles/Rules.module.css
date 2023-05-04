@@ -20,7 +20,7 @@
 
 .rules h1 {
   /* Eyeballed to fit on one line */
-  font-size: 1.78em;
+  font-size: 2.2em;
   font-weight: 900;
   line-height: 0.78;
   letter-spacing: -0.025em;
@@ -43,7 +43,6 @@
 
 .actions th {
   text-align: left;
-  font-size: 0.8em;
   writing-mode: tb-rl;
   padding: 0.5em 0.25em;
   color: rgb(var(--background-rgb));
@@ -73,7 +72,10 @@
   text-transform: uppercase;
 }
 
-.description,
+.description {
+  font-weight: 100;
+}
+
 .footer {
   font-weight: 100;
   font-size: 0.85em;
