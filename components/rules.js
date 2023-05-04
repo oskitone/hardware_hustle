@@ -135,7 +135,7 @@ export default function Rules({ startingValues }) {
       </div>
 
       <Graph
-        turnCount={9}
+        turnCount={startingValues.time.length}
         valueMax={100}
         valueStep={5}
         values={startingValues.money}

@@ -32,7 +32,10 @@ export default function Home() {
       <main className={`${font.className}`}>
         <Page split>
           <Rules startingValues={startingValues} />
-          <TurnGrid count={9} startingValues={startingValues} />
+          <TurnGrid
+            count={startingValues.time.length}
+            startingValues={startingValues}
+          />
         </Page>
         <Page>
           <RollGrid columns={35} rows={25} />
