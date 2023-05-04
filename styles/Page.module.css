@@ -1,6 +1,6 @@
 .page {
   width: var(--print-sheet-width);
-  height: var(--print-sheet-height);
+  height: calc(var(--print-sheet-height) / 2);
 
   padding: var(--print-margin);
 
@@ -9,7 +9,7 @@
 
 .split {
   display: grid;
-  grid-template-columns: 25% auto;
+  grid-template-columns: calc(100% / 3) auto;
   grid-gap: 2em;
 }
 
