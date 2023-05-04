@@ -36,35 +36,38 @@ export function Cell({
   bottomLeft,
   bottomRight,
 }) {
-  const hasContent = icon || children;
+  const props = {
+    className: classnames({
+      [styles.td]: !head && !icon,
+      [styles.th]: head,
+      [styles.day]: day,
 
-  return (
-    <div
-      contentEditable={!hasContent}
-      className={classnames({
-        [styles.td]: !head && !icon,
-        [styles.th]: head,
-        [styles.day]: day,
+      [styles.icon]: !!icon,
+      [styles.carryOver]: carryOver,
+      [styles.eod]: eod,
 
-        [styles.icon]: !!icon,
-        [styles.carryOver]: carryOver,
-        [styles.eod]: eod,
+      [styles.plus]: plus,
+      [styles.minus]: minus,
+      [styles.equals]: equals,
+      [styles.follow]: follow,
 
-        [styles.plus]: plus,
-        [styles.minus]: minus,
-        [styles.equals]: equals,
-        [styles.follow]: follow,
+      [styles.topLeft]: topLeft,
+      [styles.topRight]: topRight,
+      [styles.bottomLeft]: bottomLeft,
+      [styles.bottomRight]: bottomRight,
+    }),
+  };
 
-        [styles.topLeft]: topLeft,
-        [styles.topRight]: topRight,
-        [styles.bottomLeft]: bottomLeft,
-        [styles.bottomRight]: bottomRight,
-      })}
-    >
-      {icon && <Icon id={icon} />}
-      {children}
-    </div>
-  );
+  if (icon || children) {
+    return (
+      <div {...props}>
+        {icon && <Icon id={icon} />}
+        {children}
+      </div>
+    );
+  }
+
+  return <div {...props} contentEditable />;
 }
 
 export default function Turn({ id, startingValues }) {
