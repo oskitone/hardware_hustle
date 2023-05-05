@@ -12,6 +12,19 @@ export default function Graph({
   const X_AXIS = range(0, turnCount + 1);
   const Y_AXIS = range(valueMax, 0 - 1, -valueStep);
 
+  function Axis({ labels, className, zerothPrefix }) {
+    return (
+      <div class={`${styles.axis} ${className}`}>
+        {labels.map((label, i) => (
+          <div class={className}>
+            {label}
+            {i == 0 && zerothPrefix}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   function Lines({ count, axisClassname }) {
     return (
       <div class={`${styles.lines} ${axisClassname}`}>
@@ -22,35 +35,28 @@ export default function Graph({
     );
   }
 
+  function Values() {
+    return values.map((value, i) => (
+      <div
+        class={styles.value}
+        style={{
+          bottom: `${value}%`,
+          left: `${(i / turnCount) * 100}%`,
+        }}
+      />
+    ));
+  }
+
   return (
     <div class={`${className} ${styles.graph}`}>
-      <div class={`${styles.axis} ${styles.y}`}>
-        {Y_AXIS.map((label, i) => (
-          <div class={styles.yLabel}>
-            {label}
-            {i == 0 && "+"}
-          </div>
-        ))}
-      </div>
+      <Axis labels={Y_AXIS} className={styles.y} zerothPrefix="+" />
       <div class={styles.area}>
         <Lines count={Y_AXIS.length} axisClassname={styles.y} />
         <Lines count={X_AXIS.length} axisClassname={styles.x} />
-        {values.map((value, i) => (
-          <div
-            class={styles.value}
-            style={{
-              bottom: `${value}%`,
-              left: `${(i / turnCount) * 100}%`,
-            }}
-          />
-        ))}
+        <Values />
       </div>
       <div class={styles.corner}></div>
-      <div class={`${styles.axis} ${styles.x}`}>
-        {X_AXIS.map((label) => (
-          <div class={styles.xLabel}>{label}</div>
-        ))}
-      </div>
+      <Axis labels={X_AXIS} className={styles.x} />
     </div>
   );
 }
