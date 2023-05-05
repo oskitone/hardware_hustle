@@ -90,6 +90,7 @@ export default function Rules({ startingValues }) {
 
       <LineInput title={"Name / Date"} className={styles.LineInput} />
 
+      <h2>Actions</h2>
       <div class={styles.actions}>
         <table class={styles.icons}>
           {ACTIONS.map((action, actionI) => (
@@ -134,6 +135,7 @@ export default function Rules({ startingValues }) {
         </table>
       </div>
 
+      <h2>Profit</h2>
       <Graph
         turnCount={startingValues.time.length}
         valueMax={100}
