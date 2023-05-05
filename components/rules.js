@@ -135,7 +135,9 @@ export default function Rules({ startingValues }) {
         </table>
       </div>
 
-      <h2>Profit</h2>
+      <h2>
+        <Icon id="money" /> Profit
+      </h2>
       <Graph
         turnCount={startingValues.time.length}
         valueMax={100}
