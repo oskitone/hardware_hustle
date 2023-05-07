@@ -137,13 +137,11 @@ export default function Rules({ startingValues }) {
         </table>
       </div>
 
-      <h2>
-        <Icon id="money" /> Profit
-      </h2>
+      <h2>Money</h2>
       <Graph
         turnCount={startingValues.time.length}
         valueMax={100}
-        valueStep={5}
+        valueStep={10}
         values={startingValues.money}
         className={styles.Graph}
       />

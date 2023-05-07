@@ -10,15 +10,14 @@ export default function Graph({
   className,
 }) {
   const X_AXIS = range(0, turnCount + 1);
-  const Y_AXIS = range(valueMax, 0 - 1, -valueStep);
+  const Y_AXIS = [...range(0, valueMax + 1, valueStep).slice(0, -1), "+"];
 
-  function Axis({ labels, className, zerothPrefix }) {
+  function Axis({ labels, className }) {
     return (
       <div className={`${styles.axis} ${className}`}>
         {labels.map((label, i) => (
           <div className={className} key={i}>
             {label}
-            {i == 0 && zerothPrefix}
           </div>
         ))}
       </div>
@@ -50,7 +49,7 @@ export default function Graph({
 
   return (
     <div className={`${className} ${styles.graph}`}>
-      <Axis labels={Y_AXIS} className={styles.y} zerothPrefix="+" />
+      <Axis labels={Y_AXIS} className={styles.y} />
       <div className={styles.area}>
         <Lines count={Y_AXIS.length} axisClassname={styles.y} />
         <Lines count={X_AXIS.length} axisClassname={styles.x} />
