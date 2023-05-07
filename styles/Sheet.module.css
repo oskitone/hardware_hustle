@@ -1,0 +1,24 @@
+.sheet {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+
+  width: 11in;
+  height: 8.5in;
+
+  padding: var(--print-margin);
+
+  margin: 2em auto;
+}
+
+@media print {
+  .sheet {
+    margin: 0;
+
+    /* HACK: removes errant blank interim sheets */
+    height: calc(8.5in - 2px);
+  }
+
+  .sheet:not(:last-of-type) {
+    page-break-after: always;
+  }
+}

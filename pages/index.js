@@ -2,6 +2,7 @@ import Head from "next/head";
 import Page from "components/page";
 import RollGrid from "components/roll-grid";
 import Rules from "components/rules";
+import Sheet from "components/sheet";
 import TurnGrid from "components/turn-grid";
 
 import { Open_Sans } from "next/font/google";
@@ -30,16 +31,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${font.className}`}>
-        <Page split>
-          <Rules startingValues={startingValues} />
-          <TurnGrid
-            count={startingValues.time.length}
-            startingValues={startingValues}
-          />
-        </Page>
-        <Page>
-          <RollGrid columns={35} rows={25} />
-        </Page>
+        <Sheet>
+          <Page split>
+            <Rules startingValues={startingValues} />
+            <TurnGrid
+              count={startingValues.time.length}
+              startingValues={startingValues}
+            />
+          </Page>
+        </Sheet>
+        <Sheet>
+          <Page>
+            <RollGrid columns={35} rows={25} />
+          </Page>
+        </Sheet>
       </main>
     </>
   );
