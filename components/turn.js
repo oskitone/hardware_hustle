@@ -58,7 +58,7 @@ export function Cell({
     }),
   };
 
-  if (icon || !isUndefined(children)) {
+  if (icon || !!children || children === 0 || carryOver) {
     return (
       <div {...props}>
         {icon && <Icon id={icon} />}
