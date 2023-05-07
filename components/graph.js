@@ -14,9 +14,9 @@ export default function Graph({
 
   function Axis({ labels, className, zerothPrefix }) {
     return (
-      <div class={`${styles.axis} ${className}`}>
+      <div className={`${styles.axis} ${className}`}>
         {labels.map((label, i) => (
-          <div class={className}>
+          <div className={className}>
             {label}
             {i == 0 && zerothPrefix}
           </div>
@@ -27,9 +27,9 @@ export default function Graph({
 
   function Lines({ count, axisClassname }) {
     return (
-      <div class={`${styles.lines} ${axisClassname}`}>
+      <div className={`${styles.lines} ${axisClassname}`}>
         {[...Array(count)].map((e, i) => (
-          <div class={styles.line} />
+          <div className={styles.line} />
         ))}
       </div>
     );
@@ -38,7 +38,7 @@ export default function Graph({
   function Values() {
     return values.map((value, i) => (
       <div
-        class={styles.value}
+        className={styles.value}
         style={{
           bottom: `${value}%`,
           left: `${(i / turnCount) * 100}%`,
@@ -48,14 +48,14 @@ export default function Graph({
   }
 
   return (
-    <div class={`${className} ${styles.graph}`}>
+    <div className={`${className} ${styles.graph}`}>
       <Axis labels={Y_AXIS} className={styles.y} zerothPrefix="+" />
-      <div class={styles.area}>
+      <div className={styles.area}>
         <Lines count={Y_AXIS.length} axisClassname={styles.y} />
         <Lines count={X_AXIS.length} axisClassname={styles.x} />
         <Values />
       </div>
-      <div class={styles.corner}></div>
+      <div className={styles.corner}></div>
       <Axis labels={X_AXIS} className={styles.x} />
     </div>
   );

@@ -85,14 +85,14 @@ export default function Rules({ startingValues }) {
   ];
 
   return (
-    <div class={styles.rules}>
+    <div className={styles.rules}>
       <h1>Hardware Hustle</h1>
 
       <LineInput title={"Name / Date"} className={styles.LineInput} />
 
       <h2>Actions</h2>
-      <div class={styles.actions}>
-        <table class={styles.icons}>
+      <div className={styles.actions}>
+        <table className={styles.icons}>
           {ACTIONS.map((action, actionI) => (
             <tbody>
               {action.body.map((columns, bodyI) => (
@@ -109,7 +109,7 @@ export default function Rules({ startingValues }) {
                 </tr>
               ))}
               <tr>
-                <td class={styles.gutter} />
+                <td className={styles.gutter} />
               </tr>
             </tbody>
           ))}
@@ -120,7 +120,7 @@ export default function Rules({ startingValues }) {
               </th>
               <td colspan={3}>
                 <Icon id="time" /> &gt;= <Icon id="roll" />
-                <span class={styles.description}>
+                <span className={styles.description}>
                   Research: Reduce Action <Icon id="time" />
                 </span>
               </td>
@@ -128,7 +128,9 @@ export default function Rules({ startingValues }) {
             <tr>
               <td colspan={3}>
                 <Icon id="time" /> &lt; 0
-                <span class={styles.description}>Burnout: Lose next turn</span>
+                <span className={styles.description}>
+                  Burnout: Lose next turn
+                </span>
               </td>
             </tr>
           </tbody>
@@ -146,7 +148,7 @@ export default function Rules({ startingValues }) {
         className={styles.Graph}
       />
 
-      <footer class={styles.footer}>CC BY-SA 4.0 Oskitone</footer>
+      <footer className={styles.footer}>CC BY-SA 4.0 Oskitone</footer>
     </div>
   );
 }

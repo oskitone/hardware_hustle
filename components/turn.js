@@ -5,15 +5,15 @@ import Icon from "components/icon";
 import styles from "@/styles/Turn.module.css";
 
 function Head({ children }) {
-  return <div class={`${styles.thead}`}>{children}</div>;
+  return <div className={`${styles.thead}`}>{children}</div>;
 }
 
 function Body({ children }) {
-  return <div class={`${styles.tbody}`}>{children}</div>;
+  return <div className={`${styles.tbody}`}>{children}</div>;
 }
 
 function Row({ children }) {
-  return <div class={`${styles.tr}`}>{children}</div>;
+  return <div className={`${styles.tr}`}>{children}</div>;
 }
 
 export function Cell({
@@ -117,7 +117,7 @@ export default function Turn({ id, startingValues }) {
   ];
 
   return (
-    <div class={`${styles.turn}`}>
+    <div className={`${styles.turn}`}>
       <Head>
         <Row>
           <Cell head day={true}>

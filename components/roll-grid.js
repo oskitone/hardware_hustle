@@ -13,12 +13,12 @@ export default function RollGrid({ columns, rows }) {
   }, []);
 
   return (
-    <div class={styles.rollGrid}>
+    <div className={styles.rollGrid}>
       {[...Array(rows)].map((undef, i) => {
         return (
-          <div class={styles.row}>
+          <div className={styles.row}>
             {[...Array(columns)].map((undef, i) => (
-              <span class={styles.cell}>{isClient && roll()}</span>
+              <span className={styles.cell}>{isClient && roll()}</span>
             ))}
           </div>
         );

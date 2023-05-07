@@ -4,7 +4,7 @@ import styles from "@/styles/TurnGrid.module.css";
 
 export default function TurnGrid({ count, startingValues }) {
   return (
-    <div class={`${styles.turnGrid}`}>
+    <div className={`${styles.turnGrid}`}>
       {[...Array(count)].map((e, i) => (
         <Turn
           key={i}
