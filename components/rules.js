@@ -94,17 +94,17 @@ export default function Rules({ startingValues }) {
       <div className={styles.actions}>
         <table className={styles.icons}>
           {ACTIONS.map((action, actionI) => (
-            <tbody>
+            <tbody key={actionI}>
               {action.body.map((columns, bodyI) => (
-                <tr>
+                <tr key={bodyI}>
                   {bodyI == 0 && (
-                    <th rowspan={action.body.length}>
+                    <th rowSpan={action.body.length}>
                       <h3>{action.title}</h3>
                     </th>
                   )}
 
-                  {columns.map((column) => (
-                    <td>{column}</td>
+                  {columns.map((column, columnI) => (
+                    <td key={columnI}>{column}</td>
                   ))}
                 </tr>
               ))}
@@ -115,10 +115,10 @@ export default function Rules({ startingValues }) {
           ))}
           <tbody>
             <tr>
-              <th rowspan={2}>
+              <th rowSpan={2}>
                 <h3>PM</h3>
               </th>
-              <td colspan={3}>
+              <td colSpan={3}>
                 <Icon id="time" /> &gt;= <Icon id="roll" />
                 <span className={styles.description}>
                   Research: Reduce Action <Icon id="time" />
@@ -126,7 +126,7 @@ export default function Rules({ startingValues }) {
               </td>
             </tr>
             <tr>
-              <td colspan={3}>
+              <td colSpan={3}>
                 <Icon id="time" /> &lt; 0
                 <span className={styles.description}>
                   Burnout: Lose next turn

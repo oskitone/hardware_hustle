@@ -24,6 +24,7 @@ export default function PointSelector({ icon, options, value }) {
           className={classnames(styles.option, {
             [styles.selected]: isSelected(option),
           })}
+          key={i}
         >
           {option}
         </span>

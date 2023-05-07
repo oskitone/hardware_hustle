@@ -16,7 +16,7 @@ export default function Graph({
     return (
       <div className={`${styles.axis} ${className}`}>
         {labels.map((label, i) => (
-          <div className={className}>
+          <div className={className} key={i}>
             {label}
             {i == 0 && zerothPrefix}
           </div>
@@ -29,7 +29,7 @@ export default function Graph({
     return (
       <div className={`${styles.lines} ${axisClassname}`}>
         {[...Array(count)].map((e, i) => (
-          <div className={styles.line} />
+          <div className={styles.line} key={i} />
         ))}
       </div>
     );
@@ -43,6 +43,7 @@ export default function Graph({
           bottom: `${value}%`,
           left: `${(i / turnCount) * 100}%`,
         }}
+        key={i}
       />
     ));
   }

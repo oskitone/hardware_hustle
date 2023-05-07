@@ -123,20 +123,22 @@ export default function Turn({ id, startingValues }) {
           <Cell head day={true}>
             <span>{id + 1}</span>
           </Cell>
-          {COLUMNS.map((column) => (
-            <Cell head>{column}</Cell>
+          {COLUMNS.map((column, i) => (
+            <Cell head key={i}>
+              {column}
+            </Cell>
           ))}
         </Row>
       </Head>
 
       {BODIES.map((body, bodyI) => (
-        <Body>
+        <Body key={bodyI}>
           {body.rows.map((rowIcon, rowI) => {
             const isFirstRow = rowI == 0;
             const isLastRow = rowI == body.rows.length - 1;
 
             return (
-              <Row>
+              <Row key={rowI}>
                 <Cell icon={rowIcon} />
 
                 {body.columns.map((column, columnI) => {
@@ -157,6 +159,7 @@ export default function Turn({ id, startingValues }) {
                       follow={
                         isFirstColumn && isUndefined(startingValues[rowIcon])
                       }
+                      key={columnI}
                     />
                   );
                 })}

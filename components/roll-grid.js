@@ -16,9 +16,11 @@ export default function RollGrid({ columns, rows }) {
     <div className={styles.rollGrid}>
       {[...Array(rows)].map((undef, i) => {
         return (
-          <div className={styles.row}>
-            {[...Array(columns)].map((undef, i) => (
-              <span className={styles.cell}>{isClient && roll()}</span>
+          <div className={styles.row} key={i}>
+            {[...Array(columns)].map((undef, ii) => (
+              <span className={styles.cell} key={ii}>
+                {isClient && roll()}
+              </span>
             ))}
           </div>
         );
