@@ -119,15 +119,15 @@ export default function Rules({ startingValues }) {
                 <h3>PM</h3>
               </th>
               <td colSpan={3}>
-                <Icon id="time" /> &gt;= <Icon id="roll" />
+                <Icon id="opportunity" /> &gt;= <Icon id="roll" />
                 <span className={styles.description}>
-                  Research: Reduce Action <Icon id="time" />
+                  Research: Reduce Action <Icon id="opportunity" />
                 </span>
               </td>
             </tr>
             <tr>
               <td colSpan={3}>
-                <Icon id="time" /> &lt; 0
+                <Icon id="opportunity" /> &lt; 0
                 <span className={styles.description}>
                   Burnout: Lose next turn
                 </span>

@@ -105,7 +105,7 @@ export default function Turn({ id, startingValues }) {
       ],
     },
     {
-      rows: ["time"],
+      rows: ["opportunity"],
       columns: [
         {},
         { minus: true },

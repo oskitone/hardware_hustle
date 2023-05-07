@@ -1,7 +1,7 @@
 export default function Icon({ id, prefix, suffix, className }) {
   const iconClassName = {
     money: "bi-piggy-bank",
-    time: "bi-stopwatch",
+    opportunity: "bi-arrow-up-right-circle",
 
     A: "bi-nut",
     B: "bi-box-seam",
