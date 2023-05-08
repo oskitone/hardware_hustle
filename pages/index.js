@@ -9,7 +9,7 @@ import { Open_Sans } from "next/font/google";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-export default function Home() {
+function Home({ count }) {
   const startingValues = {
     money: [10],
     time: [12, 12, 8, 8, 4, 4],
@@ -32,20 +32,30 @@ export default function Home() {
       </Head>
       <main className={`${font.className}`}>
         <Sheet>
-          <Page split>
-            <Rules startingValues={startingValues} />
-            <TurnGrid
-              count={startingValues.time.length}
-              startingValues={startingValues}
-            />
-          </Page>
+          {[...Array(count || 0)].map((e, i) => (
+            <Page split key={i}>
+              <Rules startingValues={startingValues} />
+              <TurnGrid
+                count={startingValues.time.length}
+                startingValues={startingValues}
+              />
+            </Page>
+          ))}
         </Sheet>
         <Sheet>
-          <Page>
-            <RollGrid columns={35} rows={25} />
-          </Page>
+          {[...Array(count || 0)].map((e, i) => (
+            <Page key={i}>
+              <RollGrid columns={35} rows={25} />
+            </Page>
+          ))}
         </Sheet>
       </main>
     </>
   );
 }
+
+Home.defaultProps = {
+  count: 1,
+};
+
+export default Home;
