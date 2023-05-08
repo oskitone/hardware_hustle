@@ -1,10 +1,12 @@
 .page {
-  width: var(--print-sheet-width);
-  height: calc(var(--print-sheet-height) / 2);
+  width: 8in;
+  height: 6in;
 
   padding: var(--print-margin);
 
   outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
+
+  margin: auto;
 }
 
 .split {
