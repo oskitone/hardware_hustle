@@ -16,13 +16,18 @@
   grid-template-columns: calc(1em + 0.5em) repeat(5, 1fr);
 }
 
+/* TODO: derive? */
+.tbody .th,
+.tbody .td {
+  height: 1.53em;
+}
+
 .td {
   padding: 0 1em;
   overflow: hidden;
-  height: 1.5em;
 }
 
-.th {
+.thead .th {
   font-weight: bold;
   line-height: 0.75;
   text-transform: uppercase;
@@ -46,9 +51,8 @@
   line-height: 1.5em;
   border-radius: calc(var(--fillet) * 2);
 
-  left: calc(50% - (0.5em / 2));
+  left: 50%;
   top: 50%;
-  z-index: 0;
   transform: translate(-50%, -50%);
 
   z-index: 0;
@@ -56,16 +60,23 @@
 
 .td {
   border: 1px solid rgb(var(--foreground-rgb));
+  border-width: 1px 1px 0;
   margin: 0 0 -1px -1px;
 
   position: relative; /* for carrover line containment */
+}
+
+.tbody .tr:last-of-type .td {
+  border-bottom-width: 1px;
+}
+
+.td,
+.tbody .th {
+  line-height: 1;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* TODO: derive? */
-  height: 1.57em;
 }
 
 .topLeft {

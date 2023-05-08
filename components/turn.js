@@ -39,7 +39,7 @@ export function Cell({
   const props = {
     className: classnames({
       [styles.td]: !head && !icon,
-      [styles.th]: head,
+      [styles.th]: head || !!icon,
       [styles.day]: day,
 
       [styles.icon]: !!icon,
