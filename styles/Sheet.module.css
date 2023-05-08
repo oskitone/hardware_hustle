@@ -2,8 +2,8 @@
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 
-  width: 11in;
-  height: 8.5in;
+  width: var(--print-sheet-width);
+  height: var(--print-sheet-height);
 
   margin: 2em auto;
 }
@@ -13,7 +13,7 @@
     margin: 0;
 
     /* HACK: removes errant blank interim sheets */
-    height: calc(8.5in - 2px);
+    height: calc(var(--print-sheet-height) - 2px);
   }
 
   .sheet:not(:last-of-type) {

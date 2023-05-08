@@ -13,6 +13,8 @@
 
   --fillet: 4px;
 
+  --print-sheet-width: 11in;
+  --print-sheet-height: 8.5in;
   --print-margin: 0.5in;
 
   --default-font-size: 14px;
