@@ -63,7 +63,7 @@
   border-width: 1px 1px 0;
   margin: 0 0 -1px -1px;
 
-  position: relative; /* for carrover line containment */
+  position: relative; /* for prefix containment */
 }
 
 .tbody .tr:last-of-type .td {
