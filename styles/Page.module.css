@@ -3,10 +3,18 @@
   height: var(--print-sheet-height);
 
   padding: var(--print-margin);
+
+  outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
 }
 
 .split {
   display: grid;
   grid-template-columns: 25% auto;
   grid-gap: 2em;
+}
+
+@media print {
+  .page {
+    outline: none;
+  }
 }
