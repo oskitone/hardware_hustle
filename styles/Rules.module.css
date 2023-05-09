@@ -45,7 +45,7 @@
   color: rgb(var(--background-rgb));
   background: rgb(var(--foreground-rgb));
 
-  width: calc(0.85em + 0.25em * 2);
+  width: 27%; /* HACK */
 
   position: relative;
 }
@@ -69,8 +69,8 @@
   white-space: nowrap;
 }
 
-.actions td:last-of-type {
-  width: 100%;
+.actions td:not(.gutter):last-of-type {
+  width: 100%; /* HACK */
 }
 
 .actions .gutter {

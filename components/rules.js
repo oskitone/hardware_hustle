@@ -109,7 +109,7 @@ export default function Rules({ startingValues }) {
                 </tr>
               ))}
               <tr>
-                <td className={styles.gutter} />
+                <td colspan={4} className={styles.gutter} />
               </tr>
             </tbody>
           ))}
