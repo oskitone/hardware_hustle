@@ -1,8 +1,6 @@
 .graph {
   line-height: 1;
 
-  padding: 0.5em 0 0 0;
-
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr min-content;
@@ -19,17 +17,33 @@
 
 .axis.y {
   flex-direction: column-reverse;
-  margin: -0.5em 0;
+  margin: calc(1em / -2) 0;
+}
+
+.axis.y .y {
+  text-align: right;
+  position: relative;
+}
+
+.axis.y .y:first-of-type {
+  margin: calc(1em / -2) 0 calc(1em / 2) 0;
+}
+
+.axis.y .y:last-of-type {
+  margin: calc(1em / 2) 0 calc(1em / -2) 0;
 }
 
 .axis.x {
   flex-direction: row;
-  margin: 0 -0.5ch;
+  margin: 0 calc(1ch / -2);
 }
 
-.y {
-  text-align: right;
-  position: relative;
+.axis.x .x:first-of-type {
+  margin: 0 calc(1ch / -2) 0 calc(1ch / 2);
+}
+
+.axis.x .x:last-of-type {
+  margin: 0 calc(1ch / 2) 0 calc(1ch / -2);
 }
 
 .area {
