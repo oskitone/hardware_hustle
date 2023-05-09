@@ -154,7 +154,9 @@ export default function Rules({ startingValues }) {
         className={styles.Graph}
       />
 
-      <footer className={styles.footer}>CC BY-SA 4.0 Oskitone</footer>
+      <footer className={styles.footer}>
+        2023 CC BY-SA 4.0 Oskitone / oskitone.com
+      </footer>
     </div>
   );
 }
