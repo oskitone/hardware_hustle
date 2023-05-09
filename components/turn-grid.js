@@ -11,7 +11,7 @@ export default function TurnGrid({ count, startingValues }) {
           id={i}
           startingValues={{
             money: startingValues.money[i],
-            time: startingValues.time[i],
+            opportunity: startingValues.opportunity[i],
 
             A: startingValues.A[i],
             B: startingValues.B[i],

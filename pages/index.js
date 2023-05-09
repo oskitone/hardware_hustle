@@ -12,7 +12,7 @@ const font = Open_Sans({ subsets: ["latin"] });
 function Home({ count }) {
   const startingValues = {
     money: [10],
-    time: [12, 12, 8, 8, 4, 4],
+    opportunity: [12, 12, 8, 8, 4, 4],
     A: [0],
     B: [0],
     C: [0],
@@ -36,7 +36,7 @@ function Home({ count }) {
             <Page split key={i}>
               <Rules startingValues={startingValues} />
               <TurnGrid
-                count={startingValues.time.length}
+                count={startingValues.opportunity.length}
                 startingValues={startingValues}
               />
             </Page>
