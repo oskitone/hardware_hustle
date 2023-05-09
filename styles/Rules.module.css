@@ -42,11 +42,25 @@
 }
 
 .actions th {
-  text-align: left;
-  writing-mode: tb-rl;
-  padding: 0.5em 0.25em;
   color: rgb(var(--background-rgb));
   background: rgb(var(--foreground-rgb));
+
+  width: calc(0.85em + 0.25em * 2);
+
+  position: relative;
+}
+
+.actions h3 {
+  text-align: left;
+  writing-mode: tb-rl;
+
+  padding: 0.25em;
+
+  font-size: 0.85em;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .actions td {
