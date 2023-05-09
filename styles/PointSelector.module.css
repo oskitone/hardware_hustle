@@ -1,5 +1,6 @@
 .pointSelector {
   display: flex;
+  align-items: center;
 }
 
 .icon {
@@ -30,12 +31,12 @@
   border-right-width: 2px;
 }
 
-tbody tr:first-of-type .selected {
+.first .selected {
   border-top-color: rgb(var(--foreground-rgb));
   border-top-width: 2px;
 }
 
-tbody tr:nth-last-of-type(2) .selected {
+.last .selected {
   border-bottom-color: rgb(var(--foreground-rgb));
   border-bottom-width: 2px;
 }

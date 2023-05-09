@@ -1,12 +1,16 @@
+import classnames from "classnames";
+
 import Icon from "components/icon";
 import PointSelector from "components/point-selector";
 
 import styles from "@/styles/ActionsTable.module.css";
 
 export default function ActionsTable({ className }) {
-  function PS({ options, value }) {
+  function PS({ options, value, first, last }) {
     return (
       <PointSelector
+        first={first}
+        last={last}
         icon="opportunity"
         iconPrefix="-"
         options={options}
@@ -21,7 +25,7 @@ export default function ActionsTable({ className }) {
       body: [
         [
           <Icon id="A" />,
-          <PS options={[0, 0, 0, 0]} value={0} />,
+          <PS options={[0, 0, 0, 0]} value={0} first />,
           <Icon id="money" prefix="-" suffix="1" />,
         ],
         [
@@ -36,7 +40,7 @@ export default function ActionsTable({ className }) {
         ],
         [
           <Icon id="D" />,
-          <PS options={[3, 2, 1, 0]} value={3} />,
+          <PS options={[3, 2, 1, 0]} value={3} last />,
           <Icon id="money" prefix="-" suffix="4" />,
         ],
       ],
@@ -46,7 +50,7 @@ export default function ActionsTable({ className }) {
       body: [
         [
           <Icon id="AB" />,
-          <PS options={[1, 0, 0, 0]} value={1} />,
+          <PS options={[1, 0, 0, 0]} value={1} first />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" />
           </>,
@@ -60,7 +64,7 @@ export default function ActionsTable({ className }) {
         ],
         [
           <Icon id="ABCD" />,
-          <PS options={[3, 2, 1, 0]} value={3} />,
+          <PS options={[3, 2, 1, 0]} value={3} last />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
             <Icon id="D" />
@@ -74,7 +78,7 @@ export default function ActionsTable({ className }) {
       body: [
         [
           <Icon id="AB" />,
-          <PS options={[2, 1, 0, 0]} value={2} />,
+          <PS options={[2, 1, 0, 0]} value={2} first />,
           <Icon id="money" prefix="+" suffix="6" />,
         ],
         [
@@ -84,7 +88,7 @@ export default function ActionsTable({ className }) {
         ],
         [
           <Icon id="ABCD" />,
-          <PS options={[4, 3, 2, 1]} value={4} />,
+          <PS options={[4, 3, 2, 1]} value={4} last />,
           <Icon id="money" prefix="+" suffix="40" />,
         ],
       ],
@@ -92,58 +96,19 @@ export default function ActionsTable({ className }) {
   ];
 
   return (
-    <div className={`${styles.actions} ${className}`}>
-      <table className={styles.icons}>
-        {ACTIONS.map((action, actionI) => (
-          <tbody key={actionI}>
-            {action.body.map((columns, bodyI) => (
-              <tr key={bodyI}>
-                {bodyI == 0 && (
-                  <th rowSpan={action.body.length}>
-                    <h3>{action.title}</h3>
-                  </th>
-                )}
-
-                {columns.map((column, columnI) => (
-                  <td key={columnI}>{column}</td>
-                ))}
-              </tr>
-            ))}
-            <tr>
-              <td className={styles.gutter} />
-            </tr>
-          </tbody>
-        ))}
-        <tbody>
-          <tr>
-            <th>
-              <h3>PM</h3>
-            </th>
-            <td colSpan={4}>
-              <table className={styles.description}>
-                <tbody>
-                  <tr>
-                    <td>
-                      <Icon id="opportunity" /> &gt;= <Icon id="roll" />
-                    </td>
-                    <td className={styles.descriptionHead}>Research</td>
-                    <td>
-                      Reduce Action <Icon id="opportunity" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Icon id="opportunity" /> &lt; 0
-                    </td>
-                    <td className={styles.descriptionHead}>Burnout</td>
-                    <td>Lose next turn</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div className={classnames(className, styles.actionsTable)}>
+      {ACTIONS.map((action, actionI) => (
+        <div className={styles.action} key={actionI}>
+          <div className={styles.title}>{action.title}</div>
+          {action.body.map((columns, bodyI) =>
+            columns.map((column, columnI) => (
+              <div className={styles.column} key={columnI}>
+                {column}
+              </div>
+            ))
+          )}
+        </div>
+      ))}
     </div>
   );
 }
