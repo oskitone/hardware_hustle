@@ -3,10 +3,6 @@
   align-items: center;
 }
 
-.icon {
-  margin-right: 0.25em;
-}
-
 .option {
   font-size: 0.85em;
   height: calc(var(--default-font-size) * 1.25);

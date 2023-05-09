@@ -1,5 +1,9 @@
-export default function Icon({ id, prefix, suffix, className }) {
-  const iconClassName = {
+import classnames from "classnames";
+
+import styles from "@/styles/Icon.module.css";
+
+export default function Icon({ id, prefix, suffix, className, inline }) {
+  const bootstrapIconClassName = {
     money: "bi-piggy-bank",
     opportunity: "bi-arrow-up-right-circle",
 
@@ -16,10 +20,21 @@ export default function Icon({ id, prefix, suffix, className }) {
   }[id];
 
   return (
-    <span title={id}>
-      {prefix && `${prefix} `}
-      <i className={`${className} bi ${iconClassName}`}></i>
-      {suffix && ` ${suffix}`}
-    </span>
+    <div
+      className={classnames(className, styles.icon, {
+        [styles.inline]: inline,
+      })}
+      title={id}
+    >
+      {prefix}
+      <i
+        className={classnames(
+          "bi",
+          bootstrapIconClassName,
+          styles.bootstrapIcon
+        )}
+      />
+      {suffix}
+    </div>
   );
 }

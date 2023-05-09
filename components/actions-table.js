@@ -8,14 +8,16 @@ import styles from "@/styles/ActionsTable.module.css";
 export default function ActionsTable({ className }) {
   function PS({ options, value, first, last }) {
     return (
-      <PointSelector
-        first={first}
-        last={last}
-        icon="opportunity"
-        iconPrefix="-"
-        options={options}
-        value={value}
-      />
+      <>
+        {"- "}
+        <PointSelector
+          first={first}
+          last={last}
+          icon="opportunity"
+          options={options}
+          value={value}
+        />
+      </>
     );
   }
 
@@ -26,22 +28,30 @@ export default function ActionsTable({ className }) {
         [
           <Icon id="A" />,
           <PS options={[0, 0, 0, 0]} value={0} first />,
-          <Icon id="money" prefix="-" suffix="1" />,
+          <>
+            - <Icon id="money" suffix="1" />
+          </>,
         ],
         [
           <Icon id="B" />,
           <PS options={[1, 0, 0, 0]} value={1} />,
-          <Icon id="money" prefix="-" suffix="2" />,
+          <>
+            - <Icon id="money" suffix="2" />
+          </>,
         ],
         [
           <Icon id="C" />,
           <PS options={[2, 1, 0, 0]} value={2} />,
-          <Icon id="money" prefix="-" suffix="3" />,
+          <>
+            - <Icon id="money" suffix="3" />
+          </>,
         ],
         [
           <Icon id="D" />,
           <PS options={[3, 2, 1, 0]} value={3} last />,
-          <Icon id="money" prefix="-" suffix="4" />,
+          <>
+            - <Icon id="money" suffix="4" />
+          </>,
         ],
       ],
     },
@@ -52,22 +62,24 @@ export default function ActionsTable({ className }) {
           <Icon id="AB" />,
           <PS options={[1, 0, 0, 0]} value={1} first />,
           <>
-            <Icon prefix="-" id="A" /> <Icon id="B" />
+            - <Icon id="A" inline /> <Icon id="B" inline />
           </>,
         ],
         [
           <Icon id="ABC" />,
           <PS options={[2, 1, 0, 0]} value={2} />,
           <>
-            <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
+            - <Icon id="A" inline /> <Icon id="B" inline />{" "}
+            <Icon id="C" inline />
           </>,
         ],
         [
           <Icon id="ABCD" />,
           <PS options={[3, 2, 1, 0]} value={3} last />,
           <>
-            <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
-            <Icon id="D" />
+            - <Icon id="A" inline /> <Icon id="B" inline />{" "}
+            <Icon id="C" inline />
+            <Icon id="D" inline />
           </>,
         ],
       ],
@@ -79,17 +91,23 @@ export default function ActionsTable({ className }) {
         [
           <Icon id="AB" />,
           <PS options={[2, 1, 0, 0]} value={2} first />,
-          <Icon id="money" prefix="+" suffix="6" />,
+          <>
+            + <Icon id="money" suffix="6" />
+          </>,
         ],
         [
           <Icon id="ABC" />,
           <PS options={[3, 2, 1, 0]} value={3} />,
-          <Icon id="money" prefix="+" suffix="18" />,
+          <>
+            + <Icon id="money" suffix="18" />
+          </>,
         ],
         [
           <Icon id="ABCD" />,
           <PS options={[4, 3, 2, 1]} value={4} last />,
-          <Icon id="money" prefix="+" suffix="40" />,
+          <>
+            + <Icon id="money" suffix="40" />
+          </>,
         ],
       ],
     },

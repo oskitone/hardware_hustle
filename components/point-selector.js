@@ -30,7 +30,7 @@ export default function PointSelector({
         [styles.last]: last,
       })}
     >
-      {icon && <Icon id={icon} prefix={iconPrefix} className={styles.icon} />}
+      {icon && <Icon id={icon} prefix={iconPrefix} />}
 
       {options.map((option, i) => (
         <span
