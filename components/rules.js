@@ -115,22 +115,30 @@ export default function Rules({ startingValues }) {
           ))}
           <tbody>
             <tr>
-              <th rowSpan={2}>
+              <th>
                 <h3>PM</h3>
               </th>
-              <td colSpan={3}>
-                <Icon id="opportunity" /> &gt;= <Icon id="roll" />
-                <span className={styles.description}>
-                  Research: Reduce Action <Icon id="opportunity" />
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={3}>
-                <Icon id="opportunity" /> &lt; 0
-                <span className={styles.description}>
-                  Burnout: Lose next turn
-                </span>
+              <td colSpan={4}>
+                <table className={styles.description}>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <Icon id="opportunity" /> &gt;= <Icon id="roll" />
+                      </td>
+                      <td className={styles.descriptionHead}>Research</td>
+                      <td>
+                        Reduce Action <Icon id="opportunity" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Icon id="opportunity" /> &lt; 0
+                      </td>
+                      <td className={styles.descriptionHead}>Burnout</td>
+                      <td>Lose next turn</td>
+                    </tr>
+                  </tbody>
+                </table>
               </td>
             </tr>
           </tbody>

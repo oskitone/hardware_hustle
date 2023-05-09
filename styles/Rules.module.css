@@ -56,12 +56,21 @@
   white-space: nowrap;
 }
 
+.actions td:last-of-type {
+  width: 100%;
+}
+
 .actions .gutter {
   height: 0.5em;
 }
 
-.description {
-  margin-left: 0.5em;
+.description tbody td:first-of-type {
+  padding: 0;
+}
+
+.descriptionHead {
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .description,
