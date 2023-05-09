@@ -9,7 +9,7 @@
 
 .split {
   display: grid;
-  grid-template-columns: calc(100% / 3) auto;
+  grid-template-columns: calc(100% / 4) auto;
   grid-gap: 2em;
 }
 

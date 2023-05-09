@@ -19,7 +19,7 @@
 
 .rules h1 {
   /* Eyeballed to fit on one line */
-  font-size: 2em;
+  font-size: 1.66em;
   font-weight: 900;
   line-height: 0.78;
   letter-spacing: -0.025em;
@@ -42,5 +42,5 @@
 
 .footer {
   font-weight: 100;
-  font-size: 0.85em;
+  font-size: 0.8em;
 }
