@@ -8,28 +8,39 @@ import PointSelector from "components/point-selector";
 import styles from "@/styles/Rules.module.css";
 
 export default function Rules({ startingValues }) {
+  function PS({ options, value }) {
+    return (
+      <PointSelector
+        icon="opportunity"
+        iconPrefix="-"
+        options={options}
+        value={value}
+      />
+    );
+  }
+
   const ACTIONS = [
     {
       title: "Buy",
       body: [
         [
           <Icon id="A" />,
-          <PointSelector icon="opportunity" options={[0, 0, 0, 0]} value={0} />,
+          <PS options={[0, 0, 0, 0]} value={0} />,
           <Icon id="money" prefix="-" suffix="1" />,
         ],
         [
           <Icon id="B" />,
-          <PointSelector icon="opportunity" options={[1, 0, 0, 0]} value={1} />,
+          <PS options={[1, 0, 0, 0]} value={1} />,
           <Icon id="money" prefix="-" suffix="2" />,
         ],
         [
           <Icon id="C" />,
-          <PointSelector icon="opportunity" options={[2, 1, 0, 0]} value={2} />,
+          <PS options={[2, 1, 0, 0]} value={2} />,
           <Icon id="money" prefix="-" suffix="3" />,
         ],
         [
           <Icon id="D" />,
-          <PointSelector icon="opportunity" options={[3, 2, 1, 0]} value={3} />,
+          <PS options={[3, 2, 1, 0]} value={3} />,
           <Icon id="money" prefix="-" suffix="4" />,
         ],
       ],
@@ -39,21 +50,21 @@ export default function Rules({ startingValues }) {
       body: [
         [
           <Icon id="AB" />,
-          <PointSelector icon="opportunity" options={[1, 0, 0, 0]} value={1} />,
+          <PS options={[1, 0, 0, 0]} value={1} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" />
           </>,
         ],
         [
           <Icon id="ABC" />,
-          <PointSelector icon="opportunity" options={[2, 1, 0, 0]} value={2} />,
+          <PS options={[2, 1, 0, 0]} value={2} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
           </>,
         ],
         [
           <Icon id="ABCD" />,
-          <PointSelector icon="opportunity" options={[3, 2, 1, 0]} value={3} />,
+          <PS options={[3, 2, 1, 0]} value={3} />,
           <>
             <Icon prefix="-" id="A" /> <Icon id="B" /> <Icon id="C" />
             <Icon id="D" />
@@ -67,17 +78,17 @@ export default function Rules({ startingValues }) {
       body: [
         [
           <Icon id="AB" />,
-          <PointSelector icon="opportunity" options={[2, 1, 0, 0]} value={2} />,
+          <PS options={[2, 1, 0, 0]} value={2} />,
           <Icon id="money" prefix="+" suffix="6" />,
         ],
         [
           <Icon id="ABC" />,
-          <PointSelector icon="opportunity" options={[3, 2, 1, 0]} value={3} />,
+          <PS options={[3, 2, 1, 0]} value={3} />,
           <Icon id="money" prefix="+" suffix="18" />,
         ],
         [
           <Icon id="ABCD" />,
-          <PointSelector icon="opportunity" options={[4, 3, 2, 1]} value={4} />,
+          <PS options={[4, 3, 2, 1]} value={4} />,
           <Icon id="money" prefix="+" suffix="40" />,
         ],
       ],
