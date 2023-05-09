@@ -31,7 +31,7 @@
 }
 
 .rules h1,
-.actions,
+.ActionsTable,
 .LineInput,
 .Graph {
   margin: 0 0 calc(var(--default-font-size) * 1.5);
@@ -41,39 +41,6 @@
   margin: 0 0 calc(var(--default-font-size) / 2);
 }
 
-.actions th {
-  text-align: left;
-  font-size: 0.8em;
-  writing-mode: tb-rl;
-  padding: 0.5em 0.25em;
-  color: rgb(var(--background-rgb));
-  background: rgb(var(--foreground-rgb));
-}
-
-.actions td {
-  line-height: 1;
-  padding: 0 0 0 0.5em;
-  white-space: nowrap;
-}
-
-.actions td:last-of-type {
-  width: 100%;
-}
-
-.actions .gutter {
-  height: 0.5em;
-}
-
-.description tbody td:first-of-type {
-  padding: 0;
-}
-
-.descriptionHead {
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.description,
 .footer {
   font-weight: 100;
   font-size: 0.85em;
