@@ -36,3 +36,19 @@
   border-bottom-color: rgb(var(--foreground-rgb));
   border-bottom-width: 2px;
 }
+
+.first .option:first-of-type {
+  border-top-left-radius: var(--fillet);
+}
+
+.first .option:last-of-type {
+  border-top-right-radius: var(--fillet);
+}
+
+.last .option:first-of-type {
+  border-bottom-left-radius: var(--fillet);
+}
+
+.last .option:last-of-type {
+  border-bottom-right-radius: var(--fillet);
+}
