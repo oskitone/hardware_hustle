@@ -51,7 +51,7 @@ export default function Graph({
     <div className={`${className} ${styles.graph}`}>
       <Axis labels={Y_AXIS} className={styles.y} />
       <div className={styles.area}>
-        <Lines count={Y_AXIS.length} axisClassname={styles.y} />
+        <Lines count={Y_AXIS.length * 2 - 1} axisClassname={styles.y} />
         <Lines count={X_AXIS.length} axisClassname={styles.x} />
         <Values />
       </div>
