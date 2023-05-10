@@ -4,11 +4,11 @@ import ActionsTable from "components/actions-table";
 import Graph from "components/graph";
 import LineInput from "components/line-input";
 
-import styles from "@/styles/Rules.module.css";
+import styles from "@/styles/Sidebar.module.css";
 
-export default function Rules({ startingValues }) {
+export default function Sidebar({ startingValues }) {
   return (
-    <div className={styles.rules}>
+    <div className={styles.sidebar}>
       <h1>Hardware Hustle</h1>
 
       <LineInput title={"Name / Date"} className={styles.LineInput} />

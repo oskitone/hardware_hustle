@@ -1,9 +1,9 @@
-.rules {
+.sidebar {
   display: flex;
   flex-direction: column;
 }
 
-.rules > * {
+.sidebar > * {
   flex-grow: 0;
 }
 
@@ -11,13 +11,13 @@
   flex-grow: 1;
 }
 
-.rules h1,
-.rules h2 {
+.sidebar h1,
+.sidebar h2 {
   text-transform: uppercase;
   line-height: 1;
 }
 
-.rules h1 {
+.sidebar h1 {
   /* Eyeballed to fit on one line */
   font-size: 1.78em;
   font-weight: 900;
@@ -25,18 +25,18 @@
   letter-spacing: -0.025em;
 }
 
-.rules h2 {
+.sidebar h2 {
   font-size: 1.25em;
 }
 
-.rules h1,
+.sidebar h1,
 .ActionsTable,
 .LineInput,
 .Graph {
   margin: 0 0 calc(var(--default-font-size) * 1.5);
 }
 
-.rules h2 {
+.sidebar h2 {
   margin: 0 0 calc(var(--default-font-size) / 2);
 }
 

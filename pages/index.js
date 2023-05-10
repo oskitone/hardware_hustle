@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Page from "components/page";
 import RollGrid from "components/roll-grid";
-import Rules from "components/rules";
+import Sidebar from "components/sidebar";
 import Sheet from "components/sheet";
 import TurnGrid from "components/turn-grid";
 
@@ -34,7 +34,7 @@ function Home({ count }) {
         <Sheet>
           {[...Array(count || 0)].map((e, i) => (
             <Page split key={i}>
-              <Rules startingValues={startingValues} />
+              <Sidebar startingValues={startingValues} />
               <TurnGrid
                 count={startingValues.opportunity.length}
                 startingValues={startingValues}
