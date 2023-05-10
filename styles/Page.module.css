@@ -10,7 +10,7 @@
 .split {
   display: grid;
   grid-template-columns: 25% auto;
-  grid-gap: 2em;
+  grid-gap: var(--print-margin);
 }
 
 @media print {
