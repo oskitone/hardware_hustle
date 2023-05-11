@@ -19,7 +19,7 @@
 /* TODO: derive? */
 .tbody .th,
 .tbody .td {
-  height: 1.53em;
+  height: calc(var(--default-font-size) * 1.53);
 }
 
 .td {
@@ -116,7 +116,7 @@
   position: absolute;
   left: 0.2em;
   pointer-events: none;
-  font-size: 0.75em;
+  font-size: calc(var(--default-font-size) * 0.75);
   font-weight: 100;
 }
 
