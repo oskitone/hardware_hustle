@@ -8,6 +8,10 @@
   margin: 2em auto;
 }
 
+.sheet:nth-child(even) > * {
+  margin: 0 0 0 auto;
+}
+
 @media print {
   .sheet {
     margin: 0;

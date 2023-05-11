@@ -4,7 +4,7 @@
 
 .thead .th,
 .tbody {
-  margin: 0 0 0.5em;
+  margin: 0 0 0.25em;
 }
 
 .tbody:last-of-type {
@@ -19,7 +19,7 @@
 /* TODO: derive? */
 .tbody .th,
 .tbody .td {
-  height: calc(var(--default-font-size) * 1.53);
+  height: calc(var(--default-font-size) * 1.34);
 }
 
 .td[contenteditable] {
