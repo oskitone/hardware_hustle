@@ -4,6 +4,9 @@ import Icon from "components/icon";
 
 import styles from "@/styles/Turn.module.css";
 
+import { Gaegu } from "next/font/google";
+const handwritingFont = Gaegu({ subsets: ["latin"], weight: "400" });
+
 function Head({ children }) {
   return <div className={`${styles.thead}`}>{children}</div>;
 }
@@ -36,6 +39,8 @@ export function Cell({
   bottomLeft,
   bottomRight,
 }) {
+  const hasContent = icon || !!children || children === 0 || carryOver;
+
   const props = {
     className: classnames({
       [styles.td]: !head && !icon,
@@ -55,10 +60,12 @@ export function Cell({
       [styles.topRight]: topRight,
       [styles.bottomLeft]: bottomLeft,
       [styles.bottomRight]: bottomRight,
+
+      [handwritingFont.className]: !hasContent,
     }),
   };
 
-  if (icon || !!children || children === 0 || carryOver) {
+  if (hasContent) {
     return (
       <div {...props}>
         {icon && <Icon id={icon} />}

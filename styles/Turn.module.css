@@ -22,6 +22,10 @@
   height: calc(var(--default-font-size) * 1.53);
 }
 
+.td[contenteditable] {
+  font-size: 1.5em;
+}
+
 .td {
   padding: 0 1em;
   overflow: hidden;
