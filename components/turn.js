@@ -7,6 +7,23 @@ import styles from "@/styles/Turn.module.css";
 import { Gaegu } from "next/font/google";
 const handwritingFont = Gaegu({ subsets: ["latin"], weight: "400" });
 
+const emptyTurnData = {
+  money: [],
+  A: [],
+  B: [],
+  C: [],
+  D: [],
+  AB: [],
+  ABC: [],
+  ABCD: [],
+  opportunity: [],
+};
+
+export const makeTurnData = (newData) => ({
+  ...emptyTurnData,
+  ...newData,
+});
+
 function Head({ children }) {
   return <div className={`${styles.thead}`}>{children}</div>;
 }
@@ -77,7 +94,7 @@ export function Cell({
   return <div {...props} contentEditable />;
 }
 
-export default function Turn({ id, startingValues }) {
+function Turn({ id, data, className }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
   const BODIES = [
@@ -124,7 +141,7 @@ export default function Turn({ id, startingValues }) {
   ];
 
   return (
-    <div className={`${styles.turn}`}>
+    <div className={classnames(className, styles.turn)}>
       <Head>
         <Row>
           <Cell head day={true}>
@@ -154,7 +171,7 @@ export default function Turn({ id, startingValues }) {
 
                   return (
                     <Cell
-                      children={isFirstColumn && startingValues[rowIcon]}
+                      children={(data[rowIcon] || [])[columnI]}
                       topLeft={isFirstRow && isFirstColumn}
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}
@@ -164,7 +181,7 @@ export default function Turn({ id, startingValues }) {
                       minus={column.minus}
                       equals={column.equals}
                       follow={
-                        isFirstColumn && isUndefined(startingValues[rowIcon])
+                        isFirstColumn && isUndefined(data[rowIcon][columnI])
                       }
                       key={columnI}
                     />
@@ -178,3 +195,11 @@ export default function Turn({ id, startingValues }) {
     </div>
   );
 }
+
+Turn.defaultProps = {
+  id: 0,
+  data: emptyTurnData,
+  className: undefined,
+};
+
+export default Turn;

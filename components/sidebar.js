@@ -4,7 +4,7 @@ import LineInput from "components/line-input";
 
 import styles from "@/styles/Sidebar.module.css";
 
-export default function Sidebar({ startingValues }) {
+export default function Sidebar({ turnsData }) {
   return (
     <div className={styles.sidebar}>
       <h1>Hardware Hustle</h1>
@@ -16,10 +16,10 @@ export default function Sidebar({ startingValues }) {
 
       <h2>Money</h2>
       <Graph
-        turnCount={startingValues.opportunity.length}
+        turnCount={turnsData.length}
         valueMax={100}
         valueStep={10}
-        values={startingValues.money}
+        values={[[turnsData[0].money[0]]]}
         className={styles.Graph}
       />
 

@@ -1,26 +1,34 @@
 import Head from "next/head";
+import { Open_Sans } from "next/font/google";
+
+import { makeTurnData } from "components/turn";
 import Page from "components/page";
 import RollGrid from "components/roll-grid";
-import Sidebar from "components/sidebar";
 import Sheet from "components/sheet";
+import Sidebar from "components/sidebar";
 import TurnGrid from "components/turn-grid";
-
-import { Open_Sans } from "next/font/google";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
 function Home({ count }) {
-  const startingValues = {
-    money: [10],
-    opportunity: [12, 12, 8, 8, 4, 4],
-    A: [0],
-    B: [0],
-    C: [0],
-    D: [0],
-    AB: [0],
-    ABC: [0],
-    ABCD: [0],
-  };
+  const turnsData = [
+    makeTurnData({
+      money: [10],
+      A: [0],
+      B: [0],
+      C: [0],
+      D: [0],
+      AB: [0],
+      ABC: [0],
+      ABCD: [0],
+      opportunity: [12],
+    }),
+    makeTurnData({ opportunity: [12] }),
+    makeTurnData({ opportunity: [8] }),
+    makeTurnData({ opportunity: [8] }),
+    makeTurnData({ opportunity: [4] }),
+    makeTurnData({ opportunity: [4] }),
+  ];
 
   return (
     <>
@@ -34,11 +42,8 @@ function Home({ count }) {
         <Sheet>
           {[...Array(count || 0)].map((e, i) => (
             <Page split key={i}>
-              <Sidebar startingValues={startingValues} />
-              <TurnGrid
-                count={startingValues.opportunity.length}
-                startingValues={startingValues}
-              />
+              <Sidebar turnsData={turnsData} />
+              <TurnGrid turnsData={turnsData} />
             </Page>
           ))}
         </Sheet>
