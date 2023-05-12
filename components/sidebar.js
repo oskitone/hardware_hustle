@@ -1,5 +1,3 @@
-import classnames from "classnames";
-
 import ActionsTable from "components/actions-table";
 import Graph from "components/graph";
 import LineInput from "components/line-input";
