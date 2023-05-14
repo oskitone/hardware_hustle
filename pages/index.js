@@ -26,7 +26,7 @@ export async function getStaticProps(context) {
   };
 }
 
-function Home({ count, commitHash, dateString }) {
+function Home({ count, commitHash, dateString, reverse }) {
   const turnsData = [
     makeTurnData({
       money: [10],
@@ -46,6 +46,32 @@ function Home({ count, commitHash, dateString }) {
     makeTurnData({ opportunity: [4] }),
   ];
 
+  let sheetContents = [
+    <>
+      {[...Array(count || 0)].map((e, i) => (
+        <Page split key={i}>
+          <Sidebar
+            turnsData={turnsData}
+            commitHash={commitHash}
+            dateString={dateString}
+          />
+          <TurnGrid turnsData={turnsData} />
+        </Page>
+      ))}
+    </>,
+    <>
+      {[...Array(count || 0)].map((e, i) => (
+        <Page key={i}>
+          <RollGrid columns={35} rows={25} />
+        </Page>
+      ))}
+    </>,
+  ];
+
+  if (reverse) {
+    sheetContents = sheetContents.reverse();
+  }
+
   return (
     <>
       <Head>
@@ -55,25 +81,9 @@ function Home({ count, commitHash, dateString }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${font.className}`}>
-        <Sheet>
-          {[...Array(count || 0)].map((e, i) => (
-            <Page split key={i}>
-              <Sidebar
-                turnsData={turnsData}
-                commitHash={commitHash}
-                dateString={dateString}
-              />
-              <TurnGrid turnsData={turnsData} />
-            </Page>
-          ))}
-        </Sheet>
-        <Sheet>
-          {[...Array(count || 0)].map((e, i) => (
-            <Page key={i}>
-              <RollGrid columns={35} rows={25} />
-            </Page>
-          ))}
-        </Sheet>
+        {sheetContents.map((sheet, i) => (
+          <Sheet key={i}>{sheet}</Sheet>
+        ))}
       </main>
     </>
   );
@@ -83,6 +93,7 @@ Home.defaultProps = {
   count: 1,
   commitHash: undefined,
   dateString: undefined,
+  reverse: false,
 };
 
 export default Home;
