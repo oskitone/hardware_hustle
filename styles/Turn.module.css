@@ -22,7 +22,8 @@
   height: calc(var(--default-font-size) * 1.34);
 }
 
-.td[contenteditable] {
+.handwritten {
+  font-family: var(--font-handwriting);
   font-size: 1.5em;
 }
 

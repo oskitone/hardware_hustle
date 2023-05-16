@@ -5,7 +5,11 @@ import Icon from "components/icon";
 import styles from "@/styles/Turn.module.css";
 
 import { Gaegu } from "next/font/google";
-const handwritingFont = Gaegu({ subsets: ["latin"], weight: "400" });
+const handwritingFont = Gaegu({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-handwriting",
+});
 
 const emptyTurnData = {
   money: [],
@@ -23,6 +27,24 @@ export const makeTurnData = (newData) => ({
   ...emptyTurnData,
   ...newData,
 });
+
+export const defaultSuppliedColumns = {
+  ...emptyTurnData,
+  opportunity: [true],
+};
+
+export const firstTurnSuppliedColumns = {
+  ...defaultSuppliedColumns,
+  money: [true],
+  A: [true],
+  B: [true],
+  C: [true],
+  D: [true],
+  AB: [true],
+  ABC: [true],
+  ABCD: [true],
+  opportunity: [true],
+};
 
 function Head({ children }) {
   return <div className={`${styles.thead}`}>{children}</div>;
@@ -51,6 +73,8 @@ export function Cell({
   equals,
   follow,
 
+  supplied,
+
   topLeft,
   topRight,
   bottomLeft,
@@ -59,7 +83,7 @@ export function Cell({
   const hasContent = icon || !!children || children === 0 || carryOver;
 
   const props = {
-    className: classnames({
+    className: classnames(handwritingFont.variable, {
       [styles.td]: !head && !icon,
       [styles.th]: head || !!icon,
       [styles.day]: day,
@@ -78,7 +102,7 @@ export function Cell({
       [styles.bottomLeft]: bottomLeft,
       [styles.bottomRight]: bottomRight,
 
-      [handwritingFont.className]: !hasContent,
+      [styles.handwritten]: !day && !head && !icon && !supplied,
     }),
   };
 
@@ -94,7 +118,7 @@ export function Cell({
   return <div {...props} contentEditable />;
 }
 
-function Turn({ id, data, className }) {
+function Turn({ id, data, className, suppliedColumns }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
   const BODIES = [
@@ -183,6 +207,7 @@ function Turn({ id, data, className }) {
                       follow={
                         isFirstColumn && isUndefined(data[rowIcon][columnI])
                       }
+                      supplied={(suppliedColumns[rowIcon] || [])[columnI]}
                       key={columnI}
                     />
                   );
@@ -200,6 +225,7 @@ Turn.defaultProps = {
   id: 0,
   data: emptyTurnData,
   className: undefined,
+  suppliedColumns: defaultSuppliedColumns,
 };
 
 export default Turn;
