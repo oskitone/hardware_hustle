@@ -4,7 +4,9 @@ import LineInput from "components/line-input";
 
 import styles from "@/styles/Sidebar.module.css";
 
-export default function Sidebar({ turnsData }) {
+export default function Sidebar({ turnsData, commitHash, dateString }) {
+  const [YYYY, MM, DD] = dateString.split("-");
+
   return (
     <div className={styles.sidebar}>
       <h1>Hardware Hustle</h1>
@@ -24,7 +26,10 @@ export default function Sidebar({ turnsData }) {
       />
 
       <footer className={styles.footer}>
-        2023 CC BY-SA 4.0 Oskitone / oskitone.com
+        <p>{YYYY} CC BY-SA 4.0 Oskitone / oskitone.com</p>
+        <p className={styles.rev}>
+          Rev {commitHash}-{[YYYY.slice(-2), MM, DD].join("")}
+        </p>
       </footer>
     </div>
   );

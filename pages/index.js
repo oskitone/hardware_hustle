@@ -10,7 +10,23 @@ import TurnGrid from "components/turn-grid";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-function Home({ count }) {
+export async function getStaticProps(context) {
+  const commit = require("child_process")
+    .execSync('git log -n1 --format="%h %ai"')
+    .toString()
+    .trim();
+
+  const [commitHash, dateString] = commit.split(" ");
+
+  return {
+    props: {
+      commitHash,
+      dateString,
+    },
+  };
+}
+
+function Home({ count, commitHash, dateString }) {
   const turnsData = [
     makeTurnData({
       money: [10],
@@ -42,7 +58,11 @@ function Home({ count }) {
         <Sheet>
           {[...Array(count || 0)].map((e, i) => (
             <Page split key={i}>
-              <Sidebar turnsData={turnsData} />
+              <Sidebar
+                turnsData={turnsData}
+                commitHash={commitHash}
+                dateString={dateString}
+              />
               <TurnGrid turnsData={turnsData} />
             </Page>
           ))}
@@ -61,6 +81,8 @@ function Home({ count }) {
 
 Home.defaultProps = {
   count: 1,
+  commitHash: undefined,
+  dateString: undefined,
 };
 
 export default Home;
