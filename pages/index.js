@@ -1,5 +1,7 @@
-import Head from "next/head";
+import { isUndefined } from "lodash";
 import { Open_Sans } from "next/font/google";
+import { useRouter } from "next/router";
+import Head from "next/head";
 
 import { makeTurnData } from "components/turn";
 import Page from "components/page";
@@ -27,6 +29,10 @@ export async function getStaticProps(context) {
 }
 
 function Home({ count, commitHash, dateString, reverse }) {
+  const router = useRouter();
+  count = parseInt(router.query.count) || count;
+  reverse = !isUndefined(router.query.reverse) || reverse;
+
   const turnsData = [
     makeTurnData({
       money: [10],
