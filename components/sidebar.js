@@ -28,7 +28,7 @@ export default function Sidebar({ turnsData, commitHash, dateString }) {
       <footer className={styles.footer}>
         <p>{YYYY} CC BY-SA 4.0 Oskitone / oskitone.com</p>
         <p className={styles.rev}>
-          Draft: {commitHash}-{[YYYY.slice(-2), MM, DD].join("")}
+          prototype_draft_{commitHash}_{[YYYY.slice(-2), MM, DD].join("")}
         </p>
       </footer>
     </div>
