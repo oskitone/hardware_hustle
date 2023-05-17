@@ -13,6 +13,7 @@ export default function TurnGrid({ turnsData }) {
           key={i}
           id={i}
           data={turnData}
+          isFinalTurn={i == turnsData.length - 1}
           suppliedColumns={
             i == 0 ? firstTurnSuppliedColumns : defaultSuppliedColumns
           }

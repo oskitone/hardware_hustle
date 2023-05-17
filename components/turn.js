@@ -118,7 +118,7 @@ export function Cell({
   return <div {...props} contentEditable />;
 }
 
-function Turn({ id, data, className, suppliedColumns }) {
+function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
   const BODIES = [
@@ -129,7 +129,7 @@ function Turn({ id, data, className, suppliedColumns }) {
         { minus: true },
         { carryOver: true },
         { plus: true },
-        { equals: true },
+        { equals: true, carryOver: true },
       ],
     },
     {
@@ -139,7 +139,7 @@ function Turn({ id, data, className, suppliedColumns }) {
         { plus: true },
         { minus: true },
         { carryOver: true },
-        { equals: true },
+        { equals: true, carryOver: true },
       ],
     },
     {
@@ -149,7 +149,7 @@ function Turn({ id, data, className, suppliedColumns }) {
         { carryOver: true },
         { plus: true },
         { minus: true },
-        { equals: true },
+        { equals: true, carryOver: true },
       ],
     },
     {
@@ -200,7 +200,9 @@ function Turn({ id, data, className, suppliedColumns }) {
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}
                       bottomLeft={isLastRow && isFirstColumn}
-                      carryOver={column.carryOver}
+                      carryOver={
+                        !(isFinalTurn && isLastColumn) && column.carryOver
+                      }
                       plus={column.plus}
                       minus={column.minus}
                       equals={column.equals}
@@ -224,6 +226,7 @@ function Turn({ id, data, className, suppliedColumns }) {
 Turn.defaultProps = {
   id: 0,
   data: emptyTurnData,
+  isFinalTurn: false,
   className: undefined,
   suppliedColumns: defaultSuppliedColumns,
 };
