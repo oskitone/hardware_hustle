@@ -6,6 +6,7 @@ import Head from "next/head";
 import { makeTurnData } from "components/turn";
 import Page from "components/page";
 import RollGrid from "components/roll-grid";
+import Rules from "components/rules.mdx";
 import Sheet from "components/sheet";
 import Sidebar from "components/sidebar";
 import TurnGrid from "components/turn-grid";
@@ -54,6 +55,11 @@ function Home({ count, year, draftId, reverse }) {
   ];
 
   let sheetContents = [
+    <>
+      <Page double>
+        <Rules year={year} draftId={draftId} />
+      </Page>
+    </>,
     <>
       {[...Array(count || 0)].map((e, i) => (
         <Page split key={i}>
