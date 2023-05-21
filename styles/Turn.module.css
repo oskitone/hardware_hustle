@@ -1,5 +1,6 @@
 .turn {
   height: fit-content;
+  break-inside: avoid;
 }
 
 .thead .th,
