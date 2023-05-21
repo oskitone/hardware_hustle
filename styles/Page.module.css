@@ -13,6 +13,10 @@
   grid-gap: var(--print-margin);
 }
 
+.double {
+  height: 12in;
+}
+
 @media print {
   .page {
     outline: none;
