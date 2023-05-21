@@ -1,0 +1,44 @@
+.rules {
+  column-count: 4;
+  column-gap: var(--print-margin);
+
+  /* width: 40em; */
+  height: 100%;
+
+  font-size: var(--rules-font-size);
+}
+
+/* TODO: extract against Sidebar */
+.rules h1 {
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.025em;
+}
+
+/* TODO: define typographic sizes */
+.rules h1,
+.rules h2,
+.rules h3 {
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* .rules h1, */
+.rules h2,
+.rules h3,
+.rules p,
+.rules ol,
+.rules ul,
+.rules .Turn {
+  margin: 0 0 var(--default-font-size);
+}
+
+.rules ol,
+.rules ul {
+  margin-left: 1.5em;
+}
+.rules strong {
+  font-weight: 700;
+}
