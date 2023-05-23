@@ -6,13 +6,13 @@ import PointSelector from "components/point-selector";
 import styles from "@/styles/ActionsTable.module.css";
 
 export default function ActionsTable({ className }) {
-  function PS({ options, value, first, last }) {
+  function PS({ options, value, firstRow, lastRow }) {
     return (
       <>
         {"- "}
         <PointSelector
-          first={first}
-          last={last}
+          firstRow={firstRow}
+          lastRow={lastRow}
           icon="opportunity"
           options={options}
           value={value}
@@ -27,7 +27,7 @@ export default function ActionsTable({ className }) {
       body: [
         [
           <Icon id="A" />,
-          <PS options={[0, 0, 0, 0]} value={0} first />,
+          <PS options={[0, 0, 0, 0]} value={0} firstRow />,
           <>
             - <Icon id="money" suffix="1" />
           </>,
@@ -48,7 +48,7 @@ export default function ActionsTable({ className }) {
         ],
         [
           <Icon id="D" />,
-          <PS options={[3, 2, 1, 0]} value={3} last />,
+          <PS options={[3, 2, 1, 0]} value={3} lastRow />,
           <>
             - <Icon id="money" suffix="4" />
           </>,
@@ -60,7 +60,7 @@ export default function ActionsTable({ className }) {
       body: [
         [
           <Icon id="AB" />,
-          <PS options={[1, 0, 0, 0]} value={1} first />,
+          <PS options={[1, 0, 0, 0]} value={1} firstRow />,
           <>
             - <Icon id="A" inline /> <Icon id="B" inline />
           </>,
@@ -75,7 +75,7 @@ export default function ActionsTable({ className }) {
         ],
         [
           <Icon id="ABCD" />,
-          <PS options={[3, 2, 1, 0]} value={3} last />,
+          <PS options={[3, 2, 1, 0]} value={3} lastRow />,
           <>
             - <Icon id="A" inline /> <Icon id="B" inline />{" "}
             <Icon id="C" inline />
@@ -90,7 +90,7 @@ export default function ActionsTable({ className }) {
       body: [
         [
           <Icon id="AB" />,
-          <PS options={[2, 1, 0, 0]} value={2} first />,
+          <PS options={[2, 1, 0, 0]} value={2} firstRow />,
           <>
             + <Icon id="money" suffix="6" />
           </>,
@@ -104,7 +104,7 @@ export default function ActionsTable({ className }) {
         ],
         [
           <Icon id="ABCD" />,
-          <PS options={[4, 3, 2, 1]} value={4} last />,
+          <PS options={[4, 3, 2, 1]} value={4} lastRow />,
           <>
             + <Icon id="money" suffix="40" />
           </>,

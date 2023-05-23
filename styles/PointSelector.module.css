@@ -27,28 +27,28 @@
   border-right-width: 2px;
 }
 
-.first .selected {
+.firstRow .selected {
   border-top-color: rgb(var(--foreground-rgb));
   border-top-width: 2px;
 }
 
-.last .selected {
+.lastRow .selected {
   border-bottom-color: rgb(var(--foreground-rgb));
   border-bottom-width: 2px;
 }
 
-.first .option:first-of-type {
+.firstRow .firstColumn {
   border-top-left-radius: var(--fillet);
 }
 
-.first .option:last-of-type {
+.firstRow .lastColumn {
   border-top-right-radius: var(--fillet);
 }
 
-.last .option:first-of-type {
+.lastRow .firstColumn {
   border-bottom-left-radius: var(--fillet);
 }
 
-.last .option:last-of-type {
+.lastRow .lastColumn {
   border-bottom-right-radius: var(--fillet);
 }

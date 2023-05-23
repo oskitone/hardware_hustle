@@ -20,7 +20,7 @@ export default function Icon({ id, prefix, suffix, className, inline }) {
   }[id];
 
   return (
-    <div
+    <span
       className={classnames(className, styles.icon, {
         [styles.inline]: inline,
       })}
@@ -35,6 +35,6 @@ export default function Icon({ id, prefix, suffix, className, inline }) {
         )}
       />
       {suffix}
-    </div>
+    </span>
   );
 }
