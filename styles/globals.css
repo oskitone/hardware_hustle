@@ -17,9 +17,9 @@
   --print-sheet-height: 14in;
   --print-margin: 0.25in;
 
-  /* TODO: merge */
+  /* TODO: merge/obviate */
   --default-font-size: 12px;
-  --rules-font-size: 11px;
+  --rules-font-size: 10px;
 }
 
 * {

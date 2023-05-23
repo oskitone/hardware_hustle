@@ -1,5 +1,5 @@
 .rules {
-  column-count: 3;
+  column-count: 4;
   column-gap: var(--print-margin);
   column-fill: auto;
 
@@ -20,7 +20,8 @@
 /* TODO: define typographic sizes */
 .rules h1,
 .rules h2,
-.rules h3 {
+.rules h3,
+.rules h4 {
   text-transform: uppercase;
   line-height: 1;
 }
@@ -28,11 +29,13 @@
 /* .rules h1, */
 .rules h2,
 .rules h3,
+.rules h4,
 .rules p,
 .rules ol,
 .rules ul,
 .ActionsTable,
-.Turn {
+.Turn,
+.Graph {
   margin: 0 0 var(--default-font-size);
   break-inside: avoid;
 }
@@ -45,13 +48,12 @@
 }
 
 .rules ol,
-.rules ul {
+.rules ul,
+.Graph {
   margin-left: 1.5em;
 }
-.rules strong {
-  font-weight: 700;
-}
 
-.union {
-  white-space: nowrap;
+.Graph {
+  height: 170px;
+  margin: 0 0 calc(var(--default-font-size) * 2);
 }
