@@ -5,6 +5,8 @@ import styles from "@/styles/Icon.module.css";
 export default function Icon({ id, prefix, suffix, className, inline }) {
   const bootstrapIconClassName = {
     money: "bi-piggy-bank",
+
+    // TODO: bandwidth? battery-full, bar-chart?
     opportunity: "bi-arrow-up-right-circle",
 
     A: "bi-nut",
@@ -16,7 +18,7 @@ export default function Icon({ id, prefix, suffix, className, inline }) {
     ABC: "bi-boombox",
     ABCD: "bi-motherboard",
 
-    roll: "bi-question-square",
+    roll: "bi-question-square", // TODO: remove
   }[id];
 
   return (

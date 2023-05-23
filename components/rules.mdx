@@ -1,73 +1,122 @@
 import styles from "@/styles/Rules.module.css";
 
-import Turn from "components/turn";
+import ActionsTable from "components/actions-table";
+import Icon from "components/icon";
+import Turn, { firstTurnSuppliedColumns } from "components/turn";
 
 # Hardware Hustle
 
 DRAFT RULES
+{/* TODO: commit rev */}
 
-A pen-and-paper game where you try to run a little hardware business without burning out. Buy parts to make widgets to sell for profit to buy parts, ad nausem.
+A pen-and-paper game for 1+ players about sustainably running a small hardware business.
 
 ## Setup
 
 The game is played solo or competitively. Each player will need:
 
 - Hardware Hustle game sheet
-- six-sided die
-- calculator
+- Six-sided die
+- Calculator (optional)
+- 20min or so of time, depending on number of players
+
+## Starting the game
+
+For games with multiple players, the first to play can be determined by the highest die roll, then go clockwise.
+
+Write your name on the "ID" line in the top left, then note the Actions table below it.
+
+{/* <ActionsTable className={styles.ActionsTable} /> */}
+
+The icons you see represent:
+
+- Parts
+  - <Icon id="A" />: Fastener
+  - <Icon id="B" />: Enclosure
+  - <Icon id="C" />: Gear
+  - <Icon id="D" />: Screen
+- Widgets
+  - <Icon id="AB" />: Amplifier
+  - <Icon id="ABC" />: Music Player
+  - <Icon id="ABCD" />: Sequencer
+- <Icon id="money" />: Money
+- <Icon id="opportunity" />: Opportunity
+
+Let's walk through what all that means...
 
 ## Taking a turn
 
-You can think of a turn like a workday: you wake up, do some stuff, and then retire at the end of the day. Ideally, each day gets you further towards your goal, which is, unfortunately, to make the money that you need to continue making money.
+You can think of a turn like a typical workday: you wake up in the AM, do some stuff (Actions), and then rest in the PM. Ideally, the day's actions get you further towards your goal, which is, unfortunately, to make the money that you need to continue making money.
 
-The day is a graph and its columns are done in order from left to right:
+{/* TODO: think about how to combine icons w/ text into their own component */}
 
-1.  **AM:** Start the turn
-2.  **Buy:** Buy Parts to make Widgets
-3.  **Make:** Make Widgets from Parts
-4.  **Sell:** Sell Widgets for Money
-5.  **PM:** End the turn
+Here's an example of the first turn, completed:
+
+{/* TODO: confirm math... */}
 
 <Turn
   className={styles.Turn}
-  startingValues={{
-    money: 0,
-    opportunity: 0,
-    A: 0,
-    B: 0,
-    C: 0,
-    D: 0,
-    AB: 0,
-    ABC: 0,
-    ABCD: 0,
+  data={{
+    money: [10, 9, undefined, 6, 7],
+    A: [0, 2, 2, undefined, 0],
+    B: [0, 2, 2, undefined, 0],
+    C: [0, 1, 1, undefined, 0],
+    D: [0, 0, 0, undefined, 0],
+    AB: [0, undefined, 2, 1, 1],
+    ABC: [0, undefined, 1, 0, 1],
+    ABCD: [0, undefined, 0, 0, 0],
+    opportunity: [12, 4, 4, 2, 2],
   }}
+  suppliedColumns={firstTurnSuppliedColumns}
 />
 
-### AM
+The day is a graph and its columns are done in order from left to right. Let's walk through it...
 
-Your first day on the job starts with 10 Money and 12 Opportunity but nothing else. Nothing to do here but note what you've got... which for now is not much.
+### 1. AM
 
-### Buy
+Your first day on the job starts with <Icon id="money" prefix="10" /> and <Icon id="opportunity" prefix="12" /> but nothing else. Nothing to do here but note what you've got... which, for now, isn't much!
 
-We need to buy Parts to make Widgets for our store. Parts costs Money and Opportunity.
+### 2. Buy
 
-You can think of Opportunity as some combination of time, effort, and luck. You spend it like Money but, unlike Money, it refreshes each AM.
+Let's buy some Parts. This will cost Money and Opportunity.
 
-**"Roll for Opportunity"**: The maximum Opportunity that you can spend is determined by a die roll. You can spend less but not more than this value.
+**Roll for Opportunity:** Roll a die. Its value is the maximum you can spend on Opportunity. We'll say the user rolled a 5. (You can think of Opportunity as a combination of time, effort, and luck. You spend it like <Icon id="money" /> but, unlike <Icon id="money" />, it refreshes each AM.)
 
-### Make
+So, the user buys <Icon id="A" prefix="2" />, <Icon id="B" prefix="2" />, and <Icon id="C" prefix="1" />; and marks those numbers in the Parts columns.
 
-Make Widgets from Parts, costing Parts and Opportunity\*.
+That cost <Icon id="money" suffix="9" /> (<Icon id="money" inline suffix="1x2" /> + <Icon id="money" inline suffix="2x2" /> + <Icon id="money" inline suffix="3" />) and that total is marked in the <Icon id="money" /> column.
+
+It also took <Icon id="opportunity" suffix="4" /> to buy the parts (<Icon id="opportunity" inline suffix="0x2" /> + <Icon id="opportunity" inline suffix="1x2" /> + <Icon id="opportunity" inline suffix="2" />). The Actions table's <Icon id="opportunity" /> costs each have a row of values, but, for now, we'll use the value with a dark outline.
+
+A couple things to recap/note:
+
+- Refer to the Actions table on the left of your game sheet to see how much things cost in <Icon id="money" /> and <Icon id="opportunity" />.
+- There's only one <Icon id="money" /> cost for each part, so that's straightforward. But <Icon id="opportunity" /> is less obvious because there's a row of values to seemingly choose from. For now, use the outlined value on the far left.
+- Cells are marked by their mathematical operation. Since we're spending <Icon id="money" /> and <Icon id="opportunity" />, those cells have a "-". We're gaining Parts, so those cells have a "+".
+- Cells that are unused have a gray background. There are no changes to our Widget inventory when we're buying Parts &mdash; they're gray so we know to skip them.
+- Action-relevant cells with no change are filled with 0 or can be left blank.
+- We rolled 5 for Opportunity but only spent 4. That's okay. Mark down only what you spent, not rolled. You cannot spend more Opportunity than you roll.
+- Similarly, you cannot spend more Money than you have.
+
+### 3. Make
+
+Now we'll make Widgets from Parts, costing Parts and Opportunity.
+
+Roll for Opportunity. We'll say it lands on 4.
+
+So the user makes 2x<Icon id="AB" /> and 1x<Icon id="ABC" />, marked in their columns.
+
+The <Icon id="AB" /> consumed 1x<Icon id="A" />+1x<Icon id="B" />, and the <Icon id="ABC" /> took 1x<Icon id="A" />+1x<Icon id="B" />+1x<Icon id="C" />. Those total to <Icon id="A" suffix="2" />, <Icon id="B" suffix="2" />, and <Icon id="C" suffix="1" />.
+
+Total <Icon id="opportunity" /> cost is 4 (<Icon id="opportunity" suffix="1" />x2 + <Icon id="opportunity" suffix="2" />x1). There is no <Icon id="money" /> cost because you already bought the parts you're using.
+
+### 4. Sell
+
+Sell Widgets, costing Widgets (of course) and Opportunity but gaining Money.
 
 Again, Roll for Opportunity.
 
-### Sell
-
-Sell Widgets, costing Widgets (of course) and Opportunity\* but gaining Money.
-
-Again, Roll for Opportunity.
-
-### PM
+### 5. PM
 
 Tally up your Actions' math and end the turn. If you have enough Opportunity remaining, you may be able to Research. Opportunity remaining, you may be able to Research.
 

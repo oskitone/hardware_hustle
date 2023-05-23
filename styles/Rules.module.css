@@ -1,8 +1,8 @@
 .rules {
-  column-count: 4;
+  column-count: 3;
   column-gap: var(--print-margin);
+  column-fill: auto;
 
-  /* width: 40em; */
   height: 100%;
 
   font-size: var(--rules-font-size);
@@ -31,8 +31,17 @@
 .rules p,
 .rules ol,
 .rules ul,
-.rules .Turn {
+.ActionsTable,
+.Turn {
   margin: 0 0 var(--default-font-size);
+  break-inside: avoid;
+}
+
+.rules ul ul,
+.rules ul ol,
+.rules ol ul,
+.rules ol ol {
+  margin-bottom: 0;
 }
 
 .rules ol,
@@ -41,4 +50,8 @@
 }
 .rules strong {
   font-weight: 700;
+}
+
+.union {
+  white-space: nowrap;
 }
