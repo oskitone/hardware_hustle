@@ -80,7 +80,7 @@ export function Cell({
   bottomLeft,
   bottomRight,
 }) {
-  const hasContent = icon || !!children || children === 0 || carryOver;
+  const hasContent = icon || !!children || children === 0;
 
   const props = {
     className: classnames(handwritingFont.variable, {
@@ -169,7 +169,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
       <Head>
         <Row>
           <Cell head day={true}>
-            <span>{id + 1}</span>
+            {!isUndefined(id) && <span>{id + 1}</span>}
           </Cell>
           {COLUMNS.map((column, i) => (
             <Cell head key={i}>
@@ -224,11 +224,11 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
 }
 
 Turn.defaultProps = {
-  id: 0,
+  id: undefined,
   data: emptyTurnData,
   isFinalTurn: false,
   className: undefined,
-  suppliedColumns: defaultSuppliedColumns,
+  suppliedColumns: firstTurnSuppliedColumns,
 };
 
 export default Turn;
