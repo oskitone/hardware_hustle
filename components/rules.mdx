@@ -13,18 +13,18 @@ A pen-and-paper game for 1+ players about sustainably running a small hardware b
 
 ## Setup
 
-The game is played solo or competitively. Each player will need:
+Each player will need:
 
 - Hardware Hustle game sheet
 - Six-sided die
 - Calculator (optional)
-- 20min or so of time, depending on number of players
+- 20 minutes or so, depending on number of players
 
 ## Starting the game
 
-For games with multiple players, the first to play can be determined by the highest die roll, then go clockwise.
+For games with multiple players, the first to play can be determined by the highest die roll, then proceed clockwise.
 
-Write your name on the "ID" line in the top left, then note the Actions table below it. The icons you see represent:
+Write your name on the "ID" line in the top left, then familiarize yourself with the Actions table below it. Its icons represent:
 
 - Parts
   - <Icon id="A" />: Fastener
@@ -38,11 +38,9 @@ Write your name on the "ID" line in the top left, then note the Actions table be
 - <Icon id="money" />: Money
 - <Icon id="opportunity" />: Opportunity
 
-Let's walk through what all that means...
-
 ## Taking a turn
 
-You can think of a turn like a typical workday: you wake up in the AM, do some stuff (Actions), and then rest in the PM. Ideally, the day's actions get you further towards your goal, which is, unfortunately, to make the money that you need to continue making money.
+You can think of a turn like a typical workday: you wake up in the AM, do some stuff (Actions), and then rest in the PM. Ideally, the day's actions get you further towards your goal, which is, unfortunately, to make enough money to continue making money.
 
 {/* TODO: think about how to combine icons w/ text into their own component */}
 
@@ -66,13 +64,9 @@ Here's an example of the first turn, completed:
   suppliedColumns={firstTurnSuppliedColumns}
 />
 
-{/* TODO: better word than graph? It's not a "graphical representation of data" */}
-
-The day is a graph and its columns are done in order from left to right.
+The turn's day is a little spreadsheet. Its rows are grouped into Money, Parts, Widgets, and Opportunity. And its columns are Actions to be filled out in order from left to right.
 
 Let's walk through it, step by step:
-
-{/* TODO: standardize user/you/we/they */}
 
 ### 1. AM
 
@@ -82,35 +76,42 @@ Your first day on the job starts with <Icon id="money" prefix="10" /> and <Icon 
 
 Let's buy some Parts. This will cost Money and Opportunity.
 
-**Roll for Opportunity:** Roll a die. Its value is the maximum you can spend on Opportunity. We'll say the user rolled a 5. (You can think of Opportunity as a combination of time, effort, and luck. You spend it like <Icon id="money" /> but, unlike <Icon id="money" />, it refreshes each AM.)
+**Roll for Opportunity:** Roll a die. Its value is the maximum you can spend on Opportunity for this particular Action. We'll say you rolled 5.
 
-So, the user buys <Icon id="A" prefix="2" />, <Icon id="B" prefix="2" />, and <Icon id="C" prefix="1" />; and marks those numbers in the Parts columns.
+You buy 2x<Icon id="A" />, 2x<Icon id="B" />, and 1x<Icon id="C" />; then you mark those numbers in the Parts cells.
 
 <ActionsTable actions={[ACTIONS.BUY]} className={styles.ActionsTable} />
 
-That cost <Icon id="money" suffix="9" /> (<Icon id="money" inline suffix="1x2" /> + <Icon id="money" inline suffix="2x2" /> + <Icon id="money" inline suffix="3" />) and that total is marked in the <Icon id="money" /> column.
+{/* TODO: try part icons on multipliers */}
+
+According to the Actions table, that cost <Icon id="money" suffix="9" /> (<Icon id="money" inline suffix="1x2" /> + <Icon id="money" inline suffix="2x2" /> + <Icon id="money" inline suffix="3" />) and is marked in the <Icon id="money" /> cell.
+
+{/* TODO: maybe pull out math by itself? */}
+
+1&times;2 + 2&times;2 + 1&times;3 = 9
 
 It also took <Icon id="opportunity" suffix="4" /> to buy the parts (<Icon id="opportunity" inline suffix="0x2" /> + <Icon id="opportunity" inline suffix="1x2" /> + <Icon id="opportunity" inline suffix="2" />). The Actions table's <Icon id="opportunity" /> costs each have a row of values, but, for now, we'll use the value with a dark outline.
 
 A couple things to call out:
 
-- Cells are marked by their mathematical operation. Since we're spending <Icon id="money" /> and <Icon id="opportunity" />, those cells have a "-". We're gaining Parts, so those cells have a "+".
+- You can think of Opportunity as a combination of time, effort, and luck.
+- Cells are marked by their mathematical operation. We're spending <Icon id="money" /> and <Icon id="opportunity" />, so those cells have a "**-**". We're gaining Parts, so those cells have a "**+**".
 - Cells that are unused have a gray background. There are no changes to our Widget inventory when we're buying Parts &mdash; they're gray so we know to skip them.
-- Action-relevant cells with no change can be filled with 0 or left blank.
-- We rolled 5 for Opportunity but only spent 4. That's okay. Mark down only what you spent, not rolled. You cannot spend more Opportunity than you roll.
+- Cells with no change (like <Icon id="D" />) can be filled with 0 or left blank.
+- We rolled 5 for Opportunity but only spent 4. That's okay. Mark down what you spent, not rolled. You cannot spend more Opportunity than you roll.
 - Similarly, you cannot spend more Money than you have.
 
 ### 3. Make
 
-Now we'll make Widgets from Parts, costing Parts and Opportunity.
+Now we'll make Widgets from Parts. This will cost Parts and Opportunity.
 
 **Roll for Opportunity.** Call it 4.
 
-So the user makes 2x<Icon id="AB" /> and 1x<Icon id="ABC" />, marked in their columns.
+You make 2x<Icon id="AB" /> and 1x<Icon id="ABC" />, marked in their columns.
 
 <ActionsTable actions={[ACTIONS.MAKE]} className={styles.ActionsTable} />
 
-The <Icon id="AB" /> consumed 1x<Icon id="A" />+1x<Icon id="B" />, and the <Icon id="ABC" /> took 1x<Icon id="A" />+1x<Icon id="B" />+1x<Icon id="C" />. Those total to <Icon id="A" suffix="2" />, <Icon id="B" suffix="2" />, and <Icon id="C" suffix="1" />.
+The <Icon id="AB" /> consumed 1x<Icon id="A" />+1x<Icon id="B" />, and the <Icon id="ABC" /> took 1x<Icon id="A" />+1x<Icon id="B" />+1x<Icon id="C" />. Those total to 2x<Icon id="A" />, 2x<Icon id="B" />, and 1x<Icon id="C" />.
 
 Total <Icon id="opportunity" /> cost is 4 (<Icon id="opportunity" suffix="1" />x2 + <Icon id="opportunity" suffix="2" />x1). 4 is the max we rolled, so that's perfect. There's no <Icon id="money" /> cost because you already bought the parts you're using.
 
@@ -120,7 +121,7 @@ The last Action of our turn is to Sell Widgets, costing Widgets (of course) and 
 
 **Roll for Opportunity.** We'll say it's 3.
 
-Here the user sells 1x<Icon id="AB" /> for its price of <Icon id="money" suffix="6" />, using <Icon id="opportunity" suffix="2" />, marking those values in their columns.
+Here you sell 1x<Icon id="AB" /> for its price of <Icon id="money" suffix="6" />, using <Icon id="opportunity" suffix="2" />, marking those values in their columns.
 
 <ActionsTable actions={[ACTIONS.SELL]} className={styles.ActionsTable} />
 
@@ -130,11 +131,13 @@ If we had rolled 4 for <Icon id="opportunity" /> we could have sold 2x<Icon id="
 
 Tally up your Actions' math and end your turn in the PM column.
 
+{/* TODO: math <pre>? */}
+
 #### Money
 
-The user ends with <Icon id="money" suffix="7" />, which can be plotted in the MONEY dot chart on the left of the game sheet. Not the most unprofitable day, for sure...
+You end with <Icon id="money" suffix="7" />, which can be plotted in the Money dot chart on the left of the game sheet. Not the most profitable day, for sure...
 
-{/* TODO: subset of Graph */}
+{/* TODO: subset of Graph area, or ditch entirely */}
 
 <Graph
   turnCount={6}
@@ -146,15 +149,18 @@ The user ends with <Icon id="money" suffix="7" />, which can be plotted in the M
 
 #### Opportunity
 
-As for <Icon id="opportunity" />, if you exhaust yourself and go negative, you **Burn Out** and lose the entire next turn! In this example, the user has <Icon id="opportunity" suffix="2" /> so is safe.
+As for <Icon id="opportunity" />, if you exhaust yourself and go negative, you **Burn Out** and lose the entire next turn! In this example, you have <Icon id="opportunity" suffix="2" /> so are safe.
 
-Otherwise, **Roll for Research**. Its value is how much <Icon id="opportunity" /> you'd need so spend to successfully research how to get better at one of the Actions.
+Otherwise, **Roll for Research**. Its value is how much <Icon id="opportunity" /> you'd need to successfully get better at one of the Actions.
+
+{/* TODO: examples */}
 
 #### Research
 
-We'll say the user rolls 2, which, conveniently!, is all the <Icon id="opportunity" /> we have left.
+We'll say you roll 2, which, conveniently!, is all the <Icon id="opportunity" /> we have left.
 
-The user decides they want to be better at Making, so they use the Research there, crossing out the previously values to outline new ones.
+You decide you want to be better at Making and use the Research there, crossing out the previous column of values to outline the new ones to its right.
+
 {/* TODO: mark new PS values */}
 
 <ActionsTable className={styles.ActionsTable} />
@@ -167,9 +173,9 @@ When your turn's done, for games with multiple players, hand the die to the next
 
 ### Starting the next turn
 
-The values in your PM column carry over to the empty cells in next turn's AM column.
+The values in your PM column carry over to the empty cells in the next turn's AM column, as denoted by the "**⇢**" prefix
 
-Note that <Icon id="opportunity" /> is always filled out and dwindles over the course of the game. Just like in real life, you can't grind forever.
+Note that <Icon id="opportunity" /> is always filled out and dwindles over the course of the game. Just like in real life, initial enthusiasm is hard to maintain indefinitely. You can't grind forever.
 
 ## End of Game
 
@@ -183,9 +189,9 @@ Solo play is solitaire; try to beat your best score.
 
 ### How to Lose
 
-If you Burn Out in the last turn, you are too tired to go to your family picnic the next day.
+If you Burn Out in the last turn, you are too physically and emotionally exhausted to go to a very important family gathering the next day.
 
-You were too preoccupied with money and have lost sight of what really matters to you and the people who love you, so you lose.
+You were too preoccupied with money and lost sight of what really matters, so you lose.
 
 _{props.year} CC BY-SA 4.0 Oskitone_
 
