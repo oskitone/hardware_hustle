@@ -57,7 +57,7 @@ function Home({ count, year, draftId, reverse }) {
   let sheetContents = [
     <>
       <Page double>
-        <Rules />
+        <Rules year={year} draftId={draftId} />
       </Page>
     </>,
     <>
