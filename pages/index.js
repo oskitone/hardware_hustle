@@ -18,17 +18,18 @@ export async function getStaticProps(context) {
     .toString()
     .trim();
 
-  const [commitHash, dateString] = commit.split(" ");
+  const [hash, date] = commit.split(" ");
+  const [YYYY, MM, DD] = date.split("-");
 
   return {
     props: {
-      commitHash,
-      dateString,
+      year: YYYY,
+      draftId: `prototype_draft_${hash}_${[YYYY.slice(-2), MM, DD].join("")}`,
     },
   };
 }
 
-function Home({ count, commitHash, dateString, reverse }) {
+function Home({ count, year, draftId, reverse }) {
   const router = useRouter();
   count = parseInt(router.query.count) || count;
   reverse = !isUndefined(router.query.reverse) || reverse;
@@ -56,11 +57,7 @@ function Home({ count, commitHash, dateString, reverse }) {
     <>
       {[...Array(count || 0)].map((e, i) => (
         <Page split key={i}>
-          <Sidebar
-            turnsData={turnsData}
-            commitHash={commitHash}
-            dateString={dateString}
-          />
+          <Sidebar turnsData={turnsData} year={year} draftId={draftId} />
           <TurnGrid turnsData={turnsData} />
         </Page>
       ))}
@@ -96,9 +93,10 @@ function Home({ count, commitHash, dateString, reverse }) {
 }
 
 Home.defaultProps = {
+  // TODO: gamesPerSheet, gameSheetCount
   count: 1,
-  commitHash: undefined,
-  dateString: undefined,
+  year: undefined,
+  draftId: undefined,
   reverse: false,
 };
 
