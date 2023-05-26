@@ -30,9 +30,9 @@ export async function getStaticProps(context) {
   };
 }
 
-function Home({ count, year, draftId, reverse }) {
+function Home({ gamesPerSheet, copies, year, draftId, reverse }) {
   const router = useRouter();
-  count = parseInt(router.query.count) || count;
+  copies = parseInt(router.query.copies) || copies;
   reverse = !isUndefined(router.query.reverse) || reverse;
 
   const turnsData = [
@@ -60,24 +60,31 @@ function Home({ count, year, draftId, reverse }) {
         <Rules year={year} draftId={draftId} />
       </Page>
     </Front>,
-    <Back></Back>,
-
-    <Front>
-      {[...Array(count || 0)].map((e, i) => (
-        <Page split key={i}>
-          <Sidebar turnsData={turnsData} year={year} draftId={draftId} />
-          <TurnGrid turnsData={turnsData} />
-        </Page>
-      ))}
-    </Front>,
-    <Back>
-      {[...Array(count || 0)].map((e, i) => (
-        <Page key={i}>
-          <RollGrid columns={35} rows={25} />
-        </Page>
-      ))}
-    </Back>,
+    <Back />,
   ];
+
+  for (let i = 0; i < copies; i++) {
+    sheets = [
+      ...sheets,
+      ...[
+        <Front>
+          {[...Array(gamesPerSheet || 0)].map((e, i) => (
+            <Page split key={i}>
+              <Sidebar turnsData={turnsData} year={year} draftId={draftId} />
+              <TurnGrid turnsData={turnsData} />
+            </Page>
+          ))}
+        </Front>,
+        <Back>
+          {[...Array(gamesPerSheet || 0)].map((e, i) => (
+            <Page key={i}>
+              <RollGrid columns={35} rows={25} />
+            </Page>
+          ))}
+        </Back>,
+      ],
+    ];
+  }
 
   if (reverse) {
     sheets = sheets.reverse();
@@ -99,8 +106,8 @@ function Home({ count, year, draftId, reverse }) {
 }
 
 Home.defaultProps = {
-  // TODO: gamesPerSheet, gameSheetCount
-  count: 1,
+  gamesPerSheet: 2,
+  copies: 1,
   year: undefined,
   draftId: undefined,
   reverse: false,
