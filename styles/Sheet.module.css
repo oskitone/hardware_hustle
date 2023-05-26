@@ -8,6 +8,11 @@
   margin: 2em auto;
 }
 
+.landscape {
+  height: var(--print-sheet-width);
+  width: var(--print-sheet-height);
+}
+
 .sheet:nth-child(even) > * {
   margin: 0 0 0 auto;
 }
@@ -16,11 +21,17 @@
   .sheet {
     margin: 0;
 
+    /* TODO: Fix? Web and print no longer match */
     /* Rely on Page for height */
     height: auto;
   }
 
   .sheet:not(:last-of-type) {
     page-break-after: always;
+  }
+
+  .landscape {
+    width: var(--print-sheet-width);
+    height: var(--print-sheet-height);
   }
 }

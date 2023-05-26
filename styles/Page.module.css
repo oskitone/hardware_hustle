@@ -1,6 +1,6 @@
 .page {
-  width: 8in;
-  height: 6in;
+  width: var(--page-width);
+  height: var(--page-height);
 
   padding: var(--print-margin);
 
@@ -13,12 +13,22 @@
   grid-gap: var(--print-margin);
 }
 
+.landscape {
+  height: var(--page-width);
+  width: var(--page-height);
+}
+
 .double {
-  height: 12in;
+  width: calc(var(--page-height) * 2);
 }
 
 @media print {
   .page {
     outline: none;
+  }
+
+  .landscape {
+    transform: rotate(90deg);
+    transform-origin: calc(var(--page-width) / 2) calc(var(--page-width) / 2);
   }
 }

@@ -1,5 +1,5 @@
 .rules {
-  column-count: 4;
+  column-count: 6;
   column-gap: var(--print-margin);
   column-fill: auto;
 
@@ -38,6 +38,13 @@
 .Turn,
 .Graph {
   margin: 0 0 var(--default-font-size);
+}
+
+.rules p,
+.rules li,
+.ActionsTable,
+.Turn,
+.Graph {
   break-inside: avoid;
 }
 
@@ -55,6 +62,6 @@
 }
 
 .Graph {
-  height: 150px;
+  height: 120px;
   margin: 0 0 calc(var(--default-font-size) * 2);
 }

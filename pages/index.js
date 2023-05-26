@@ -55,12 +55,12 @@ function Home({ gamesPerSheet, copies, year, draftId, reverse }) {
   ];
 
   let sheets = [
-    <Front>
-      <Page double>
+    <Front landscape>
+      <Page landscape double>
         <Rules year={year} draftId={draftId} />
       </Page>
     </Front>,
-    <Back />,
+    <Back landscape />,
   ];
 
   for (let i = 0; i < copies; i++) {
