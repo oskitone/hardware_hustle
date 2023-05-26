@@ -7,7 +7,7 @@ import { makeTurnData } from "components/turn";
 import Page from "components/page";
 import RollGrid from "components/roll-grid";
 import Rules from "components/rules.mdx";
-import Sheet from "components/sheet";
+import { Front, Back } from "components/sheet";
 import Sidebar from "components/sidebar";
 import TurnGrid from "components/turn-grid";
 
@@ -54,31 +54,33 @@ function Home({ count, year, draftId, reverse }) {
     makeTurnData({ opportunity: [4] }),
   ];
 
-  let sheetContents = [
-    <>
+  let sheets = [
+    <Front>
       <Page double>
         <Rules year={year} draftId={draftId} />
       </Page>
-    </>,
-    <>
+    </Front>,
+    <Back></Back>,
+
+    <Front>
       {[...Array(count || 0)].map((e, i) => (
         <Page split key={i}>
           <Sidebar turnsData={turnsData} year={year} draftId={draftId} />
           <TurnGrid turnsData={turnsData} />
         </Page>
       ))}
-    </>,
-    <>
+    </Front>,
+    <Back>
       {[...Array(count || 0)].map((e, i) => (
         <Page key={i}>
           <RollGrid columns={35} rows={25} />
         </Page>
       ))}
-    </>,
+    </Back>,
   ];
 
   if (reverse) {
-    sheetContents = sheetContents.reverse();
+    sheets = sheets.reverse();
   }
 
   return (
@@ -90,9 +92,7 @@ function Home({ count, year, draftId, reverse }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${font.className}`}>
-        {sheetContents.map((sheet, i) => (
-          <Sheet key={i}>{sheet}</Sheet>
-        ))}
+        {sheets.map((sheet, i) => sheet)}
       </main>
     </>
   );
