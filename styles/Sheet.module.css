@@ -21,7 +21,6 @@
   .sheet {
     margin: 0;
 
-    /* TODO: Fix? Web and print no longer match */
     /* Rely on Page for height */
     height: auto;
   }
