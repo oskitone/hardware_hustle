@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import { Front, Back } from "components/sheet";
+import { getCommitProps } from "common/utils";
 import { makeTurnData } from "components/turn";
 import Page from "components/page";
 import RollGrid from "components/roll-grid";
@@ -12,23 +13,7 @@ import TurnGrid from "components/turn-grid";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-// TODO: extract
-export async function getStaticProps(context) {
-  const commit = require("child_process")
-    .execSync('git log -n1 --format="%h %ai"')
-    .toString()
-    .trim();
-
-  const [hash, date] = commit.split(" ");
-  const [YYYY, MM, DD] = date.split("-");
-
-  return {
-    props: {
-      year: YYYY,
-      draftId: `prototype_draft_${hash}_${[YYYY.slice(-2), MM, DD].join("")}`,
-    },
-  };
-}
+export const getStaticProps = async (context) => getCommitProps();
 
 function Home({ gamesPerSheet, copies, year, draftId, reverse }) {
   const router = useRouter();
