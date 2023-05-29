@@ -1,0 +1,12 @@
+.scoresheet h1 {
+  text-transform: uppercase;
+  margin: 0 0 var(--default-font-size);
+}
+
+.entry {
+  margin: 0 0 var(--default-font-size);
+
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 0 1em;
+}

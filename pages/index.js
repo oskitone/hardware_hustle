@@ -3,11 +3,13 @@ import { Open_Sans } from "next/font/google";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
+import { Front, Back } from "components/sheet";
 import { makeTurnData } from "components/turn";
+import Cover from "components/cover";
 import Page from "components/page";
 import RollGrid from "components/roll-grid";
 import Rules from "components/rules.mdx";
-import { Front, Back } from "components/sheet";
+import Scoresheet from "components/scoresheet";
 import Sidebar from "components/sidebar";
 import TurnGrid from "components/turn-grid";
 
@@ -56,11 +58,18 @@ function Home({ gamesPerSheet, copies, year, draftId, reverse }) {
 
   let sheets = [
     <Front landscape>
+      <Page landscape>
+        <Scoresheet />
+      </Page>
+      <Page landscape>
+        <Cover year={year} draftId={draftId} />
+      </Page>
+    </Front>,
+    <Back landscape>
       <Page landscape double>
         <Rules year={year} draftId={draftId} />
       </Page>
-    </Front>,
-    <Back landscape />,
+    </Back>,
   ];
 
   for (let i = 0; i < copies; i++) {
