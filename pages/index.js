@@ -34,7 +34,9 @@ export async function getStaticProps(context) {
 
 function Home({ gamesPerSheet, copies, year, draftId, reverse }) {
   const router = useRouter();
-  copies = parseInt(router.query.copies) || copies;
+  copies = !isUndefined(router.query.copies)
+    ? parseInt(router.query.copies)
+    : copies;
   reverse = !isUndefined(router.query.reverse) || reverse;
 
   const turnsData = [
