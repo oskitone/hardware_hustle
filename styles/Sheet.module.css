@@ -6,15 +6,24 @@
   height: var(--print-sheet-height);
 
   margin: 2em auto;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .landscape {
   height: var(--print-sheet-width);
   width: var(--print-sheet-height);
+
+  flex-direction: row;
 }
 
-.sheet:nth-child(even) > * {
-  margin: 0 0 0 auto;
+.sheet:nth-child(odd) {
+  justify-content: left;
+}
+
+.sheet:nth-child(even) {
+  justify-content: right;
 }
 
 @media print {

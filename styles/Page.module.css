@@ -19,6 +19,12 @@
 }
 
 .double {
+  height: calc(var(--page-height) * 2);
+  width: var(--page-height);
+}
+
+.landscape.double {
+  height: var(--page-width);
   width: calc(var(--page-height) * 2);
 }
 
@@ -27,7 +33,7 @@
     outline: none;
   }
 
-  .landscape {
+  .landscape.double {
     /* Eyeballed to match @screen */
     height: calc(var(--page-width) + 6px);
 
