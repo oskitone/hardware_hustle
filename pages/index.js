@@ -5,16 +5,14 @@ import Head from "next/head";
 
 import { Front, Back } from "components/sheet";
 import { makeTurnData } from "components/turn";
-import Cover from "components/cover";
 import Page from "components/page";
 import RollGrid from "components/roll-grid";
-import Rules from "components/rules.mdx";
-import Scoresheet from "components/scoresheet";
 import Sidebar from "components/sidebar";
 import TurnGrid from "components/turn-grid";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
+// TODO: extract
 export async function getStaticProps(context) {
   const commit = require("child_process")
     .execSync('git log -n1 --format="%h %ai"')
@@ -58,21 +56,7 @@ function Home({ gamesPerSheet, copies, year, draftId, reverse }) {
     makeTurnData({ opportunity: [4] }),
   ];
 
-  let sheets = [
-    <Front landscape>
-      <Page landscape>
-        <Scoresheet />
-      </Page>
-      <Page landscape>
-        <Cover year={year} draftId={draftId} />
-      </Page>
-    </Front>,
-    <Back landscape>
-      <Page landscape double>
-        <Rules year={year} draftId={draftId} />
-      </Page>
-    </Back>,
-  ];
+  let sheets = [];
 
   for (let i = 0; i < copies; i++) {
     sheets = [

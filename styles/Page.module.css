@@ -36,8 +36,5 @@
   .landscape.double {
     /* Eyeballed to match @screen */
     height: calc(var(--page-width) + 6px);
-
-    transform: rotate(90deg);
-    transform-origin: calc(var(--page-width) / 2) calc(var(--page-width) / 2);
   }
 }
