@@ -9,7 +9,7 @@ export default function Sidebar({ turnsData, year, draftId }) {
     <div className={styles.sidebar}>
       <h1>Hardware Hustle</h1>
 
-      <LineInput title={"ID"} className={styles.LineInput} />
+      <LineInput title={"Name/Date"} className={styles.LineInput} />
 
       <h2>Actions</h2>
       <ActionsTable className={styles.ActionsTable} />

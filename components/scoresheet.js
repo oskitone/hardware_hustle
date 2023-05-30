@@ -9,9 +9,8 @@ function Scoresheet({ count }) {
 
       {[...Array(count)].map((x, i) => (
         <div className={styles.entry} key={i}>
-          <LineInput title={"ID"} />
+          <LineInput title={"Name/Date"} />
           <LineInput title={"Score"} />
-          <LineInput title={"Date"} />
         </div>
       ))}
     </div>
