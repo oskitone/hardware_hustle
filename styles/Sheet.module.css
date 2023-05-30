@@ -23,6 +23,11 @@
 }
 
 .sheet:nth-child(even) {
+  align-items: end;
+}
+
+.landscape:nth-child(even) {
+  align-items: start;
   justify-content: right;
 }
 
