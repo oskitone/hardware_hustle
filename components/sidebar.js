@@ -1,13 +1,14 @@
 import ActionsTable from "components/actions-table";
 import Graph from "components/graph";
 import LineInput from "components/line-input";
+import Title from "components/title";
 
 import styles from "@/styles/Sidebar.module.css";
 
 export default function Sidebar({ turnsData, year, draftId }) {
   return (
     <div className={styles.sidebar}>
-      <h1>Hardware Hustle</h1>
+      <Title className={styles.Title} />
 
       <LineInput title={"Name/Date"} className={styles.LineInput} />
 

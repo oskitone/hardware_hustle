@@ -7,16 +7,9 @@
   text-align: center;
 }
 
-.cover h1 {
+.Title {
   /* Eyeballed to fit on two lines */
   font-size: 6em;
-
-  /* TODO: extract against Sidebar */
-  text-transform: uppercase;
-  line-height: 1;
-  font-weight: 900;
-  line-height: 0.78;
-  letter-spacing: -0.025em;
 
   margin: 0 0 var(--default-font-size);
 }
