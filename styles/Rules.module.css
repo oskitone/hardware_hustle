@@ -6,6 +6,9 @@
   height: 100%;
 
   font-size: var(--rules-font-size);
+
+  /* Don't remove! Explicitly set for screen/print consistency! */
+  line-height: 1.35;
 }
 
 .rules h1 {
