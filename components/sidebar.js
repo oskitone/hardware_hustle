@@ -17,8 +17,6 @@ export default function Sidebar({ turnsData, year, draftId }) {
       <h2>Money</h2>
       <Graph
         turnCount={turnsData.length}
-        valueMax={100}
-        valueStep={10}
         values={[[turnsData[0].money[0]]]}
         className={styles.Graph}
       />

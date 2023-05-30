@@ -2,13 +2,7 @@ import { range } from "lodash";
 
 import styles from "@/styles/Graph.module.css";
 
-export default function Graph({
-  turnCount,
-  values,
-  valueMax,
-  valueStep,
-  className,
-}) {
+function Graph({ turnCount, values, valueMax, valueStep, className }) {
   const X_AXIS = range(0, turnCount + 1);
   const Y_AXIS = [...range(0, valueMax + 1, valueStep).slice(0, -1), "+"];
 
@@ -60,3 +54,15 @@ export default function Graph({
     </div>
   );
 }
+
+Graph.defaultProps = {
+  turnCount: 0,
+
+  values: [],
+  valueMax: 100,
+  valueStep: 10,
+
+  className: undefined,
+};
+
+export default Graph;
