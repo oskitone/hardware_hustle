@@ -1,3 +1,5 @@
+/* TODO: fix auto-reload not working */
+
 .wordmark h1 {
   font-size: 1em; /* Inherit from parent */
 
@@ -6,6 +8,7 @@
   line-height: 0.78;
   letter-spacing: -0.025em;
 
+  margin-left: -0.05em;
   margin-bottom: calc(var(--default-font-size) / 2);
 }
 

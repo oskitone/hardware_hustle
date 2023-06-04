@@ -8,7 +8,7 @@ import styles from "@/styles/Sidebar.module.css";
 export default function Sidebar({ turnsData, year, draftId }) {
   return (
     <div className={styles.sidebar}>
-      <Wordmark className={styles.wordmark} />
+      <Wordmark className={styles.Wordmark} />
 
       <LineInput title={"Name/Date"} className={styles.LineInput} />
 

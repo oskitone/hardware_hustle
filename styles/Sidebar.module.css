@@ -16,7 +16,7 @@
   line-height: 1;
 }
 
-.Title {
+.Wordmark {
   /* Eyeballed to fit on one line */
   font-size: 1.62em;
 }
@@ -25,11 +25,11 @@
   font-size: 1.25em;
 }
 
-.sidebar h1,
+.Wordmark,
 .ActionsTable,
 .LineInput,
 .Graph {
-  margin: 0 0 calc(var(--default-font-size) * 1.5);
+  margin-bottom: calc(var(--default-font-size) * 1.5);
 }
 
 .sidebar h2 {
