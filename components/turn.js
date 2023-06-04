@@ -139,7 +139,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
         { plus: true },
         { minus: true },
         { carryOver: true },
-        { equals: true, carryOver: true },
+        { equals: true },
       ],
     },
     {
@@ -149,7 +149,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
         { carryOver: true },
         { plus: true },
         { minus: true },
-        { equals: true, carryOver: true },
+        { equals: true },
       ],
     },
     {
