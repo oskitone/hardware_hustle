@@ -1,0 +1,15 @@
+.wordmark h1 {
+  font-size: 1em; /* Inherit from parent */
+
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.025em;
+
+  margin-bottom: calc(var(--default-font-size) / 2);
+}
+
+.wordmark .rev {
+  font-size: calc(var(--default-font-size) * 0.85);
+  font-weight: 100;
+}

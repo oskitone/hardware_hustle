@@ -1,12 +1,11 @@
 import styles from "@/styles/Cover.module.css";
 
-import Title from "components/title";
+import Wordmark from "components/wordmark";
 
-export default function Cover({ turnsData, year, draftId }) {
+export default function Cover({ draftId }) {
   return (
     <div className={styles.cover}>
-      <Title className={styles.Title} />
-      <p>{draftId}</p>
+      <Wordmark className={styles.Wordmark} draftId={draftId} />
     </div>
   );
 }

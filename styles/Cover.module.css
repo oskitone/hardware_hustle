@@ -7,9 +7,7 @@
   text-align: center;
 }
 
-.Title {
+.Wordmark {
   /* Eyeballed to fit on two lines */
   font-size: 6em;
-
-  margin: 0 0 var(--default-font-size);
 }

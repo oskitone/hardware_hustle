@@ -3,12 +3,10 @@ import styles from "@/styles/Rules.module.css";
 import ActionsTable, { ACTIONS } from "components/actions-table";
 import Graph from "components/graph";
 import Icon from "components/icon";
-import Title from "components/title";
+import Wordmark from "components/wordmark";
 import Turn, { firstTurnSuppliedColumns } from "components/turn";
 
-<Title className={styles.Title} />
-
-<p>{props.draftId}</p>
+<Wordmark className={styles.Wordmark} draftId={props.draftId} />
 
 A pen-and-paper game for 1+ players about sustainably running a small hardware business.
 

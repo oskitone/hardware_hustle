@@ -27,7 +27,7 @@ function RulesPage({ year, draftId }) {
             <Scoresheet />
           </Page>
           <Page landscape>
-            <Cover year={year} draftId={draftId} />
+            <Cover draftId={draftId} />
           </Page>
         </Front>
         <Back landscape>
