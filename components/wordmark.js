@@ -1,6 +1,6 @@
 import classnames from "classnames";
 
-import styles from "@/styles/wordmark.module.css";
+import styles from "@/styles/Wordmark.module.css";
 
 function Wordmark({ className, draftId }) {
   return (
