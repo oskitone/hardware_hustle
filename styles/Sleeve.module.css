@@ -1,0 +1,21 @@
+.sleeve {
+  margin: 0 var(--sleeve-gutter);
+  margin-top: calc(
+    var(--sleeve-lip) + var(--sleeve-depth) +
+      (var(--page-height) - 2in - var(--sleeve-gutter))
+  );
+
+  outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
+}
+
+.Wordmark {
+  /* Sized to fill height */
+  font-size: 9.25em;
+  height: 2in;
+}
+
+@media print {
+  .sleeve {
+    outline: none;
+  }
+}

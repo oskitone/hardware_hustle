@@ -20,6 +20,10 @@
   --page-width: 8in;
   --page-height: 6in;
 
+  --sleeve-lip: 1in;
+  --sleeve-gutter: 0.5in;
+  --sleeve-depth: 0.125in;
+
   --default-font-size: 12px;
   --rules-font-size: 11px;
 }

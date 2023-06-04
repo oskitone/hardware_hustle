@@ -7,10 +7,13 @@
   outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
 }
 
-.split {
-  display: grid;
-  grid-template-columns: min-content auto;
-  grid-gap: var(--print-margin);
+.double {
+  height: calc(var(--page-height) * 2);
+  width: var(--page-height);
+}
+
+.fullHeight {
+  height: 100%;
 }
 
 .landscape {
@@ -18,14 +21,15 @@
   width: var(--page-height);
 }
 
-.double {
-  height: calc(var(--page-height) * 2);
-  width: var(--page-height);
-}
-
 .landscape.double {
   height: var(--page-width);
   width: calc(var(--page-height) * 2);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: var(--print-margin);
 }
 
 @media print {
