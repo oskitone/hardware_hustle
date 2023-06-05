@@ -61,22 +61,22 @@ export const ACTIONS = {
         <Icon id="AB" />,
         <PS options={[1, 0, 0, 0]} value={1} firstRow />,
         <>
-          - <Icon id="A" inline /> <Icon id="B" inline />
+          - <Icon id="A" row /> <Icon id="B" row />
         </>,
       ],
       [
         <Icon id="ABC" />,
         <PS options={[2, 1, 0, 0]} value={2} />,
         <>
-          - <Icon id="A" inline /> <Icon id="B" inline /> <Icon id="C" inline />
+          - <Icon id="A" row /> <Icon id="B" row /> <Icon id="C" row />
         </>,
       ],
       [
         <Icon id="ABCD" />,
         <PS options={[3, 2, 1, 0]} value={3} lastRow />,
         <>
-          - <Icon id="A" inline /> <Icon id="B" inline /> <Icon id="C" inline />
-          <Icon id="D" inline />
+          - <Icon id="A" row /> <Icon id="B" row /> <Icon id="C" row />
+          <Icon id="D" row />
         </>,
       ],
     ],

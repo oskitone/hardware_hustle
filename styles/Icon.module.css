@@ -3,5 +3,9 @@
 }
 
 .inline .bootstrapIcon {
+  margin: 0;
+}
+
+.row .bootstrapIcon {
   margin-right: 0;
 }
