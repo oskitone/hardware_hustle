@@ -5,12 +5,14 @@ import Wordmark from "components/wordmark";
 
 import styles from "@/styles/Sidebar.module.css";
 
+export const ID_TITLE = "Name/Date";
+
 export default function Sidebar({ turnsData, year, draftId }) {
   return (
     <div className={styles.sidebar}>
       <Wordmark className={styles.Wordmark} />
 
-      <LineInput title={"Name/Date"} className={styles.LineInput} />
+      <LineInput title={ID_TITLE} className={styles.LineInput} />
 
       <h2>Actions</h2>
       <ActionsTable className={styles.ActionsTable} />
