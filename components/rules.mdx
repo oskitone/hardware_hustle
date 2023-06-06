@@ -155,9 +155,13 @@ Tally up your Actions' math and end your turn in the PM column.
 
 You end with <Icon id="money" suffix="7" />, which can be plotted in the Money dot chart on the left of the game sheet. A productive day, but not super profitable...
 
-{/* TODO: subset of Graph area, or ditch entirely */}
-
-<Graph values={[10, 7]} className={styles.Graph} />
+<Graph
+  values={[10, 7]}
+  x_axis_labels={[0, 1, 2, 3]}
+  y_axis_labels={[0, 10, 20, 30]}
+  subset={true}
+  className={styles.Graph}
+/>
 
 #### Opportunity
 
