@@ -5,6 +5,10 @@
       (var(--page-height) - 2in - var(--sleeve-gutter))
   );
 
+  width: calc(var(--print-sheet-width) - var(--sleeve-gutter) * 2);
+
+  position: relative;
+
   outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
 }
 
@@ -12,6 +16,20 @@
   /* Sized to fill height */
   font-size: 9.25em;
   height: 2in;
+}
+
+.exposure {
+  outline: 1px dashed rgb(var(--foreground-rgb));
+
+  height: var(--sleeve-exposure-diameter);
+  width: var(--sleeve-exposure-diameter);
+
+  position: absolute;
+
+  top: calc(50% - var(--sleeve-exposure-diameter) / 2);
+  right: calc(var(--sleeve-exposure-diameter) / -2 - var(--sleeve-gutter));
+
+  border-radius: 50%;
 }
 
 @media print {

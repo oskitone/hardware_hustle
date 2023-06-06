@@ -6,6 +6,7 @@ export default function Sleeve({ draftId }) {
   return (
     <div className={styles.sleeve}>
       <Wordmark className={styles.Wordmark} draftId={draftId} />
+      <div className={styles.exposure} />
     </div>
   );
 }
