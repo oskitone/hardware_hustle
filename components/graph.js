@@ -2,10 +2,14 @@ import { range } from "lodash";
 
 import styles from "@/styles/Graph.module.css";
 
-function Graph({ turnCount, values, valueMax, valueStep, className }) {
-  const X_AXIS = range(0, turnCount + 1);
-  const Y_AXIS = [...range(0, valueMax + 1, valueStep).slice(0, -1), "+"];
+function Graph({
+  values,
 
+  x_axis_labels,
+  y_axis_labels,
+
+  className,
+}) {
   function Axis({ labels, className }) {
     return (
       <div className={`${styles.axis} ${className}`}>
@@ -34,7 +38,7 @@ function Graph({ turnCount, values, valueMax, valueStep, className }) {
         className={styles.value}
         style={{
           bottom: `${value}%`,
-          left: `${(i / turnCount) * 100}%`,
+          left: `${(i / (x_axis_labels.length - 1)) * 100}%`,
         }}
         key={i}
       />
@@ -43,24 +47,26 @@ function Graph({ turnCount, values, valueMax, valueStep, className }) {
 
   return (
     <div className={`${className} ${styles.graph}`}>
-      <Axis labels={Y_AXIS} className={styles.y} />
+      <Axis labels={y_axis_labels} className={styles.y} />
       <div className={styles.area}>
-        <Lines count={Y_AXIS.length * 2 - 1} axisClassname={styles.y} />
-        <Lines count={X_AXIS.length} axisClassname={styles.x} />
+        <Lines count={y_axis_labels.length * 2 - 1} axisClassname={styles.y} />
+        <Lines count={x_axis_labels.length} axisClassname={styles.x} />
         <Values />
       </div>
       <div className={styles.corner}></div>
-      <Axis labels={X_AXIS} className={styles.x} />
+      <Axis labels={x_axis_labels} className={styles.x} />
     </div>
   );
 }
 
-Graph.defaultProps = {
-  turnCount: 0,
+const Y_AXIS_LABELS = [...range(0, 100 + 1, 10).slice(0, -1), "+"];
+const X_AXIS_LABELS = range(0, 6 + 1);
 
+Graph.defaultProps = {
   values: [],
-  valueMax: 100,
-  valueStep: 10,
+
+  x_axis_labels: X_AXIS_LABELS,
+  y_axis_labels: Y_AXIS_LABELS,
 
   className: undefined,
 };

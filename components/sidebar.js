@@ -18,11 +18,7 @@ export default function Sidebar({ turnsData, year, draftId }) {
       <ActionsTable className={styles.ActionsTable} />
 
       <h2>Money</h2>
-      <Graph
-        turnCount={turnsData.length}
-        values={[[turnsData[0].money[0]]]}
-        className={styles.Graph}
-      />
+      <Graph values={[turnsData[0].money[0]]} className={styles.Graph} />
 
       <footer className={styles.footer}>
         <p>{year} CC BY-SA 4.0 Oskitone / oskitone.com</p>
