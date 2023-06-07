@@ -228,7 +228,7 @@ Turn.defaultProps = {
   data: emptyTurnData,
   isFinalTurn: false,
   className: undefined,
-  suppliedColumns: firstTurnSuppliedColumns,
+  suppliedColumns: defaultSuppliedColumns,
 };
 
 export default Turn;
