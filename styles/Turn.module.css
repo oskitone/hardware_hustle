@@ -52,10 +52,12 @@
   background: rgb(var(--foreground-rgb));
   color: rgb(var(--background-rgb));
 
+  font-size: 0.8em;
+
   width: 2em;
   height: 1.5em;
   line-height: 1.5em;
-  border-radius: calc(var(--fillet) * 2);
+  border-radius: var(--fillet);
 
   left: calc(50% - 0.5em / 2);
   top: 50%;
