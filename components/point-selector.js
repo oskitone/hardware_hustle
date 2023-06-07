@@ -4,8 +4,6 @@ import Icon from "components/icon";
 
 import styles from "@/styles/PointSelector.module.css";
 
-// TODO: vertical
-
 export default function PointSelector({
   firstRow,
   lastRow,

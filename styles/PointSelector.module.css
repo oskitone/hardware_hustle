@@ -10,13 +10,22 @@
 
   margin: 0 -1px -1px 0;
 
-  border: 1px solid rgb(var(--point-selector-outline-rgb));
+  border: 0 solid rgb(var(--point-selector-outline-rgb));
+  border-width: 0 1px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   position: relative;
+}
+
+.firstRow .option {
+  border-top-width: 1px;
+}
+
+.lastRow .option {
+  border-bottom-width: 1px;
 }
 
 .selected {
