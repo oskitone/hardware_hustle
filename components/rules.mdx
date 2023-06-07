@@ -34,7 +34,7 @@ Each player will need:
 
 For games with multiple players, the highest die roller goes first, then proceed clockwise.
 
-Fill out the "{ID_TITLE}" line in the top left, then familiarize yourself with the Actions table below it.
+Fill out the "{ID_TITLE}" line in the top left, then familiarize yourself with the Actions Cost table.
 
 <ActionsTable className={styles.ActionsTable} />
 
@@ -56,11 +56,7 @@ Its icons represent:
 
 You can think of a turn like a typical workday: you wake up in the AM, do some stuff (Actions), and then rest in the PM. Ideally, the day's actions get you further towards your goal, which is, unfortunately, to make enough money to continue making money.
 
-{/* TODO: think about how to combine icons w/ text into their own component */}
-
 The turn's day is like a little spreadsheet. Here's an example of the first one when completed:
-
-{/* TODO: confirm math... */}
 
 <Turn
   className={styles.Turn}
@@ -70,10 +66,10 @@ The turn's day is like a little spreadsheet. Here's an example of the first one 
     B: [0, 2, 2, undefined, 0],
     C: [0, 1, 1, undefined, 0],
     D: [0, 0, 0, undefined, 0],
-    AB: [0, undefined, 2, 1, 1],
+    AB: [0, undefined, 1, 1, 0],
     ABC: [0, undefined, 1, 0, 1],
     ABCD: [0, undefined, 0, 0, 0],
-    opportunity: [12, 4, 4, 2, 2],
+    opportunity: [12, 4, 3, 2, 3],
   }}
   suppliedColumns={firstTurnSuppliedColumns}
 />
@@ -84,24 +80,42 @@ Its columns are Actions and are filled out in order from left to right. Let's wa
 
 ### 1. AM
 
-Your first day on the job starts with <Icon id="money" prefix="10" /> and <Icon id="opportunity" prefix="12" /> but nothing else. Nothing to do here but note what you've got... which, for now, isn't much!
+Your first day on the job starts with <Icon id="money" />10 and <Icon id="opportunity" />12 but nothing else. Nothing to do here but note what you've got... which, for now, isn't much!
 
 ### 2. Buy
 
 Let's buy some Parts.
 
-**Roll for <Opportunity />:** Roll a die. Its value is the maximum you can spend on Opportunity for this particular Action. (Think of Opportunity as a combination of time/effort you _spend_ plus luck/goodwill you _receive_, all in one value.) Anyway, we'll say you rolled 5.
-
-Parts cost Opportunity(<Opportunity />) and Money(<Money />), as shown in the Actions table. The <Opportunity /> cost is a row of values, but, for now, we'll only use the value with a dark outline.
+Parts cost Opportunity (<Opportunity />) and Money (<Money />), as shown in the Actions Cost table.
 
 <ActionsTable actions={[ACTIONS.BUY]} className={styles.ActionsTable} />
 
-With <Money />10 and <Opportunity />12, you decide to buy <A />2, <B />2, and <C />1.
+The <Opportunity /> cost for each Part is a row of values, but, for now, we'll only use the one in the column with the dark outline. The <Money /> cost is fixed and much simpler.
 
-    <Money />1×<A />2 + <Money />2×<B />2 + <Money />3×<C />1 = <Money />9
+**Roll for <Opportunity />:** Roll a die. Its value is the maximum you can spend on Opportunity for this particular Action. (Think of Opportunity as a combination of time/effort you _spend_ plus luck/goodwill you _receive_, all in one value.) Anyway, we'll say you rolled 5.
+
+With <Money />10 and <Opportunity />12, you decide to buy <A />2, <B />2, and <C />1. The math for that looks like:
+
+    <Money />1×<A />2 + <Money />2×<B />2 + <Money />3×<C />1 = <Money />9<br />
     <Opportunity />0&times;<A />2 + <Opportunity />1&times;<B />2 + <Opportunity />2&times;<C />1 = <Opportunity />4
 
-In the BUY column, you mark down the new values for the parts you bought and their <Opportunity />/<Money /> costs.
+In the Buy column, you mark down the new values for the parts you bought and their total <Opportunity />/<Money /> costs:
+
+<Turn
+  className={styles.Turn}
+  data={{
+    money: [10, 9],
+    A: [0, 2],
+    B: [0, 2],
+    C: [0, 1],
+    D: [0, 0],
+    AB: [0, undefined],
+    ABC: [0, undefined],
+    ABCD: [0, undefined],
+    opportunity: [12, 4],
+  }}
+  suppliedColumns={firstTurnSuppliedColumns}
+/>
 
 A couple things to call out:
 
@@ -113,47 +127,94 @@ A couple things to call out:
 
 ### 3. Make
 
-Now we'll make Widgets from Parts.
-
-**Roll for <Opportunity />.** Call it 4.
-
-{/* TODO: consistent #xIcon */}
-
-Making Widgets costs Opportunity and Parts.
+Now we'll make Widgets from Parts, which costs Opportunity and Parts.
 
 <ActionsTable actions={[ACTIONS.MAKE]} className={styles.ActionsTable} />
 
-You make 2x<AB /> and 1x<ABC />, marked in their columns.
+**Roll for <Opportunity />.** Call it 4.
 
-{/* TODO: math */}
+You decide to make <AB />2 and <ABC />1, the math for which looks like:
 
-The <AB /> consumed 1x<A />+1x<B />, and the <ABC /> took 1x<A />+1x<B />+1x<C />. Those total to 2x<A />, 2x<B />, and 1x<C />.
+    <AB />1x<A />1 + <ABC />1x<A />1 = 2<A /><br />
+    <AB />1x<B />1 + <ABC />1x<B />1 = 2<B /><br />
+    <AB />1x<C />0 + <ABC />1x<C />1 = 1<C /><br />
 
-Total <Opportunity /> cost is 4 (<Icon id="opportunity" suffix="1" />x2 + <Icon id="opportunity" suffix="2" />x1). 4 is the max we rolled, so that's perfect. There's no <Money /> cost because you already bought the parts you're using.
+    <AB />1x<Opportunity />1 + <ABC />1x<Opportunity />2 = 3<Opportunity />
+
+(Total <Opportunity /> cost is 3, which is within the 4 you rolled. There's no <Money /> cost because you already bought the parts you're using.)
+
+You fill out the Make column with those new values:
+
+<Turn
+  className={styles.Turn}
+  data={{
+    money: [10, 9, undefined],
+    A: [0, 2, 2],
+    B: [0, 2, 2],
+    C: [0, 1, 1],
+    D: [0, 0, 0],
+    AB: [0, undefined, 1],
+    ABC: [0, undefined, 1],
+    ABCD: [0, undefined, 0],
+    opportunity: [12, 4, 3],
+  }}
+  suppliedColumns={firstTurnSuppliedColumns}
+/>
 
 ### 4. Sell
 
-The last Action of our turn is to Sell Widgets.
-
-**Roll for <Opportunity />.** We'll say it's 3.
-
-Selling consumes Widgets (of course) and Opportunity. Note that in Sell, we _gain_ Money.
+The last Action of our turn is to Sell Widgets, consuming Opportunity and _gaining_ Money.
 
 <ActionsTable actions={[ACTIONS.SELL]} className={styles.ActionsTable} />
 
-Here you sell 1x<AB /> for its price of <Icon id="money" suffix="6" />, using <Icon id="opportunity" suffix="2" />, marking those values in their columns.
+**Roll for <Opportunity />.** We'll say it's 3.
 
-If we had rolled 4 for <Opportunity /> we could have sold 2x<AB />. See how that works? You can Buy/Sell/Make as much as you want within what you roll/have.
+    <AB />1x<Money />6 = <Money />6<br />
+    <AB />1x<Opportunity />2 = <Opportunity />2
 
-{/* TODO: math */}
+Our <Opportunity /> roll wasn't enough to sell both of the Widgets we made, so we could only move the <AB />. See how that works? You can Buy/Sell/Make as much as you want but only within what you roll/have.
+
+<Turn
+  className={styles.Turn}
+  data={{
+    money: [10, 9, undefined, 6],
+    A: [0, 2, 2, undefined],
+    B: [0, 2, 2, undefined],
+    C: [0, 1, 1, undefined],
+    D: [0, 0, 0, undefined],
+    AB: [0, undefined, 1, 1],
+    ABC: [0, undefined, 1, 0],
+    ABCD: [0, undefined, 0, 0],
+    opportunity: [12, 4, 3, 2],
+  }}
+  suppliedColumns={firstTurnSuppliedColumns}
+/>
+
+When you sell a Widget, you lose it from your inventory, of course.
 
 ### 5. PM
 
 Tally up your Actions' math and end your turn in the PM column.
 
+<Turn
+  className={styles.Turn}
+  data={{
+    money: [10, 9, undefined, 6, 7],
+    A: [0, 2, 2, undefined, 0],
+    B: [0, 2, 2, undefined, 0],
+    C: [0, 1, 1, undefined, 0],
+    D: [0, 0, 0, undefined, 0],
+    AB: [0, undefined, 1, 1, 0],
+    ABC: [0, undefined, 1, 0, 1],
+    ABCD: [0, undefined, 0, 0, 0],
+    opportunity: [12, 4, 3, 2, 3],
+  }}
+  suppliedColumns={firstTurnSuppliedColumns}
+/>
+
 #### Money
 
-You end with <Icon id="money" suffix="7" />, which can be plotted in the Money dot chart on the left of the game sheet. A productive day, but not super profitable...
+Your turn ends with <Icon id="money" />7, and you plot it in the Money chart on the left of the game sheet.
 
 <Graph
   values={[10, 7]}
@@ -163,25 +224,31 @@ You end with <Icon id="money" suffix="7" />, which can be plotted in the Money d
   className={styles.Graph}
 />
 
+A productive day, sure, but not super profitable...
+
 #### Opportunity
 
-As for <Opportunity />, if you exhaust yourself and go negative, you **Burn Out** and lose the entire next turn! In this example, you have <Icon id="opportunity" suffix="2" /> so are safe.
+As for <Opportunity />, if you exhaust yourself and go negative, you **Burn Out** and lose the entire next turn! In this example, you have <Icon id="opportunity" />3 so are safe.
 
-Otherwise, **Roll for Research**. Its value is how much <Opportunity /> you'd need to successfully get better at one of the Actions.
-
-{/* TODO: examples */}
+Otherwise, **Roll for Research**. Its value is how much <Opportunity /> you'd need to successfully research and get better at Buying, Making, or Selling.
 
 #### Research
 
-We'll say you roll 2, which, conveniently!, is all the <Opportunity /> we have left.
+Some real world examples of Research might be:
 
-Remember how we've only been using the first column of <Opportunity /> values with the dark outline? You decide you want to be better at Making and use the Research there, so you cross out the previously used values to outline the whole column of new ones to their right.
+- Befriending vendors to get Parts more easily
+- Getting machinery that builds Widgets automatically
+- Upping your social media game for better marketing
+
+We'll say you roll 3, which, conveniently!, is all the <Opportunity /> you have left.
+
+Remember how you've only been using the first column of <Opportunity /> values with the dark outline? You decide you want to be better at Making, so you cross out the previously used values to outline the whole column of new ones to their right.
 
 {/* TODO: mark new PS values */}
 
 <ActionsTable className={styles.ActionsTable} />
 
-Nice! For the rest of the game, all Parts will cost one less <Opportunity />!
+Nice! For the rest of the game, all Widgets will consume one less <Opportunity />, no matter how many of them you make! (With this Research, all <AB />s are effectively "free" to Make.)
 
 #### Handoff
 
@@ -191,7 +258,24 @@ When your turn's done, for games with multiple players, hand the die to the next
 
 The values in your PM column carry over to the empty cells in the next turn's AM column, as denoted by the "**⇢**" prefix
 
-Note that <Opportunity /> dwindles over the course of the game. Just like in real life, grinding all day is unsustainable.
+<Turn
+  className={styles.Turn}
+  data={{
+    money: [7],
+    A: [0],
+    B: [0],
+    C: [0],
+    D: [0],
+    AB: [0],
+    ABC: [1],
+    ABCD: [0],
+    opportunity: [12],
+  }}
+/>
+
+Note that <Opportunity /> is fixed back up to a high number, so you don't carry over your 3.
+
+Later in the game, AM <Opportunity /> starts dwindling each turn &mdash; just like in real life, grinding is unsustainable and you naturally lose momentum.
 
 ## End of Game
 

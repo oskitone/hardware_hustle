@@ -9,7 +9,7 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
 
     A: "bi-nut",
     B: "bi-box-seam",
-    C: "bi-gear",
+    C: "bi-gear", // TODO: looks too similar to nut
     D: "bi-display",
 
     AB: "bi-speaker",
