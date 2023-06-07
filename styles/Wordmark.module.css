@@ -13,4 +13,5 @@
 .wordmark .rev {
   font-size: calc(var(--default-font-size) * 0.85);
   font-weight: 100;
+  font-style: italic;
 }
