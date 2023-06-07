@@ -1,0 +1,75 @@
+import styles from "@/styles/Rules.module.css";
+
+import ActionsTable, { ACTIONS } from "components/actions-table";
+import Icon, {
+  Money,
+  Opportunity,
+  A,
+  B,
+  C,
+  D,
+  AB,
+  ABC,
+  ABCD,
+} from "components/icon";
+import Turn, { firstTurnSuppliedColumns } from "components/turn";
+
+{/* TODO: mark new PS values */}
+
+<ActionsTable className={styles.ActionsTable} />
+
+Nice! For the rest of the game, all Widgets will consume one less <Opportunity />, no matter how many of them you make! (With this Research, all <AB />s are effectively "free" to Make.)
+
+#### Handoff
+
+When your turn's done, for games with multiple players, hand the die to the next player so they can take their turn.
+
+### Starting the next turn
+
+The values in your PM column carry over to the empty cells in the next turn's AM column, as denoted by the "**⇢**" prefix
+
+<Turn
+  className={styles.Turn}
+  data={{
+    money: [7],
+    A: [0],
+    B: [0],
+    C: [0],
+    D: [0],
+    AB: [0],
+    ABC: [1],
+    ABCD: [0],
+    opportunity: [12],
+  }}
+/>
+
+Note that <Opportunity /> is fixed back up to a high number, so you don't carry over your 3.
+
+Later in the game, AM <Opportunity /> starts dwindling each turn &mdash; just like in real life, grinding is unsustainable and you naturally lose momentum.
+
+## End of Game
+
+### How to Win
+
+The player with the most money at the end of the game _without Burning Out in the last turn_ wins!
+
+(Unused Parts and unsold Widgets count for nothing, only Money.)
+
+Solo play is solitaire; try to beat your best score.
+
+### How to Lose
+
+If you Burn Out in the last turn, you are too physically and emotionally exhausted to go to a very important family gathering the next day.
+
+You were too preoccupied with money and lost sight of what really matters, so you lose.
+
+_{props.year} CC BY-SA 4.0 Oskitone_
+
+export default function Rules({ children, year, draftId }) {
+  return (
+    <div className={styles.rules}>
+      {children}
+    </div>
+  );
+
+}

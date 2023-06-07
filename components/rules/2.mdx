@@ -1,0 +1,101 @@
+import styles from "@/styles/Rules.module.css";
+
+import ActionsTable, { ACTIONS } from "components/actions-table";
+import Icon, {
+  Money,
+  Opportunity,
+  A,
+  B,
+  C,
+  D,
+  AB,
+  ABC,
+  ABCD,
+} from "components/icon";
+import Turn, { firstTurnSuppliedColumns } from "components/turn";
+
+The <Opportunity /> cost for each Part is a row of values, but, for now, we'll only use the one in the column with the dark outline. The <Money /> cost is fixed and much simpler.
+
+**Roll for <Opportunity />:** Roll a die. Its value is the maximum you can spend on Opportunity for this particular Action. (Think of Opportunity as a combination of time/effort you _spend_ plus luck/goodwill you _receive_, all in one value.) Anyway, we'll say you rolled 5.
+
+With <Money />10 and <Opportunity />12, you decide to buy <A />2, <B />2, and <C />1. The math for that looks like:
+
+    <Money />1×<A />2 + <Money />2×<B />2 + <Money />3×<C />1 = <Money />9<br />
+    <Opportunity />0&times;<A />2 + <Opportunity />1&times;<B />2 + <Opportunity />2&times;<C />1 = <Opportunity />4
+
+In the Buy column, you mark down the new values for the parts you bought and their total <Opportunity />/<Money /> costs:
+
+<Turn
+  className={styles.Turn}
+  data={{
+    money: [10, 9],
+    A: [0, 2],
+    B: [0, 2],
+    C: [0, 1],
+    D: [0, 0],
+    AB: [0, undefined],
+    ABC: [0, undefined],
+    ABCD: [0, undefined],
+    opportunity: [12, 4],
+  }}
+  suppliedColumns={firstTurnSuppliedColumns}
+/>
+
+A couple things to call out:
+
+- Cells are marked by their mathematical operation. We're spending <Money /> and <Opportunity />, so those cells have a "**-**". We're gaining Parts, so those cells have a "**+**".
+- Unused cells have a gray background so we know to skip them for this Action.
+- Cells with no change (like the <D /> in our example) can be filled with 0 or left blank.
+- We rolled 5 for Opportunity but only spent 4. That's okay. Mark down what you spent, not rolled. You cannot spend more Opportunity than you roll.
+- Similarly, you cannot spend more Money than you have.
+
+### 3. Make
+
+Now we'll make Widgets from Parts, which costs Opportunity and Parts.
+
+<ActionsTable actions={[ACTIONS.MAKE]} className={styles.ActionsTable} />
+
+**Roll for <Opportunity />.** Call it 4.
+
+You decide to make <AB />2 and <ABC />1, the math for which looks like:
+
+    <AB />1x<A />1 + <ABC />1x<A />1 = 2<A /><br />
+    <AB />1x<B />1 + <ABC />1x<B />1 = 2<B /><br />
+    <AB />1x<C />0 + <ABC />1x<C />1 = 1<C /><br />
+
+    <AB />1x<Opportunity />1 + <ABC />1x<Opportunity />2 = 3<Opportunity />
+
+(Total <Opportunity /> cost is 3, which is within the 4 you rolled. There's no <Money /> cost because you already bought the parts you're using.)
+
+You fill out the Make column with those new values:
+
+<Turn
+  className={styles.Turn}
+  data={{
+    money: [10, 9, undefined],
+    A: [0, 2, 2],
+    B: [0, 2, 2],
+    C: [0, 1, 1],
+    D: [0, 0, 0],
+    AB: [0, undefined, 1],
+    ABC: [0, undefined, 1],
+    ABCD: [0, undefined, 0],
+    opportunity: [12, 4, 3],
+  }}
+  suppliedColumns={firstTurnSuppliedColumns}
+/>
+
+### 4. Sell
+
+The last Action of our turn is to Sell Widgets, consuming Opportunity and _gaining_ Money.
+
+<ActionsTable actions={[ACTIONS.SELL]} className={styles.ActionsTable} />
+
+export default function Rules({ children, year, draftId }) {
+  return (
+    <div className={styles.rules}>
+      {children}
+    </div>
+  );
+
+}
