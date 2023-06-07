@@ -10,7 +10,7 @@ export const ID_TITLE = "Name/Date";
 export default function Sidebar({ turnsData, year, draftId }) {
   return (
     <div className={styles.sidebar}>
-      <Wordmark className={styles.Wordmark} />
+      <Wordmark className={styles.Wordmark} draftId={draftId} />
 
       <LineInput title={ID_TITLE} className={styles.LineInput} />
 
@@ -26,7 +26,6 @@ export default function Sidebar({ turnsData, year, draftId }) {
 
       <footer className={styles.footer}>
         <p>{year} CC BY-SA 4.0 Oskitone / oskitone.com</p>
-        <p className={styles.rev}>{draftId}</p>
       </footer>
     </div>
   );
