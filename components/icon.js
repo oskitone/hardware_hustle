@@ -4,17 +4,17 @@ import styles from "@/styles/Icon.module.css";
 
 function Icon({ id, prefix, suffix, className, inline, row }) {
   const bootstrapIconClassName = {
-    money: "bi-piggy-bank",
+    money: "bi-coin",
     opportunity: "bi-arrow-up-right-circle",
 
     A: "bi-nut",
     B: "bi-box-seam",
-    C: "bi-gear", // TODO: looks too similar to nut
-    D: "bi-display",
+    C: "bi-sliders",
+    D: "bi-cpu",
 
     AB: "bi-speaker",
     ABC: "bi-boombox",
-    ABCD: "bi-motherboard",
+    ABCD: "bi-joystick",
   }[id];
 
   return (
