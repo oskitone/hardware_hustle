@@ -1,5 +1,6 @@
 import styles from "@/styles/Rules.module.css";
 
+import ActionsTable, { ACTIONS } from "components/actions-table";
 import Graph from "components/graph";
 import Icon, {
   Money,
@@ -13,6 +14,8 @@ import Icon, {
   ABCD,
 } from "components/icon";
 import Turn, { firstTurnSuppliedColumns } from "components/turn";
+
+<ActionsTable actions={[ACTIONS.SELL]} className={styles.ActionsTable} />
 
 **Roll for <Opportunity />.** We'll say it's 3.
 

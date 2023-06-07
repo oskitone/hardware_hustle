@@ -18,6 +18,8 @@ import Wordmark from "components/wordmark";
 
 <Wordmark className={styles.Wordmark} draftId={props.draftId} />
 
+# Rules
+
 A pen-and-paper game for 1+ players about sustainably running a small hardware business.
 
 ## Setup
@@ -86,8 +88,6 @@ Your first day on the job starts with <Icon id="money" />10 and <Icon id="opport
 Let's buy some Parts.
 
 Parts cost Opportunity (<Opportunity />) and Money (<Money />), as shown in the Actions Cost table.
-
-<ActionsTable actions={[ACTIONS.BUY]} className={styles.ActionsTable} />
 
 export default function Rules({ children, year, draftId }) {
   return (

@@ -13,7 +13,8 @@ const font = Open_Sans({ subsets: ["latin"] });
 
 export const getStaticProps = async (context) => getCommitProps();
 
-// TODO: #/4 page count
+// TODO: #/4 page count?
+// TODO: deter widows/orphans in headers/icons
 
 function RulesPage({ year, draftId }) {
   return (
@@ -27,18 +28,18 @@ function RulesPage({ year, draftId }) {
       <main className={`${font.className}`}>
         <Front landscape>
           <Page landscape>
-            <PageFour />
+            <PageFour year={year} draftId={draftId} />
           </Page>
           <Page landscape>
-            <PageOne />
+            <PageOne year={year} draftId={draftId} />
           </Page>
         </Front>
         <Back landscape>
           <Page landscape>
-            <PageTwo />
+            <PageTwo year={year} draftId={draftId} />
           </Page>
           <Page landscape>
-            <PageThree />
+            <PageThree year={year} draftId={draftId} />
           </Page>
         </Back>
       </main>
