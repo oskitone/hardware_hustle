@@ -14,10 +14,10 @@ export default function Sidebar({ turnsData, year, draftId }) {
 
       <LineInput title={ID_TITLE} className={styles.LineInput} />
 
-      <h2>Actions</h2>
+      <h2>Actions Table</h2>
       <ActionsTable className={styles.ActionsTable} />
 
-      <h2>Money</h2>
+      <h2>Money/Turn</h2>
       <Graph
         values={[turnsData[0].money[0]]}
         y_axis_label_cap={"+"}
