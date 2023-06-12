@@ -1,5 +1,6 @@
 import classnames from "classnames";
 
+import { htmlEntity } from "common/utils";
 import Icon from "components/icon";
 import PointSelector from "components/point-selector";
 
@@ -26,28 +27,28 @@ export const ACTIONS = {
         <Icon id="A" prefix="+" />,
         <PS options={[0, 0, 0, 0]} value={0} firstRow />,
         <>
-          - <Icon id="money" suffix="1" />
+          {htmlEntity("-")} <Icon id="money" suffix="1" />
         </>,
       ],
       [
         <Icon id="B" prefix="+" />,
         <PS options={[1, 0, 0, 0]} value={1} />,
         <>
-          - <Icon id="money" suffix="2" />
+          {htmlEntity("-")} <Icon id="money" suffix="2" />
         </>,
       ],
       [
         <Icon id="C" prefix="+" />,
         <PS options={[2, 1, 0, 0]} value={2} />,
         <>
-          - <Icon id="money" suffix="3" />
+          {htmlEntity("-")} <Icon id="money" suffix="3" />
         </>,
       ],
       [
         <Icon id="D" prefix="+" />,
         <PS options={[3, 2, 1, 0]} value={3} lastRow />,
         <>
-          - <Icon id="money" suffix="4" />
+          {htmlEntity("-")} <Icon id="money" suffix="4" />
         </>,
       ],
     ],
@@ -59,21 +60,23 @@ export const ACTIONS = {
         <Icon id="AB" prefix="+" />,
         <PS options={[1, 0, 0, 0]} value={1} firstRow />,
         <>
-          - <Icon id="A" row /> <Icon id="B" row />
+          {htmlEntity("-")} <Icon id="A" row /> <Icon id="B" row />
         </>,
       ],
       [
         <Icon id="ABC" prefix="+" />,
         <PS options={[2, 1, 0, 0]} value={2} />,
         <>
-          - <Icon id="A" row /> <Icon id="B" row /> <Icon id="C" row />
+          {htmlEntity("-")} <Icon id="A" row /> <Icon id="B" row />{" "}
+          <Icon id="C" row />
         </>,
       ],
       [
         <Icon id="ABCD" prefix="+" />,
         <PS options={[3, 2, 1, 0]} value={3} lastRow />,
         <>
-          - <Icon id="A" row /> <Icon id="B" row /> <Icon id="C" row />
+          {htmlEntity("-")} <Icon id="A" row /> <Icon id="B" row />{" "}
+          <Icon id="C" row />
           <Icon id="D" row />
         </>,
       ],
@@ -86,21 +89,21 @@ export const ACTIONS = {
         <Icon id="AB" prefix="-" />,
         <PS options={[2, 1, 0, 0]} value={2} firstRow />,
         <>
-          + <Icon id="money" suffix="6" />
+          {htmlEntity("+")} <Icon id="money" suffix="6" />
         </>,
       ],
       [
         <Icon id="ABC" prefix="-" />,
         <PS options={[3, 2, 1, 0]} value={3} />,
         <>
-          + <Icon id="money" suffix="18" />
+          {htmlEntity("+")} <Icon id="money" suffix="18" />
         </>,
       ],
       [
         <Icon id="ABCD" prefix="-" />,
         <PS options={[4, 3, 2, 1]} value={4} lastRow />,
         <>
-          + <Icon id="money" suffix="40" />
+          {htmlEntity("+")} <Icon id="money" suffix="40" />
         </>,
       ],
     ],

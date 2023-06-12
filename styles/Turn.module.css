@@ -129,6 +129,8 @@
   font-weight: 100;
 }
 
+/* TODO: use htmlEntity */
+
 .plus:before {
   content: "+";
 }

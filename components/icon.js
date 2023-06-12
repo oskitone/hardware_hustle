@@ -1,5 +1,6 @@
 import classnames from "classnames";
 
+import { htmlEntity } from "common/utils";
 import styles from "@/styles/Icon.module.css";
 
 function Icon({ id, prefix, suffix, className, inline, row }) {
@@ -25,7 +26,7 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
       })}
       title={id}
     >
-      {prefix}
+      {htmlEntity(prefix)}
       <i
         className={classnames(
           "bi",
@@ -33,7 +34,7 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
           styles.bootstrapIcon
         )}
       />
-      {suffix}
+      {htmlEntity(suffix)}
     </span>
   );
 }
