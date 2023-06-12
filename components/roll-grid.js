@@ -28,3 +28,8 @@ export default function RollGrid({ columns, rows }) {
     </div>
   );
 }
+
+RollGrid.defaultProps = {
+  columns: 35,
+  rows: 25,
+};
