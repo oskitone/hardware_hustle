@@ -7,16 +7,14 @@ import styles from "@/styles/ActionsTable.module.css";
 
 function PS({ options, value, firstRow, lastRow }) {
   return (
-    <>
-      {"- "}
-      <PointSelector
-        firstRow={firstRow}
-        lastRow={lastRow}
-        icon="opportunity"
-        options={options}
-        value={value}
-      />
-    </>
+    <PointSelector
+      firstRow={firstRow}
+      lastRow={lastRow}
+      icon="opportunity"
+      iconPrefix="-"
+      options={options}
+      value={value}
+    />
   );
 }
 
