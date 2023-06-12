@@ -14,3 +14,19 @@ export const getCommitProps = () => {
     },
   };
 };
+
+export const htmlEntity = (id) => (
+  <span
+    dangerouslySetInnerHTML={{
+      __html:
+        {
+          "-": "&minus;",
+          "+": "&plus;",
+          "*": "&times;",
+          x: "&times;",
+          "/": "&divide;",
+          "=": "&equals;",
+        }[id] || id,
+    }}
+  />
+);
