@@ -1,13 +1,42 @@
-.sleeve {
-  margin: 0 var(--sleeve-gutter);
-  margin-top: calc(
-    var(--sleeve-lip) + var(--sleeve-depth) +
-      (var(--page-height) - 2in - var(--sleeve-gutter))
+.Page {
+  width: var(--page-width);
+  height: calc(
+    var(--sleeve-lip) + var(--sleeve-depth) * 2 + var(--page-height) * 2
   );
 
-  width: calc(var(--print-sheet-width) - var(--sleeve-gutter) * 2);
+  padding: 0;
+}
 
+.lip,
+.depth,
+.front,
+.back {
+  width: 100%;
   position: relative;
+  outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
+}
+
+.lip {
+  height: var(--sleeve-lip);
+}
+
+.depth {
+  height: var(--sleeve-depth);
+}
+
+.front,
+.back {
+  height: var(--page-height);
+}
+
+.content {
+  position: absolute;
+
+  left: var(--sleeve-gutter);
+  bottom: var(--sleeve-gutter);
+
+  height: 2in;
+  width: calc(var(--page-width) - var(--sleeve-gutter) * 2);
 
   outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
 }
@@ -33,6 +62,10 @@
 }
 
 @media print {
+  .lip,
+  .depth,
+  .front,
+  .back,
   .sleeve {
     outline: none;
   }

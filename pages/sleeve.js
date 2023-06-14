@@ -1,8 +1,8 @@
 import { Open_Sans } from "next/font/google";
 import Head from "next/head";
 
-import Sheet from "components/sheet";
 import { getCommitProps } from "common/utils";
+import Sheet from "components/sheet";
 import Sleeve from "components/sleeve";
 
 const font = Open_Sans({ subsets: ["latin"] });
