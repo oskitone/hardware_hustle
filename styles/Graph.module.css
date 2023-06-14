@@ -25,14 +25,12 @@
   position: relative;
 }
 
-/* TODO: affix top-of-text to top-of-graph */
-
 .axis.y .y:first-of-type {
-  margin: calc(1em / -2) 0 calc(1em / 2) 0;
+  margin: calc(1ex / -2) 0 calc(1ex / 2) 0;
 }
 
 .axis.y .y:last-of-type {
-  margin: calc(1em / 2) 0 calc(1em / -2) 0;
+  margin: calc(1ex / 2) 0 calc(1ex / -2) 0;
 }
 
 .axis.x {
