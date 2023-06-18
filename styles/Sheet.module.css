@@ -11,11 +11,20 @@
   flex-direction: column;
 }
 
+.letter {
+  height: 11in;
+}
+
 .landscape {
   height: var(--print-sheet-width);
   width: var(--print-sheet-height);
 
   flex-direction: row;
+}
+
+.letter.landscape {
+  height: 8.5in;
+  width: 11in;
 }
 
 .sheet:nth-child(odd) {
