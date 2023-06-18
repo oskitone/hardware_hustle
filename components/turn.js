@@ -192,6 +192,8 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                 {body.columns.map((column, columnI) => {
                   const isFirstColumn = columnI == 0;
                   const isLastColumn = columnI == body.columns.length - 1;
+                  const isSupplied = (suppliedColumns[rowIcon] || [])[columnI];
+                  const isEmpty = isUndefined(data[rowIcon][columnI]);
 
                   return (
                     <Cell
@@ -207,9 +209,10 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                       minus={column.minus}
                       equals={column.equals}
                       follow={
-                        isFirstColumn && isUndefined(data[rowIcon][columnI])
+                        (isFirstColumn && isEmpty) ||
+                        (isFirstColumn && id > 0 && !isSupplied)
                       }
-                      supplied={(suppliedColumns[rowIcon] || [])[columnI]}
+                      supplied={isSupplied}
                       key={columnI}
                     />
                   );
@@ -224,7 +227,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
 }
 
 Turn.defaultProps = {
-  id: undefined,
+  id: 0,
   data: emptyTurnData,
   isFinalTurn: false,
   className: undefined,
