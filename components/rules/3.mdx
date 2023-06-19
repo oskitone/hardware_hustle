@@ -15,6 +15,10 @@ import Icon, {
 } from "components/icon";
 import Turn, { firstTurnSuppliedColumns } from "components/turn";
 
+### 4. Sell
+
+The last Action of our turn is to Sell Widgets, consuming Opportunity and gaining Money.
+
 <ActionsTable actions={[ACTIONS.SELL]} className={styles.ActionsTable} />
 
 **Roll for <Opportunity />.** We'll say it's 3.
@@ -22,7 +26,7 @@ import Turn, { firstTurnSuppliedColumns } from "components/turn";
     <AB />1x<Money />6 = <Money />6<br />
     <AB />1x<Opportunity />2 = <Opportunity />2
 
-Our <Opportunity /> roll wasn't enough to sell both of the Widgets we made, so we could only move the <AB />. See how that works? You can Buy/Sell/Make as much as you want but only within what you roll/have.
+Our <Opportunity /> roll wasn't enough to sell both of the Widgets we made, so we could only sell the <AB />. You can Buy/Sell/Make as much as you want but only within what you roll/have.
 
 <Turn
   className={styles.Turn}

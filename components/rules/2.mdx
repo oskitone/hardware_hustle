@@ -59,11 +59,11 @@ Now we'll make Widgets from Parts, which costs Opportunity and Parts.
 
 **Roll for <Opportunity />.** Call it 4.
 
-You decide to make <AB />2 and <ABC />1, the math for which looks like:
+You decide to make <AB />1 and <ABC />1, the math for which looks like:
 
     <AB />1x<A />1 + <ABC />1x<A />1 = 2<A /><br />
     <AB />1x<B />1 + <ABC />1x<B />1 = 2<B /><br />
-    <AB />1x<C />0 + <ABC />1x<C />1 = 1<C /><br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ABC />1x<C />1 = 1<C /><br />
 
     <AB />1x<Opportunity />1 + <ABC />1x<Opportunity />2 = 3<Opportunity />
 
@@ -86,10 +86,6 @@ You fill out the Make column with those new values:
   }}
   suppliedColumns={firstTurnSuppliedColumns}
 />
-
-### 4. Sell
-
-The last Action of our turn is to Sell Widgets, consuming Opportunity and _gaining_ Money.
 
 export default function Rules({ children, year, draftId }) {
   return (
