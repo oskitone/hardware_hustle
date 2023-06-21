@@ -1,6 +1,6 @@
 export const getCommitProps = () => {
   const commit = require("child_process")
-    .execSync('git show 39d3d63 --format="%h %ai"')
+    .execSync('git log -n1 --format="%h %ai"')
     .toString()
     .trim();
 
