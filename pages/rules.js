@@ -26,7 +26,7 @@ function RulesPage({ year, draftId }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${font.className}`}>
-        <Front landscape>
+        <Front size="letter" landscape>
           <Page landscape>
             <PageFour year={year} draftId={draftId} />
           </Page>
@@ -34,7 +34,7 @@ function RulesPage({ year, draftId }) {
             <PageOne year={year} draftId={draftId} />
           </Page>
         </Front>
-        <Back landscape>
+        <Back size="letter" landscape>
           <Page landscape>
             <PageTwo year={year} draftId={draftId} />
           </Page>
