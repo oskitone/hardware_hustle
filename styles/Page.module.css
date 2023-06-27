@@ -7,6 +7,11 @@
   outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
 }
 
+.page.letter {
+  width: var(--letter-page-width);
+  height: var(--letter-page-height);
+}
+
 .double {
   height: calc(var(--page-height) * 2);
   width: var(--page-height);

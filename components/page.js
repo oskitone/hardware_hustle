@@ -2,7 +2,7 @@ import classnames from "classnames";
 
 import styles from "@/styles/Page.module.css";
 
-export default function Page({
+function Page({
   children,
 
   double,
@@ -10,6 +10,8 @@ export default function Page({
   landscape,
 
   split,
+
+  size,
 
   className,
 }) {
@@ -20,9 +22,25 @@ export default function Page({
         [styles.fullHeight]: fullHeight,
         [styles.landscape]: landscape,
         [styles.split]: split,
+        [styles.legal]: size == "legal",
+        [styles.letter]: size == "letter",
       })}
     >
       {children}
     </div>
   );
 }
+
+Page.defaultProps = {
+  double: false,
+  fullHeight: false,
+  landscape: false,
+
+  split: false,
+
+  size: "legal",
+
+  className: undefined,
+};
+
+export default Page;

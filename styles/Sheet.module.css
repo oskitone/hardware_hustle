@@ -2,8 +2,8 @@
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 
-  width: var(--print-sheet-width);
-  height: var(--print-sheet-height);
+  width: var(--legal-sheet-width);
+  height: var(--legal-sheet-height);
 
   margin: 2em auto;
 
@@ -12,19 +12,20 @@
 }
 
 .letter {
-  height: 11in;
+  width: var(--letter-sheet-width);
+  height: var(--letter-sheet-height);
 }
 
 .landscape {
-  height: var(--print-sheet-width);
-  width: var(--print-sheet-height);
+  height: var(--legal-sheet-width);
+  width: var(--legal-sheet-height);
 
   flex-direction: row;
 }
 
 .letter.landscape {
-  height: 8.5in;
-  width: 11in;
+  width: var(--letter-sheet-height);
+  height: var(--letter-sheet-width);
 }
 
 .sheet:nth-child(odd) {
