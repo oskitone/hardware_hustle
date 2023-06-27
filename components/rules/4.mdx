@@ -14,6 +14,10 @@ import Icon, {
 } from "components/icon";
 import Turn, { firstTurnSuppliedColumns } from "components/turn";
 
+We'll say you roll 3, which, conveniently!, is all the <Opportunity /> you have left.
+
+Remember how you've only been using the first column of <Opportunity /> values with the dark outline? You decide you want to be better at Making, so you cross out the previously used values to outline the whole column of new ones to their right.
+
 {/* TODO: mark new PS values */}
 
 <ActionsTable className={styles.ActionsTable} />
@@ -47,12 +51,6 @@ The values in your PM column carry over to the empty cells in the next turn's AM
 Note that <Opportunity /> is fixed back up to a high number, so you don't carry over your 3.
 
 Later in the game, AM <Opportunity /> starts dwindling each turn &mdash; just like in real life, grinding is unsustainable and you naturally lose momentum.
-
-{/* Bump header into next column */}
-
-<br />
-<br />
-<br />
 
 ## End of Game
 

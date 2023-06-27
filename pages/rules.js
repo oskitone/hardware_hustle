@@ -27,18 +27,18 @@ function RulesPage({ year, draftId }) {
       </Head>
       <main className={`${font.className}`}>
         <Front size="letter" landscape>
-          <Page landscape>
+          <Page size="letter" landscape>
             <PageFour year={year} draftId={draftId} />
           </Page>
-          <Page landscape>
+          <Page size="letter" landscape>
             <PageOne year={year} draftId={draftId} />
           </Page>
         </Front>
         <Back size="letter" landscape>
-          <Page landscape>
+          <Page size="letter" landscape>
             <PageTwo year={year} draftId={draftId} />
           </Page>
-          <Page landscape>
+          <Page size="letter" landscape>
             <PageThree year={year} draftId={draftId} />
           </Page>
         </Back>

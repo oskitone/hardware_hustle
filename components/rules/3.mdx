@@ -66,10 +66,6 @@ Tally up your Actions' math and end your turn in the PM column.
   suppliedColumns={firstTurnSuppliedColumns}
 />
 
-{/* Bump header into next column */}
-
-<br />
-
 #### Money
 
 Your turn ends with <Icon id="money" />7, and you plot it in the Money chart on the left of the game sheet.
@@ -97,10 +93,6 @@ Some real world examples of Research might be:
 - Befriending vendors to get Parts more easily
 - Getting machinery that builds Widgets automatically
 - Upping your social media game for better marketing
-
-We'll say you roll 3, which, conveniently!, is all the <Opportunity /> you have left.
-
-Remember how you've only been using the first column of <Opportunity /> values with the dark outline? You decide you want to be better at Making, so you cross out the previously used values to outline the whole column of new ones to their right.
 
 export default function Rules({ children, year, draftId }) {
   return (
