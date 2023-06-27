@@ -30,6 +30,6 @@ export default function RollGrid({ columns, rows }) {
 }
 
 RollGrid.defaultProps = {
-  columns: 35,
-  rows: 25,
+  columns: 25,
+  rows: 35,
 };

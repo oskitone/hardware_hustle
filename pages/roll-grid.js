@@ -26,19 +26,19 @@ function RollGridPage({ count }) {
       <main className={`${font.className}`}>
         {[...Array(count)].map((e, i) => (
           <div key={i}>
-            <Front>
-              <Page>
+            <Front size="letter" landscape>
+              <Page size="letter">
                 <RollGrid />
               </Page>
-              <Page>
+              <Page size="letter">
                 <RollGrid />
               </Page>
             </Front>
-            <Back>
-              <Page>
+            <Back size="letter" landscape>
+              <Page size="letter">
                 <RollGrid />
               </Page>
-              <Page>
+              <Page size="letter">
                 <RollGrid />
               </Page>
             </Back>
