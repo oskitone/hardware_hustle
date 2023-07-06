@@ -11,10 +11,24 @@
   line-height: 1.35;
 
   overflow: hidden;
+
+  position: relative;
 }
 
 .inner {
   position: relative;
+}
+
+/* TODO: remove */
+.rules:before {
+  position: absolute;
+  content: "DRAFT";
+  color: rgb(var(--carryover-rgb));
+  font-size: 12rem;
+  line-height: 1;
+  font-weight: 900;
+  transform: rotate(45deg);
+  top: 33%;
 }
 
 .inner[page="0"] {
