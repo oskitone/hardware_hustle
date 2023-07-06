@@ -4,10 +4,7 @@ import Head from "next/head";
 import { Front, Back } from "components/sheet";
 import { getCommitProps } from "common/utils";
 import Page from "components/page";
-import PageOne from "components/rules/1.mdx";
-import PageTwo from "components/rules/2.mdx";
-import PageThree from "components/rules/3.mdx";
-import PageFour from "components/rules/4.mdx";
+import Rules from "components/rules.mdx";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -28,20 +25,9 @@ function RulesPage({ year, draftId }) {
       <main className={`${font.className}`}>
         <Front size="letter" landscape>
           <Page size="letter" landscape>
-            <PageFour year={year} draftId={draftId} />
-          </Page>
-          <Page size="letter" landscape>
-            <PageOne year={year} draftId={draftId} />
+            <Rules year={year} draftId={draftId} />
           </Page>
         </Front>
-        <Back size="letter" landscape>
-          <Page size="letter" landscape>
-            <PageTwo year={year} draftId={draftId} />
-          </Page>
-          <Page size="letter" landscape>
-            <PageThree year={year} draftId={draftId} />
-          </Page>
-        </Back>
       </main>
     </>
   );
