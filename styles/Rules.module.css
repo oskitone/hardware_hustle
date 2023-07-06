@@ -9,6 +9,28 @@
 
   /* Don't remove! Explicitly set for screen/print consistency! */
   line-height: 1.35;
+
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+}
+
+.inner[page="0"] {
+  left: calc((var(--letter-page-width) - var(--print-margin)) * 0);
+}
+
+.inner[page="1"] {
+  left: calc((var(--letter-page-width) - var(--print-margin)) * -1);
+}
+
+.inner[page="2"] {
+  left: calc((var(--letter-page-width) - var(--print-margin)) * -2);
+}
+
+.inner[page="3"] {
+  left: calc((var(--letter-page-width) - var(--print-margin)) * -3);
 }
 
 .Wordmark {

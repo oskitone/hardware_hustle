@@ -302,10 +302,12 @@ _{props.draftId}_
 
 _{props.year} CC BY-SA 4.0 Oskitone_
 
-export default function Rules({ children, year, draftId }) {
+export default function Rules({ children, page, year, draftId }) {
   return (
     <div className={styles.rules}>
-      {children}
+      <div className={styles.inner} page={page}>
+        {children}
+      </div>
     </div>
   );
 

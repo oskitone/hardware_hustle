@@ -25,9 +25,20 @@ function RulesPage({ year, draftId }) {
       <main className={`${font.className}`}>
         <Front size="letter" landscape>
           <Page size="letter" landscape>
-            <Rules year={year} draftId={draftId} />
+            <Rules page={3} year={year} draftId={draftId} />
+          </Page>
+          <Page size="letter" landscape>
+            <Rules page={0} year={year} draftId={draftId} />
           </Page>
         </Front>
+        <Back size="letter" landscape>
+          <Page size="letter" landscape>
+            <Rules page={1} year={year} draftId={draftId} />
+          </Page>
+          <Page size="letter" landscape>
+            <Rules page={2} year={year} draftId={draftId} />
+          </Page>
+        </Back>
       </main>
     </>
   );
