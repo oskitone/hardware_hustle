@@ -16,6 +16,15 @@
   height: var(--letter-sheet-height);
 }
 
+.full {
+  width: auto;
+  height: auto;
+
+  margin: 0;
+
+  padding: var(--print-margin);
+}
+
 .landscape {
   height: var(--legal-sheet-width);
   width: var(--legal-sheet-height);

@@ -47,6 +47,14 @@
   left: calc((var(--letter-page-width) - var(--print-margin)) * -3);
 }
 
+.view-all {
+  column-count: auto;
+}
+
+.view-all:before {
+  display: none;
+}
+
 .Wordmark {
   /* Eyeballed to fit on two lines */
   font-size: 2.75em;

@@ -7,6 +7,7 @@ function Sheet({ children, landscape, size }) {
     <div
       className={classnames(styles.sheet, {
         [styles.landscape]: landscape,
+        [styles.full]: size == "full",
         [styles.legal]: size == "legal",
         [styles.letter]: size == "letter",
       })}

@@ -1,7 +1,8 @@
 import { Open_Sans } from "next/font/google";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { Front, Back } from "components/sheet";
+import Sheet, { Front, Back } from "components/sheet";
 import { getCommitProps } from "common/utils";
 import Page from "components/page";
 import Rules from "components/rules.mdx";
@@ -13,16 +14,21 @@ export const getStaticProps = async (context) => getCommitProps();
 // TODO: #/4 page count?
 // TODO: deter widows/orphans in headers/icons
 
-function RulesPage({ year, draftId }) {
-  return (
-    <>
-      <Head>
-        <title>Hardware Hustle</title>
-        <meta name="robots" content="noindex" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={`${font.className}`}>
+function RulesPage({ year, draftId, view }) {
+  const router = useRouter();
+  view = view || router.query.view;
+
+  function getContent() {
+    if (view == "all") {
+      return (
+        <Sheet size="full">
+          <Rules />
+        </Sheet>
+      );
+    }
+
+    return (
+      <>
         <Front size="letter" landscape>
           <Page size="letter" landscape>
             <Rules page={3} year={year} draftId={draftId} />
@@ -39,7 +45,19 @@ function RulesPage({ year, draftId }) {
             <Rules page={2} year={year} draftId={draftId} />
           </Page>
         </Back>
-      </main>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Head>
+        <title>Hardware Hustle</title>
+        <meta name="robots" content="noindex" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className={`${font.className}`}>{getContent()}</main>
     </>
   );
 }
@@ -47,6 +65,7 @@ function RulesPage({ year, draftId }) {
 RulesPage.defaultProps = {
   year: undefined,
   draftId: undefined,
+  view: undefined,
 };
 
 export default RulesPage;

@@ -1,3 +1,5 @@
+import classnames from "classnames";
+
 import styles from "@/styles/Rules.module.css";
 
 import { ID_TITLE } from "components/sidebar";
@@ -304,7 +306,13 @@ _{props.year} CC BY-SA 4.0 Oskitone_
 
 export default function Rules({ children, page, year, draftId }) {
   return (
-    <div className={styles.rules}>
+    <div className={
+        classnames(
+          styles.rules, {
+            [styles["view-all"]]: page == undefined
+          }
+        )
+      }>
       <div className={styles.inner} page={page}>
         {children}
       </div>
