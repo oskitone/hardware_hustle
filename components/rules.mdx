@@ -60,31 +60,31 @@ Its icons represent:
 
 You can think of a turn like a typical workday: you wake up in the AM, do some stuff (Actions), and then rest in the PM. Ideally, the day's actions get you further towards your goal, which is, unfortunately, to make enough money to continue making money.
 
-The turn's day is like a little spreadsheet. Here's an example of the first one when completed:
+The turn's day is like a little spreadsheet. Its rows are grouped into Money, Parts, Widgets, and Opportunity. Its columns are Actions to be filled out from left to right.
+
+Let's walk through an example:
+
+### 1. AM
+
+Your first day on the job starts with <Icon id="money" />10 and <Icon id="opportunity" />12 but everything else is 0.
 
 <Turn
   className={styles.Turn}
   data={{
-    money: [10, 9, undefined, 6, 7],
-    A: [0, 2, 2, undefined, 0],
-    B: [0, 2, 2, undefined, 0],
-    C: [0, 1, 1, undefined, 0],
-    D: [0, 0, 0, undefined, 0],
-    AB: [0, undefined, 1, 1, 0],
-    ABC: [0, undefined, 1, 0, 1],
-    ABCD: [0, undefined, 0, 0, 0],
-    opportunity: [12, 4, 3, 2, 3],
+    money: [10],
+    A: [0],
+    B: [0],
+    C: [0],
+    D: [0],
+    AB: [0],
+    ABC: [0],
+    ABCD: [0],
+    opportunity: [12],
   }}
   suppliedColumns={firstTurnSuppliedColumns}
 />
 
-You can see that its rows are grouped into Money, Parts, Widgets, and Opportunity.
-
-Its columns are Actions and are filled out in order from left to right. Let's walk through it:
-
-### 1. AM
-
-Your first day on the job starts with <Icon id="money" />10 and <Icon id="opportunity" />12 but nothing else. Nothing to do here but note what you've got... which, for now, isn't much!
+There's nothing else to do here right now besides note what you've got... which, for now, isn't much!
 
 ### 2. Buy
 
@@ -94,11 +94,13 @@ Parts cost Opportunity (<Opportunity />) and Money (<Money />), as shown in the 
 
 <ActionsTable actions={[ACTIONS.BUY]} className={styles.ActionsTable} />
 
-The <Opportunity /> cost for each Part is a row of values, but, for now, we'll only use the one in the column with the dark outline. The <Money /> cost is fixed and much simpler.
+The <Opportunity /> cost for each Part is a row of values, but, for now, we'll only use the one in the column with the dark outline: 0, 1, 2, 3.
 
 **Roll for <Opportunity />:** Roll a die. Its value is the maximum you can spend on Opportunity for this particular Action. (Think of Opportunity as a combination of time/effort you _spend_ plus luck/goodwill you _receive_, all in one value.) Anyway, we'll say you rolled 5.
 
 With <Money />10 and <Opportunity />12, you decide to buy <A />2, <B />2, and <C />1. The math for that looks like:
+
+{/* TODO: make this and the other math examples clearer */}
 
     <Money />1×<A />2 + <Money />2×<B />2 + <Money />3×<C />1 = <Money />9<br />
     <Opportunity />0&times;<A />2 + <Opportunity />1&times;<B />2 + <Opportunity />2&times;<C />1 = <Opportunity />4
@@ -147,8 +149,6 @@ You decide to make <AB />1 and <ABC />1, the math for which looks like:
 
 (Total <Opportunity /> cost is 3, which is within the 4 you rolled. There's no <Money /> cost because you already bought the parts you're using.)
 
-You fill out the Make column with those new values:
-
 <Turn
   className={styles.Turn}
   data={{
@@ -194,7 +194,7 @@ Our <Opportunity /> roll wasn't enough to sell both of the Widgets we made, so w
   suppliedColumns={firstTurnSuppliedColumns}
 />
 
-When you sell a Widget, you lose it from your inventory, of course.
+When you sell a Widget, you lose it from your inventory.
 
 ### 5. PM
 
@@ -294,7 +294,7 @@ Solo play is solitaire; try to beat your best score.
 
 ### How to Lose
 
-If you Burn Out in the last turn, you are too physically and emotionally exhausted to go to a very important family gathering the next day.
+If you Burn Out in the last turn, you are too physically and emotionally exhausted to go to a very important event the next day.
 
 You were too preoccupied with money and lost sight of what really matters, so you lose.
 
