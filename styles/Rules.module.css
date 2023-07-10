@@ -49,6 +49,7 @@
 
 .view-all {
   column-count: auto;
+  max-width: calc((var(--letter-page-width) - var(--print-margin) * 3) / 2);
 }
 
 .view-all:before {
