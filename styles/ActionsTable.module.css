@@ -32,3 +32,13 @@
   display: flex;
   align-items: center;
 }
+
+.action .pmAction {
+  line-height: calc(var(--default-font-size) + 2px);
+  font-size: var(--rules-font-size);
+}
+
+.action .pmAction strong {
+  width: 4.5rem; /* Eyeballed! */
+  font-weight: 600;
+}

@@ -108,6 +108,33 @@ export const ACTIONS = {
       ],
     ],
   },
+  PM: {
+    title: "PM",
+    body: [
+      [
+        <>
+          <Icon id="opportunity" /> &lt; 0
+        </>,
+        <div className={styles.pmAction}>
+          <strong>Burnout:</strong> <em>Lose next turn</em>
+        </div>,
+        <></>,
+      ],
+      [
+        <>
+          <Icon id="opportunity" /> &gt;=
+          <Icon id="roll" />
+        </>,
+        <div className={styles.pmAction}>
+          <strong>Research:</strong>{" "}
+          <em>
+            Lower <Icon id="opportunity" /> cost
+          </em>
+        </div>,
+        <></>,
+      ],
+    ],
+  },
 };
 
 function ActionsTable({ className, actions }) {
@@ -131,7 +158,7 @@ function ActionsTable({ className, actions }) {
 
 ActionsTable.defaultProps = {
   className: undefined,
-  actions: [ACTIONS.BUY, ACTIONS.MAKE, ACTIONS.SELL],
+  actions: [ACTIONS.BUY, ACTIONS.MAKE, ACTIONS.SELL, ACTIONS.PM],
 };
 
 export default ActionsTable;
