@@ -16,6 +16,8 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
     AB: "bi-speaker",
     ABC: "bi-boombox",
     ABCD: "bi-joystick",
+
+    roll: "bi-dice-5",
   }[id];
 
   return (
@@ -48,5 +50,6 @@ export const D = () => <Icon id="D" inline />;
 export const AB = () => <Icon id="AB" inline />;
 export const ABC = () => <Icon id="ABC" inline />;
 export const ABCD = () => <Icon id="ABCD" inline />;
+export const Roll = () => <Icon id="roll" inline />;
 
 export default Icon;
