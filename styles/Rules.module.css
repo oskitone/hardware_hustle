@@ -10,7 +10,8 @@
   /* Don't remove! Explicitly set for screen/print consistency! */
   line-height: 1.35;
 
-  overflow: hidden;
+  /* TODO: fix Turn "day" overflow */
+  overflow-x: hidden;
 
   position: relative;
 }

@@ -218,6 +218,8 @@ Tally up your Actions' math and end your turn in the PM column.
   suppliedColumns={firstTurnSuppliedColumns}
 />
 
+But your turn isn't done yet! Let's chart our Money and see if we can do anything with our leftover Opportunity.
+
 #### Money
 
 Your turn ends with <Icon id="money" />7, and you plot it in the Money chart on the left of the game sheet.
@@ -234,9 +236,10 @@ A productive day, sure, but not super profitable...
 
 #### Opportunity
 
-As for <Opportunity />, if you exhaust yourself and go negative, you **Burnout** and lose the entire next turn! In this example, you have <Icon id="opportunity" />3 so are safe.
+As for <Opportunity />, there are two possibilities:
 
-Otherwise, **Roll for Research**. Its value is the <Opportunity /> cost to research getting better at Buying, Making, or Selling.
+- If you exhaust yourself and go negative, you suffer **Burnout** and lose the entire next turn! In this example, you have <Icon id="opportunity" />3 so are safe.
+- Otherwise, **Roll for Research**. Its value is the <Opportunity /> cost to research getting better at _one_ of the three actions: Buying, Making, or Selling.
 
 #### Research
 
@@ -254,7 +257,7 @@ Remember how you've only been using the first column of <Opportunity /> values w
 
 <ActionsTable className={styles.ActionsTable} />
 
-Nice! For the rest of the game, all Widgets will consume one less <Opportunity />, no matter how many of them you make! (With this Research, all <AB />s are effectively "free" to Make.)
+Nice! For the rest of the game, all Widgets will consume one less <Opportunity />, no matter how many of them you make! With this Research, all <AB />s are effectively "free" to Make.)
 
 #### Handoff
 
