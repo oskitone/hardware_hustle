@@ -119,46 +119,62 @@ export function Cell({
 function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
+  const PARTS_COLUMNS = [
+    {},
+    { prefix: PLUS },
+    { prefix: MINUS },
+    { carryOver: true },
+    { prefix: EQUALS },
+  ];
+  const WIDGETS_COLUMNS = [
+    {},
+    { carryOver: true },
+    { prefix: PLUS },
+    { prefix: MINUS },
+    { prefix: EQUALS },
+  ];
+
   const BODIES = [
     {
       rows: ["money"],
-      columns: [
-        {},
-        { prefix: MINUS },
-        { carryOver: true },
-        { prefix: PLUS },
-        { prefix: EQUALS },
-      ],
+      columns: {
+        money: [
+          {},
+          { prefix: MINUS },
+          { carryOver: true },
+          { prefix: PLUS },
+          { prefix: EQUALS },
+        ],
+      },
     },
     {
       rows: ["A", "B", "C", "D"],
-      columns: [
-        {},
-        { prefix: PLUS },
-        { prefix: MINUS },
-        { carryOver: true },
-        { prefix: EQUALS },
-      ],
+      columns: {
+        A: PARTS_COLUMNS,
+        B: PARTS_COLUMNS,
+        C: PARTS_COLUMNS,
+        D: PARTS_COLUMNS,
+      },
     },
     {
       rows: ["AB", "ABC", "ABCD"],
-      columns: [
-        {},
-        { carryOver: true },
-        { prefix: PLUS },
-        { prefix: MINUS },
-        { prefix: EQUALS },
-      ],
+      columns: {
+        AB: WIDGETS_COLUMNS,
+        ABC: WIDGETS_COLUMNS,
+        ABCD: WIDGETS_COLUMNS,
+      },
     },
     {
       rows: ["opportunity"],
-      columns: [
-        {},
-        { prefix: MINUS },
-        { prefix: MINUS },
-        { prefix: MINUS },
-        { prefix: EQUALS },
-      ],
+      columns: {
+        opportunity: [
+          {},
+          { prefix: MINUS },
+          { prefix: MINUS },
+          { prefix: MINUS },
+          { prefix: EQUALS },
+        ],
+      },
     },
   ];
 
@@ -187,7 +203,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
               <Row key={rowI}>
                 <Cell icon={rowIcon} />
 
-                {body.columns.map((column, columnI) => {
+                {body.columns[rowIcon].map((column, columnI) => {
                   const isFirstColumn = columnI == 0;
                   const isLastColumn = columnI == body.columns.length - 1;
                   const isSupplied = (suppliedColumns[rowIcon] || [])[columnI];
