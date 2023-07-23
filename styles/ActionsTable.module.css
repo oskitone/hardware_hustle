@@ -39,6 +39,7 @@
 }
 
 .action .pmAction strong {
-  width: 4.5rem; /* Eyeballed! */
+  display: inline-block;
+  width: 4rem; /* Eyeballed! */
   font-weight: 600;
 }
