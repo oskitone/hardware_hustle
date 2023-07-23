@@ -23,13 +23,14 @@ function Home({ gamesPerSheet, year, draftId }) {
       AB: [0],
       ABC: [0],
       ABCD: [0],
-      opportunity: [12],
+      opportunity: [],
+      time: [12],
     }),
-    makeTurnData({ opportunity: [12] }),
-    makeTurnData({ opportunity: [8] }),
-    makeTurnData({ opportunity: [8] }),
-    makeTurnData({ opportunity: [4] }),
-    makeTurnData({ opportunity: [4] }),
+    makeTurnData({ time: [12] }),
+    makeTurnData({ time: [8] }),
+    makeTurnData({ time: [8] }),
+    makeTurnData({ time: [4] }),
+    makeTurnData({ time: [4] }),
   ];
 
   return (

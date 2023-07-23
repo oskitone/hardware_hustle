@@ -20,7 +20,7 @@
 /* TODO: derive? */
 .tbody .th,
 .tbody .td {
-  height: calc(var(--default-font-size) * 1.34);
+  height: calc(var(--default-font-size) * 1.21);
 }
 
 .handwritten {

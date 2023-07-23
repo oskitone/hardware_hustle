@@ -26,6 +26,7 @@ const emptyTurnData = {
   ABC: [],
   ABCD: [],
   opportunity: [],
+  time: [],
 };
 
 export const makeTurnData = (newData) => ({
@@ -35,7 +36,7 @@ export const makeTurnData = (newData) => ({
 
 export const defaultSuppliedColumns = {
   ...emptyTurnData,
-  opportunity: [true],
+  time: [true],
 };
 
 export const firstTurnSuppliedColumns = {
@@ -49,6 +50,7 @@ export const firstTurnSuppliedColumns = {
   ABC: [true],
   ABCD: [true],
   opportunity: [true],
+  time: [true],
 };
 
 function Head({ children }) {
@@ -165,9 +167,10 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
       },
     },
     {
-      rows: ["opportunity"],
+      rows: ["opportunity", "time"],
       columns: {
-        opportunity: [
+        opportunity: [{ inactive: true }, {}, {}, {}, { inactive: true }],
+        time: [
           {},
           { prefix: MINUS },
           { prefix: MINUS },

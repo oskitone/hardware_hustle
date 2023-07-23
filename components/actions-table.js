@@ -11,7 +11,7 @@ function PS({ options, value, firstRow, lastRow }) {
     <PointSelector
       firstRow={firstRow}
       lastRow={lastRow}
-      icon="opportunity"
+      icon="time"
       iconPrefix="-"
       options={options}
       value={value}
@@ -113,7 +113,7 @@ export const ACTIONS = {
     body: [
       [
         <>
-          <Icon id="opportunity" /> &lt; 0
+          <Icon id="time" /> &lt; 0
         </>,
         <div className={styles.pmAction}>
           <strong>Burnout:</strong> <em>Lose next turn</em>
@@ -122,13 +122,13 @@ export const ACTIONS = {
       ],
       [
         <>
-          <Icon id="opportunity" /> &gt;=
+          <Icon id="time" /> &gt;=
           <Icon id="roll" />
         </>,
         <div className={styles.pmAction}>
           <strong>Research:</strong>{" "}
           <em>
-            Lower <Icon id="opportunity" /> cost
+            Lower <Icon id="time" /> cost
           </em>
         </div>,
         <></>,
