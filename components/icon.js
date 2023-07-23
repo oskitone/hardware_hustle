@@ -7,6 +7,7 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
   const bootstrapIconClassName = {
     money: "bi-coin",
     opportunity: "bi-arrow-up-right-circle",
+    time: "bi-stopwatch",
 
     A: "bi-nut",
     B: "bi-box-seam",
@@ -43,6 +44,7 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
 
 export const Money = () => <Icon id="money" inline />;
 export const Opportunity = () => <Icon id="opportunity" inline />;
+export const Time = () => <Icon id="time" inline />;
 export const A = () => <Icon id="A" inline />;
 export const B = () => <Icon id="B" inline />;
 export const C = () => <Icon id="C" inline />;
