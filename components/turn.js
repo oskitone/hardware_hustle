@@ -11,6 +11,11 @@ const handwritingFont = Gaegu({
   variable: "--font-handwriting",
 });
 
+const PLUS = "+";
+const MINUS = "-";
+const EQUALS = "=";
+const FOLLOW = "⇢";
+
 const emptyTurnData = {
   money: [],
   A: [],
@@ -68,10 +73,7 @@ export function Cell({
   carryOver,
   eod,
 
-  plus,
-  minus,
-  equals,
-  follow,
+  prefix,
 
   supplied,
 
@@ -83,6 +85,7 @@ export function Cell({
   const hasContent = icon || !!children || children === 0;
 
   const props = {
+    prefix,
     className: classnames(handwritingFont.variable, {
       [styles.td]: !head && !icon,
       [styles.th]: head || !!icon,
@@ -91,11 +94,6 @@ export function Cell({
       [styles.icon]: !!icon,
       [styles.carryOver]: carryOver,
       [styles.eod]: eod,
-
-      [styles.plus]: plus,
-      [styles.minus]: minus,
-      [styles.equals]: equals,
-      [styles.follow]: follow,
 
       [styles.topLeft]: topLeft,
       [styles.topRight]: topRight,
@@ -126,20 +124,20 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
       rows: ["money"],
       columns: [
         {},
-        { minus: true },
+        { prefix: MINUS },
         { carryOver: true },
-        { plus: true },
-        { equals: true },
+        { prefix: PLUS },
+        { prefix: EQUALS },
       ],
     },
     {
       rows: ["A", "B", "C", "D"],
       columns: [
         {},
-        { plus: true },
-        { minus: true },
+        { prefix: PLUS },
+        { prefix: MINUS },
         { carryOver: true },
-        { equals: true },
+        { prefix: EQUALS },
       ],
     },
     {
@@ -147,19 +145,19 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
       columns: [
         {},
         { carryOver: true },
-        { plus: true },
-        { minus: true },
-        { equals: true },
+        { prefix: PLUS },
+        { prefix: MINUS },
+        { prefix: EQUALS },
       ],
     },
     {
       rows: ["opportunity"],
       columns: [
         {},
-        { minus: true },
-        { minus: true },
-        { minus: true },
-        { equals: true },
+        { prefix: MINUS },
+        { prefix: MINUS },
+        { prefix: MINUS },
+        { prefix: EQUALS },
       ],
     },
   ];
@@ -195,6 +193,11 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                   const isSupplied = (suppliedColumns[rowIcon] || [])[columnI];
                   const isEmpty = isUndefined(data[rowIcon][columnI]);
 
+                  // TODO: obviate or tidy, please
+                  const isFollow =
+                    (isFirstColumn && isEmpty) ||
+                    (isFirstColumn && id > 0 && !isSupplied);
+
                   return (
                     <Cell
                       children={(data[rowIcon] || [])[columnI]}
@@ -205,13 +208,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                       carryOver={
                         !(isFinalTurn && isLastColumn) && column.carryOver
                       }
-                      plus={column.plus}
-                      minus={column.minus}
-                      equals={column.equals}
-                      follow={
-                        (isFirstColumn && isEmpty) ||
-                        (isFirstColumn && id > 0 && !isSupplied)
-                      }
+                      prefix={isFollow ? FOLLOW : column.prefix}
                       supplied={isSupplied}
                       key={columnI}
                     />
