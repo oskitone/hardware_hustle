@@ -205,9 +205,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}
                       bottomLeft={isLastRow && isFirstColumn}
-                      carryOver={
-                        !(isFinalTurn && isLastColumn) && column.carryOver
-                      }
+                      carryOver={column.carryOver}
                       prefix={isFollow ? FOLLOW : column.prefix}
                       supplied={isSupplied}
                       key={columnI}
