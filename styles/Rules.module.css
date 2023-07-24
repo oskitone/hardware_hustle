@@ -24,7 +24,7 @@
 .rules:before {
   position: absolute;
   content: "DRAFT";
-  color: rgb(var(--carryover-rgb));
+  color: rgb(var(--inactive-rgb));
   font-size: 12rem;
   line-height: 1;
   font-weight: 900;

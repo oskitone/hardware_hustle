@@ -113,8 +113,8 @@
   border-color: rgb(var(--foreground-rgb));
 }
 
-.carryOver {
-  background: rgb(var(--carryover-rgb));
+.inactive {
+  background: rgb(var(--inactive-rgb));
 }
 
 .turn [prefix]:before {

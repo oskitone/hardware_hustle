@@ -70,7 +70,7 @@ export function Cell({
   head,
   day,
 
-  carryOver,
+  inactive,
   eod,
 
   prefix,
@@ -92,7 +92,7 @@ export function Cell({
       [styles.day]: day,
 
       [styles.icon]: !!icon,
-      [styles.carryOver]: carryOver,
+      [styles.inactive]: inactive,
       [styles.eod]: eod,
 
       [styles.topLeft]: topLeft,
@@ -123,12 +123,12 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
     {},
     { prefix: PLUS },
     { prefix: MINUS },
-    { carryOver: true },
+    { inactive: true },
     { prefix: EQUALS },
   ];
   const WIDGETS_COLUMNS = [
     {},
-    { carryOver: true },
+    { inactive: true },
     { prefix: PLUS },
     { prefix: MINUS },
     { prefix: EQUALS },
@@ -141,7 +141,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
         money: [
           {},
           { prefix: MINUS },
-          { carryOver: true },
+          { inactive: true },
           { prefix: PLUS },
           { prefix: EQUALS },
         ],
@@ -211,8 +211,9 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
 
                   // TODO: obviate or tidy, please
                   const isFollow =
-                    (isFirstColumn && isEmpty) ||
-                    (isFirstColumn && id > 0 && !isSupplied);
+                    !column.inactive &&
+                    ((isFirstColumn && isEmpty) ||
+                      (isFirstColumn && id > 0 && !isSupplied));
 
                   return (
                     <Cell
@@ -221,7 +222,7 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}
                       bottomLeft={isLastRow && isFirstColumn}
-                      carryOver={column.carryOver}
+                      inactive={column.inactive}
                       prefix={isFollow ? FOLLOW : column.prefix}
                       supplied={isSupplied}
                       key={columnI}
