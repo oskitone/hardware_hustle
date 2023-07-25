@@ -3,6 +3,8 @@ import classnames from "classnames";
 import { htmlEntity } from "common/utils";
 import styles from "@/styles/Icon.module.css";
 
+// TODO?: https://react-icons.github.io/react-icons
+
 function Icon({ id, prefix, suffix, className, inline, row }) {
   const bootstrapIconClassName = {
     money: "bi-coin",
