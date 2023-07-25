@@ -205,7 +205,8 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
 
                 {body.columns[rowIcon].map((column, columnI) => {
                   const isFirstColumn = columnI == 0;
-                  const isLastColumn = columnI == body.columns.length - 1;
+                  const isLastColumn =
+                    columnI == body.columns[rowIcon].length - 1;
                   const isSupplied = (suppliedColumns[rowIcon] || [])[columnI];
                   const isEmpty = isUndefined(data[rowIcon][columnI]);
 
