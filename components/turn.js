@@ -51,6 +51,25 @@ export const firstTurnSuppliedColumns = {
   opportunity: [true],
 };
 
+export const defaultTurnsData = [
+  makeTurnData({
+    money: [10],
+    A: [0],
+    B: [0],
+    C: [0],
+    D: [0],
+    AB: [0],
+    ABC: [0],
+    ABCD: [0],
+    opportunity: [12],
+  }),
+  makeTurnData({ opportunity: [12] }),
+  makeTurnData({ opportunity: [8] }),
+  makeTurnData({ opportunity: [8] }),
+  makeTurnData({ opportunity: [4] }),
+  makeTurnData({ opportunity: [4] }),
+];
+
 function Head({ children }) {
   return <div className={`${styles.thead}`}>{children}</div>;
 }
