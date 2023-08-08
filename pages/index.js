@@ -1,18 +1,19 @@
 import { Open_Sans } from "next/font/google";
+import Link from "next/link";
 import Head from "next/head";
 
 import { Front } from "components/sheet";
 import { getCommitProps } from "common/utils";
-import { defaultTurnsData } from "components/turn";
 import Page from "components/page";
-import Sidebar from "components/sidebar";
-import TurnGrid from "components/turn-grid";
-
-const font = Open_Sans({ subsets: ["latin"] });
+import Wordmark from "components/wordmark";
 
 export const getStaticProps = async (context) => getCommitProps();
 
-function Home({ gamesPerSheet, year, draftId }) {
+const font = Open_Sans({ subsets: ["latin"] });
+
+import styles from "@/styles/Index.module.css";
+
+function Index({ year, draftId }) {
   return (
     <>
       <Head>
@@ -23,26 +24,29 @@ function Home({ gamesPerSheet, year, draftId }) {
       </Head>
       <main className={`${font.className}`}>
         <Front>
-          {[...Array(gamesPerSheet || 0)].map((e, i) => (
-            <Page split key={i}>
-              <Sidebar
-                turnsData={defaultTurnsData}
-                year={year}
-                draftId={draftId}
-              />
-              <TurnGrid turnsData={defaultTurnsData} />
-            </Page>
-          ))}
+          <Page className={styles.Page}>
+            <Wordmark draftId={draftId} className={styles.Wordmark} />
+            <ul className={styles.navigation}>
+              <li>
+                <Link href="/letter">Game sheet (letter paper)</Link>
+              </li>
+              <li>
+                <Link href="/legal">Game sheet (legal paper)</Link>
+              </li>
+              <li>
+                <Link href="/rules">Rules (letter paper)</Link>
+              </li>
+            </ul>
+          </Page>
         </Front>
       </main>
     </>
   );
 }
 
-Home.defaultProps = {
-  gamesPerSheet: 2,
+Index.defaultProps = {
   year: undefined,
   draftId: undefined,
 };
 
-export default Home;
+export default Index;

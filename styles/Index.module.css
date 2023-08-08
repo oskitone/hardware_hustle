@@ -1,0 +1,21 @@
+.Page {
+  outline: none; /* HACK! */
+}
+
+.Wordmark {
+  /* Eyeballed to fit on one line */
+  font-size: 3em;
+}
+
+.Wordmark,
+.navigation {
+  margin-bottom: calc(var(--default-font-size) * 1.5);
+}
+
+.navigation {
+  margin-left: 2em;
+}
+
+.navigation a {
+  color: inherit;
+}
