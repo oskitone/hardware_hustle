@@ -6,7 +6,7 @@ export function Labels({ count, draftId }) {
   return (
     <div className={styles.labels}>
       {[...Array(count)].map((e, i) => (
-        <Label draftId={draftId} />
+        <Label draftId={draftId} key={i} />
       ))}
     </div>
   );

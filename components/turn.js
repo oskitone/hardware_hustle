@@ -237,7 +237,6 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
 
                   return (
                     <Cell
-                      children={(data[rowIcon] || [])[columnI]}
                       topLeft={isFirstRow && isFirstColumn}
                       topRight={isFirstRow && isLastColumn}
                       bottomRight={isLastRow && isLastColumn}
@@ -246,7 +245,9 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                       prefix={isFollow ? FOLLOW : column.prefix}
                       supplied={isSupplied}
                       key={columnI}
-                    />
+                    >
+                      {(data[rowIcon] || [])[columnI]}
+                    </Cell>
                   );
                 })}
               </Row>
