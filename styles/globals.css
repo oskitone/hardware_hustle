@@ -48,6 +48,11 @@ html {
 }
 
 @media print {
+  @page {
+    margin: 0;
+    padding: 0;
+  }
+
   html {
     background: none;
   }
