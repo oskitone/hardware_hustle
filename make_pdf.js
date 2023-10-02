@@ -11,9 +11,9 @@ const makePdf = async (url, outputPath, format) => {
   });
 
   await page.pdf({
+    preferCSSPageSize: true,
     printBackground: true,
     path: outputPath,
-    format,
   });
 
   await browser.close();
@@ -21,4 +21,4 @@ const makePdf = async (url, outputPath, format) => {
 
 const [, , url, outputPath] = process.argv;
 
-makePdf(url, outputPath, "letter");
+makePdf(url, outputPath);
