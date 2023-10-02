@@ -6,8 +6,6 @@
 set -o errexit
 set -o errtrace
 
-chrome="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-
 url="http://localhost:3000"
 
 timestamp=$(git log -n1 --date=unix --format="%ad")
@@ -31,12 +29,7 @@ function export_stl() {
 
     echo "Exporting ${filename}"
 
-    "$chrome" \
-        --headless \
-        --print-to-pdf="${filename}" \
-        --virtual-time-budget=50000 \
-        "${url}/${path}" \
-        2>/dev/null
+    node make_pdf.js "${url}/${path}" "${filename}"
 }
 
 confirm_url
