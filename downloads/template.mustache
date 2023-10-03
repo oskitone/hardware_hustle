@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Oskitone APC - Downloads</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Work+Sans:400,600,700" type="text/css" title="Google Fonts" />
+    <style>
+        body {
+            font-family: Work Sans, sans-serif;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .size {
+            font-style: italic;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 0 1rem 0 0;
+        }
+
+        footer {
+            font-size: .75rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Oskitone APC</h1>
+        <h2>Downloads</h2>
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#files}}
+                <tr>
+                    <td>
+                        <a href="{{filename}}">
+                            {{filename}}
+                        </a>
+                    </td>
+                    <td class="size">
+                        {{size}}
+                    </td>
+                </tr>
+            {{/files}}
+        </tbody>
+    </table>
+
+    <footer>
+        <p>
+            Last updated on {{ commit_date }} from commit
+            <a href="https://github.com/oskitone/apc/commit/{{ commit_hash }}">
+                {{ commit_hash }}
+            </a>.
+        </p>
+        <p>Changelog: <a href="https://github.com/oskitone/apc#changelog">
+            https://github.com/oskitone/apc#changelog
+        </a></p>
+    </footer>
+</body>
+
+</html>
