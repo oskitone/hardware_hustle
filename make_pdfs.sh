@@ -12,10 +12,20 @@ timestamp=$(git log -n1 --date=unix --format="%ad")
 commit_hash=$(git log -n1 --format="%h")
 stub="hardware_hustle-${commit_hash}"
 
-# TODO: parameterize
+# Option default(s)
 dir="output/${timestamp}-${commit_hash}"
 
-mkdir -pv "${dir}" >/dev/null
+function help() {
+    echo "\
+Makes PDFs
+
+Usage:
+./make_pdfs.sh
+./make_pdfs.sh -h                 Show this message and quit
+./make_pdfs.sh -d                 Set output directory
+                                  Dynamic default, currently \"${dir}\"
+"
+}
 
 function confirm_url() {
     wget -q --spider "${url}" || {
@@ -34,10 +44,24 @@ function export_pdf() {
     node make_pdf.js "${url}/${path}" "${filename}"
 }
 
-confirm_url
+function run() {
+    confirm_url
 
-export_pdf letter
-export_pdf legal
-export_pdf rules
+    mkdir -pv "${dir}" >/dev/null
+
+    export_pdf letter
+    export_pdf legal
+    export_pdf rules
+}
+
+while getopts "h?d:" opt; do
+    case "$opt" in
+        h) help; exit ;;
+        d) dir="$OPTARG" ;;
+        *) echo; _help; exit ;;
+    esac
+done
+
+run
 
 }
