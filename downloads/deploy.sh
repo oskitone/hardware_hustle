@@ -6,15 +6,15 @@
 # set -o errexit # TODO: fix this not running python
 set -o errtrace
 
+dir="output/yuhhhh"
+
 function help() {
     echo "\
-Deploys STLs to GitHub pages.
+Deploys PDFs to GitHub pages.
 
 Usage:
 downloads/deploy.sh
-downloads/deploy.sh -b                 Make STLs and ZIP
 downloads/deploy.sh --do-it-live       Actually deploy
-downloads/deploy.sh -b --do-it-live    All of the above
 "
 }
 
@@ -41,30 +41,18 @@ function run() {
 
     confirm_git_clean_status
 
-    dir=$(./make_stls.sh -e)
-    commit_hash=$(./make_stls.sh -c)
-    commit_timestamp=$(./make_stls.sh -t)
+    rm -rf $dir
+    mkdir -pv $dir >/dev/null
 
-    mkdir -pv $dir
-
-    # TODO: fail if STLs aren't being made or already made
-
-    if [[ "$1" == *"-b"* ]]; then
-        echo "MAKING STLS + ZIP"
-        echo "-----------------"
-        echo
-        rm -rf $dir
-        ./make_stls.sh -d "$dir"
-        echo
-    fi
+    echo "MAKING PDFS"
+    echo "-----------------"
+    ./make_pdfs.sh -d "$dir"
+    echo
 
     echo "BUILDING SITE"
     echo "-------------"
-    echo
-    python downloads/build.py \
-        --directory "$dir" \
-        --commit_hash "$commit_hash" \
-        --commit_timestamp "$commit_timestamp"
+    python3 downloads/build.py \
+        --directory "$dir"
     echo "Done!"
     echo
 
@@ -72,8 +60,6 @@ function run() {
     echo "----------"
     echo
     git checkout gh-pages
-    rm *.stl
-    rm *.zip
     cp $dir/* "."
 
     git add .
@@ -83,7 +69,6 @@ function run() {
         echo
         echo "DEPLOYING"
         echo "---------"
-        echo
         git push origin gh-pages
     fi
 
