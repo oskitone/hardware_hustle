@@ -4,12 +4,15 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import { Front, Back } from "components/sheet";
+import { getCommitProps } from "common/utils";
 import RollTable from "components/roll-table";
 import Page from "components/page";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-function RollTablePage({ count }) {
+export const getStaticProps = async (context) => getCommitProps();
+
+function RollTablePage({ year, count }) {
   const router = useRouter();
   count = !isUndefined(router.query.count)
     ? parseInt(router.query.count)
@@ -37,18 +40,18 @@ function RollTablePage({ count }) {
           <div key={i}>
             <Front size="letter" landscape>
               <Page size="letter">
-                <RollTable />
+                <RollTable year={year} />
               </Page>
               <Page size="letter">
-                <RollTable />
+                <RollTable year={year} />
               </Page>
             </Front>
             <Back size="letter" landscape>
               <Page size="letter">
-                <RollTable />
+                <RollTable year={year} />
               </Page>
               <Page size="letter">
-                <RollTable />
+                <RollTable year={year} />
               </Page>
             </Back>
           </div>
@@ -59,6 +62,7 @@ function RollTablePage({ count }) {
 }
 
 RollTablePage.defaultProps = {
+  year: undefined,
   count: 1,
 };
 

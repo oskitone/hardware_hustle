@@ -23,3 +23,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.footer {
+  margin: var(--default-font-size) 0 0;
+  font-weight: 100;
+  font-size: 0.75em;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer p {
+  white-space: nowrap;
+}
+
+.footer strong {
+  font-weight: 400;
+}

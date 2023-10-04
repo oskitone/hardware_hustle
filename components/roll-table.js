@@ -6,7 +6,7 @@ const MAX = 6;
 
 const roll = () => MAX + Math.floor(Math.random() * (MIN - MAX) + 1);
 
-export default function RollTable({ columns, rows }) {
+export default function RollTable({ columns, rows, year }) {
   const [isClient, setIsClient] = useState();
   useEffect(() => {
     setIsClient(true);
@@ -25,6 +25,12 @@ export default function RollTable({ columns, rows }) {
           </div>
         );
       })}
+      <footer className={styles.footer}>
+        <p>
+          Close your eyes and point somewhere on the table. That's your roll!
+        </p>
+        <p>{year} CC BY-SA 4.0 Oskitone / oskitone.com</p>
+      </footer>
     </div>
   );
 }
@@ -32,4 +38,5 @@ export default function RollTable({ columns, rows }) {
 RollTable.defaultProps = {
   columns: 25,
   rows: 35,
+  year: undefined,
 };
