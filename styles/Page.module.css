@@ -5,6 +5,10 @@
   padding: var(--print-margin);
 
   outline: 1px dashed rgb(var(--roll-table-outline-rgb));
+
+  /* Mostly hide Rules overflow */
+  /* TODO: fix adjacent pages still showing? */
+  overflow: hidden;
 }
 
 .page.letter {
