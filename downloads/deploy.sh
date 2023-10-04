@@ -58,18 +58,18 @@ function run() {
 
     echo "COMMITTING"
     echo "----------"
-    echo
     git checkout gh-pages
     cp $dir/* "."
-
     git add .
     git commit -m "Deploy $dir"
+    echo
 
+    echo "DEPLOYING"
+    echo "---------"
     if [[ "$1" == *"--do-it-live"* ]]; then
-        echo
-        echo "DEPLOYING"
-        echo "---------"
         git push origin gh-pages
+    else
+        echo "Skipped! Supply --do-it-live flag to deploy."
     fi
 
     git checkout "@{-1}"
