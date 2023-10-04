@@ -1,4 +1,4 @@
-.rollGrid {
+.rollTable {
   width: 100%;
   height: 100%;
 
@@ -13,7 +13,7 @@
 }
 
 .cell {
-  border: 1px solid rgb(var(--roll-grid-outline-rgb));
+  border: 1px solid rgb(var(--roll-table-outline-rgb));
   margin: 0 0 -1px -1px;
 
   width: 100%;

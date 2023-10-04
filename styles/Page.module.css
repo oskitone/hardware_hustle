@@ -4,7 +4,7 @@
 
   padding: var(--print-margin);
 
-  outline: 1px dashed rgb(var(--roll-grid-outline-rgb));
+  outline: 1px dashed rgb(var(--roll-table-outline-rgb));
 }
 
 .page.letter {

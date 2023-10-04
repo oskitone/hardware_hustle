@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import { Front, Back } from "components/sheet";
-import RollGrid from "components/roll-grid";
+import RollTable from "components/roll-table";
 import Page from "components/page";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-function RollGridPage({ count }) {
+function RollTablePage({ count }) {
   const router = useRouter();
   count = !isUndefined(router.query.count)
     ? parseInt(router.query.count)
@@ -28,18 +28,18 @@ function RollGridPage({ count }) {
           <div key={i}>
             <Front size="letter" landscape>
               <Page size="letter">
-                <RollGrid />
+                <RollTable />
               </Page>
               <Page size="letter">
-                <RollGrid />
+                <RollTable />
               </Page>
             </Front>
             <Back size="letter" landscape>
               <Page size="letter">
-                <RollGrid />
+                <RollTable />
               </Page>
               <Page size="letter">
-                <RollGrid />
+                <RollTable />
               </Page>
             </Back>
           </div>
@@ -49,8 +49,8 @@ function RollGridPage({ count }) {
   );
 }
 
-RollGridPage.defaultProps = {
+RollTablePage.defaultProps = {
   count: 1,
 };
 
-export default RollGridPage;
+export default RollTablePage;
