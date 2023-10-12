@@ -1,5 +1,7 @@
 "use strict";
 
+// TODO: merge with make_pdfs.sh
+
 const puppeteer = require("puppeteer");
 
 const makePdf = async (url, outputPath, format) => {

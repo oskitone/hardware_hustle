@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: merge with make_pdf.js
+
 {
 
 # Exit on error
