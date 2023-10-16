@@ -15,10 +15,13 @@ function Home({ gamesPerSheet, sheetSize, year, draftId }) {
   const legal_sheet_height = "14in";
   const letter_sheet_width = "8.5in";
   const letter_sheet_height = "11in";
+  const page_width = "8in";
+  const page_height = "6in";
 
   const pageSize = {
     legal: `${legal_sheet_width} ${legal_sheet_height}`,
     letter: `${letter_sheet_width} ${letter_sheet_height}`,
+    single: `${page_width} ${page_height}`,
   }[sheetSize];
 
   return (

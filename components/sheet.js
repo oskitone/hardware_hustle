@@ -10,6 +10,7 @@ function Sheet({ children, landscape, size }) {
         [styles.full]: size == "full",
         [styles.legal]: size == "legal",
         [styles.letter]: size == "letter",
+        [styles.single]: size == "single",
       })}
     >
       {children}

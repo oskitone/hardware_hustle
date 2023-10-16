@@ -51,6 +51,7 @@ function run() {
 
     mkdir -pv "${dir}" >/dev/null
 
+    export_pdf single
     export_pdf letter
     export_pdf legal
     export_pdf rules

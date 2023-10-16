@@ -11,6 +11,11 @@
   flex-direction: column;
 }
 
+.single {
+  width: var(--page-width);
+  height: var(--page-height);
+}
+
 .letter {
   width: var(--letter-sheet-width);
   height: var(--letter-sheet-height);

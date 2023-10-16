@@ -20,6 +20,8 @@ function RulesPage({ year, draftId, view }) {
   const legal_sheet_height = "14in";
   const letter_sheet_width = "8.5in";
   const letter_sheet_height = "11in";
+  const page_width = "8in";
+  const page_height = "6in";
 
   const pageSize = `${letter_sheet_height} ${letter_sheet_width}`;
 
