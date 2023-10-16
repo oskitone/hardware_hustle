@@ -1,5 +1,7 @@
 # Hardware Hustle
 
+![Hardware Hustle screenshot](screenshot.png)
+
 Hardware Hustle is a roll-and-write resource management game for one or more players about sustainably running a small hardware business. It's a tabletop game that you print out and play!
 
 **Status:** Open beta testing. Medium, mechanics, and features are set; copy and design can change.

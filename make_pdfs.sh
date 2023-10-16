@@ -46,6 +46,20 @@ function export_pdf() {
     node make_pdf.js "${url}/${path}" "${filename}"
 }
 
+function update_screenshot() {
+    path="$1"
+    input="${dir}/${stub}-${path}.pdf"
+    output="screenshot.png"
+
+    echo "Updating ${output} from ${filename}"
+
+    convert \
+        -density 150 \
+        "${input}" \
+        -colorspace LinearGray \
+        "${output}"
+}
+
 function run() {
     confirm_url
 
@@ -56,6 +70,10 @@ function run() {
     export_pdf legal
     export_pdf rules
     export_pdf roll-table
+
+    echo
+
+    update_screenshot single
 }
 
 while getopts "h?d:" opt; do
