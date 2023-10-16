@@ -22,9 +22,11 @@ import Wordmark from "components/wordmark";
 
 <Wordmark className={styles.Wordmark} draftId={props.draftId} />
 
-# Rules
-
 A roll-and-write resource management game for one or more players about sustainably running a small hardware business.
+
+Buy, make, sell, and research your way to profit without burning out!
+
+# Rules
 
 ## Setup
 
@@ -58,13 +60,28 @@ Its icons represent:
 - <Opportunity />: Opportunity
 - <Roll />: Dice roll
 
-## Taking a turn
+## A turn, in summary
 
-You can think of a turn like a typical workday: you wake up in the AM, do some stuff (Actions), and then rest in the PM. Ideally, the day's actions get you further towards your goal, which is, unfortunately, to make enough money to continue making money.
+1. ### AM
+   Take stock and get ready for the day
+1. ### Buy
+   Spend <Opportunity /> and <Money /> to get Parts (<A /> <B /> <C /> <D />)
+1. ### Make
+   Spend <Opportunity /> and Parts to get Widgets (<AB /> <ABC /> <ABCD />)
+1. ### Sell
+   Spend <Opportunity /> and Widgets to get <Money />
+1. ### PM
+   Use remaining <Opportunity /> to attempt Research, or lose next turn if <Opportunity /> is negative
 
-The turn's day is like a little spreadsheet. Its rows are grouped into Money, Parts, Widgets, and Opportunity. Its columns are Actions to be filled out from left to right.
+Buying, Making, and Selling all take <Opportunity />. How much <Opportunity /> is limited by a die roll per Action and a fixed cap per turn.
 
 Let's walk through an example:
+
+## A turn, in detail
+
+Think of a turn as a typical workday: you wake up in the morning, do some work, and then rest or research in the evening. Ideally, the day's actions get you further towards your goal, which, unfortunately, is to make enough money to continue making money.
+
+That day is represented as a spreadsheet. Its rows are grouped into Money, Parts, Widgets, and Opportunity. Its columns are Actions to be filled out from left to right.
 
 ### 1. AM
 
@@ -291,9 +308,7 @@ Later in the game, AM <Opportunity /> starts dwindling each turn &mdash; just li
 
 ### How to Win
 
-The player with the most money at the end of the game _without Burning Out in the last turn_ wins!
-
-(Unused Parts and unsold Widgets count for nothing, only Money.)
+The player with the most money at the end of the game _without Burning Out in the last turn_ wins! Unused Parts and unsold Widgets count for nothing, only Money.
 
 Solo play is solitaire; try to beat your best score.
 
@@ -305,8 +320,7 @@ You were too preoccupied with money and lost sight of what really matters, so yo
 
 ---
 
-_{props.draftId}_
-
+_{props.draftId}_  
 _{props.year} CC BY-SA 4.0 Oskitone_
 
 export default function Rules({ children, page, year, draftId }) {
