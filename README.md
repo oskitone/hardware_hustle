@@ -2,11 +2,13 @@
 
 ![Hardware Hustle screenshot](screenshot.png)
 
-Hardware Hustle is a roll-and-write resource management game for one or more players about sustainably running a small hardware business. It's a tabletop game that you print out and play!
+Hardware Hustle is a roll-and-write resource management game for one or more players about sustainably running a small hardware business. It's a tabletop game disguised as a spreadsheet that you print out and play!
 
-**Status:** Open beta testing. Medium, mechanics, and features are set; copy and design can change.
+Buy, make, sell, and research your way to profit without burning out!
 
 ## Development notes
+
+**Open beta testing:** Format, mechanics, and features are set; copy and design can change.
 
 - Long ago, I drafted pixel art for a video game of the same name and concept. This paper version is like what I had in mind but boiled down to the bare math.  
   ![Arduboy video game concept art](public/arduboy-concept-art.png)
@@ -19,23 +21,30 @@ Hardware Hustle is a roll-and-write resource management game for one or more pla
 
 ### Print instructions
 
-1. Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](https://oskitone.github.io/hardware_hustle/)
-2. Print
-   - Designs have margins built-in, so print without them
-   - Game sheet pages have versions for letter and legal (preferred) paper sizes
-   - Rules print in landscape mode, two-sided, flip on short edge
-3. Trim game sheets to 8"x6"
-4. Rules fold into a booklet
+Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](https://oskitone.github.io/hardware_hustle/)
 
-### Playtester feedback welcome!
+- Game sheets
+  - Choose layout for either letter or legal paper size; design is identical
+  - Print portrait mode without margins, at 100% scale, and single-sided
+  - Trim individual game sheets to 8"x6"
+  - For a nice finish, bind a stack of them to cardboard backing with bookbinding glue
+- Rules
+  - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
+  - Fold into a booklet
+- Roll table
+  - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
+  - Use cardstock for better reusability
 
-Form: [https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
+### Playtester feedback welcome
 
-Please only leave feedback if you've played an entire game and can be constructive. If games like this are not for you or you have nothing nice to say, it is better to say nothing at all.
+Hardware Hustle is not for everyone. I had one playtester tell me its format and rules were so complicated it's basically unplayable. Another said its format is so straightforward it doesn't need rules!
+
+Whatever the case, your feedback is welcome. Please play at least one entire game before submitting feedback here:  
+[https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
 
 ## Source code
 
-Believe it or not, Hardware Hustle is a website that is optimized for print. This repo contains its source code.
+Believe it or not, this game is a website optimized for print.
 
 To run:
 
