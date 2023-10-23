@@ -34,6 +34,9 @@ function Index({ year, draftId }) {
                 <Link href="/legal">Game sheet (legal paper)</Link>
               </li>
               <li>
+                <Link href="/single">Game sheet (single)</Link>
+              </li>
+              <li>
                 <Link href="/rules">Rules (letter paper)</Link>
               </li>
               <li>
