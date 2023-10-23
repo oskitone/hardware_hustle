@@ -5,8 +5,9 @@ import Head from "next/head";
 
 import { Front, Back } from "components/sheet";
 import { getCommitProps } from "common/utils";
-import RollTable from "components/roll-table";
+import { letter_sheet_width, letter_sheet_height } from "common/dimensions";
 import Page from "components/page";
+import RollTable from "components/roll-table";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -17,14 +18,6 @@ function RollTablePage({ year, count }) {
   count = !isUndefined(router.query.count)
     ? parseInt(router.query.count)
     : count;
-
-  // TODO: DRY against globals.css?
-  const legal_sheet_width = "8.5in";
-  const legal_sheet_height = "14in";
-  const letter_sheet_width = "8.5in";
-  const letter_sheet_height = "11in";
-  const page_width = "8in";
-  const page_height = "6in";
 
   const pageSize = `${letter_sheet_height} ${letter_sheet_width}`;
 

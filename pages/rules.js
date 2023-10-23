@@ -2,10 +2,11 @@ import { Open_Sans } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import Sheet, { Front, Back } from "components/sheet";
 import { getCommitProps } from "common/utils";
+import { letter_sheet_width, letter_sheet_height } from "common/dimensions";
 import Page from "components/page";
 import Rules from "components/rules.mdx";
+import Sheet, { Front, Back } from "components/sheet";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -15,14 +16,6 @@ export const getStaticProps = async (context) => getCommitProps();
 // TODO: deter widows/orphans in headers/icons
 
 function RulesPage({ year, draftId, view }) {
-  // TODO: DRY against globals.css?
-  const legal_sheet_width = "8.5in";
-  const legal_sheet_height = "14in";
-  const letter_sheet_width = "8.5in";
-  const letter_sheet_height = "11in";
-  const page_width = "8in";
-  const page_height = "6in";
-
   const pageSize = `${letter_sheet_height} ${letter_sheet_width}`;
 
   const router = useRouter();
