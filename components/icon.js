@@ -16,9 +16,11 @@ import {
   BsDice5,
 } from "react-icons/bs";
 
+import { IoDiceOutline } from "react-icons/io5";
+
 function Icon({ id, prefix, suffix, className, inline, row }) {
   // TODO: tidy
-  const bootstrapIcon = {
+  const iconElement = {
     money: <BsCoin className={styles.bootstrapIcon} />,
     opportunity: <BsArrowUpRightCircle className={styles.bootstrapIcon} />,
     A: <BsNut className={styles.bootstrapIcon} />,
@@ -28,7 +30,7 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
     AB: <BsSpeaker className={styles.bootstrapIcon} />,
     ABC: <BsBoombox className={styles.bootstrapIcon} />,
     ABCD: <BsJoystick className={styles.bootstrapIcon} />,
-    roll: <BsDice5 className={styles.bootstrapIcon} />,
+    roll: <IoDiceOutline className={styles.bootstrapIcon} />,
   }[id];
 
   return (
@@ -40,7 +42,7 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
       title={id}
     >
       {htmlEntity(prefix)}
-      {bootstrapIcon}
+      {iconElement}
       {htmlEntity(suffix)}
     </span>
   );
