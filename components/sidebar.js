@@ -25,7 +25,7 @@ export default function Sidebar({ turnsData, year, draftId }) {
       />
 
       <footer className={styles.footer}>
-        <p>{year} CC BY-SA 4.0 Oskitone / oskitone.com</p>
+        <p>{year} CC BY-SA 4.0 - oskitone.com</p>
       </footer>
     </div>
   );
