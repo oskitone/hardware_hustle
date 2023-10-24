@@ -3,23 +3,32 @@ import classnames from "classnames";
 import { htmlEntity } from "common/utils";
 import styles from "@/styles/Icon.module.css";
 
-// TODO?: https://react-icons.github.io/react-icons
+import {
+  BsCoin,
+  BsArrowUpRightCircle,
+  BsNut,
+  BsBoxSeam,
+  BsSliders,
+  BsCpu,
+  BsSpeaker,
+  BsBoombox,
+  BsJoystick,
+  BsDice5,
+} from "react-icons/bs";
 
 function Icon({ id, prefix, suffix, className, inline, row }) {
-  const bootstrapIconClassName = {
-    money: "bi-coin",
-    opportunity: "bi-arrow-up-right-circle",
-
-    A: "bi-nut",
-    B: "bi-box-seam",
-    C: "bi-sliders",
-    D: "bi-cpu",
-
-    AB: "bi-speaker",
-    ABC: "bi-boombox",
-    ABCD: "bi-joystick",
-
-    roll: "bi-dice-5",
+  // TODO: tidy
+  const bootstrapIcon = {
+    money: <BsCoin className={styles.bootstrapIcon} />,
+    opportunity: <BsArrowUpRightCircle className={styles.bootstrapIcon} />,
+    A: <BsNut className={styles.bootstrapIcon} />,
+    B: <BsBoxSeam className={styles.bootstrapIcon} />,
+    C: <BsSliders className={styles.bootstrapIcon} />,
+    D: <BsCpu className={styles.bootstrapIcon} />,
+    AB: <BsSpeaker className={styles.bootstrapIcon} />,
+    ABC: <BsBoombox className={styles.bootstrapIcon} />,
+    ABCD: <BsJoystick className={styles.bootstrapIcon} />,
+    roll: <BsDice5 className={styles.bootstrapIcon} />,
   }[id];
 
   return (
@@ -31,13 +40,7 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
       title={id}
     >
       {htmlEntity(prefix)}
-      <i
-        className={classnames(
-          "bi",
-          bootstrapIconClassName,
-          styles.bootstrapIcon
-        )}
-      />
+      {bootstrapIcon}
       {htmlEntity(suffix)}
     </span>
   );

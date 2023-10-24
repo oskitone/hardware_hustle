@@ -12,7 +12,6 @@
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.4.2",
-    "bootstrap-icons": "^1.10.4",
     "classnames": "^2.3.2",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
@@ -20,7 +19,8 @@
     "next": "13.3.1",
     "puppeteer": "^21.3.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.11.0"
   },
   "devDependencies": {
     "@types/node": "18.15.13",
