@@ -122,7 +122,7 @@ export const ACTIONS = {
       ],
       [
         <>
-          <Icon id="opportunity" /> &gt;=
+          <Icon id="opportunity" /> &ge;
           <Icon id="roll" />
         </>,
         <div key={0} className={styles.pmAction}>
