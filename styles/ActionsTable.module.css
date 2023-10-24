@@ -6,6 +6,8 @@
   margin: 0 0 0.5em;
 
   white-space: nowrap;
+
+  font-size: var(--default-font-size);
 }
 
 .action:last-of-type {

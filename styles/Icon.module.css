@@ -1,5 +1,6 @@
 .bootstrapIcon {
   margin: 0 2px;
+  font-size: var(--default-font-size);
 }
 
 .inline .bootstrapIcon {

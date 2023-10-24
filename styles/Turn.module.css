@@ -1,6 +1,8 @@
 .turn {
   height: fit-content;
   break-inside: avoid;
+
+  font-size: var(--default-font-size);
 }
 
 .thead .th,
