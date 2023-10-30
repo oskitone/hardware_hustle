@@ -147,14 +147,8 @@
 }
 
 .rules ol,
-.rules ul,
-.Graph {
+.rules ul {
   margin-left: 1.5em;
-}
-
-.Graph {
-  height: 120px;
-  margin: 0 0 calc(var(--default-font-size) * 2);
 }
 
 .rules hr {
