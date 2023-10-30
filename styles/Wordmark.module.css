@@ -7,7 +7,7 @@
   letter-spacing: -0.025em;
 
   margin-left: -0.05em;
-  margin-bottom: calc(var(--default-font-size) / 4);
+  margin: 0 0 calc(var(--default-font-size) / 4);
 }
 
 .oskitones {
