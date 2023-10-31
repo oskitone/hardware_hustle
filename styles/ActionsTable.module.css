@@ -7,7 +7,7 @@
 
   white-space: nowrap;
 
-  font-size: var(--default-font-size);
+  font-size: inherit;
 }
 
 .action:last-of-type {
@@ -36,7 +36,7 @@
 }
 
 .action .pmAction {
-  line-height: calc(var(--default-font-size) + 2px);
+  line-height: calc(1em + 2px);
   font-size: 0.8em;
 }
 

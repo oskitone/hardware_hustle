@@ -4,7 +4,7 @@
 
 .bootstrapIcon {
   margin: 0 2px;
-  font-size: var(--default-font-size);
+  font-size: inherit;
 }
 
 .inline .bootstrapIcon {

@@ -2,7 +2,7 @@
   height: fit-content;
   break-inside: avoid;
 
-  font-size: var(--default-font-size);
+  font-size: inherit;
 }
 
 .thead .th,
@@ -19,9 +19,11 @@
   grid-template-columns: calc(1em + 0.5em) repeat(5, minmax(0, 1fr));
 }
 
-/* TODO: derive? */
-.tbody .th,
-.tbody .td {
+/* NOTE: Eyeballed to fill sheet */
+/* Ideally it's extracted into parent component so individual uses
+   can have arbitrary/implicit heights but that is some work to do. */
+.turn .tbody .th,
+.turn .tbody .td {
   height: calc(var(--default-font-size) * 1.34);
 }
 
@@ -124,7 +126,7 @@
   position: absolute;
   left: 0.2em;
   pointer-events: none;
-  font-size: calc(var(--default-font-size) * 0.75);
+  font-size: calc(1em * 0.75);
   font-weight: 100;
 }
 
