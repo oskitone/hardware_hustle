@@ -268,11 +268,9 @@ Some real world examples of Research might be:
 
 Roll to figure out how much <Opportunity /> the Research will cost. We'll say it's a 2, which is less than the <Opportunity />3 you have left. Lucky you! (A roll of 3 would have also succeeded. 4 and up would not.)
 
-Remember how you've only been using the first column of <Opportunity /> values with the dark outline? You decide you want to be better at Making, so you cross out the previously used values to outline the whole column of new ones to their right.
+Remember how you've only been using the first column of <Opportunity /> values with the dark outline? You decide you want to be better at Making, so you shade in the previously used values and outline the whole column of new ones to their right.
 
-{/* TODO: mark new PS values */}
-
-<ActionsTable className={styles.ActionsTable} />
+<ActionsTable className={styles.ActionsTable} selectedIndexes={[0, 1, 0]} />
 
 Nice! For the rest of the game, all Widgets will consume one less <Opportunity />, no matter how many of them you make! With this Research, all <AB />s are effectively "free" to Make.)
 
