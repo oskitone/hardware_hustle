@@ -37,7 +37,7 @@
 
 .action .pmAction {
   line-height: calc(var(--default-font-size) + 2px);
-  font-size: var(--rules-font-size);
+  font-size: 0.8em;
 }
 
 .action .pmAction strong {
