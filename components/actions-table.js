@@ -6,7 +6,7 @@ import PointSelector from "components/point-selector";
 
 import styles from "@/styles/ActionsTable.module.css";
 
-function PS({ options, value, firstRow, lastRow }) {
+function PS({ options, selectedIndex, firstRow, lastRow }) {
   return (
     <PointSelector
       firstRow={firstRow}
@@ -14,7 +14,7 @@ function PS({ options, value, firstRow, lastRow }) {
       icon="opportunity"
       iconPrefix="-"
       options={options}
-      value={value}
+      selectedIndex={selectedIndex}
     />
   );
 }
@@ -22,31 +22,41 @@ function PS({ options, value, firstRow, lastRow }) {
 export const ACTIONS = {
   BUY: {
     title: "Buy",
-    body: [
+    getBody: (selectedIndex) => [
       [
         <Icon key={0} id="A" prefix="+" />,
-        <PS key={0} options={[0, 0, 0, 0]} value={0} firstRow />,
+        <PS
+          key={0}
+          options={[0, 0, 0, 0]}
+          selectedIndex={selectedIndex}
+          firstRow
+        />,
         <>
           {htmlEntity("-")} <Icon id="money" suffix="1" />
         </>,
       ],
       [
         <Icon key={0} id="B" prefix="+" />,
-        <PS key={0} options={[1, 0, 0, 0]} value={1} />,
+        <PS key={0} options={[1, 0, 0, 0]} selectedIndex={selectedIndex} />,
         <>
           {htmlEntity("-")} <Icon id="money" suffix="2" />
         </>,
       ],
       [
         <Icon key={0} id="C" prefix="+" />,
-        <PS key={0} options={[2, 1, 0, 0]} value={2} />,
+        <PS key={0} options={[2, 1, 0, 0]} selectedIndex={selectedIndex} />,
         <>
           {htmlEntity("-")} <Icon id="money" suffix="3" />
         </>,
       ],
       [
         <Icon key={0} id="D" prefix="+" />,
-        <PS key={0} options={[3, 2, 1, 0]} value={3} lastRow />,
+        <PS
+          key={0}
+          options={[3, 2, 1, 0]}
+          selectedIndex={selectedIndex}
+          lastRow
+        />,
         <>
           {htmlEntity("-")} <Icon id="money" suffix="4" />
         </>,
@@ -55,17 +65,22 @@ export const ACTIONS = {
   },
   MAKE: {
     title: "Make",
-    body: [
+    getBody: (selectedIndex) => [
       [
         <Icon key={0} id="AB" prefix="+" />,
-        <PS key={0} options={[1, 0, 0, 0]} value={1} firstRow />,
+        <PS
+          key={0}
+          options={[1, 0, 0, 0]}
+          selectedIndex={selectedIndex}
+          firstRow
+        />,
         <>
           {htmlEntity("-")} <Icon id="A" row /> <Icon id="B" row />
         </>,
       ],
       [
         <Icon key={0} id="ABC" prefix="+" />,
-        <PS key={0} options={[2, 1, 0, 0]} value={2} />,
+        <PS key={0} options={[2, 1, 0, 0]} selectedIndex={selectedIndex} />,
         <>
           {htmlEntity("-")} <Icon id="A" row /> <Icon id="B" row />{" "}
           <Icon id="C" row />
@@ -73,7 +88,12 @@ export const ACTIONS = {
       ],
       [
         <Icon key={0} id="ABCD" prefix="+" />,
-        <PS key={0} options={[3, 2, 1, 0]} value={3} lastRow />,
+        <PS
+          key={0}
+          options={[3, 2, 1, 0]}
+          selectedIndex={selectedIndex}
+          lastRow
+        />,
         <>
           {htmlEntity("-")} <Icon id="A" row /> <Icon id="B" row />{" "}
           <Icon id="C" row />
@@ -84,24 +104,34 @@ export const ACTIONS = {
   },
   SELL: {
     title: "Sell",
-    body: [
+    getBody: (selectedIndex) => [
       [
         <Icon key={0} id="AB" prefix="-" />,
-        <PS key={0} options={[2, 1, 0, 0]} value={2} firstRow />,
+        <PS
+          key={0}
+          options={[2, 1, 0, 0]}
+          selectedIndex={selectedIndex}
+          firstRow
+        />,
         <>
           {htmlEntity("+")} <Icon id="money" suffix="6" />
         </>,
       ],
       [
         <Icon key={0} id="ABC" prefix="-" />,
-        <PS key={0} options={[3, 2, 1, 0]} value={3} />,
+        <PS key={0} options={[3, 2, 1, 0]} selectedIndex={selectedIndex} />,
         <>
           {htmlEntity("+")} <Icon id="money" suffix="18" />
         </>,
       ],
       [
         <Icon key={0} id="ABCD" prefix="-" />,
-        <PS key={0} options={[4, 3, 2, 1]} value={4} lastRow />,
+        <PS
+          key={0}
+          options={[4, 3, 2, 1]}
+          selectedIndex={selectedIndex}
+          lastRow
+        />,
         <>
           {htmlEntity("+")} <Icon id="money" suffix="40" />
         </>,
@@ -110,7 +140,7 @@ export const ACTIONS = {
   },
   PM: {
     title: "PM",
-    body: [
+    getBody: () => [
       [
         <>
           <Icon id="opportunity" /> &lt; 0
@@ -137,13 +167,13 @@ export const ACTIONS = {
   },
 };
 
-function ActionsTable({ className, actions }) {
+function ActionsTable({ className, actions, selectedIndexes }) {
   return (
     <div className={classnames(className, styles.actionsTable)}>
       {actions.map((action, actionI) => (
         <div className={styles.action} key={actionI}>
           <div className={styles.title}>{action.title}</div>
-          {action.body.map((columns, bodyI) =>
+          {action.getBody(selectedIndexes[actionI]).map((columns) =>
             columns.map((column, columnI) => (
               <div className={styles.column} key={columnI}>
                 {column}
@@ -159,6 +189,7 @@ function ActionsTable({ className, actions }) {
 ActionsTable.defaultProps = {
   className: undefined,
   actions: [ACTIONS.BUY, ACTIONS.MAKE, ACTIONS.SELL, ACTIONS.PM],
+  selectedIndexes: [0, 0, 0],
 };
 
 export default ActionsTable;

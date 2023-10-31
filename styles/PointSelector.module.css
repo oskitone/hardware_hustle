@@ -36,6 +36,10 @@
   border-right-width: 2px;
 }
 
+.selected.shaded {
+  background-color: rgb(var(--shaded-rgb));
+}
+
 .firstRow .selected {
   border-top-color: rgb(var(--foreground-rgb));
   border-top-width: 2px;

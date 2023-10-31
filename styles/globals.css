@@ -4,11 +4,9 @@
   --background-rgb: 255, 255, 255;
 
   --inactive-rgb: 235, 235, 235;
-
+  --shaded-rgb: 180, 180, 180;
   --point-selector-outline-rgb: 180, 180, 180;
-
   --graph-line-rgb: 180, 180, 180;
-
   --roll-table-outline-rgb: 180, 180, 180;
 
   --fillet: 4px;
