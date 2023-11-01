@@ -39,31 +39,34 @@ function confirm_url() {
 
 function export_pdf() {
     path="$1"
-    filename="${dir}/${stub}-${path}.pdf"
+    filename="${stub}-${path}.pdf"
 
     echo "Exporting ${filename}"
 
-    node make_pdf.js "${url}/${path}" "${filename}"
+    node make_pdf.js "${url}/${path}" "${dir}/${filename}"
 }
 
 function make_screenshot() {
     path="$1"
-    input="${dir}/${stub}-${path}.pdf"
-    output="${dir}/${stub}-${path}.png"
+    input="${stub}-${path}.pdf"
+    output="${stub}-${path}.png"
 
     echo "Making ${output} from ${filename}"
 
     convert \
         -density 150 \
-        "${input}" \
+        "${dir}/${input}" \
         -colorspace LinearGray \
-        "${output}"
+        "${dir}/${output}"
 }
 
 function run() {
     confirm_url
 
     mkdir -pv "${dir}" >/dev/null
+
+    echo "Output directory: ${dir}"
+    echo
 
     export_pdf single
     export_pdf letter
