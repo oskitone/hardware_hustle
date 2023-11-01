@@ -52,6 +52,12 @@ function make_screenshot() {
     output="${dir}/${stub}-${path}.png"
 
     echo "Making ${output} from ${filename}"
+
+    convert \
+        -density 150 \
+        "${input}" \
+        -colorspace LinearGray \
+        "${output}"
 }
 
 function run() {
