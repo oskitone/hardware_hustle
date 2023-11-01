@@ -1,5 +1,6 @@
 .icon {
-  vertical-align: sub;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 .bootstrapIcon {
