@@ -15,3 +15,12 @@
 .row .bootstrapIcon {
   margin-right: 0;
 }
+
+.iconX {
+  white-space: nowrap;
+}
+
+.iconX .x {
+  margin: 0 0.2em;
+  font-weight: 100;
+}

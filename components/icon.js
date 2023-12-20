@@ -59,4 +59,19 @@ export const ABC = () => <Icon id="ABC" inline />;
 export const ABCD = () => <Icon id="ABCD" inline />;
 export const Roll = () => <Icon id="roll" inline />;
 
+export const MoneyX = ({ value }) => (
+  <span className={styles.iconX}>
+    <Icon id="money" inline />
+    <span className={styles.x}>&times;</span>
+    {value}
+  </span>
+);
+export const OpportunityX = ({ value }) => (
+  <span className={styles.iconX}>
+    <Icon id="opportunity" inline />
+    <span className={styles.x}>&times;</span>
+    {value}
+  </span>
+);
+
 export default Icon;
