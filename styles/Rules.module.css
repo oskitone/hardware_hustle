@@ -129,7 +129,8 @@
 .rules li,
 .ActionsTable,
 .Turn,
-.Graph {
+.Graph,
+.rules table {
   break-inside: avoid;
 }
 
@@ -160,9 +161,11 @@
 
 .rules table {
   width: 100%;
+  line-height: 1;
 }
 
 .rules table th {
-  font-weight: 800;
+  font-weight: 600;
   text-align: left;
+  width: 2em;
 }
