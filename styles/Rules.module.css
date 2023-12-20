@@ -67,6 +67,7 @@
 .rules h4 {
   text-transform: uppercase;
   line-height: 1;
+  page-break-after: avoid;
 }
 
 .rules h1,
