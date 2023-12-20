@@ -110,7 +110,8 @@
 .rules ul,
 .ActionsTable,
 .Turn,
-.Graph {
+.Graph,
+.rules table {
   margin: 0 0 var(--default-font-size);
 }
 
@@ -155,4 +156,13 @@
   border: 0 solid rgb(var(--graph-line-rgb));
   border-width: 1px 0 0 0;
   margin: 2em 0;
+}
+
+.rules table {
+  width: 100%;
+}
+
+.rules table th {
+  font-weight: 800;
+  text-align: left;
 }

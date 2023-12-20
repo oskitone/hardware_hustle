@@ -15,6 +15,8 @@ import Icon, {
   ABC,
   ABCD,
   Roll,
+  MoneyX,
+  OpportunityX,
 } from "components/icon";
 import Turn, { firstTurnSuppliedColumns } from "components/turn";
 import Wordmark from "components/wordmark";
@@ -25,19 +27,19 @@ import Wordmark from "components/wordmark";
 
 ## Introduction
 
-{/* Conceptual intro */}
+Hardware Hustle is a tabletop, roll-and-write resource management game for one or more players about sustainably running a small hardware business.
 
-Buy, make, sell, and research your way to profit without burning out!
+Can you buy, make, sell, and research your way to profit without burning out?
 
-## Overview
+## Game Overview
 
-Hardware Hustle is a roll-and-write resource management game for one or more players about sustainably running a small hardware business.
+You have six turns to buy parts to make widgets, make widgets from parts, and sell widgets for money. Each action takes Opportunity, which you have less and less of as the game progresses. At the end of each turn, you can spend excess Opportunity to attempt a research upgrade, making you better at buying, making, or selling.
 
-You have six turns to make as much money as you can by buying parts, making widgets, and then selling the widgets for profit. Along the way, you can get better at those actions by researching. But don't overwork yourself or you'll burn out and lose a turn!
+The six turns are represented as spreadsheets. The game ends when they're all filled out, and the player with the most money wins.
 
 ## Components
 
-Each player will need:
+Each player needs:
 
 - Hardware Hustle game sheet
 - Six-sided die or "Roll Table" sheet
@@ -45,21 +47,11 @@ Each player will need:
 
 ## Game Setup
 
-The player with the highest die roll goes first, then proceed clockwise.
+Fill out the "{ID_TITLE}" line in the game sheet's top left. The player with the highest die roll goes first, then proceed clockwise.
 
-Fill out the "{ID_TITLE}" line in the game sheet's top left, then familiarize yourself with the Actions table below it.
-
-{/* TODO: rough outline of worksheet? */}
-
-<ActionsTable className={styles.ActionsTable} />
-
-Its icons represent:
-
-{/* TODO: table or some nice way to show these? */}
-
-- Parts
-  - <A />: Enclosure
-  - <B />: Speaker
+{/* - Parts
+  - <A />: Fastener
+  - <B />: Enclosure
   - <C />: Controls
   - <D />: Processor
 - Widgets
@@ -68,11 +60,15 @@ Its icons represent:
   - <ABCD />: Synth
 - <Money />: Money
 - <Opportunity />: Opportunity
-- <Roll />: Dice roll
+- <Roll />: Dice roll */}
 
 ## How to Play
 
-The game is played in six turns, each represented as a miniature spreadsheet. The spreadsheet's rows are grouped into Money, parts, widgets, and Opportunity; its columns are actions to be filled out from left to right.
+The game is played in six turns, each represented as a mini spreadsheet.
+
+The spreadsheet's rows are grouped into Money, Parts, Widgets, and Opportunity; its columns are actions to be filled out from left to right.
+
+{/* TODO: labeled graphic */}
 
 1. ### AM
    Wake up and get ready for the day
@@ -83,113 +79,142 @@ The game is played in six turns, each represented as a miniature spreadsheet. Th
 1. ### Sell
    Sell widgets to get <Money />, using <Opportunity />
 1. ### PM
-   End your workday; use remaining <Opportunity /> to attempt Research, or lose next turn if <Opportunity /> is negative
+   End your workday; use remaining <Opportunity /> to attempt Research upgrade, or lose next turn if <Opportunity /> is negative
 
 Let's walk through each action in detail:
 
 ### 1. AM
 
-You start your turn like a typical workday, waking up in the AM.
+Good morning! You start each turn taking stock of what you have and what you need.
 
-For the game's first turn, there's nothing to do here besides note your starting values: 10 <Money />, 12 <Opportunity />, and nothing else.
+For the game's first turn, there's nothing to do here besides note your starting values: <MoneyX value={10}/>, <OpportunityX value={12}/>, and 0 everything else.
 
 ### 2. Buy
 
-Time to get to work and buy some parts.
-
-{/* TODO: would these look nice as a table? */}
-
-1. **Roll:** Roll a die. Its value is the _maximum_ you can spend on Opportunity.
-1. **Decide:** Based on how much <Money /> you have in the AM column and max <Opportunity /> you just rolled, decide which parts you'd like to buy. See below.
-1. **Write:** In the Buy column, write the values for the parts you bought and their total <Opportunity /> and <Money /> costs.
-
-Refer to the Actions table for costs:
+Let's buy some parts. They cost <Money /> and <Opportunity />, as listed out in the Actions table on the left side of the game sheet:
 
 <ActionsTable actions={[ACTIONS.BUY]} className={styles.ActionsTable} />
 
-The <Opportunity /> costs are a table of values, but, for now, you'll only use the ones in the first column with the dark outline. In other words, a <A /> costs 0 <Opportunity /> + 1 <Money />, a <B /> costs 1 <Opportunity /> + 2 <Money />, etc.
+The <Opportunity /> costs are a table of values, but, for now, you'll only use the ones in the first column with the dark outline. In other words, to buy a <A /> you need <OpportunityX value={0} /> and <MoneyX value={1} />, to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />, etc:
 
-You can buy as much as you want, as long as the total <Opportunity /> sum is less than or equal to your roll and you have the <Money />.
+{/* <table>
+  <thead>
+    <tr><th /><th>Part</th><th><Opportunity /></th><th><Money /></th></tr>
+  </thead>
+  <tbody>
+    <tr><th><A /></th><td>Fastener</td><td>0</td><td>1</td></tr>
+    <tr><th><B /></th><td>Enclosure</td><td>1</td><td>2</td></tr>
+    <tr><th><C /></th><td>Controls</td><td>2</td><td>3</td></tr>
+    <tr><th><D /></th><td>Integrated Circuit</td><td>3</td><td>4</td></tr>
+  </tbody>
+</table> */}
+
+To complete the Buy phase:
+
+1. **Roll for <Opportunity />:** Roll a die. Its value is the _maximum_ <Opportunity /> you can spend buying.
+1. **Decide:** Based on how much <Money /> you have in the AM column and the max <Opportunity /> you just rolled, decide which parts to buy.
+1. **Write:** In the Buy column, write the values for the total <Money /> cost, the parts you bought, and the total <Opportunity /> they cost.
+
+{/* TODO: standardize "the total <Opportunity /> they cost" language. Consumed? Used? */}
 
 Note:
 
-- Cells are prefixed by their mathematical operation. We're spending <Money /> and <Opportunity />, so those they have a "**-**". We're gaining parts, so those cells have a "**+**". You can see the same corresponding **-**/**+** signs in the Actions table.
-- Unused cells have a gray background so we know to skip them.
+- You can buy as much as you want and multiples of the same part, as long as you have the <Opportunity /> and <Money />. (The sum <Opportunity /> must be less than or equal to your <Roll /> roll and the sum <Money /> must be less than or equal to what you have in the AM column.)
+- Cells are prefixed by their mathematical operation. You're spending <Money /> and <Opportunity />, so those they have a "**-**". You're gaining parts, so those cells have a "**+**". The same corresponding **-**/**+** signs are in the Actions table.
+- Unused cells have a gray background to denote they're skipped.
 - Cells with no change can be crossed out or filled with 0.
 - You can spend less <Opportunity /> than you roll, but you cannot spend more.
-- You also cannot spend more Money than you have.
+- You cannot spend more <Money /> than you have.
 
 ### 3. Make
 
-Next, you'll use those parts to Make widgets.
-
-1. **Roll:** Roll a die. Its value is the _maximum_ you can spend on Opportunity.
-1. **Decide:** Based on which parts you bought in the previous turn and max <Opportunity /> you just rolled, decide which widgets you'd like to make.
-1. **Write:** In the Make column, write the values for the parts you used and their total <Opportunity /> and cost.
+Next, you'll use the parts you just bought to make widgets. Again, the Actions table lists what you can make, their <Opportunity /> costs, and the parts that they'll consume:
 
 <ActionsTable actions={[ACTIONS.MAKE]} className={styles.ActionsTable} />
 
-Again, only use outlined values for now.
+Again, only use the outlined <Opportunity /> values for now.
+
+{/* - <AB />: Amplifier
+- <ABC />: Boombox
+- <ABCD />: Game */}
+
+To complete the Make phase:
+
+1. **Roll for <Opportunity />:** Roll a die. Its value is the _maximum_ <Opportunity /> you can spend making.
+1. **Decide:** Based on which parts you now have available and the max <Opportunity /> you just rolled, decide which widgets to make.
+1. **Write:** In the Make column, write the values for the parts you used, the widgets you made, and the total <Opportunity /> they cost.
+
+Just like in the Buy phase, you can make as much as you want, provided you have the parts and <Opportunity />.
 
 ### 4. Sell
 
-If you made any widgets, now's the time to sell them.
+If you made any widgets, now's the time to sell them. Note how the Actions table has you losing widgets but now gaining <Money />:
 
-1. **Roll for <Opportunity />:** Roll a die. Its value is the maximum you can spend on Opportunity.
-1. **Decide:** Based on which widgets you made in the previous turn and max <Opportunity /> you just rolled, decide which widgets you'd like to sell.
-1. **Write:** In the Sell column, write the values for the widgets you sold and their total <Opportunity /> and cost.
+<ActionsTable actions={[ACTIONS.SELL]} className={styles.ActionsTable} />
 
-<ActionsTable actions={[ACTIONS.MAKE]} className={styles.ActionsTable} />
+To complete the Sell phase:
+
+1. **Roll for <Opportunity />:** Roll a die. Its value is the _maximum_ <Opportunity /> you can spend selling.
+1. **Decide:** Based on which widgets you made in the previous turn and the max <Opportunity /> you just rolled, decide which widgets to sell.
+1. **Write:** In the Sell column, write the values for the <Money /> you made, the widgets you sold, and the total total <Opportunity /> they cost.
 
 ### 5. PM
 
-The cells in the PM column are all prefixed with **=**. Let's finish those equations to close out the spreadsheet and end the turn.
+Time to wrap the day up.
+
+The cells in the PM column are all prefixed with **=**. In this phase, you finish the math to complete the spreadsheet, ending the turn.
+
+To complete the PM phase:
 
 1. **Tally:** Complete each row's math equation into the final column.
 1. **Resolve <Opportunity />:**
    - If <Opportunity /> is negative, you suffer **Burnout** and lose the entire next turn to rest.
-   - Otherwise, **Roll for Research**. Its value is the <Opportunity /> cost to research getting better at _one_ of the previous three actions: Buying, Making, or Selling.
+   - Otherwise, **Roll for Research**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three actions: Buying, Making, or Selling.
 1. **Plot:** Draw a dot on the "Money / Turn" chart at your new <Money /> total, then draw a line connecting it to the previous dot.
 
 #### Burnout
 
 Cross out the entire next turn's spreadsheet. You cannot do any of its actions.
 
-#### Research
+#### Research Upgrade
 
 Did you roll less than or equal to your remaining <Opportunity />? Congrats! Your research succeeded. Circle the cell to mark that your research succeeded; otherwise cross it out to say it failed.
 
 {/* TODO: circle/cross examples */}
 
-Remember how you've only been using the first column of <Opportunity /> values with the dark outline? If your research succeeded, choose _one_ action to spend it on, then cross its column out to outline the values to their right. As an example, here's what it would look like to successfully research Making:
+Remember how you've only been using the first column of <Opportunity /> values with the dark outline? If your research succeeded, choose _one_ action to spend it on, then cross its column out and outline the values to their right.
+
+As an example, here's what it would look like to successfully research Making:
 
 <ActionsTable className={styles.ActionsTable} selectedIndexes={[0, 1, 0]} />
 
 Note that the other action's <Opportunity /> costs are unchanged.
 
-### Example turn
+## Example turn
 
-{/* TODO: turn a profit, successful research w/ circle */}
+{/* TODO: successful research w/ circle */}
+
+Here's an example of a completed first turn:
 
 <Turn
   className={styles.Turn}
   data={{
-    money: [10, 9, undefined, 6, 7],
-    A: [0, 2, 2, undefined, 0],
-    B: [0, 2, 2, undefined, 0],
-    C: [0, 1, 1, undefined, 0],
+    money: [10, 5, undefined, 6, 11],
+    A: [0, 1, 1, undefined, 0],
+    B: [0, 2, 1, undefined, 1],
+    C: [0, 0, 0, undefined, 0],
     D: [0, 0, 0, undefined, 0],
     AB: [0, undefined, 1, 1, 0],
-    ABC: [0, undefined, 1, 0, 1],
+    ABC: [0, undefined, 0, 0, 0],
     ABCD: [0, undefined, 0, 0, 0],
-    opportunity: [12, 4, 3, 2, 3],
+    opportunity: [12, 2, 1, 2, 8],
   }}
   suppliedColumns={firstTurnSuppliedColumns}
 />
 
 ## Ending a turn
 
-When your turn's done, hand the die to the next player so they can start theirs.
+When your turn's done, hand the die to the next player so they can start their turn.
 
 ## Starting a new turn
 
