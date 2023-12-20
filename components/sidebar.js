@@ -5,7 +5,7 @@ import Wordmark from "components/wordmark";
 
 import styles from "@/styles/Sidebar.module.css";
 
-export const ID_TITLE = "Name/Date";
+export const ID_TITLE = "Name";
 
 export default function Sidebar({ turnsData, year, draftId }) {
   return (
