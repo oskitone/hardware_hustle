@@ -90,7 +90,8 @@ export function Cell({
   day,
 
   inactive,
-  eod,
+  eod, // TODO: remove
+  standalone,
 
   prefix,
 
@@ -100,6 +101,9 @@ export function Cell({
   topRight,
   bottomLeft,
   bottomRight,
+
+  success,
+  fail,
 }) {
   const hasContent = icon || !!children || children === 0;
 
@@ -113,6 +117,7 @@ export function Cell({
       [styles.icon]: !!icon,
       [styles.inactive]: inactive,
       [styles.eod]: eod,
+      [styles.standalone]: standalone,
 
       [styles.topLeft]: topLeft,
       [styles.topRight]: topRight,
@@ -120,6 +125,9 @@ export function Cell({
       [styles.bottomRight]: bottomRight,
 
       [styles.handwritten]: !day && !head && !icon && !supplied,
+
+      [styles.success]: success,
+      [styles.fail]: fail,
     }),
   };
 
@@ -134,6 +142,19 @@ export function Cell({
 
   return <div {...props} contentEditable />;
 }
+
+export const ExampleCell = ({ success, fail, value }) => (
+  <Cell
+    standalone={true}
+    prefix={EQUALS} // TODO: fix
+    topRight={true}
+    bottomRight={true}
+    success={success}
+    fail={fail}
+  >
+    {value}
+  </Cell>
+);
 
 function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];

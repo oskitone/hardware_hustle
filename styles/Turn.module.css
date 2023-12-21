@@ -32,11 +32,6 @@
   font-size: 1.5em;
 }
 
-.td {
-  padding: 0 1em;
-  overflow: hidden;
-}
-
 .thead .th {
   font-weight: bold;
   line-height: 0.75;
@@ -80,8 +75,13 @@
   position: relative; /* for prefix containment */
 }
 
-.tbody .tr:last-of-type .td {
+.tbody .tr:last-of-type .td,
+.standalone {
   border-bottom-width: 1px;
+}
+
+.standalone {
+  max-width: 2em;
 }
 
 .td,
@@ -121,7 +121,7 @@
   background: rgb(var(--inactive-rgb));
 }
 
-.turn [prefix]:before {
+.td[prefix]:before {
   font-family: monospace;
   position: absolute;
   left: 0.2em;
@@ -130,6 +130,26 @@
   font-weight: 100;
 }
 
-.turn [prefix]:before {
+.td[prefix]:before {
   content: attr(prefix);
+}
+
+.success:after,
+.fail:after {
+  content: "O";
+  font-family: var(--font-handwriting);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  pointer-events: none;
+  font-size: 3.5em;
+  line-height: 16px;
+  opacity: 0.25;
+}
+
+.fail:after {
+  content: "X";
 }
