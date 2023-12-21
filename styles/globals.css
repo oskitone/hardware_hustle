@@ -28,6 +28,7 @@ html {
   background: rgb(var(--offpaper-rgb));
 
   font-size: var(--default-font-size);
+  font-family: Open Sans, sans-serif;
 }
 
 @media print {
