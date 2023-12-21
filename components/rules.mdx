@@ -23,11 +23,9 @@ import Wordmark from "components/wordmark";
 
 <Wordmark className={styles.Wordmark} draftId={props.draftId} />
 
-{/* TODO: we vs you */}
+{/* TODO: standardize "the total <Opportunity /> they cost" language. Consumed? Used? */}
 
-{/* TODO: Icon glossary */}
-
-{/* TODO: standardize capitalization */}
+{/* TODO: standardize intro w/ readme */}
 
 # Rules
 
@@ -41,7 +39,7 @@ Can you buy, make, sell, and research your way to profit without burning out?
 
 You have six turns to buy parts to make widgets, make widgets from parts, and sell widgets for money.
 
-Each of those actions takes Opportunity, which you have less and less of as the game progresses. At the end of each turn, you can spend excess Opportunity to attempt a research upgrade, reducing future Opportunity costs for buying, making, or selling.
+Each of those actions takes opportunity (<Opportunity />), which you have less and less of as the game progresses. At the end of each turn, you can spend excess <Opportunity /> to attempt a research upgrade, reducing future <Opportunity /> costs for buying, making, or selling.
 
 The six turns are represented as spreadsheets. The game ends when they're all filled out, and the player with the most money wins.
 
@@ -57,24 +55,11 @@ Each player needs:
 
 Fill out the "{ID_TITLE}" line in the game sheet's top left. The player with the highest die roll goes first, then proceed clockwise.
 
-{/* - Parts
-  - <A />: Fastener
-  - <B />: Enclosure
-  - <C />: Controls
-  - <D />: Processor
-- Widgets
-  - <AB />: Amplifier
-  - <ABC />: Noisebox
-  - <ABCD />: Synth
-- <Money />: Money
-- <Opportunity />: Opportunity
-- <Roll />: Dice roll */}
-
 ## How to Play
 
 The game is played in six turns, each represented as a mini spreadsheet.
 
-The spreadsheet's rows are grouped into Money, Parts, Widgets, and Opportunity; its columns are actions to be filled out from left to right.
+The spreadsheet's rows are grouped into money, parts, widgets, and opportunity; its columns are actions to be filled out from left to right.
 
 {/* TODO: labeled graphic */}
 
@@ -87,7 +72,7 @@ The spreadsheet's rows are grouped into Money, Parts, Widgets, and Opportunity; 
 1. ### Sell
    Sell widgets to get <Money />, using <Opportunity />
 1. ### PM
-   End your workday; use remaining <Opportunity /> to attempt Research upgrade, or lose next turn if <Opportunity /> is negative
+   End your workday; use remaining <Opportunity /> to attempt research upgrade, or lose next turn if <Opportunity /> is negative
 
 Let's walk through each action in detail:
 
@@ -105,25 +90,11 @@ Let's buy some parts. They cost <Money /> and <Opportunity />, as listed out in 
 
 The <Opportunity /> costs are a table of values, but, for now, you'll only use the ones in the first column with the dark outline. In other words, to buy a <A /> you need <OpportunityX value={0} /> and <MoneyX value={1} />, to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />, etc:
 
-{/* <table>
-  <thead>
-    <tr><th /><th>Part</th><th><Opportunity /></th><th><Money /></th></tr>
-  </thead>
-  <tbody>
-    <tr><th><A /></th><td>Fastener</td><td>0</td><td>1</td></tr>
-    <tr><th><B /></th><td>Enclosure</td><td>1</td><td>2</td></tr>
-    <tr><th><C /></th><td>Controls</td><td>2</td><td>3</td></tr>
-    <tr><th><D /></th><td>Integrated Circuit</td><td>3</td><td>4</td></tr>
-  </tbody>
-</table> */}
-
 To complete the Buy phase:
 
 1. **Roll for <Opportunity />:** Roll a die. Its value is the _maximum_ <Opportunity /> you can spend buying.
 1. **Decide:** Based on how much <Money /> you have in the AM column and the max <Opportunity /> you just rolled, decide which parts to buy.
 1. **Write:** In the Buy column, write the values for the total <Money /> cost, the parts you bought, and the total <Opportunity /> they cost.
-
-{/* TODO: standardize "the total <Opportunity /> they cost" language. Consumed? Used? */}
 
 Note:
 
@@ -168,16 +139,14 @@ To complete the Sell phase:
 
 ### 5. PM
 
-Time to wrap the day up.
-
-The cells in the PM column are all prefixed with **=**. In this phase, you finish the math to complete the spreadsheet, ending the turn.
+Time to wrap the day up and end the turn.
 
 To complete the PM phase:
 
-1. **Tally:** Complete each row's math equation into the final column.
+1. **Tally:** Complete each row's equation into the final column prefixed with **=**.
 1. **Resolve <Opportunity />:**
    - If <Opportunity /> is negative, you suffer **Burnout** and lose the entire next turn to rest.
-   - Otherwise, **Roll for Research**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three actions: Buying, Making, or Selling.
+   - Otherwise, **Roll for research**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three actions: Buying, Making, or Selling.
 1. **Plot:** Draw a dot on the "Money / Turn" chart at your new <Money /> total, then draw a line connecting it to the previous dot.
 
 #### Burnout
@@ -186,17 +155,19 @@ Cross out the entire next turn's spreadsheet. You cannot do any of its actions.
 
 #### Research Upgrade
 
-Did you roll less than or equal to your remaining <Opportunity />? Congrats! Your research succeeded. Circle the cell to mark that your research succeeded; otherwise cross it out to say it failed.
+Did you roll less than or equal to your remaining <Opportunity />? Congrats! Your research succeeded. Circle the cell to mark its success; otherwise cross it out to say it failed.
 
 {/* TODO: circle/cross examples */}
 
-Remember how you've only been using the first column of <Opportunity /> values with the dark outline? If your research succeeded, choose _one_ action to spend it on, then cross its column out and outline the values to their right.
+(Note that the <Opportunity /> roll for research is used differently than Buy/Make/Sell. For the other actions, it's a maximum that want to roll high; for research, it's more like a minimum that want to roll low.)
+
+Recall how you've only been using the first column of <Opportunity /> values with the dark outline. If your research succeeded, choose _one_ action to spend it on, then cross its column out and outline the values to their right.
 
 As an example, here's what it would look like to successfully research Making:
 
 <ActionsTable className={styles.ActionsTable} selectedIndexes={[0, 1, 0]} />
 
-Note that the other action's <Opportunity /> costs are unchanged.
+The non-researched action's <Opportunity /> costs remain unchanged.
 
 ## Example turn
 
@@ -232,7 +203,7 @@ Note that <Opportunity /> is _not_ empty; you have to use the value provided.
 
 ## End of the Game
 
-The player with the most money at the end of the six turns _without_ Burning Out in the last turn wins! Unused parts and unsold widgets count for nothing, only Money.
+The player with the most money at the end of the six turns _without_ Burning Out in the last turn wins! Unused parts and unsold widgets count for nothing, only money.
 
 If you **Burnout** in the last turn, you automatically lose.
 
@@ -244,7 +215,7 @@ Solo play is solitaire; try to beat your best score.
 
 ## Icon Glossary
 
-### Parts
+##### Parts
 
 <table>
   <tbody>
@@ -255,7 +226,7 @@ Solo play is solitaire; try to beat your best score.
   </tbody>
 </table>
 
-### Widgets
+##### Widgets
 
 <table>
   <tbody>
@@ -265,7 +236,7 @@ Solo play is solitaire; try to beat your best score.
   </tbody>
 </table>
 
-### Other
+##### Other
 
 <table>
   <tbody>

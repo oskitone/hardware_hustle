@@ -110,7 +110,6 @@
 .rules ul,
 .ActionsTable,
 .Turn,
-.Graph,
 .rules table {
   margin: 0 0 var(--default-font-size);
 }
@@ -129,14 +128,12 @@
 .rules li,
 .ActionsTable,
 .Turn,
-.Graph,
 .rules table {
   break-inside: avoid;
 }
 
 .ActionsTable,
 .Turn,
-.Graph,
 .rules table {
   page-break-before: avoid;
 }
@@ -161,11 +158,30 @@
 
 .rules table {
   width: 100%;
-  line-height: 1;
 }
 
 .rules table th {
-  font-weight: 600;
   text-align: left;
-  width: 2em;
+}
+
+.rules tbody {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.rules tbody tr {
+  display: flex;
+}
+
+.rules tbody th {
+  margin: 0 calc(var(--default-font-size) * 0.25) 0 0;
+}
+
+.rules tbody td {
+  flex-grow: 1;
+}
+
+.rules h5 {
+  font-size: var(--rules-font-size);
+  margin-bottom: calc(var(--default-font-size) * 0.25);
 }
