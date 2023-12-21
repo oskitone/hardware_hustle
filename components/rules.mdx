@@ -18,7 +18,7 @@ import Icon, {
   MoneyX,
   OpportunityX,
 } from "components/icon";
-import Turn, { firstTurnSuppliedColumns } from "components/turn";
+import Turn, { ExampleCell, firstTurnSuppliedColumns } from "components/turn";
 import Wordmark from "components/wordmark";
 
 <Wordmark className={styles.Wordmark} draftId={props.draftId} />
@@ -157,13 +157,24 @@ Cross out the entire next turn's spreadsheet. You cannot do any of its actions.
 
 Did you roll less than or equal to your remaining <Opportunity />? Congrats! Your research succeeded. Circle the cell to mark its success; otherwise cross it out to say it failed.
 
-{/* TODO: circle/cross examples */}
+<table>
+  <tbody>
+    <tr>
+      <th>Success: &nbsp;</th>
+      <td><ExampleCell success value={5} /></td>
+    </tr>
+    <tr>
+      <th>Failure: &nbsp;</th>
+      <td><ExampleCell fail value={2} /></td>
+    </tr>
+  </tbody>
+</table>
 
-(Note that the <Opportunity /> roll for research is used differently than Buy/Make/Sell. For the other actions, it's a maximum that want to roll high; for research, it's more like a minimum that want to roll low.)
+Note that the <Opportunity /> roll for research is used differently than Buy/Make/Sell. For the other actions, it's a maximum that you want to roll high; for research, you want to roll low.
 
 Recall how you've only been using the first column of <Opportunity /> values with the dark outline. If your research succeeded, choose _one_ action to spend it on, then cross its column out and outline the values to their right.
 
-As an example, here's what it would look like to successfully research Making:
+As an example, here's what the Actions table would look like after a successful research upgrade to Make:
 
 <ActionsTable className={styles.ActionsTable} selectedIndexes={[0, 1, 0]} />
 
@@ -205,9 +216,7 @@ Note that <Opportunity /> is _not_ empty; you have to use the value provided.
 
 The player with the most money at the end of the six turns _without_ Burning Out in the last turn wins! Unused parts and unsold widgets count for nothing, only money.
 
-If you **Burnout** in the last turn, you automatically lose.
-
-{/* TODO: reconsider or houserule */}
+If you burnout in the last turn, you automatically lose. In the case of a tie, the player who lost the fewest turns to burnout wins.
 
 ## Solo Mode
 

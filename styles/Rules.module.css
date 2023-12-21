@@ -162,6 +162,7 @@
 
 .rules table th {
   text-align: left;
+  font-weight: inherit;
 }
 
 .rules tbody {
