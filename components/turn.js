@@ -90,7 +90,6 @@ export function Cell({
   day,
 
   inactive,
-  eod, // TODO: remove
   standalone,
 
   prefix,
@@ -116,7 +115,6 @@ export function Cell({
 
       [styles.icon]: !!icon,
       [styles.inactive]: inactive,
-      [styles.eod]: eod,
       [styles.standalone]: standalone,
 
       [styles.topLeft]: topLeft,
