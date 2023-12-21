@@ -101,6 +101,13 @@
   break-inside: avoid;
 }
 
+.ActionsTable,
+.Turn,
+.Graph,
+.rules table {
+  page-break-before: avoid;
+}
+
 .rules ul ul,
 .rules ul ol,
 .rules ol ul,
