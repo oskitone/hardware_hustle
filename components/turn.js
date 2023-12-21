@@ -154,7 +154,14 @@ export const ExampleCell = ({ success, fail, value }) => (
   </Cell>
 );
 
-function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
+function Turn({
+  id,
+  data,
+  isFinalTurn, // TODO: remove
+  className,
+  suppliedColumns,
+  researchSuccess,
+}) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
   const PARTS_COLUMNS = [
@@ -254,6 +261,9 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                     ((isFirstColumn && isEmpty) ||
                       (isFirstColumn && id > 0 && !isSupplied));
 
+                  const isResearchUpgrade =
+                    rowIcon == "opportunity" && isLastColumn;
+
                   return (
                     <Cell
                       topLeft={isFirstRow && isFirstColumn}
@@ -264,6 +274,8 @@ function Turn({ id, data, isFinalTurn, className, suppliedColumns }) {
                       prefix={isFollow ? FOLLOW : column.prefix}
                       supplied={isSupplied}
                       key={columnI}
+                      success={isResearchUpgrade && researchSuccess}
+                      fail={isResearchUpgrade && !researchSuccess}
                     >
                       {(data[rowIcon] || [])[columnI]}
                     </Cell>
@@ -284,6 +296,7 @@ Turn.defaultProps = {
   isFinalTurn: false,
   className: undefined,
   suppliedColumns: defaultSuppliedColumns,
+  researchSuccess: false,
 };
 
 export default Turn;

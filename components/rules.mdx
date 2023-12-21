@@ -182,9 +182,7 @@ The non-researched action's <Opportunity /> costs remain unchanged.
 
 ## Example turn
 
-{/* TODO: successful research w/ circle */}
-
-Here's an example of a completed first turn:
+Here's an example of a completed first turn with a successful research upgrade:
 
 <Turn
   className={styles.Turn}
@@ -200,6 +198,7 @@ Here's an example of a completed first turn:
     opportunity: [12, 2, 1, 2, 8],
   }}
   suppliedColumns={firstTurnSuppliedColumns}
+  researchSuccess={true}
 />
 
 ## Ending a turn
@@ -223,6 +222,8 @@ If you burnout in the last turn, you automatically lose. In the case of a tie, t
 Solo play is solitaire; try to beat your best score.
 
 ## Icon Glossary
+
+{/* TODO: try header on left */}
 
 ##### Parts
 
