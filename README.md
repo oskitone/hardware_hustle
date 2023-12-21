@@ -39,8 +39,7 @@ Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](http
 
 Hardware Hustle is not for everyone. I had one playtester tell me its format and rules were so complicated it's basically unplayable. Another said its format is so straightforward it doesn't need rules!
 
-Whatever the case, your feedback is welcome. Please play at least one entire game before submitting feedback here:  
-[https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
+Whatever the case, your constructive feedback is welcome. Please play at least one entire game before submitting. [https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
 
 ## Source code
 
