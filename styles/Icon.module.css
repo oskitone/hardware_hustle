@@ -16,11 +16,20 @@
   margin-right: 0;
 }
 
-.iconX {
+.IconX,
+.IconsParen {
   white-space: nowrap;
 }
 
-.iconX .x {
+.IconX .x {
   margin: 0 0.2em;
   font-weight: 100;
+}
+
+.IconsParen .paren {
+  font-weight: 100;
+}
+
+.IconsParen .bootstrapIcon {
+  margin: 0 1px;
 }

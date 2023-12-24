@@ -60,17 +60,27 @@ export const ABCD = () => <Icon id="ABCD" inline />;
 export const Roll = () => <Icon id="roll" inline />;
 
 export const MoneyX = ({ value }) => (
-  <span className={styles.iconX}>
+  <span className={styles.IconX}>
     <Icon id="money" inline />
     <span className={styles.x}>&times;</span>
     {value}
   </span>
 );
 export const OpportunityX = ({ value }) => (
-  <span className={styles.iconX}>
+  <span className={styles.IconX}>
     <Icon id="opportunity" inline />
     <span className={styles.x}>&times;</span>
     {value}
+  </span>
+);
+
+export const IconsParen = ({ ids }) => (
+  <span className={styles.IconsParen}>
+    <span className={styles.paren}>(</span>
+    {ids.map((id) => (
+      <Icon id={id} />
+    ))}
+    <span className={styles.paren}>)</span>
   </span>
 );
 
