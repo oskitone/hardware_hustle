@@ -4,6 +4,7 @@
   column-fill: auto;
 
   height: 100%;
+  padding-bottom: 1.5em; /* For pageNumber */
 
   font-size: var(--rules-font-size);
 
@@ -27,6 +28,20 @@
   font-weight: 900;
   transform: rotate(45deg);
   top: 33%;
+}
+
+.pageNumber {
+  position: absolute;
+  bottom: 0;
+  font-weight: 100;
+}
+
+.pageNumber.front {
+  right: 0;
+}
+
+.pageNumber.back {
+  left: 0;
 }
 
 .inner[page="0"] {

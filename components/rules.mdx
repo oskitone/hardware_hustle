@@ -321,7 +321,7 @@ You were too preoccupied with money and lost sight of what really matters, so yo
 _{props.draftId}_  
 _{props.year} CC BY-SA 4.0 - oskitone.com_
 
-export default function Rules({ children, page, year, draftId }) {
+export default function Rules({ children, page, pageCount, year, draftId }) {
   return (
     <div className={
         classnames(
@@ -329,7 +329,11 @@ export default function Rules({ children, page, year, draftId }) {
             [styles["view-all"]]: page == undefined
           }
         )
-      }>
+    }>
+      <div className={classnames(styles.pageNumber, {
+        [styles.front]: page % 2 == 0,
+        [styles.back]: page % 2 == 1
+      })}>{page + 1}/{pageCount}</div>
       <div className={styles.inner} page={page}>
         {children}
       </div>

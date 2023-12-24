@@ -34,18 +34,18 @@ function RulesPage({ year, draftId, view }) {
       <>
         <Front size="letter" landscape>
           <Page size="letter" landscape>
-            <Rules page={3} year={year} draftId={draftId} />
+            <Rules page={3} pageCount={4} year={year} draftId={draftId} />
           </Page>
           <Page size="letter" landscape>
-            <Rules page={0} year={year} draftId={draftId} />
+            <Rules page={0} pageCount={4} year={year} draftId={draftId} />
           </Page>
         </Front>
         <Back size="letter" landscape>
           <Page size="letter" landscape>
-            <Rules page={1} year={year} draftId={draftId} />
+            <Rules page={1} pageCount={4} year={year} draftId={draftId} />
           </Page>
           <Page size="letter" landscape>
-            <Rules page={2} year={year} draftId={draftId} />
+            <Rules page={2} pageCount={4} year={year} draftId={draftId} />
           </Page>
         </Back>
       </>
