@@ -4,7 +4,7 @@
   column-fill: auto;
 
   height: 100%;
-  padding-bottom: 1.5em; /* For pageNumber */
+  padding-bottom: 2em; /* For pageNumber */
 
   font-size: var(--rules-font-size);
 
