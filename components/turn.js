@@ -275,7 +275,7 @@ function Turn({
                       supplied={isSupplied}
                       key={columnI}
                       success={isResearchUpgrade && researchSuccess}
-                      fail={isResearchUpgrade && !researchSuccess}
+                      fail={isResearchUpgrade && researchSuccess === false}
                     >
                       {(data[rowIcon] || [])[columnI]}
                     </Cell>
@@ -296,7 +296,7 @@ Turn.defaultProps = {
   isFinalTurn: false,
   className: undefined,
   suppliedColumns: defaultSuppliedColumns,
-  researchSuccess: false,
+  researchSuccess: undefined,
 };
 
 export default Turn;
