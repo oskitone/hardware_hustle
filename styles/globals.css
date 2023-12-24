@@ -3,7 +3,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
 
-  --inactive-rgb: 235, 235, 235;
+  --ghost-rgb: 225, 225, 225;
+  --inactive-rgb: 180, 180, 180;
   --shaded-rgb: 180, 180, 180;
   --point-selector-outline-rgb: 180, 180, 180;
   --graph-line-rgb: 180, 180, 180;
