@@ -158,6 +158,7 @@
 
 .rules table {
   width: 100%;
+  table-layout: fixed;
 }
 
 .rules table th {
@@ -184,5 +185,17 @@
 
 .rules h5 {
   font-size: var(--rules-font-size);
-  margin-bottom: calc(var(--default-font-size) * 0.25);
+  margin: calc(var(--default-font-size) * 0.5) 0;
+}
+
+.rules dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  margin: 0 0 1em;
+}
+
+.rules dd {
+  margin: 0 0 calc(var(--default-font-size) * 0.25);
+  font-size: 2em;
 }
