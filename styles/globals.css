@@ -15,7 +15,7 @@
   --print-margin: 0.25in;
 
   --default-font-size: 12px;
-  --rules-font-size: 11px;
+  --rules-font-size: 11px; /* TODO: bump up? */
 }
 
 * {
