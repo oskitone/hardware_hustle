@@ -77,8 +77,8 @@ export const OpportunityX = ({ value }) => (
 export const IconsParen = ({ ids }) => (
   <span className={styles.IconsParen}>
     <span className={styles.paren}>(</span>
-    {ids.map((id) => (
-      <Icon id={id} />
+    {ids.map((id, i) => (
+      <Icon id={id} key={i} />
     ))}
     <span className={styles.paren}>)</span>
   </span>
