@@ -14,7 +14,7 @@ export default function Sidebar({ turnsData, year, draftId }) {
 
       <LineInput title={ID_TITLE} className={styles.LineInput} />
 
-      <h2>Actions</h2>
+      <h2>Phases</h2>
       <ActionsTable className={styles.ActionsTable} />
 
       <h2>Money / Turn</h2>

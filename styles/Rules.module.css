@@ -71,7 +71,7 @@
 
 .Wordmark {
   /* Eyeballed to fit on two lines */
-  font-size: 2.75em;
+  font-size: calc(var(--default-font-size) * 3.35);
   margin: 0 0 var(--default-font-size);
 }
 
@@ -197,5 +197,5 @@
 
 .rules dd {
   margin: 0 0 calc(var(--default-font-size) * 0.25);
-  font-size: 2em;
+  font-size: 3em;
 }
