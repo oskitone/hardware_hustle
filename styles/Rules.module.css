@@ -114,7 +114,6 @@
   margin: 0 0 var(--default-font-size);
 }
 
-.rules h1,
 .rules h2,
 .rules h3,
 .rules h4 {
@@ -134,6 +133,7 @@
 
 .ActionsTable,
 .Turn,
+.rules ul,
 .rules table {
   page-break-before: avoid;
 }
@@ -185,7 +185,7 @@
 
 .rules h5 {
   font-size: var(--rules-font-size);
-  margin: calc(var(--default-font-size) * 0.5) 0;
+  margin: calc(var(--default-font-size) * 0.5) 0 0;
 }
 
 .rules dl {
@@ -198,4 +198,9 @@
 .rules dd {
   margin: 0 0 calc(var(--default-font-size) * 0.25);
   font-size: 3em;
+}
+
+.rules img {
+  max-width: 100%;
+  border: 1px solid rgb(var(--shaded-rgb));
 }

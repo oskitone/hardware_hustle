@@ -15,7 +15,7 @@
   --print-margin: 0.25in;
 
   --default-font-size: 12px;
-  --rules-font-size: 10.4px;
+  --rules-font-size: 10.12px; /* Eyeballed to fit layout */
 }
 
 * {

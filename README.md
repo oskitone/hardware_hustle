@@ -2,7 +2,9 @@
 
 ![Hardware Hustle](header.jpg)
 
-Hardware Hustle is a tabletop, roll-and-write resource management game for one or more players about sustainably running a small hardware business.
+Hardware Hustle is a tabletop, roll-and-write resource management game about sustainably running a small hardware business.
+
+For 1+ players. Ages 10+. ~20min to play.
 
 Buy, make, sell, and research your way to profit without burning out!
 
@@ -13,8 +15,7 @@ Buy, make, sell, and research your way to profit without burning out!
 - Long ago, I drafted pixel art for a video game of the same name and concept. This paper version is like what I had in mind but boiled down to the bare math.  
   ![Arduboy video game concept art](public/arduboy-concept-art.png)
 - In the tradeoff between complexity and accessibility, this game errs towards the latter. I want it to be fast and easy to play solo. There were lots of "It would be cool if" type features that were abandoned.
-- Part/Widget names are temporary and their icons are stock.
-- A couple playtesters have said the rules are presented too difficultly. I'm working on it!
+- Part/Widget names are ~temporary and their icons are stock.
 - An “electronic dice” soldering kit would would make a great companion. I've done some breadboard research and it's very doable and fun.
 
 ## To play
