@@ -3,8 +3,6 @@ import classnames from "classnames";
 import { htmlEntity } from "common/utils";
 import styles from "@/styles/Icon.module.css";
 
-import { BsArrowUpRightCircle } from "react-icons/bs";
-
 import {
   BiVolumeFull,
   BiPackage,
@@ -14,23 +12,25 @@ import {
   BiMoney,
   BiSliderAlt,
   BiSpeaker,
+  BiRightTopArrowCircle,
 } from "react-icons/bi";
 
 import { IoDiceOutline } from "react-icons/io5";
 
 function Icon({ id, prefix, suffix, className, inline, row }) {
-  // TODO: tidy
+  const props = { className: styles.iconElement };
+
   const iconElement = {
-    money: <BiMoney className={styles.iconElement} />,
-    opportunity: <BsArrowUpRightCircle className={styles.iconElement} />,
-    A: <BiPackage className={styles.iconElement} />,
-    B: <BiVolumeFull className={styles.iconElement} />,
-    C: <BiSliderAlt className={styles.iconElement} />,
-    D: <BiMicrochip className={styles.iconElement} />,
-    AB: <BiSpeaker className={styles.iconElement} />,
-    ABC: <BiCalculator className={styles.iconElement} />,
-    ABCD: <BiSolidPiano className={styles.iconElement} />,
-    roll: <IoDiceOutline className={styles.iconElement} />,
+    money: <BiMoney {...props} />,
+    opportunity: <BiRightTopArrowCircle {...props} />,
+    A: <BiPackage {...props} />,
+    B: <BiVolumeFull {...props} />,
+    C: <BiSliderAlt {...props} />,
+    D: <BiMicrochip {...props} />,
+    AB: <BiSpeaker {...props} />,
+    ABC: <BiCalculator {...props} />,
+    ABCD: <BiSolidPiano {...props} />,
+    roll: <IoDiceOutline {...props} />,
   }[id];
 
   return (
