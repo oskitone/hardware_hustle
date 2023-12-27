@@ -132,7 +132,7 @@ export function Cell({
   if (hasContent) {
     return (
       <div {...props}>
-        {icon && <Icon id={icon} />}
+        {icon && <Icon id={icon} className={styles.icon} />}
         {children}
       </div>
     );

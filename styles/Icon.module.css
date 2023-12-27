@@ -1,18 +1,19 @@
 .icon {
   line-height: 1;
   vertical-align: middle;
+  display: inline-flex;
 }
 
-.bootstrapIcon {
-  margin: 0 2px;
+.iconElement {
+  margin: 0 1px;
   font-size: inherit;
 }
 
-.inline .bootstrapIcon {
+.inline .iconElement {
   margin: 0;
 }
 
-.row .bootstrapIcon {
+.row .iconElement {
   margin-right: 0;
 }
 
@@ -30,6 +31,6 @@
   font-weight: 100;
 }
 
-.IconsParen .bootstrapIcon {
+.IconsParen .iconElement {
   margin: 0 1px;
 }

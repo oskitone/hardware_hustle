@@ -3,34 +3,34 @@ import classnames from "classnames";
 import { htmlEntity } from "common/utils";
 import styles from "@/styles/Icon.module.css";
 
+import { BsArrowUpRightCircle } from "react-icons/bs";
+
 import {
-  BsCoin,
-  BsArrowUpRightCircle,
-  BsNut,
-  BsBoxSeam,
-  BsSliders,
-  BsCpu,
-  BsSpeaker,
-  BsBoombox,
-  BsJoystick,
-  BsDice5,
-} from "react-icons/bs";
+  BiVolumeFull,
+  BiPackage,
+  BiCalculator,
+  BiSolidPiano,
+  BiMicrochip,
+  BiMoney,
+  BiSliderAlt,
+  BiSpeaker,
+} from "react-icons/bi";
 
 import { IoDiceOutline } from "react-icons/io5";
 
 function Icon({ id, prefix, suffix, className, inline, row }) {
   // TODO: tidy
   const iconElement = {
-    money: <BsCoin className={styles.bootstrapIcon} />,
-    opportunity: <BsArrowUpRightCircle className={styles.bootstrapIcon} />,
-    A: <BsNut className={styles.bootstrapIcon} />,
-    B: <BsBoxSeam className={styles.bootstrapIcon} />,
-    C: <BsSliders className={styles.bootstrapIcon} />,
-    D: <BsCpu className={styles.bootstrapIcon} />,
-    AB: <BsSpeaker className={styles.bootstrapIcon} />,
-    ABC: <BsBoombox className={styles.bootstrapIcon} />,
-    ABCD: <BsJoystick className={styles.bootstrapIcon} />,
-    roll: <IoDiceOutline className={styles.bootstrapIcon} />,
+    money: <BiMoney className={styles.iconElement} />,
+    opportunity: <BsArrowUpRightCircle className={styles.iconElement} />,
+    A: <BiPackage className={styles.iconElement} />,
+    B: <BiVolumeFull className={styles.iconElement} />,
+    C: <BiSliderAlt className={styles.iconElement} />,
+    D: <BiMicrochip className={styles.iconElement} />,
+    AB: <BiSpeaker className={styles.iconElement} />,
+    ABC: <BiCalculator className={styles.iconElement} />,
+    ABCD: <BiSolidPiano className={styles.iconElement} />,
+    roll: <IoDiceOutline className={styles.iconElement} />,
   }[id];
 
   return (
