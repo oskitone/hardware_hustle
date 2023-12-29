@@ -65,7 +65,7 @@ The spreadsheet's rows are grouped into money <IconsParen ids={["money"]} />, pa
 Its five columns are phases that you fill out from left to right during your turn.
 
 1. ### AM
-   Take stock of what you have
+   Take stock of what you have and need
 1. ### Buy
    Buy parts <IconsParen ids={["A", "B", "C", "D"]} /> using <Money /> and <Opportunity />
 1. ### Make
@@ -81,7 +81,7 @@ You begin each turn by taking stock of what you have and what you need.
 
 For the game's first turn, there's nothing to do here besides note the starting pre-filled values. You have <MoneyX value={10}/> and <OpportunityX value={12}/>, and you need basically everything else.
 
-(Later turns will have empty cells to fill out, but there still won't be any decision-making. For that reason, "AM" is not listed in the Phases table on the left of your game sheet.)
+(Later turns will have empty cells to fill out, but there still won't be any decision-making. For that reason, AM is not listed in the Phases table on the left of your game sheet.)
 
 ### 2. Buy
 
@@ -100,9 +100,9 @@ To complete the Buy phase:
 
 Notes:
 
-- You can buy as many or as few as you want and even multiples of the same part, as long as you have the required <Opportunity /> and <Money />. (The sum <Opportunity /> must be less than or equal to your roll, and the sum <Money /> must be less than or equal to what you have in the AM column.)
+- You can buy as many or as few parts as you want and even multiples of the same part, as long as you have the required <Opportunity /> and <Money />. (The sum <Opportunity /> must be less than or equal to your roll, and the sum <Money /> must be less than or equal to what you have in the AM column.)
 - You can also choose to buy nothing and skip this phase, though that's a gutsy move on your first turn!
-- Cells are prefixed by their mathematical operation. You're losing <Money /> and <Opportunity />, so those cells have a "**-**". You're gaining parts, so they have a "**+**". The same **-**/**+** signs are in the Phases table.
+- Cells are prefixed by their mathematical operation. You're losing <Money /> and <Opportunity />, so those cells have a **-**. You're gaining parts, so they have a **+**. The same **-**/**+** signs are in the Phases table.
 - Unused cells have a gray background to mark that they're skipped.
 - Cells with no change can be crossed out or filled with 0.
 - You can spend less <Opportunity /> than you roll, but you can't spend more. You also can't spend more <Money /> than you have available.
@@ -148,7 +148,7 @@ To complete the PM phase:
 1. **Tally:** Complete each row's equation into the final column prefixed with **=**.
 1. **Resolve <Opportunity />:**
    - If <Opportunity /> is negative, you suffer **burnout** and lose the entire next turn to rest.
-   - Otherwise, **Roll for research upgrade**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three phases' actions.
+   - Otherwise, **roll for research upgrade**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three phases' actions.
 1. **Plot:** Draw a dot on the "Money/Turn" graph at your new <Money /> total, then draw a line connecting it to the previous dot.
 
 #### Burnout
@@ -184,7 +184,7 @@ Everything in Make is now <OpportunityX value={1} /> cheaper. The non-researched
 
 Notes:
 
-* The <Opportunity /> roll for research is used differently than it is for Buy/Make/Sell. For those, it's a maximum that you want to roll high; for research, you want to roll low.
+* PM's <Opportunity /> roll for research upgrade is used differently than the <Opportunity /> roll in the other phases. For Buy/Make/Sell, it's a maximum that you want to roll high; for research, it's a minimum that you want to roll low.
 * Because you can't roll higher than six, ending a turn with <OpportunityX value={6} /> or higher means your research attempt automatically wins.
 * Subsequent research upgrades on the same phase action work the same way. Each phase action can be upgraded three times.
 
@@ -215,11 +215,11 @@ When your turn is done, hand the die to the next player so they can start their 
 
 ## Starting a new turn
 
-The values in the PM column carry over to the empty cells in the next turn's AM column, as denoted by the "**⇢**" prefix.
+The values in the PM column carry over to the empty cells in the next turn's AM column, as denoted by the **⇢** prefix.
 
 The <Opportunity /> cells, however, are _not_ empty; you have to use the values provided.
 
-For skipped turns, fill the "**⇢**" cells on the next playable turn from the previously played turn.
+For skipped turns, fill the **⇢** AM cells on the next playable turn from the PM cells in the previously played turn.
 
 ## End of the Game
 

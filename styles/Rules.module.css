@@ -133,6 +133,7 @@
 
 .ActionsTable,
 .Turn,
+.rules ol,
 .rules ul,
 .rules table {
   page-break-before: avoid;
@@ -181,11 +182,6 @@
 
 .rules tbody td {
   flex-grow: 1;
-}
-
-.rules h5 {
-  font-size: var(--rules-font-size);
-  margin: calc(var(--default-font-size) * 0.5) 0 0;
 }
 
 .rules dl {

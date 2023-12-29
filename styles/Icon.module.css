@@ -5,13 +5,6 @@
   font-size: inherit;
 }
 
-.IconsParen .icon,
-.inline {
-  vertical-align: baseline;
-  height: var(--rules-font-size);
-  font-size: 12px; /* Hack! Eyeballed for rules page */
-}
-
 .iconElement {
   /* Icon images are a little small. This nudges them up. */
   margin: 0 1px;
