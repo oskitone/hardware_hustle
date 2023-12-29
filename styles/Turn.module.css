@@ -142,9 +142,9 @@
   pointer-events: none;
   font-size: 3.5em;
   line-height: 16px;
-  opacity: 0.25;
 }
 
 .fail:after {
   content: "X";
+  left: 0.18em; /* Off center to not obscure text */
 }

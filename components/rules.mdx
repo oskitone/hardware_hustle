@@ -62,7 +62,7 @@ The player with the second highest die roll goes first, then proceed clockwise.
 
 The spreadsheet's rows are grouped into money <IconsParen ids={["money"]} />, parts <IconsParen ids={["A", "B", "C", "D"]} />, widgets <IconsParen ids={["AB", "ABC", "ABCD"]} />, and opportunity <IconsParen ids={["opportunity"]} />.
 
-Its columns are phases that you fill out from left to right during your turn.
+Its five columns are phases that you fill out from left to right during your turn.
 
 1. ### AM
    Take stock of what you have
@@ -75,15 +75,13 @@ Its columns are phases that you fill out from left to right during your turn.
 1. ### PM
    Use remaining <Opportunity /> to research, or lose next turn if <Opportunity /> is negative
 
-Let's walk through them in detail:
-
 ### 1. AM
 
-You begin each turn taking stock of what you have and what you need.
+You begin each turn by taking stock of what you have and what you need.
 
-For the game's first turn, there's nothing to do here besides note the starting pre-filled values: <MoneyX value={10}/>, <OpportunityX value={12}/>, and 0 everything else.
+For the game's first turn, there's nothing to do here besides note the starting pre-filled values. You have <MoneyX value={10}/> and <OpportunityX value={12}/>, and you need basically everything else.
 
-Later turns will have empty cells to fill out, but there still won't be any decision-making. For that reason, "AM" is not listed in the Phases table on the left of your game sheet.
+(Later turns will have empty cells to fill out, but there still won't be any decision-making. For that reason, "AM" is not listed in the Phases table on the left of your game sheet.)
 
 ### 2. Buy
 
@@ -91,7 +89,7 @@ Let's buy some parts. They cost <Money /> and <Opportunity />, as listed in the 
 
 <ActionsTable actions={[ACTIONS.BUY]} className={styles.ActionsTable} />
 
-The <Opportunity /> costs are a table of values, but, for all the phases of your first turn, you'll only use the ones in the first column with the dark outline. To buy a <A />, you need <OpportunityX value={0} /> and <MoneyX value={1} />; to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />; etc. You'll revisit <Opportunity /> costs in the PM phase.
+The <Opportunity /> costs are a table of values, but, for all the phases of your first turn, you'll only use the ones in the first column with the dark outline. To buy a <A />, you need <OpportunityX value={0} /> and <MoneyX value={1} />; to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />; etc. You'll revisit <Opportunity /> costs in the PM phase a little later.
 
 To complete the Buy phase:
 
@@ -102,8 +100,8 @@ To complete the Buy phase:
 
 Notes:
 
-- You can buy as much as you want and multiples of the same part, as long as you have the required <Opportunity /> and <Money />. (The sum <Opportunity /> must be less than or equal to your roll, and the sum <Money /> must be less than or equal to what you have in the AM column.)
-- You can also choose to buy nothing and skip this Phase, though that's a gutsy move on your first turn!
+- You can buy as many or as few as you want and even multiples of the same part, as long as you have the required <Opportunity /> and <Money />. (The sum <Opportunity /> must be less than or equal to your roll, and the sum <Money /> must be less than or equal to what you have in the AM column.)
+- You can also choose to buy nothing and skip this phase, though that's a gutsy move on your first turn!
 - Cells are prefixed by their mathematical operation. You're losing <Money /> and <Opportunity />, so those cells have a "**-**". You're gaining parts, so they have a "**+**". The same **-**/**+** signs are in the Phases table.
 - Unused cells have a gray background to mark that they're skipped.
 - Cells with no change can be crossed out or filled with 0.
@@ -122,7 +120,7 @@ To complete the Make phase:
     * Based on the max <Opportunity /> you just rolled and which parts you have available, decide which widgets to make.
 1. **Write:** In the Make column, write the values for the parts you used, the widgets you made, and the total <Opportunity /> they used.
 
-You can make as much or as little as you want, provided you have the required parts and <Opportunity />. In later turns, you can use parts purchased in previous turns.
+You can make as many or as few widgets as you want, provided you have the required parts and <Opportunity />. In later turns, you can use parts purchased in previous turns.
 
 ### 4. Sell
 
@@ -137,9 +135,9 @@ To complete the Sell phase:
 1. **Roll:**
     * Roll a die. Its value is the _maximum_ <Opportunity /> you can spend selling this turn.
     * Based on the max <Opportunity /> you just rolled and which widgets you have available, decide which widgets to sell.
-1. **Write:** In the Sell column, write the values for the <Money /> you made, the widgets you sold, and the total total <Opportunity /> they cost.
+1. **Write:** In the Sell column, write the values for the <Money /> you made, the widgets you sold, and the total <Opportunity /> they used.
 
-Sell as much or as little as you want, provided you have the required widgets and <Opportunity />. In later turns, you can sell widgets made in previous turns.
+Sell as many or as few widgets as you want, provided you have the required widgets and <Opportunity />. In later turns, you can sell widgets made in previous turns.
 
 ### 5. PM
 
@@ -149,21 +147,19 @@ To complete the PM phase:
 
 1. **Tally:** Complete each row's equation into the final column prefixed with **=**.
 1. **Resolve <Opportunity />:**
-   - If <Opportunity /> is negative, you suffer **Burnout** and lose the entire next turn to rest.
-   - Otherwise, **Roll for research**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three phases' actions.
-1. **Plot:** Draw a dot on the "Money/Turn" chart at your new <Money /> total, then draw a line connecting it to the previous dot.
+   - If <Opportunity /> is negative, you suffer **burnout** and lose the entire next turn to rest.
+   - Otherwise, **Roll for research upgrade**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three phases' actions.
+1. **Plot:** Draw a dot on the "Money/Turn" graph at your new <Money /> total, then draw a line connecting it to the previous dot.
 
 #### Burnout
 
-You've spent more <Opportunity /> than you had available and have to spend the whole next day recuperating.
-
-{/* TODO: ensure no orphan <p> */}
+You've spent more <Opportunity /> than you had available and have to spend the whole next day recuperating. Hope it was worth it.
 
 Cross out the entire next turn's spreadsheet. You cannot do any of its phases.
 
 #### Research Upgrade
 
-Did you roll less than or equal to your remaining <Opportunity />? Your research succeeded. Circle the PM column's <Opportunity /> cell to mark its success; otherwise cross it out for failure:
+Did you roll less than or equal to your remaining <Opportunity />? Nice! Your research succeeded. Circle the PM column's <Opportunity /> cell to mark its success; otherwise cross it out for failure:
 
 <table>
   <tbody>
@@ -178,9 +174,9 @@ Did you roll less than or equal to your remaining <Opportunity />? Your research
   </tbody>
 </table>
 
-Recall how you've only been using the first column of <Opportunity /> values with the dark outline. If your research upgrade was successful, choose _one_ phase action (Buy, Make, or Sell) to spend it on, then shade in its column and outline the next values to its right.
+Recall how you've only been using the first column of <Opportunity /> values with the dark outline in the Phases table. If your research upgrade was successful, choose _one_ phase action (Buy, Make, or Sell) to spend it on, then shade in its outlined column and outline the next values to its right.
 
-As an example, here's what the Phases table would look like after a successful research upgrade to Make:
+As an example, here's what it would look like after a successful research upgrade to Make:
 
 <ActionsTable className={styles.ActionsTable} selectedIndexes={[0, 1, 0]} />
 
@@ -190,7 +186,7 @@ Notes:
 
 * The <Opportunity /> roll for research is used differently than it is for Buy/Make/Sell. For those, it's a maximum that you want to roll high; for research, you want to roll low.
 * Because you can't roll higher than six, ending a turn with <OpportunityX value={6} /> or higher means your research attempt automatically wins.
-* When an item uses <OpportunityX value={0} /> to Buy/Make/Sell, it's effectively "free" for the rest of the game.
+* Subsequent research upgrades on the same phase action work the same way. Each phase action can be upgraded three times.
 
 ## Example turn
 
@@ -222,6 +218,8 @@ When your turn is done, hand the die to the next player so they can start their 
 The values in the PM column carry over to the empty cells in the next turn's AM column, as denoted by the "**⇢**" prefix.
 
 The <Opportunity /> cells, however, are _not_ empty; you have to use the values provided.
+
+For skipped turns, fill the "**⇢**" cells on the next playable turn from the previously played turn.
 
 ## End of the Game
 
