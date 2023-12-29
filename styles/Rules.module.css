@@ -75,14 +75,30 @@
   margin: 0 0 var(--default-font-size);
 }
 
-/* TODO: define typographic sizes */
 .rules h1,
 .rules h2,
 .rules h3,
-.rules h4 {
+.rules h4,
+.rules h5 {
   text-transform: uppercase;
   line-height: 1;
   page-break-after: avoid;
+}
+
+.rules h1 {
+  font-size: calc(var(--rules-font-size) * 2.5);
+}
+.rules h2 {
+  font-size: calc(var(--rules-font-size) * 1.75);
+}
+.rules h3 {
+  font-size: calc(var(--rules-font-size) * 1.5);
+}
+.rules h4 {
+  font-size: calc(var(--rules-font-size) * 1.25);
+}
+.rules h5 {
+  font-size: calc(var(--rules-font-size) * 1);
 }
 
 .rules h1,
@@ -106,7 +122,7 @@
 }
 
 .rules ol h3 {
-  margin: inherit;
+  margin: calc(var(--default-font-size) * 0.25) 0 0;
 }
 
 .rules li,
