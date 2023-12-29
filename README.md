@@ -60,6 +60,10 @@ If you're on a Mac, to make PDFs:
 ./make_pdfs.sh
 ```
 
+## Playtester thanks
+
+Leia M, Paul S, Kris K, Kirk P, Erica S
+
 ## License
 
 Tentatively `CC BY-SA 4.0` but TBD
