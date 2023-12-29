@@ -30,9 +30,11 @@ Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](http
   - For a nice finish, bind a stack of them to cardboard backing with bookbinding glue
 - Rules
   - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
+  - Trim to 7.5"x11"
   - Fold into a booklet
 - Roll table
   - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
+  - Trim to 7.5"x5.5"
   - Use cardstock for better reusability
 
 ### Playtester feedback welcome
