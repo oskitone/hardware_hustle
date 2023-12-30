@@ -10,7 +10,7 @@
   --graph-line-rgb: 180, 180, 180;
   --roll-table-outline-rgb: 180, 180, 180;
 
-  --fillet: 4px;
+  --fillet: 0.5em;
 
   --print-margin: 0.25in;
 
