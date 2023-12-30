@@ -158,7 +158,7 @@ export const ACTIONS = {
         <div key={0} className={styles.pmAction}>
           <strong>Research:</strong>{" "}
           <em>
-            Lower <Icon id="opportunity" /> cost
+            Lower <Icon id="opportunity" inline /> cost
           </em>
         </div>,
         <></>,

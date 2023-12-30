@@ -134,11 +134,6 @@
   content: attr(prefix);
 }
 
-.icon {
-  /* Eyeballed! */
-  font-size: 14px;
-}
-
 .success:after,
 .fail:after {
   content: "O";

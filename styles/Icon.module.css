@@ -2,11 +2,13 @@
   line-height: 1;
   vertical-align: middle;
   display: inline-flex;
+  font-size: inherit;
 }
 
 .iconElement {
+  /* Icon images are a little small. This nudges them up. */
   margin: 0 1px;
-  font-size: inherit;
+  font-size: 1.16em;
 }
 
 .inline .iconElement {
