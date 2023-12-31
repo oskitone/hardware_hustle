@@ -70,3 +70,5 @@ Leia M, Paul S, Kris K, Kirk P, Erica S
 ## License
 
 Tentatively `CC BY-SA 4.0` but TBD
+
+Draft icons are BoxIcons (`CC 4.0`) and Ionicons (`MIT`)
