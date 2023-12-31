@@ -10,12 +10,12 @@
   --graph-line-rgb: 180, 180, 180;
   --roll-table-outline-rgb: 180, 180, 180;
 
-  --fillet: 0.5em;
+  --fillet: 0.25em;
 
   --print-margin: 0.25in;
 
   --default-font-size: 12px;
-  --rules-font-size: 9.48px; /* Eyeballed to fit layout */
+  --rules-font-size: 9.4px; /* Eyeballed to fit layout */
 }
 
 * {
