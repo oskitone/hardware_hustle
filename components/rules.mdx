@@ -44,7 +44,7 @@ For 1+ players. Ages 10+. ~20min to play.
 
 ## Game Overview
 
-You have six turns to buy parts to make widgets, make widgets from parts, and then sell widgets for money to buy more parts.
+Your goal is to profit without burning out. You have six turns to buy parts to make widgets, make widgets from parts, then sell widgets for money to buy more parts, and so on.
 
 Each of those actions takes opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses. At the end of each turn, you can attempt a research upgrade to reduce future <Opportunity /> costs.
 
@@ -70,7 +70,7 @@ The player who rolls the second highest die goes first, then proceed clockwise.
 
 The spreadsheet's rows are grouped into money <IconsParen ids={["money"]} />, parts <IconsParen ids={["A", "B", "C", "D"]} />, widgets <IconsParen ids={["AB", "ABC", "ABCD"]} />, and opportunity <IconsParen ids={["opportunity"]} />.
 
-Its five columns are phases that you fill out from left to right during your turn.
+And its five columns are phases that you fill out from left to right during your turn.
 
 1. ### AM
    Take stock of what you have and need
@@ -84,7 +84,7 @@ Its five columns are phases that you fill out from left to right during your tur
    Use remaining <Opportunity /> to research or lose next turn if <Opportunity /> is negative
 
 {/* TODO: try pulling these to front. */}
-(See *Example Turn* near the end of these rules for a succinct walkthrough of what a completed first turn might look like and an *Icon Glossary* to explain what the icons are.)
+(Refer to the *Example Turn* on the back page for a quick glimpse of the rules in action and an *Icon Glossary* that says what the icons are called.)
 
 ### 1. AM
 
@@ -96,7 +96,7 @@ For the game's first turn, there's nothing to do here besides note the starting 
 
 ### 2. Buy
 
-Let's buy some parts. They cost <Money /> and <Opportunity />, as listed in the Phases table:
+Before you can make any money selling widgets, you've got to spend money buying their parts. Parts cost <Money /> and <Opportunity />, as listed in the Phases table:
 
 <ActionsTable actions={[ACTIONS.BUY]} className={styles.ActionsTable} />
 
@@ -120,7 +120,7 @@ Notes:
 
 ### 3. Make
 
-Next, you'll use the parts you've bought to make widgets. The Phases table lists what you can make, their outlined <Opportunity /> costs, and the parts that they'll use:
+Now you'll use the parts you bought to make widgets you can sell. The Phases table lists the widgets you can make, their outlined <Opportunity /> costs, and the parts that they will use:
 
 <ActionsTable actions={[ACTIONS.MAKE]} className={styles.ActionsTable} />
 
@@ -137,7 +137,7 @@ You can make as many or as few widgets as you want, provided you have the requir
 
 {/* TODO: no/fewer "note"s */}
 
-If you have any widgets, now's a fine time to sell them. Note how the Phases table has you losing widgets but gaining <Money />:
+If you made any widgets, now's a fine time to sell them so you have <Money /> for the next turn's Buy phase. Notice how the Phases table for Sell has you losing widgets but gaining <Money />:
 
 <ActionsTable actions={[ACTIONS.SELL]} className={styles.ActionsTable} />
 
@@ -219,7 +219,7 @@ Notes:
 />
 
 1. ##### AM  
-    Started with <MoneyX value={10} /> and <OpportunityX value={12} />
+    Started the turn with <MoneyX value={10} /> and <OpportunityX value={12} />
 1. ##### Buy  
     Spent <MoneyX value={5} /> to buy <AX value={1} /> and <BX value={2} /> using <OpportunityX value={2} />
 1. ##### Make  
@@ -227,7 +227,7 @@ Notes:
 1. ##### Sell  
     Sold <ABX value={1} /> for <MoneyX value={6} /> using <OpportunityX value={2} />
 1. ##### PM  
-    Ended with <MoneyX value={11} />, <BX value={2} />, and <OpportunityX value={8} />, which was enough for a successful research upgrade
+    Ended with <MoneyX value={11} />, <BX value={1} />, and <OpportunityX value={8} />, which was more than enough for a research upgrade
 
 ## Ending a turn
 
