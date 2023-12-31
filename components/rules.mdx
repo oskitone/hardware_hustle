@@ -17,6 +17,14 @@ import Icon, {
   Roll,
   MoneyX,
   OpportunityX,
+  AX,
+  BX,
+  CX,
+  DX,
+  ABX,
+  ABCX,
+  ABCDX,
+  RollX,
   IconsParen
 } from "components/icon";
 import Turn, { ExampleCell, firstTurnSuppliedColumns } from "components/turn";
@@ -52,11 +60,11 @@ Each player will need:
 
 ## Game Setup
 
-Fill out the "{ID_TITLE}" line in the game sheet's top left, then familiarize yourself with the rest of its layout: Phases table, Money/Turn graph, and six turn spreadsheets.
+Fill out the "{ID_TITLE}" line in the top left of the game sheet, then familiarize yourself with the rest of its layout: Phases table, Money/Turn graph, and six turn spreadsheets.
 
 ![Hardware Hustle game sheet layout](../screenshot.png)
 
-The player with the second highest die roll goes first, then proceed clockwise.
+The player who rolls the second highest die goes first, then proceed clockwise.
 
 ## How to Play
 
@@ -73,11 +81,14 @@ Its five columns are phases that you fill out from left to right during your tur
 1. ### Sell
    Sell widgets for <Money /> using <Opportunity />
 1. ### PM
-   Use remaining <Opportunity /> to research, or lose next turn if <Opportunity /> is negative
+   Use remaining <Opportunity /> to research or lose next turn if <Opportunity /> is negative
+
+{/* TODO: try pulling these to front. */}
+(See *Example Turn* near the end of these rules for a succinct walkthrough of what a completed first turn might look like and an *Icon Glossary* to explain what the icons are.)
 
 ### 1. AM
 
-You begin each turn by taking stock of what you have and what you need.
+You begin each turn by taking stock of what you have and what you need at the beginning of the day.
 
 For the game's first turn, there's nothing to do here besides note the starting pre-filled values. You have <MoneyX value={10}/> and <OpportunityX value={12}/>, and you need basically everything else.
 
@@ -190,8 +201,6 @@ Notes:
 
 ## Example turn
 
-Here's an example of a completed first turn with a successful research upgrade:
-
 <Turn
   className={styles.Turn}
   data={{
@@ -208,6 +217,17 @@ Here's an example of a completed first turn with a successful research upgrade:
   suppliedColumns={firstTurnSuppliedColumns}
   researchSuccess={true}
 />
+
+1. ##### AM  
+    Started with <MoneyX value={10} /> and <OpportunityX value={12} />
+1. ##### Buy  
+    Spent <MoneyX value={5} /> to buy <AX value={1} /> and <BX value={2} /> using <OpportunityX value={2} />
+1. ##### Make  
+    Made <ABX value={1} /> using <AX value={1} />, <BX value={1} />, and <OpportunityX value={1} />
+1. ##### Sell  
+    Sold <ABX value={1} /> for <MoneyX value={6} /> using <OpportunityX value={2} />
+1. ##### PM  
+    Ended with <MoneyX value={11} />, <BX value={2} />, and <OpportunityX value={8} />, which was enough for a successful research upgrade
 
 ## Ending a turn
 
