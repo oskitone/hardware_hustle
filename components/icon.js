@@ -59,20 +59,27 @@ export const ABC = () => <Icon id="ABC" inline />;
 export const ABCD = () => <Icon id="ABCD" inline />;
 export const Roll = () => <Icon id="roll" inline />;
 
-export const MoneyX = ({ value }) => (
-  <span className={styles.IconX}>
-    <Icon id="money" inline />
-    <span className={styles.x}>&times;</span>
-    {value}
-  </span>
-);
-export const OpportunityX = ({ value }) => (
-  <span className={styles.IconX}>
-    <Icon id="opportunity" inline />
-    <span className={styles.x}>&times;</span>
-    {value}
-  </span>
-);
+const makeIconX =
+  (iconId) =>
+  ({ value }) =>
+    (
+      <span className={styles.IconX}>
+        <Icon id={iconId} inline />
+        <span className={styles.x}>&times;</span>
+        {value}
+      </span>
+    );
+
+export const MoneyX = makeIconX("money");
+export const OpportunityX = makeIconX("opportunity");
+export const AX = makeIconX("A");
+export const BX = makeIconX("B");
+export const CX = makeIconX("C");
+export const DX = makeIconX("D");
+export const ABX = makeIconX("AB");
+export const ABCX = makeIconX("ABC");
+export const ABCDX = makeIconX("ABCD");
+export const RollX = makeIconX("roll");
 
 export const IconsParen = ({ ids }) => (
   <span className={styles.IconsParen}>
