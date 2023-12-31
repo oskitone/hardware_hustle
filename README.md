@@ -25,14 +25,14 @@ Buy, make, sell, and research your way to profit without burning out!
 Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](https://oskitone.github.io/hardware_hustle/)
 
 - Game sheets
-  - Choose layout for either letter or legal paper size; design is identical
+  - Choose layout for either letter or legal paper size; design is identical but legal is better because you get two game sheets per paper
   - Print portrait mode without margins, at 100% scale, and single-sided
   - Trim individual game sheets to 8"x6"
   - For a nice finish, bind a stack of them to cardboard backing with bookbinding glue
 - Rules
   - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
   - Trim to 7.5"x11"
-  - Fold into a booklet
+  - Fold into a 7.5"x5.5" booklet; see page numbers in corners if it's not obvious
 - Roll table
   - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
   - Trim to 7.5"x5.5"
@@ -40,13 +40,15 @@ Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](http
 
 ### Playtester feedback welcome
 
-Hardware Hustle is not for everyone. I had one playtester tell me its format and rules were so complicated it's basically unplayable. Another said its format is so straightforward it doesn't need rules!
+As it is in real life, the Hardware Hustle is not for everyone. I had one early playtester tell me its format and rules were so complicated it's basically unplayable (the rules have since been completely rewritten). Another said its format is so straightforward that it doesn't need rules. Who knows, you know?
 
-Whatever the case, your constructive feedback is welcome. Please play at least one entire game before submitting. [https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
+Even still, your constructive feedback is welcome. Please earnestly play at least one entire game before telling me what you think. I'm especially open to feedback on how to make the rules easier to understand.
+
+**Feedback form:** [https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
 
 ## Source code
 
-Believe it or not, this game is a website optimized for print.
+Believe it or not, this game is a [Next.js](https://nextjs.org/) website optimized for print.
 
 To run:
 
@@ -57,7 +59,7 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000) in Chrome. (Note that, despite _kind of_ working, it's not designed to be played on a screen and will have display oddities in non-Chrome browsers.)
 
-If you're on a Mac, to make PDFs:
+If you're <del>on a Mac</del> me on my laptop, to make PDFs:
 
 ```bash
 ./make_pdfs.sh
@@ -65,7 +67,7 @@ If you're on a Mac, to make PDFs:
 
 ## Playtester thanks
 
-Leia M, Paul S, Kris K, Kirk P, Erica S
+Leia M, Paul S, Kris K, Kirk P, Erica S; you?
 
 ## License
 
