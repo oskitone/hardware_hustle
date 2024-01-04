@@ -33,7 +33,7 @@
 
 .split {
   display: grid;
-  grid-template-columns: 28% auto;
+  grid-template-columns: 28.75% auto;
   grid-gap: var(--print-margin);
 }
 
