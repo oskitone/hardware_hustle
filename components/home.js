@@ -1,7 +1,7 @@
 import { Open_Sans } from "next/font/google";
 import Head from "next/head";
 
-import { Front } from "components/sheet";
+import Sheet from "components/sheet";
 import { defaultTurnsData } from "components/turn";
 import Page from "components/page";
 import Sidebar from "components/sidebar";
@@ -17,7 +17,7 @@ import {
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-function Home({ gamesPerSheet, sheetSize, year, draftId }) {
+function Home({ sheetCount, gamesPerSheet, sheetSize, year, draftId }) {
   const pageSize = {
     legal: `${legal_sheet_width} ${legal_sheet_height}`,
     letter: `${letter_sheet_width} ${letter_sheet_height}`,
@@ -34,24 +34,27 @@ function Home({ gamesPerSheet, sheetSize, year, draftId }) {
         <style>{`@page { size: ${pageSize}; }`}</style>
       </Head>
       <main className={`${font.className}`}>
-        <Front size={sheetSize}>
-          {[...Array(gamesPerSheet || 0)].map((e, i) => (
-            <Page split key={i}>
-              <Sidebar
-                turnsData={defaultTurnsData}
-                year={year}
-                draftId={draftId}
-              />
-              <TurnGrid turnsData={defaultTurnsData} />
-            </Page>
-          ))}
-        </Front>
+        {[...Array(sheetCount || 0)].map((e, i) => (
+          <Sheet size={sheetSize} key={i}>
+            {[...Array(gamesPerSheet || 0)].map((e, ii) => (
+              <Page split key={ii}>
+                <Sidebar
+                  turnsData={defaultTurnsData}
+                  year={year}
+                  draftId={draftId}
+                />
+                <TurnGrid turnsData={defaultTurnsData} />
+              </Page>
+            ))}
+          </Sheet>
+        ))}
       </main>
     </>
   );
 }
 
 Home.defaultProps = {
+  sheetCount: 1,
   gamesPerSheet: 2,
   sheetSize: "legal",
   year: undefined,
