@@ -21,10 +21,6 @@
   width: var(--page-height);
 }
 
-.fullHeight {
-  height: 100%;
-}
-
 .landscape {
   height: var(--page-width);
   width: var(--page-height);

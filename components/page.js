@@ -6,7 +6,6 @@ function Page({
   children,
 
   double,
-  fullHeight,
   landscape,
 
   split,
@@ -19,7 +18,6 @@ function Page({
     <div
       className={classnames(styles.page, className, {
         [styles.double]: double,
-        [styles.fullHeight]: fullHeight,
         [styles.landscape]: landscape,
         [styles.split]: split,
         [styles.legal]: size == "legal",
@@ -33,7 +31,6 @@ function Page({
 
 Page.defaultProps = {
   double: false,
-  fullHeight: false,
   landscape: false,
 
   split: false,
