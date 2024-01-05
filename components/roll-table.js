@@ -4,7 +4,7 @@ import styles from "@/styles/RollTable.module.css";
 const MIN = 1;
 const MAX = 6;
 
-const roll = () => MAX + Math.floor(Math.random() * (MIN - MAX) + 1);
+const roll = () => MIN + Math.floor(Math.random() * (MAX - MIN + 1));
 
 export default function RollTable({ columns, rows, year }) {
   const [isClient, setIsClient] = useState();
