@@ -21,6 +21,18 @@ function RollTablePage({ year, count }) {
 
   const panelSize = `${letter_page_height} ${letter_page_width}`;
 
+  const RollTablePanel = () => (
+    <Panel size="letter">
+      <RollTable
+        parentColumns={6}
+        parentRows={3}
+        childColumns={3}
+        childRows={10}
+        year={year}
+      />
+    </Panel>
+  );
+
   return (
     <>
       <Head>
@@ -34,20 +46,12 @@ function RollTablePage({ year, count }) {
         {[...Array(count)].map((e, i) => (
           <div key={i}>
             <Front size="letter" landscape>
-              <Panel size="letter">
-                <RollTable year={year} />
-              </Panel>
-              <Panel size="letter">
-                <RollTable year={year} />
-              </Panel>
+              <RollTablePanel />
+              <RollTablePanel />
             </Front>
             <Back size="letter" landscape>
-              <Panel size="letter">
-                <RollTable year={year} />
-              </Panel>
-              <Panel size="letter">
-                <RollTable year={year} />
-              </Panel>
+              <RollTablePanel />
+              <RollTablePanel />
             </Back>
           </div>
         ))}
