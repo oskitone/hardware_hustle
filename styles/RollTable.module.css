@@ -1,41 +1,22 @@
-.parentsContainer,
 .rollTable {
   width: 100%;
   height: 100%;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 1em;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-}
+.child {
+  display: grid;
 
-.cell {
-  width: 100%;
-  flex-grow: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cell {
   border: 1px solid rgb(var(--roll-table-outline-rgb));
-  margin: 0 0 -1px -1px;
+  border-width: 1px 1px 0 0;
 }
 
-.parentsContainer > .row > .cell {
-  margin: 0 1em 1em 0;
-  border: none;
-}
-
-.parentsContainer > .row > .cell:last-of-type {
-  margin-right: 0;
-}
-
-.parentsContainer > .row:last-of-type .cell {
-  margin-bottom: 0;
+.child > * {
+  border: 1px solid rgb(var(--roll-table-outline-rgb));
+  border-width: 0 0 1px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
