@@ -18,32 +18,32 @@ export default function RollTable({
     setIsClient(true);
   }, []);
 
-  const Child = () => (
-    <div className={styles.rollTable}>
-      {[...Array(childRows)].map((undef, i) => (
-        <div className={styles.row} key={i}>
-          {[...Array(childColumns)].map((undef, ii) => (
-            <span className={styles.cell} key={ii}>
-              {isClient && roll()}
-            </span>
-          ))}
-        </div>
-      ))}
+  const Grid = ({ className, columns, rows, children }) => (
+    <div
+      className={className}
+      style={{
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+        gridTemplateRows: `repeat(${rows}, 1fr)`,
+      }}
+    >
+      {[...Array(rows * columns)].map((undef, i) =>
+        children ? children : <div key={i}>{isClient && roll()}</div>
+      )}
     </div>
   );
 
+  const Child = () => (
+    <Grid className={styles.child} columns={childColumns} rows={childRows} />
+  );
+
   return (
-    <div className={styles.parentsContainer}>
-      {[...Array(parentRows)].map((undef, i) => (
-        <div className={styles.row} key={i}>
-          {[...Array(parentColumns)].map((undef, ii) => (
-            <div className={styles.cell} key={ii}>
-              <Child />
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
+    <Grid
+      className={styles.rollTable}
+      columns={parentColumns}
+      rows={parentRows}
+    >
+      <Child />
+    </Grid>
   );
 }
 
