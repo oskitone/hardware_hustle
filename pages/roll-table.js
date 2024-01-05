@@ -19,13 +19,13 @@ function RollTablePage({ year, count }) {
     ? parseInt(router.query.count)
     : count;
 
-  const panelSize = `${letter_page_height} ${letter_page_width}`;
+  const panelSize = `${letter_page_width} ${letter_page_height}`;
 
   const RollTablePanel = () => (
-    <Panel size="letter">
+    <Panel>
       <RollTable
-        parentColumns={6}
-        parentRows={3}
+        parentColumns={8}
+        parentRows={2}
         childColumns={3}
         childRows={10}
         year={year}
@@ -45,11 +45,11 @@ function RollTablePage({ year, count }) {
       <main className={`${font.className}`}>
         {[...Array(count)].map((e, i) => (
           <div key={i}>
-            <Front size="letter" landscape>
+            <Front size="letter">
               <RollTablePanel />
               <RollTablePanel />
             </Front>
-            <Back size="letter" landscape>
+            <Back size="letter">
               <RollTablePanel />
               <RollTablePanel />
             </Back>
