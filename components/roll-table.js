@@ -6,37 +6,53 @@ const MAX = 6;
 
 const roll = () => MIN + Math.floor(Math.random() * (MAX - MIN + 1));
 
-export default function RollTable({ columns, rows, year }) {
+export default function RollTable({
+  parentColumns,
+  parentRows,
+  childColumns,
+  childRows,
+  year,
+}) {
   const [isClient, setIsClient] = useState();
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  return (
+  const Child = () => (
     <div className={styles.rollTable}>
-      {[...Array(rows)].map((undef, i) => {
-        return (
-          <div className={styles.row} key={i}>
-            {[...Array(columns)].map((undef, ii) => (
-              <span className={styles.cell} key={ii}>
-                {isClient && roll()}
-              </span>
-            ))}
-          </div>
-        );
-      })}
-      <footer className={styles.footer}>
-        <p>
-          Close your eyes and point somewhere on the table. That's your roll!
-        </p>
-        <p>{year} CC BY-SA 4.0 Oskitone / oskitone.com</p>
-      </footer>
+      {[...Array(childRows)].map((undef, i) => (
+        <div className={styles.row} key={i}>
+          {[...Array(childColumns)].map((undef, ii) => (
+            <span className={styles.cell} key={ii}>
+              {isClient && roll()}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className={styles.parentsContainer}>
+      {[...Array(parentRows)].map((undef, i) => (
+        <div className={styles.row} key={i}>
+          {[...Array(parentColumns)].map((undef, ii) => (
+            <div className={styles.cell} key={ii}>
+              <Child />
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
 
 RollTable.defaultProps = {
-  columns: 25,
-  rows: 35,
+  parentColumns: 3,
+  parentRows: 3,
+
+  childColumns: 3,
+  childRows: 3,
+
   year: undefined,
 };
