@@ -1,10 +1,15 @@
-import Home from "components/home";
+import GameSheet from "components/game-sheet";
 import { getCommitProps } from "common/utils";
 export const getStaticProps = async (context) => getCommitProps();
 
 function LetterPage({ year, draftId }) {
   return (
-    <Home sheetSize="letter" gamesPerSheet={1} year={year} draftId={draftId} />
+    <GameSheet
+      sheetSize="letter"
+      gamesPerSheet={1}
+      year={year}
+      draftId={draftId}
+    />
   );
 }
 

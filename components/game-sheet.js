@@ -17,7 +17,7 @@ import {
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-function Home({ sheetCount, gamesPerSheet, sheetSize, year, draftId }) {
+function GameSheet({ sheetCount, gamesPerSheet, sheetSize, year, draftId }) {
   const pageSize = {
     legal: `${legal_sheet_width} ${legal_sheet_height}`,
     letter: `${letter_sheet_width} ${letter_sheet_height}`,
@@ -53,7 +53,7 @@ function Home({ sheetCount, gamesPerSheet, sheetSize, year, draftId }) {
   );
 }
 
-Home.defaultProps = {
+GameSheet.defaultProps = {
   sheetCount: 1,
   gamesPerSheet: 2,
   sheetSize: "legal",
@@ -61,4 +61,4 @@ Home.defaultProps = {
   draftId: undefined,
 };
 
-export default Home;
+export default GameSheet;
