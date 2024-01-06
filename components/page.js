@@ -2,26 +2,15 @@ import classnames from "classnames";
 
 import styles from "@/styles/Page.module.css";
 
-function Page({
-  children,
-
-  double,
-  landscape,
-
-  split,
-
-  size,
-
-  className,
-}) {
+function Page({ children, landscape, size }) {
   return (
     <div
-      className={classnames(styles.page, className, {
-        [styles.double]: double,
+      className={classnames(styles.page, {
         [styles.landscape]: landscape,
-        [styles.split]: split,
+        [styles.full]: size == "full",
         [styles.legal]: size == "legal",
         [styles.letter]: size == "letter",
+        [styles.single]: size == "single",
       })}
     >
       {children}
@@ -30,14 +19,11 @@ function Page({
 }
 
 Page.defaultProps = {
-  double: false,
   landscape: false,
-
-  split: false,
-
   size: "legal",
-
-  className: undefined,
 };
+
+export const Front = Page;
+export const Back = Page;
 
 export default Page;

@@ -1,44 +1,69 @@
 .page {
-  width: var(--page-width);
-  height: var(--page-height);
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
 
-  padding: var(--print-margin);
+  width: var(--legal-page-width);
+  height: var(--legal-page-height);
 
-  outline: 1px dashed rgb(var(--roll-table-outline-rgb));
+  margin: 2em auto;
 
-  /* Mostly hide Rules overflow */
-  /* TODO: fix adjacent pages still showing? */
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.page.letter {
+.single {
+  width: var(--panel-width);
+  height: var(--panel-height);
+}
+
+.letter {
   width: var(--letter-page-width);
   height: var(--letter-page-height);
 }
 
-.double {
-  height: calc(var(--page-height) * 2);
-  width: var(--page-height);
+.full {
+  width: auto;
+  height: auto;
+
+  margin: 0;
+
+  padding: var(--print-margin);
 }
 
 .landscape {
-  height: var(--page-width);
-  width: var(--page-height);
+  height: var(--legal-page-width);
+  width: var(--legal-page-height);
+
+  flex-direction: row;
 }
 
-.landscape.double {
-  height: var(--page-width);
-  width: calc(var(--page-height) * 2);
+.letter.landscape {
+  width: var(--letter-page-height);
+  height: var(--letter-page-width);
 }
 
-.split {
-  display: grid;
-  grid-template-columns: 28% auto;
-  grid-gap: var(--print-margin);
+.page:nth-child(odd) {
+  justify-content: left;
+}
+
+.page:nth-child(even) {
+  align-items: end;
+}
+
+.landscape:nth-child(even) {
+  align-items: start;
+  justify-content: right;
 }
 
 @media print {
   .page {
-    outline: none;
+    margin: 0;
+
+    /* Rely on Panel for height */
+    height: auto;
+  }
+
+  .page:not(:last-of-type) {
+    panel-break-after: always;
   }
 }

@@ -48,27 +48,27 @@ Your goal is to profit without burning out. You have six turns to buy parts to m
 
 Each of those actions takes opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses. At the end of each turn, you can attempt a research upgrade to reduce future <Opportunity /> costs.
 
-The six turns are miniature spreadsheets, and the game ends when they're all filled out. The player at the end with the most money wins.
+The six turns are miniature spreadpages, and the game ends when they're all filled out. The player at the end with the most money wins.
 
 ## Components
 
 Each player will need:
 
-- Hardware Hustle game sheet
-- Six-sided die or "Roll Table" sheet
+- Hardware Hustle game page
+- Six-sided die or "Roll Table" page
 - Calculator or scratch paper for math (optional)
 
 ## Game Setup
 
-Fill out the "{ID_TITLE}" line in the top left of the game sheet, then familiarize yourself with the rest of its layout: Phases table, Money/Turn graph, and six turn spreadsheets.
+Fill out the "{ID_TITLE}" line in the top left of the game page, then familiarize yourself with the rest of its layout: Phases table, Money/Turn graph, and six turn spreadpages.
 
-![Hardware Hustle game sheet layout](../screenshot.png)
+![Hardware Hustle game page layout](../screenshot.png)
 
 The player who rolls the second highest die goes first, then proceed clockwise.
 
 ## How to Play
 
-The spreadsheet's rows are grouped into money <IconsParen ids={["money"]} />, parts <IconsParen ids={["A", "B", "C", "D"]} />, widgets <IconsParen ids={["AB", "ABC", "ABCD"]} />, and opportunity <IconsParen ids={["opportunity"]} />.
+The spreadpage's rows are grouped into money <IconsParen ids={["money"]} />, parts <IconsParen ids={["A", "B", "C", "D"]} />, widgets <IconsParen ids={["AB", "ABC", "ABCD"]} />, and opportunity <IconsParen ids={["opportunity"]} />.
 
 And its five columns are phases that you fill out from left to right during your turn.
 
@@ -84,7 +84,7 @@ And its five columns are phases that you fill out from left to right during your
    Use remaining <Opportunity /> to research or lose next turn if <Opportunity /> is negative
 
 {/* TODO: try pulling these to front. */}
-(Refer to the *Example Turn* on the back page for a quick glimpse of the rules in action and an *Icon Glossary* that says what the icons are called.)
+(Refer to the *Example Turn* on the back panel for a quick glimpse of the rules in action and an *Icon Glossary* that says what the icons are called.)
 
 ### 1. AM
 
@@ -92,7 +92,7 @@ You begin each turn by taking stock of what you have and what you need at the be
 
 For the game's first turn, there's nothing to do here besides note the starting pre-filled values. You have <MoneyX value={10}/> and <OpportunityX value={12}/>, and you need basically everything else.
 
-(Later turns will have empty cells to fill out, but there still won't be any decision-making. For that reason, AM is not listed in the Phases table on the left of your game sheet.)
+(Later turns will have empty cells to fill out, but there still won't be any decision-making. For that reason, AM is not listed in the Phases table on the left of your game page.)
 
 ### 2. Buy
 
@@ -166,7 +166,7 @@ To complete the PM phase:
 
 You've spent more <Opportunity /> than you had available and have to spend the whole next day recuperating. Hope it was worth it.
 
-Cross out the entire next turn's spreadsheet. You cannot do any of its phases.
+Cross out the entire next turn's spreadpage. You cannot do any of its phases.
 
 #### Research Upgrade
 
@@ -289,20 +289,20 @@ This game is published under a CC BY-SA 4.0 license. Find its source code at git
 _{props.draftId}_  
 _{props.year} CC BY-SA 4.0 - oskitone.com_
 
-export default function Rules({ children, page, pageCount, year, draftId }) {
+export default function Rules({ children, panel, panelCount, year, draftId }) {
   return (
     <div className={
         classnames(
           styles.rules, {
-            [styles["view-all"]]: page == undefined
+            [styles["view-all"]]: panel == undefined
           }
         )
     }>
-      <div className={classnames(styles.pageNumber, {
-        [styles.front]: page % 2 == 0,
-        [styles.back]: page % 2 == 1
-      })}>{page + 1}/{pageCount}</div>
-      <div className={styles.inner} page={page}>
+      <div className={classnames(styles.panelNumber, {
+        [styles.front]: panel % 2 == 0,
+        [styles.back]: panel % 2 == 1
+      })}>{panel + 1}/{panelCount}</div>
+      <div className={styles.inner} panel={panel}>
         {children}
       </div>
     </div>

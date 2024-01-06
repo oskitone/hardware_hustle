@@ -1,0 +1,44 @@
+.panel {
+  width: var(--panel-width);
+  height: var(--panel-height);
+
+  padding: var(--print-margin);
+
+  outline: 1px dashed rgb(var(--roll-table-outline-rgb));
+
+  /* Mostly hide Rules overflow */
+  /* TODO: fix adjacent panels still showing? */
+  overflow: hidden;
+}
+
+.panel.letter {
+  width: var(--letter-panel-width);
+  height: var(--letter-panel-height);
+}
+
+.double {
+  height: calc(var(--panel-height) * 2);
+  width: var(--panel-height);
+}
+
+.landscape {
+  height: var(--panel-width);
+  width: var(--panel-height);
+}
+
+.landscape.double {
+  height: var(--panel-width);
+  width: calc(var(--panel-height) * 2);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 28% auto;
+  grid-gap: var(--print-margin);
+}
+
+@media print {
+  .panel {
+    outline: none;
+  }
+}

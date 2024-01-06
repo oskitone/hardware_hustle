@@ -4,7 +4,7 @@
   column-fill: auto;
 
   height: 100%;
-  padding-bottom: 2em; /* For pageNumber */
+  padding-bottom: 2em; /* For panelNumber */
 
   font-size: var(--rules-font-size);
 
@@ -30,39 +30,39 @@
   top: 33%;
 }
 
-.pageNumber {
+.panelNumber {
   position: absolute;
   bottom: 0;
   font-weight: 100;
 }
 
-.pageNumber.front {
+.panelNumber.front {
   right: 0;
 }
 
-.pageNumber.back {
+.panelNumber.back {
   left: 0;
 }
 
-.inner[page="0"] {
-  left: calc((var(--letter-page-width) - var(--print-margin)) * 0);
+.inner[panel="0"] {
+  left: calc((var(--letter-panel-width) - var(--print-margin)) * 0);
 }
 
-.inner[page="1"] {
-  left: calc((var(--letter-page-width) - var(--print-margin)) * -1);
+.inner[panel="1"] {
+  left: calc((var(--letter-panel-width) - var(--print-margin)) * -1);
 }
 
-.inner[page="2"] {
-  left: calc((var(--letter-page-width) - var(--print-margin)) * -2);
+.inner[panel="2"] {
+  left: calc((var(--letter-panel-width) - var(--print-margin)) * -2);
 }
 
-.inner[page="3"] {
-  left: calc((var(--letter-page-width) - var(--print-margin)) * -3);
+.inner[panel="3"] {
+  left: calc((var(--letter-panel-width) - var(--print-margin)) * -3);
 }
 
 .view-all {
   column-count: auto;
-  max-width: calc((var(--letter-page-width) - var(--print-margin) * 3) / 2);
+  max-width: calc((var(--letter-panel-width) - var(--print-margin) * 3) / 2);
 }
 
 .view-all:before {
@@ -82,7 +82,7 @@
 .rules h5 {
   text-transform: uppercase;
   line-height: 1;
-  page-break-after: avoid;
+  panel-break-after: avoid;
 }
 
 .rules h1 {
@@ -136,7 +136,7 @@
 .rules ol,
 .rules ul,
 .rules table {
-  page-break-before: avoid;
+  panel-break-before: avoid;
 }
 
 .rules ul ul,

@@ -2,9 +2,9 @@ import { Open_Sans } from "next/font/google";
 import Link from "next/link";
 import Head from "next/head";
 
-import { Front } from "components/sheet";
+import { Front } from "components/page";
 import { getCommitProps } from "common/utils";
-import Page from "components/page";
+import Panel from "components/panel";
 import Wordmark from "components/wordmark";
 
 export const getStaticProps = async (context) => getCommitProps();
@@ -24,17 +24,17 @@ function Index({ year, draftId }) {
       </Head>
       <main className={`${font.className}`}>
         <Front>
-          <Page className={styles.Page}>
+          <Panel className={styles.Panel}>
             <Wordmark draftId={draftId} className={styles.Wordmark} />
             <ul className={styles.navigation}>
               <li>
-                <Link href="/letter">Game sheet (letter paper)</Link>
+                <Link href="/letter">Game page (letter paper)</Link>
               </li>
               <li>
-                <Link href="/legal">Game sheet (legal paper)</Link>
+                <Link href="/legal">Game page (legal paper)</Link>
               </li>
               <li>
-                <Link href="/single">Game sheet (single)</Link>
+                <Link href="/single">Game page (single)</Link>
               </li>
               <li>
                 <Link href="/rules">Rules (letter paper)</Link>
@@ -43,7 +43,7 @@ function Index({ year, draftId }) {
                 <Link href="/roll-table">Roll table (letter paper)</Link>
               </li>
             </ul>
-          </Page>
+          </Panel>
         </Front>
       </main>
     </>

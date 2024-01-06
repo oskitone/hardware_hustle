@@ -19,7 +19,7 @@
   grid-template-columns: calc(1em + 0.5em) repeat(5, minmax(0, 1fr));
 }
 
-/* NOTE: Eyeballed to fill sheet */
+/* NOTE: Eyeballed to fill page */
 /* Ideally it's extracted into parent component so individual uses
    can have arbitrary/implicit heights but that is some work to do. */
 .turn .tbody .th,

@@ -3,20 +3,20 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import { getCommitProps } from "common/utils";
-import { letter_sheet_width, letter_sheet_height } from "common/dimensions";
-import Page from "components/page";
+import { letter_page_width, letter_page_height } from "common/dimensions";
+import Panel from "components/panel";
 import Rules from "components/rules.mdx";
-import Sheet, { Front, Back } from "components/sheet";
+import Page, { Front, Back } from "components/page";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const getStaticProps = async (context) => getCommitProps();
 
-// TODO: #/4 page count?
+// TODO: #/4 panel count?
 // TODO: deter widows/orphans in headers/icons
 
 function RulesPage({ year, draftId, view }) {
-  const pageSize = `${letter_sheet_height} ${letter_sheet_width}`;
+  const panelSize = `${letter_page_height} ${letter_page_width}`;
 
   const router = useRouter();
   view = view || router.query.view;
@@ -24,29 +24,29 @@ function RulesPage({ year, draftId, view }) {
   function getContent() {
     if (view == "all") {
       return (
-        <Sheet size="full">
+        <Page size="full">
           <Rules />
-        </Sheet>
+        </Page>
       );
     }
 
     return (
       <>
         <Front size="letter" landscape>
-          <Page size="letter" landscape>
-            <Rules page={3} pageCount={4} year={year} draftId={draftId} />
-          </Page>
-          <Page size="letter" landscape>
-            <Rules page={0} pageCount={4} year={year} draftId={draftId} />
-          </Page>
+          <Panel size="letter" landscape>
+            <Rules panel={3} panelCount={4} year={year} draftId={draftId} />
+          </Panel>
+          <Panel size="letter" landscape>
+            <Rules panel={0} panelCount={4} year={year} draftId={draftId} />
+          </Panel>
         </Front>
         <Back size="letter" landscape>
-          <Page size="letter" landscape>
-            <Rules page={1} pageCount={4} year={year} draftId={draftId} />
-          </Page>
-          <Page size="letter" landscape>
-            <Rules page={2} pageCount={4} year={year} draftId={draftId} />
-          </Page>
+          <Panel size="letter" landscape>
+            <Rules panel={1} panelCount={4} year={year} draftId={draftId} />
+          </Panel>
+          <Panel size="letter" landscape>
+            <Rules panel={2} panelCount={4} year={year} draftId={draftId} />
+          </Panel>
         </Back>
       </>
     );
@@ -59,7 +59,7 @@ function RulesPage({ year, draftId, view }) {
         <meta name="robots" content="noindex" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <style>{`@page { size: ${pageSize}; }`}</style>
+        <style>{`@panel { size: ${panelSize}; }`}</style>
       </Head>
       <main className={`${font.className}`}>{getContent()}</main>
     </>

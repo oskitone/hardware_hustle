@@ -5,8 +5,8 @@ export const getStaticProps = async (context) => getCommitProps();
 function LetterPage({ year, draftId }) {
   return (
     <GameSheet
-      sheetSize="letter"
-      gamesPerSheet={1}
+      pageSize="letter"
+      gamesPerPage={1}
       year={year}
       draftId={draftId}
     />
