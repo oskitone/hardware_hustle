@@ -4,7 +4,7 @@ import { htmlEntity } from "common/utils";
 import Icon from "components/icon";
 import PointSelector from "components/point-selector";
 
-import styles from "@/styles/ActionsTable.module.css";
+import styles from "@/styles/PhasesTable.module.css";
 
 function PS({ options, selectedIndex, firstRow, lastRow }) {
   return (
@@ -167,10 +167,10 @@ export const ACTIONS = {
   },
 };
 
-function ActionsTable({ className, actions, selectedIndexes }) {
+function PhasesTable({ className, phases, selectedIndexes }) {
   return (
-    <div className={classnames(className, styles.actionsTable)}>
-      {actions.map((action, actionI) => (
+    <div className={classnames(className, styles.PhasesTable)}>
+      {phases.map((action, actionI) => (
         <div className={styles.action} key={actionI}>
           <div className={styles.title}>{action.title}</div>
           {action.getBody(selectedIndexes[actionI]).map((columns) =>
@@ -186,10 +186,10 @@ function ActionsTable({ className, actions, selectedIndexes }) {
   );
 }
 
-ActionsTable.defaultProps = {
+PhasesTable.defaultProps = {
   className: undefined,
-  actions: [ACTIONS.BUY, ACTIONS.MAKE, ACTIONS.SELL, ACTIONS.PM],
+  phases: [ACTIONS.BUY, ACTIONS.MAKE, ACTIONS.SELL, ACTIONS.PM],
   selectedIndexes: [0, 0, 0],
 };
 
-export default ActionsTable;
+export default PhasesTable;

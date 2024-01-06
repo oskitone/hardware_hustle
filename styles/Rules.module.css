@@ -108,7 +108,7 @@
 .rules p,
 .rules ol,
 .rules ul,
-.ActionsTable,
+.PhasesTable,
 .Turn,
 .rules table {
   margin: 0 0 var(--default-font-size);
@@ -125,13 +125,13 @@
 }
 
 .rules li,
-.ActionsTable,
+.PhasesTable,
 .Turn,
 .rules table {
   break-inside: avoid;
 }
 
-.ActionsTable,
+.PhasesTable,
 .Turn,
 .rules ol,
 .rules ul,

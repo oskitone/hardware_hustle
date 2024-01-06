@@ -1,4 +1,4 @@
-import ActionsTable from "components/actions-table";
+import PhasesTable from "components/phases-table";
 import Graph from "components/graph";
 import LineInput from "components/line-input";
 import Wordmark from "components/wordmark";
@@ -15,7 +15,7 @@ export default function Sidebar({ turnsData, year, draftId }) {
       <LineInput title={ID_TITLE} className={styles.LineInput} />
 
       <h2>Phases</h2>
-      <ActionsTable className={styles.ActionsTable} />
+      <PhasesTable className={styles.PhasesTable} />
 
       <h2>Money / Turn</h2>
       <Graph

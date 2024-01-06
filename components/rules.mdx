@@ -3,7 +3,7 @@ import classnames from "classnames";
 import styles from "@/styles/Rules.module.css";
 
 import { ID_TITLE } from "components/sidebar";
-import ActionsTable, { ACTIONS } from "components/actions-table";
+import PhasesTable, { ACTIONS } from "components/phases-table";
 import Icon, {
   Money,
   Opportunity,
@@ -46,7 +46,7 @@ For 1+ players. Ages 10+. ~20min to play.
 
 Your goal is to profit without burning out. You have six turns to buy parts to make widgets, make widgets from parts, then sell widgets for money to buy more parts, and so on.
 
-Each of those actions takes opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses. At the end of each turn, you can attempt a research upgrade to reduce future <Opportunity /> costs.
+Each of those phases takes opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses. At the end of each turn, you can attempt a research upgrade to reduce future <Opportunity /> costs.
 
 The six turns are miniature spreadpages, and the game ends when they're all filled out. The player at the end with the most money wins.
 
@@ -98,7 +98,7 @@ For the game's first turn, there's nothing to do here besides note the starting 
 
 Before you can make any money selling widgets, you've got to spend money buying their parts. Parts cost <Money /> and <Opportunity />, as listed in the Phases table:
 
-<ActionsTable actions={[ACTIONS.BUY]} className={styles.ActionsTable} />
+<PhasesTable phases={[ACTIONS.BUY]} className={styles.PhasesTable} />
 
 The <Opportunity /> costs are a table of values, but, for all the phases of your first turn, you'll only use the ones in the first column with the dark outline. To buy a <A />, you need <OpportunityX value={0} /> and <MoneyX value={1} />; to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />; etc. You'll revisit <Opportunity /> costs in the PM phase a little later.
 
@@ -122,7 +122,7 @@ Notes:
 
 Now you'll use the parts you bought to make widgets you can sell. The Phases table lists the widgets you can make, their outlined <Opportunity /> costs, and the parts that they will use:
 
-<ActionsTable actions={[ACTIONS.MAKE]} className={styles.ActionsTable} />
+<PhasesTable phases={[ACTIONS.MAKE]} className={styles.PhasesTable} />
 
 To complete the Make phase:
 
@@ -139,7 +139,7 @@ You can make as many or as few widgets as you want, provided you have the requir
 
 If you made any widgets, now's a fine time to sell them so you have <Money /> for the next turn's Buy phase. Notice how the Phases table for Sell has you losing widgets but gaining <Money />:
 
-<ActionsTable actions={[ACTIONS.SELL]} className={styles.ActionsTable} />
+<PhasesTable phases={[ACTIONS.SELL]} className={styles.PhasesTable} />
 
 To complete the Sell phase:
 
@@ -189,7 +189,7 @@ Recall how you've only been using the first column of <Opportunity /> values wit
 
 As an example, here's what it would look like after a successful research upgrade to Make:
 
-<ActionsTable className={styles.ActionsTable} selectedIndexes={[0, 1, 0]} />
+<PhasesTable className={styles.PhasesTable} selectedIndexes={[0, 1, 0]} />
 
 Everything in Make is now <OpportunityX value={1} /> cheaper. The non-researched action's <Opportunity /> costs in Buy and Sell remain unchanged.
 
