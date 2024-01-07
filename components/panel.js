@@ -22,6 +22,7 @@ function Panel({
         [styles.split]: split,
         [styles.legal]: size == "legal",
         [styles.letter]: size == "letter",
+        [styles.zine]: size == "zine",
       })}
     >
       {children}

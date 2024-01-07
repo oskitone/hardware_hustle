@@ -9,6 +9,8 @@ import {
   panel_height,
   letter_panel_width,
   letter_panel_height,
+  zine_panel_width,
+  zine_panel_height,
 } from "common/dimensions";
 
 export default function Document() {
@@ -28,6 +30,9 @@ export default function Document() {
 
             --letter-panel-width: ${letter_panel_width};
             --letter-panel-height: ${letter_panel_height};
+
+            --zine-panel-width: ${zine_panel_width};
+            --zine-panel-height: ${zine_panel_height};
         `}</style>
       </Head>
       <body>

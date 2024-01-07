@@ -1,3 +1,5 @@
+/* TODO: visualize staple, move split, adjust header */
+
 .panel {
   width: var(--panel-width);
   height: var(--panel-height);
@@ -14,6 +16,11 @@
 .panel.letter {
   width: var(--letter-panel-width);
   height: var(--letter-panel-height);
+}
+
+.panel.zine {
+  width: var(--zine-panel-width);
+  height: var(--zine-panel-height);
 }
 
 .double {
