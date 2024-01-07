@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
+import Spread from "components/spread";
 import { Front, Back } from "components/page";
 import { getCommitProps } from "common/utils";
 import { letter_page_width, letter_page_height } from "common/dimensions";
@@ -22,15 +23,22 @@ function RollTablePage({ year, count }) {
   const panelSize = `${letter_page_width} ${letter_page_height}`;
 
   const RollTablePanel = () => (
-    <Panel>
+    <Panel size={"zine"}>
       <RollTable
-        parentColumns={8}
-        parentRows={2}
+        parentColumns={6}
+        parentRows={4}
         childColumns={3}
-        childRows={10}
+        childRows={6}
         year={year}
       />
     </Panel>
+  );
+
+  const RollTableSpread = () => (
+    <Spread>
+      <RollTablePanel />
+      <RollTablePanel />
+    </Spread>
   );
 
   return (
@@ -45,13 +53,13 @@ function RollTablePage({ year, count }) {
       <main className={`${font.className}`}>
         {[...Array(count)].map((e, i) => (
           <div key={i}>
-            <Front size="letter">
-              <RollTablePanel />
-              <RollTablePanel />
+            <Front size="letter" zine>
+              <RollTableSpread />
+              <RollTableSpread />
             </Front>
-            <Back size="letter">
-              <RollTablePanel />
-              <RollTablePanel />
+            <Back size="letter" zine>
+              <RollTableSpread />
+              <RollTableSpread />
             </Back>
           </div>
         ))}
