@@ -68,15 +68,19 @@ function run() {
     echo "Output directory: ${dir}"
     echo
 
-    export_pdf single
-    export_pdf letter
-    export_pdf legal
-    export_pdf rules
-    export_pdf roll-table
+    # export_pdf single
+    # export_pdf letter
+    # export_pdf legal
+    # export_pdf rules
+    # export_pdf roll-table
 
-    echo
+    timestamp="$(date +%s)"
+    echo "Exporting ${dir}/${stub}-${timestamp}.pdf"
+    node make_pdf.js "${url}" "${dir}/${stub}-${timestamp}.pdf"
 
-    make_screenshot single
+    # echo
+
+    # make_screenshot single
 }
 
 while getopts "h?d:" opt; do

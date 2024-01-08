@@ -25,24 +25,21 @@ function Index({ year, draftId }) {
   // Intentionally leaving off cover but it's effectively 4 blank panels
 
   // TODO: consider slight page reorder for easier assembly
-  // TODO: For some reason, GameSheetSubPanel spreads against RulesPanel have
-  //       odd margin-top, but only sometimes and only in print.
-  //       Seems only on bottom half of paper?
 
   const panels = [
     <RulesPanel panel={0} year={year} draftId={draftId} />,
     <RulesPanel panel={1} year={year} draftId={draftId} />,
     <RulesPanel panel={2} year={year} draftId={draftId} />,
     <RulesPanel panel={3} year={year} draftId={draftId} />,
-    <RulesPanel panel={4} year={year} draftId={draftId} />, // TODO: ^
-    <RulesPanel panel={5} year={year} draftId={draftId} />, // TODO: ^
+    <RulesPanel panel={4} year={year} draftId={draftId} />,
+    <RulesPanel panel={5} year={year} draftId={draftId} />,
     <RulesPanel panel={6} year={year} draftId={draftId} />,
-    <GameSheetSubPanel year={year} draftId={draftId} />,
-    <GameSheetSubPanel year={year} draftId={draftId} rightSide={true} />,
-    <GameSheetSubPanel year={year} draftId={draftId} />,
-    <GameSheetSubPanel year={year} draftId={draftId} rightSide={true} />,
-    <GameSheetSubPanel year={year} draftId={draftId} />,
-    <GameSheetSubPanel year={year} draftId={draftId} rightSide={true} />,
+    <GameSheetSubPanel year={year} draftId={draftId} side="left" />,
+    <GameSheetSubPanel year={year} draftId={draftId} side="right" />,
+    <GameSheetSubPanel year={year} draftId={draftId} side="left" />,
+    <GameSheetSubPanel year={year} draftId={draftId} side="right" />,
+    <GameSheetSubPanel year={year} draftId={draftId} side="left" />,
+    <GameSheetSubPanel year={year} draftId={draftId} side="right" />,
     <RollTablePanel />,
     <RollTablePanel />,
     <RollTablePanel />,

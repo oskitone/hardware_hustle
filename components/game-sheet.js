@@ -17,20 +17,24 @@ import {
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-export const GameSheetPanel = ({ year, draftId }) => (
-  <Panel split double>
+export const GameSheetPanel = ({ year, draftId, isSubpanel }) => (
+  <Panel split double isSubpanel={isSubpanel}>
     <Sidebar turnsData={defaultTurnsData} year={year} draftId={draftId} />
     <TurnGrid turnsData={defaultTurnsData} />
   </Panel>
 );
 
-export const GameSheetSubPanel = ({ year, draftId, rightSide }) => (
-  <Panel style={{ padding: 0 }}>
-    <div style={{ marginLeft: rightSide ? "-100%" : "auto" }}>
-      <GameSheetPanel year={year} draftId={draftId} />
-    </div>
+export const GameSheetSubPanel = ({ year, draftId, side }) => (
+  <Panel side={side}>
+    <GameSheetPanel year={year} draftId={draftId} isSubpanel={!!side} />
   </Panel>
 );
+
+GameSheetSubPanel.defaultProps = {
+  year: undefined,
+  draftId: undefined,
+  side: undefined,
+};
 
 function GameSheet({ pageCount, gamesPerPage, pageSize, year, draftId }) {
   const panelSize = {

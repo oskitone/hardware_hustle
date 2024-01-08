@@ -13,6 +13,9 @@
   overflow: hidden;
 
   position: relative;
+
+  display: flex;
+  flex-shrink: 0;
 }
 
 /* .panel:before {
@@ -37,6 +40,19 @@
 
 .zine.double {
   width: calc(var(--zine-panel-width) * 2);
+}
+
+.zine.subpanel {
+  padding: 0;
+  overflow: visible; /* For Turn IDs */
+
+  height: auto;
+  width: calc(var(--zine-panel-width) * 2 - var(--print-margin) * 2);
+  outline: none;
+}
+
+.panel[side="right"] {
+  justify-content: end;
 }
 
 .landscape {

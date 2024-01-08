@@ -15,6 +15,9 @@ function Panel({
   className,
 
   style,
+
+  isSubpanel,
+  side,
 }) {
   return (
     <div
@@ -26,7 +29,9 @@ function Panel({
         [styles.legal]: size == "legal",
         [styles.letter]: size == "letter",
         [styles.zine]: size == "zine",
+        [styles.subpanel]: isSubpanel,
       })}
+      side={side}
     >
       {children}
     </div>
@@ -42,6 +47,9 @@ Panel.defaultProps = {
   size: "zine",
 
   className: undefined,
+
+  isSubpanel: false,
+  side: undefined,
 };
 
 export default Panel;
