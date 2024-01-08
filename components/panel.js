@@ -13,9 +13,12 @@ function Panel({
   size,
 
   className,
+
+  style,
 }) {
   return (
     <div
+      style={style}
       className={classnames(styles.panel, className, {
         [styles.double]: double,
         [styles.landscape]: landscape,

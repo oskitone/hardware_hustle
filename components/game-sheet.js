@@ -24,6 +24,14 @@ export const GameSheetPanel = ({ year, draftId }) => (
   </Panel>
 );
 
+export const GameSheetSubPanel = ({ year, draftId, rightSide }) => (
+  <Panel style={{ padding: 0 }}>
+    <div style={{ marginLeft: rightSide ? "-100%" : "auto" }}>
+      <GameSheetPanel year={year} draftId={draftId} />
+    </div>
+  </Panel>
+);
+
 function GameSheet({ pageCount, gamesPerPage, pageSize, year, draftId }) {
   const panelSize = {
     legal: `${legal_page_width} ${legal_page_height}`,
