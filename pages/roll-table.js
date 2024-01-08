@@ -7,8 +7,7 @@ import Spread from "components/spread";
 import { Front, Back } from "components/page";
 import { getCommitProps } from "common/utils";
 import { letter_page_width, letter_page_height } from "common/dimensions";
-import Panel from "components/panel";
-import RollTable from "components/roll-table";
+import { RollTablePanel } from "components/roll-table";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -21,18 +20,6 @@ function RollTablePage({ year, count }) {
     : count;
 
   const panelSize = `${letter_page_width} ${letter_page_height}`;
-
-  const RollTablePanel = () => (
-    <Panel size={"zine"}>
-      <RollTable
-        parentColumns={6}
-        parentRows={4}
-        childColumns={3}
-        childRows={6}
-        year={year}
-      />
-    </Panel>
-  );
 
   const RollTableSpread = () => (
     <Spread>

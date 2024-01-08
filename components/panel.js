@@ -36,7 +36,7 @@ Panel.defaultProps = {
 
   split: false,
 
-  size: "legal",
+  size: "zine",
 
   className: undefined,
 };

@@ -10,5 +10,5 @@ export const panel_height = "5.5in";
 export const letter_panel_width = "5.5in";
 export const letter_panel_height = "7.5in";
 
-export const zine_panel_width = "3.75in";
+export const zine_panel_width = "4.25in";
 export const zine_panel_height = "5.5in";

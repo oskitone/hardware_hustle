@@ -17,6 +17,13 @@ import {
 
 const font = Open_Sans({ subsets: ["latin"] });
 
+export const GameSheetPanel = ({ year, draftId }) => (
+  <Panel split double>
+    <Sidebar turnsData={defaultTurnsData} year={year} draftId={draftId} />
+    <TurnGrid turnsData={defaultTurnsData} />
+  </Panel>
+);
+
 function GameSheet({ pageCount, gamesPerPage, pageSize, year, draftId }) {
   const panelSize = {
     legal: `${legal_page_width} ${legal_page_height}`,
@@ -37,14 +44,7 @@ function GameSheet({ pageCount, gamesPerPage, pageSize, year, draftId }) {
         {[...Array(pageCount || 0)].map((e, i) => (
           <Page size={pageSize} key={i}>
             {[...Array(gamesPerPage || 0)].map((e, ii) => (
-              <Panel split key={ii}>
-                <Sidebar
-                  turnsData={defaultTurnsData}
-                  year={year}
-                  draftId={draftId}
-                />
-                <TurnGrid turnsData={defaultTurnsData} />
-              </Panel>
+              <GameSheetPanel key={ii} />
             ))}
           </Page>
         ))}
@@ -56,7 +56,7 @@ function GameSheet({ pageCount, gamesPerPage, pageSize, year, draftId }) {
 GameSheet.defaultProps = {
   pageCount: 1,
   gamesPerPage: 2,
-  pageSize: "legal",
+  pageSize: "letter",
   year: undefined,
   draftId: undefined,
 };

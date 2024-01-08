@@ -11,21 +11,32 @@
   /* Mostly hide Rules overflow */
   /* TODO: fix adjacent panels still showing? */
   overflow: hidden;
+
+  position: relative;
 }
+
+/* .panel:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  left: 50%;
+  background-color: red;
+} */
 
 .panel.letter {
   width: var(--letter-panel-width);
   height: var(--letter-panel-height);
 }
 
-.panel.zine {
+.zine {
   width: var(--zine-panel-width);
   height: var(--zine-panel-height);
 }
 
-.double {
-  height: calc(var(--panel-height) * 2);
-  width: var(--panel-height);
+.zine.double {
+  width: calc(var(--zine-panel-width) * 2);
 }
 
 .landscape {
@@ -40,7 +51,7 @@
 
 .split {
   display: grid;
-  grid-template-columns: 28.75% auto;
+  grid-template-columns: 25.3% auto;
   grid-gap: var(--print-margin);
 }
 

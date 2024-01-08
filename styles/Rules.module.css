@@ -1,5 +1,5 @@
 .rules {
-  column-count: 1;
+  column-count: 2;
   column-gap: var(--print-margin);
   column-fill: auto;
 
@@ -87,7 +87,7 @@
 
 .Wordmark {
   /* Eyeballed to fit on two lines */
-  font-size: calc(var(--default-font-size) * 3.35);
+  font-size: calc(var(--default-font-size) * 2.4);
   margin: 0 0 var(--default-font-size);
 }
 

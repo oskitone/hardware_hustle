@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
 import styles from "@/styles/RollTable.module.css";
 
+import Panel from "components/panel";
+
 const MIN = 1;
 const MAX = 6;
 
 const roll = () => MIN + Math.floor(Math.random() * (MAX - MIN + 1));
+
+export const RollTablePanel = () => (
+  <Panel size={"zine"}>
+    <RollTable
+      parentColumns={6}
+      parentRows={4}
+      childColumns={3}
+      childRows={6}
+    />
+  </Panel>
+);
 
 export default function RollTable({
   parentColumns,
   parentRows,
   childColumns,
   childRows,
-  year,
 }) {
   const [isClient, setIsClient] = useState();
   useEffect(() => {
@@ -53,6 +65,4 @@ RollTable.defaultProps = {
 
   childColumns: 3,
   childRows: 3,
-
-  year: undefined,
 };

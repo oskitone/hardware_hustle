@@ -20,7 +20,7 @@ function Page({ children, landscape, size }) {
 
 Page.defaultProps = {
   landscape: false,
-  size: "legal",
+  size: "letter",
 };
 
 export const Front = Page;

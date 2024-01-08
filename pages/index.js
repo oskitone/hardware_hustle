@@ -1,19 +1,79 @@
 import { Open_Sans } from "next/font/google";
-import Link from "next/link";
 import Head from "next/head";
 
-import { Front } from "components/page";
+import { GameSheetPanel } from "components/game-sheet";
+import Spread from "components/spread";
 import { getCommitProps } from "common/utils";
+import { letter_page_width, letter_page_height } from "common/dimensions";
+import Page from "components/page";
+import { RollTablePanel } from "components/roll-table";
 import Panel from "components/panel";
-import Wordmark from "components/wordmark";
-
-export const getStaticProps = async (context) => getCommitProps();
+import { RulesPanel } from "./rules.js";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-import styles from "@/styles/Index.module.css";
+export const getStaticProps = async (context) => getCommitProps();
 
 function Index({ year, draftId }) {
+  const panelSize = `${letter_page_height} ${letter_page_width}`;
+
+  function getContent() {
+    return (
+      <>
+        <Page>
+          <Spread>
+            <RulesPanel panel={7} year={year} draftId={draftId} />
+            <RulesPanel panel={0} year={year} draftId={draftId} />
+          </Spread>
+          <Spread>
+            <RulesPanel panel={5} year={year} draftId={draftId} />
+            <RulesPanel panel={2} year={year} draftId={draftId} />
+          </Spread>
+        </Page>
+        <Page>
+          <Spread>
+            <RulesPanel panel={6} year={year} draftId={draftId} />
+            <RulesPanel panel={1} year={year} draftId={draftId} />
+          </Spread>
+          <Spread>
+            <RulesPanel panel={3} year={year} draftId={draftId} />
+            <RulesPanel panel={4} year={year} draftId={draftId} />
+          </Spread>
+        </Page>
+
+        <Page>
+          <GameSheetPanel />
+          <GameSheetPanel />
+        </Page>
+        <Page>
+          <GameSheetPanel />
+          <GameSheetPanel />
+        </Page>
+
+        <Page>
+          <Spread>
+            <RollTablePanel />
+            <RollTablePanel />
+          </Spread>
+          <Spread>
+            <RollTablePanel />
+            <RollTablePanel />
+          </Spread>
+        </Page>
+        <Page>
+          <Spread>
+            <RollTablePanel />
+            <RollTablePanel />
+          </Spread>
+          <Spread>
+            <RollTablePanel />
+            <RollTablePanel />
+          </Spread>
+        </Page>
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -21,31 +81,9 @@ function Index({ year, draftId }) {
         <meta name="robots" content="noindex" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <style>{`@panel { size: ${panelSize}; }`}</style>
       </Head>
-      <main className={`${font.className}`}>
-        <Front>
-          <Panel className={styles.Panel}>
-            <Wordmark draftId={draftId} className={styles.Wordmark} />
-            <ul className={styles.navigation}>
-              <li>
-                <Link href="/letter">Game page (letter paper)</Link>
-              </li>
-              <li>
-                <Link href="/legal">Game page (legal paper)</Link>
-              </li>
-              <li>
-                <Link href="/single">Game page (single)</Link>
-              </li>
-              <li>
-                <Link href="/rules">Rules (letter paper)</Link>
-              </li>
-              <li>
-                <Link href="/roll-table">Roll table (letter paper)</Link>
-              </li>
-            </ul>
-          </Panel>
-        </Front>
-      </main>
+      <main className={`${font.className}`}>{getContent()}</main>
     </>
   );
 }

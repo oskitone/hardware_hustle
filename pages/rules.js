@@ -13,8 +13,11 @@ const font = Open_Sans({ subsets: ["latin"] });
 
 export const getStaticProps = async (context) => getCommitProps();
 
-// TODO: #/4 panel count?
-// TODO: deter widows/orphans in headers/icons
+export const RulesPanel = ({ panel, year, draftId }) => (
+  <Panel>
+    <Rules panel={panel} panelCount={8} year={year} draftId={draftId} />
+  </Panel>
+);
 
 function RulesPage({ year, draftId, view }) {
   const panelSize = `${letter_page_height} ${letter_page_width}`;
@@ -35,38 +38,22 @@ function RulesPage({ year, draftId, view }) {
       <>
         <Front size="letter" zine>
           <Spread>
-            <Panel size="zine">
-              <Rules panel={7} panelCount={8} year={year} draftId={draftId} />
-            </Panel>
-            <Panel size="zine">
-              <Rules panel={0} panelCount={8} year={year} draftId={draftId} />
-            </Panel>
+            <RulesPanel panel={7} year={year} draftId={draftId} />
+            <RulesPanel panel={0} year={year} draftId={draftId} />
           </Spread>
           <Spread>
-            <Panel size="zine">
-              <Rules panel={5} panelCount={8} year={year} draftId={draftId} />
-            </Panel>
-            <Panel size="zine">
-              <Rules panel={2} panelCount={8} year={year} draftId={draftId} />
-            </Panel>
+            <RulesPanel panel={5} year={year} draftId={draftId} />
+            <RulesPanel panel={2} year={year} draftId={draftId} />
           </Spread>
         </Front>
         <Back size="letter" zine>
           <Spread>
-            <Panel size="zine">
-              <Rules panel={6} panelCount={8} year={year} draftId={draftId} />
-            </Panel>
-            <Panel size="zine">
-              <Rules panel={1} panelCount={8} year={year} draftId={draftId} />
-            </Panel>
+            <RulesPanel panel={6} year={year} draftId={draftId} />
+            <RulesPanel panel={1} year={year} draftId={draftId} />
           </Spread>
           <Spread>
-            <Panel size="zine">
-              <Rules panel={3} panelCount={8} year={year} draftId={draftId} />
-            </Panel>
-            <Panel size="zine">
-              <Rules panel={4} panelCount={8} year={year} draftId={draftId} />
-            </Panel>
+            <RulesPanel panel={3} year={year} draftId={draftId} />
+            <RulesPanel panel={4} year={year} draftId={draftId} />
           </Spread>
         </Back>
       </>
