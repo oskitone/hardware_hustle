@@ -10,9 +10,9 @@ export const ID_TITLE = "Name";
 export default function Sidebar({ turnsData, year, draftId }) {
   return (
     <div className={styles.sidebar}>
-      <Wordmark className={styles.Wordmark} draftId={draftId} />
+      <Wordmark className={styles.Wordmark} />
 
-      <LineInput title={ID_TITLE} className={styles.LineInput} />
+      {/* <LineInput title={ID_TITLE} className={styles.LineInput} /> */}
 
       <h2>Phases</h2>
       <PhasesTable className={styles.PhasesTable} />
@@ -24,9 +24,9 @@ export default function Sidebar({ turnsData, year, draftId }) {
         className={styles.Graph}
       />
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <p>{year} CC BY-SA 4.0 - oskitone.com</p>
-      </footer>
+      </footer> */}
     </div>
   );
 }

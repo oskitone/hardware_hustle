@@ -11,9 +11,9 @@ const roll = () => MIN + Math.floor(Math.random() * (MAX - MIN + 1));
 export const RollTablePanel = () => (
   <Panel size={"zine"}>
     <RollTable
-      parentColumns={6}
-      parentRows={4}
-      childColumns={3}
+      parentColumns={4}
+      parentRows={3}
+      childColumns={4}
       childRows={6}
     />
   </Panel>

@@ -40,8 +40,8 @@ function Index({ year, draftId }) {
     <GameSheetSubPanel year={year} draftId={draftId} side="right" />,
     <GameSheetSubPanel year={year} draftId={draftId} side="left" />,
     <GameSheetSubPanel year={year} draftId={draftId} side="right" />,
-    <RollTablePanel />,
-    <RollTablePanel />,
+    <GameSheetSubPanel year={year} draftId={draftId} side="left" />,
+    <GameSheetSubPanel year={year} draftId={draftId} side="right" />,
     <RollTablePanel />,
   ];
 

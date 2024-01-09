@@ -27,8 +27,7 @@
 
 .Wordmark,
 .PhasesTable,
-.LineInput,
-.Graph {
+.LineInput {
   margin-bottom: calc(var(--default-font-size) * 1.5);
 }
 

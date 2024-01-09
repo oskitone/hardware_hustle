@@ -12,6 +12,10 @@
   line-height: 1.35;
 
   position: relative;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 }
 
 .inner {
@@ -143,7 +147,8 @@
 .rules li,
 .PhasesTable,
 .Turn,
-.rules table {
+.rules table,
+.rules dl {
   break-inside: avoid;
 }
 
@@ -210,6 +215,10 @@
 .rules dd {
   margin: 0 0 calc(var(--rules-font-size) * 0.25);
   font-size: 3em;
+}
+
+.rules dt {
+  font-size: 0.75em;
 }
 
 .rules img,
