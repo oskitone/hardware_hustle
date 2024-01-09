@@ -48,7 +48,7 @@ Your goal is to profit without burning out. You have six turns to buy parts to m
 
 Each of those phases takes opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses. At the end of each turn, you can attempt a research upgrade to reduce future <Opportunity /> costs.
 
-The six turns are miniature spreadpages, and the game ends when they're all filled out. The player at the end with the most money wins.
+The six turns are miniature spreadsheets, and the game ends when they're all filled out. The player at the end with the most money wins.
 
 ## Components
 
@@ -60,7 +60,7 @@ Each player will need:
 
 ## Game Setup
 
-Fill out the "{ID_TITLE}" line in the top left of the game page, then familiarize yourself with the rest of its layout: Phases table, Money/Turn graph, and six turn spreadpages.
+Fill out the "{ID_TITLE}" line in the top left of the game page, then familiarize yourself with the rest of its layout: Phases table, Money/Turn graph, and six turn spreadsheets.
 
 ![Hardware Hustle game page layout](../screenshot.png)
 
@@ -68,7 +68,7 @@ The player who rolls the second highest die goes first, then proceed clockwise.
 
 ## How to Play
 
-The spreadpage's rows are grouped into money <IconsParen ids={["money"]} />, parts <IconsParen ids={["A", "B", "C", "D"]} />, widgets <IconsParen ids={["AB", "ABC", "ABCD"]} />, and opportunity <IconsParen ids={["opportunity"]} />.
+The spreadsheet's rows are grouped into money <IconsParen ids={["money"]} />, parts <IconsParen ids={["A", "B", "C", "D"]} />, widgets <IconsParen ids={["AB", "ABC", "ABCD"]} />, and opportunity <IconsParen ids={["opportunity"]} />.
 
 And its five columns are phases that you fill out from left to right during your turn.
 
@@ -84,19 +84,21 @@ And its five columns are phases that you fill out from left to right during your
    Use remaining <Opportunity /> to research or lose next turn if <Opportunity /> is negative
 
 {/* TODO: try pulling these to front. */}
-(Refer to the *Example Turn* on the back panel for a quick glimpse of the rules in action and an *Icon Glossary* that says what the icons are called.)
+(Refer to the *Example Turn* towards the end of the rules for a glimpse of everything in action and an *Icon Glossary* that says what the icons are called.)
 
 ### 1. AM
 
-You begin each turn by taking stock of what you have and what you need at the beginning of the day.
+You begin each turn by taking stock of what you have and need at the beginning of the day.
 
-For the game's first turn, there's nothing to do here besides note the starting pre-filled values. You have <MoneyX value={10}/> and <OpportunityX value={12}/>, and you need basically everything else.
+For the game's first turn, there's nothing to do here besides note the starting pre-filled values. You have <MoneyX value={10}/> and <OpportunityX value={12}/>... and you need basically everything else.
 
 (Later turns will have empty cells to fill out, but there still won't be any decision-making. For that reason, AM is not listed in the Phases table on the left of your game page.)
 
 ### 2. Buy
 
-Before you can make any money selling widgets, you've got to spend money buying their parts. Parts cost <Money /> and <Opportunity />, as listed in the Phases table:
+Before you can make any money selling widgets, you've got to spend money to buy their parts.
+
+Parts cost <Money /> and <Opportunity />, as listed in the Phases table:
 
 <PhasesTable phases={[ACTIONS.BUY]} className={styles.PhasesTable} />
 
@@ -114,13 +116,15 @@ Notes:
 - You can buy as many or as few parts as you want and even multiples of the same part, as long as you have the required <Opportunity /> and <Money />. (The sum <Opportunity /> must be less than or equal to your roll, and the sum <Money /> must be less than or equal to what you have in the AM column.)
 - You can also choose to buy nothing and skip this phase, though that's a gutsy move on your first turn!
 - Cells are prefixed by their mathematical operation. You're losing <Money /> and <Opportunity />, so those cells have a **-**. You're gaining parts, so they have a **+**. The same **-**/**+** signs are in the Phases table.
-- Unused cells have a gray background to mark that they're skipped.
+- Unused cells have a gray background to mark they're skipped.
 - Cells with no change can be crossed out or filled with 0.
 - You can spend less <Opportunity /> than you roll, but you can't spend more. You also can't spend more <Money /> than you have available.
 
 ### 3. Make
 
-Now you'll use the parts you bought to make widgets you can sell. The Phases table lists the widgets you can make, their outlined <Opportunity /> costs, and the parts that they will use:
+Now you'll use the parts you bought to make widgets you can sell.
+
+The Phases table lists the widgets you can make, their outlined <Opportunity /> costs, and the parts they'll use:
 
 <PhasesTable phases={[ACTIONS.MAKE]} className={styles.PhasesTable} />
 
@@ -137,7 +141,9 @@ You can make as many or as few widgets as you want, provided you have the requir
 
 {/* TODO: no/fewer "note"s */}
 
-If you made any widgets, now's a fine time to sell them so you have <Money /> for the next turn's Buy phase. Notice how the Phases table for Sell has you losing widgets but gaining <Money />:
+If you made any widgets, now's a fine time to sell them so you have <Money /> for your next turn's Buy phase.
+
+Notice how the Phases table for Sell has you losing widgets but gaining <Money />:
 
 <PhasesTable phases={[ACTIONS.SELL]} className={styles.PhasesTable} />
 
@@ -152,21 +158,25 @@ Sell as many or as few widgets as you want, provided you have the required widge
 
 ### 5. PM
 
-Whew! It's time to wrap up your workday and end your turn.
+Whew! It's time to wrap up the workday and end your turn.
 
 To complete the PM phase:
 
-1. **Tally:** Complete each row's equation into the final column prefixed with **=**.
+1. **Tally:** Finish each row's equation into the final column prefixed with **=**.
 1. **Resolve <Opportunity />:**
    - If <Opportunity /> is negative, you suffer **burnout** and lose the entire next turn to rest.
    - Otherwise, **roll for research upgrade**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three phases' actions.
 1. **Plot:** Draw a dot on the "Money/Turn" graph at your new <Money /> total, then draw a line connecting it to the previous dot.
 
+The Phases table summarises PM's <Opportunity /> resolution:
+
+<PhasesTable phases={[ACTIONS.PM]} className={styles.PhasesTable} />
+
 #### Burnout
 
 You've spent more <Opportunity /> than you had available and have to spend the whole next day recuperating. Hope it was worth it.
 
-Cross out the entire next turn's spreadpage. You cannot do any of its phases.
+Cross out the entire next turn's spreadsheet. You cannot do any of its phases.
 
 #### Research Upgrade
 

@@ -82,7 +82,7 @@
 .rules h5 {
   text-transform: uppercase;
   line-height: 1;
-  panel-break-after: avoid;
+  page-break-after: avoid;
 }
 
 .rules h1 {
@@ -136,7 +136,7 @@
 .rules ol,
 .rules ul,
 .rules table {
-  panel-break-before: avoid;
+  page-break-before: avoid;
 }
 
 .rules ul ul,

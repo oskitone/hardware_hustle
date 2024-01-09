@@ -64,6 +64,6 @@
   }
 
   .page:not(:last-of-type) {
-    panel-break-after: always;
+    page-break-after: always;
   }
 }
