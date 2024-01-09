@@ -5,7 +5,7 @@ import styles from "@/styles/Wordmark.module.css";
 function Wordmark({ className, draftId }) {
   return (
     <div className={classnames(styles.wordmark, className)}>
-      <h1>Hardware Hustle</h1>
+      <h1 className={styles.header}>Hardware Hustle</h1>
       <div className={styles.rev}>{draftId}</div>
     </div>
   );

@@ -1,4 +1,5 @@
-.wordmark h1 {
+/* Intentionally over-specific selector here */
+.wordmark .header {
   font-size: 1em; /* Inherit from parent */
 
   text-transform: uppercase;
