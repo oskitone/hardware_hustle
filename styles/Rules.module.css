@@ -111,17 +111,17 @@
 .PhasesTable,
 .Turn,
 .rules table {
-  margin: 0 0 var(--default-font-size);
+  margin: 0 0 var(--rules-font-size);
 }
 
 .rules h2,
 .rules h3,
 .rules h4 {
-  margin-top: calc(var(--default-font-size) * 1.5);
+  margin-top: calc(var(--rules-font-size) * 1.5);
 }
 
 .rules ol h3 {
-  margin: calc(var(--default-font-size) * 0.25) 0 0;
+  margin: calc(var(--rules-font-size) * 0.25) 0 0;
 }
 
 .rules li,
@@ -177,7 +177,7 @@
 }
 
 .rules tbody th {
-  margin: 0 calc(var(--default-font-size) * 0.25) 0 0;
+  margin: 0 calc(var(--rules-font-size) * 0.25) 0 0;
 }
 
 .rules tbody td {
@@ -192,7 +192,7 @@
 }
 
 .rules dd {
-  margin: 0 0 calc(var(--default-font-size) * 0.25);
+  margin: 0 0 calc(var(--rules-font-size) * 0.25);
   font-size: 3em;
 }
 

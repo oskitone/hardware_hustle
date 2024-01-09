@@ -157,10 +157,10 @@ export const ExampleCell = ({ success, fail, value }) => (
 function Turn({
   id,
   data,
-  isFinalTurn, // TODO: remove
   className,
   suppliedColumns,
   researchSuccess,
+  autoHeight,
 }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
@@ -224,7 +224,11 @@ function Turn({
   ];
 
   return (
-    <div className={classnames(className, styles.turn)}>
+    <div
+      className={classnames(className, styles.turn, {
+        [styles.autoHeight]: autoHeight,
+      })}
+    >
       <Head>
         <Row>
           <Cell head day={true}>
@@ -293,10 +297,10 @@ function Turn({
 Turn.defaultProps = {
   id: 0,
   data: emptyTurnData,
-  isFinalTurn: false,
   className: undefined,
   suppliedColumns: defaultSuppliedColumns,
   researchSuccess: undefined,
+  autoHeight: false,
 };
 
 export default Turn;

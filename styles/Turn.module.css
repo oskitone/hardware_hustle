@@ -27,6 +27,11 @@
   height: calc(var(--default-font-size) * 1.34);
 }
 
+.autoHeight .tbody .th,
+.autoHeight .tbody .td {
+  height: auto;
+}
+
 .handwritten {
   font-family: var(--font-handwriting);
   font-size: 1.5em;

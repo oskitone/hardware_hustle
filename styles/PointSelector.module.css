@@ -5,8 +5,8 @@
 
 .option {
   font-size: 0.85em;
-  height: calc(var(--default-font-size) * 1.25);
-  width: calc(var(--default-font-size) * 1.25);
+  height: calc(1.25em * (1 / 0.85));
+  width: calc(1.25em * (1 / 0.85));
 
   margin: 0 -1px -1px 0;
 
