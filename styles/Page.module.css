@@ -2,44 +2,13 @@
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 
-  width: var(--legal-page-width);
-  height: var(--legal-page-height);
+  width: var(--letter-page-width);
+  height: var(--letter-page-height);
 
   margin: 2em auto;
 
   display: flex;
   flex-direction: column;
-}
-
-.single {
-  width: var(--panel-width);
-  height: var(--panel-height);
-}
-
-.letter {
-  width: var(--letter-page-width);
-  height: var(--letter-page-height);
-}
-
-.full {
-  width: auto;
-  height: auto;
-
-  margin: 0;
-
-  padding: var(--print-margin);
-}
-
-.landscape {
-  height: var(--legal-page-width);
-  width: var(--legal-page-height);
-
-  flex-direction: row;
-}
-
-.letter.landscape {
-  width: var(--letter-page-height);
-  height: var(--letter-page-width);
 }
 
 .page:nth-child(odd) {
@@ -48,11 +17,6 @@
 
 .page:nth-child(even) {
   align-items: end;
-}
-
-.landscape:nth-child(even) {
-  align-items: start;
-  justify-content: right;
 }
 
 @media print {

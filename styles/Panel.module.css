@@ -28,41 +28,21 @@
   background-color: red;
 } */
 
-.panel.letter {
-  width: var(--letter-panel-width);
-  height: var(--letter-panel-height);
+.double {
+  width: calc(var(--panel-width) * 2);
 }
 
-.zine {
-  width: var(--zine-panel-width);
-  height: var(--zine-panel-height);
-}
-
-.zine.double {
-  width: calc(var(--zine-panel-width) * 2);
-}
-
-.zine.subpanel {
+.subpanel {
   padding: 0;
   overflow: visible; /* For Turn IDs */
 
   height: auto;
-  width: calc(var(--zine-panel-width) * 2 - var(--print-margin) * 2);
+  width: calc(var(--panel-width) * 2 - var(--print-margin) * 2);
   outline: none;
 }
 
 .panel[side="right"] {
   justify-content: end;
-}
-
-.landscape {
-  height: var(--panel-width);
-  width: var(--panel-height);
-}
-
-.landscape.double {
-  height: var(--panel-width);
-  width: calc(var(--panel-height) * 2);
 }
 
 .split {

@@ -8,23 +8,7 @@ const MAX = 6;
 
 const roll = () => MIN + Math.floor(Math.random() * (MAX - MIN + 1));
 
-export const RollTablePanel = () => (
-  <Panel size={"zine"}>
-    <RollTable
-      parentColumns={4}
-      parentRows={3}
-      childColumns={4}
-      childRows={6}
-    />
-  </Panel>
-);
-
-export default function RollTable({
-  parentColumns,
-  parentRows,
-  childColumns,
-  childRows,
-}) {
+const RollTable = ({ parentColumns, parentRows, childColumns, childRows }) => {
   const [isClient, setIsClient] = useState();
   useEffect(() => {
     setIsClient(true);
@@ -57,12 +41,20 @@ export default function RollTable({
       <Child />
     </Grid>
   );
-}
+};
 
 RollTable.defaultProps = {
-  parentColumns: 3,
+  parentColumns: 4,
   parentRows: 3,
 
-  childColumns: 3,
-  childRows: 3,
+  childColumns: 4,
+  childRows: 6,
 };
+
+const RollTablePanel = () => (
+  <Panel>
+    <RollTable />
+  </Panel>
+);
+
+export default RollTablePanel;
