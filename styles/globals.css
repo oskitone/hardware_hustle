@@ -33,7 +33,7 @@ html {
 }
 
 @media print {
-  @panel {
+  @page {
     margin: 0;
     padding: 0;
   }

@@ -16,7 +16,7 @@ export const getStaticProps = async (context) => getCommitProps();
 // TODO: deter widows/orphans in headers/icons
 
 function RulesPage({ year, draftId, view }) {
-  const panelSize = `${letter_page_height} ${letter_page_width}`;
+  const pageDimensions = `${letter_page_height} ${letter_page_width}`;
 
   const router = useRouter();
   view = view || router.query.view;
@@ -59,7 +59,7 @@ function RulesPage({ year, draftId, view }) {
         <meta name="robots" content="noindex" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <style>{`@panel { size: ${panelSize}; }`}</style>
+        <style>{`@page { size: ${pageDimensions}; }`}</style>
       </Head>
       <main className={`${font.className}`}>{getContent()}</main>
     </>

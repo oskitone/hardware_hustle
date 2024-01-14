@@ -18,7 +18,7 @@ import {
 const font = Open_Sans({ subsets: ["latin"] });
 
 function GameSheet({ pageCount, gamesPerPage, pageSize, year, draftId }) {
-  const panelSize = {
+  const pageDimensions = {
     legal: `${legal_page_width} ${legal_page_height}`,
     letter: `${letter_page_width} ${letter_page_height}`,
     single: `${panel_width} ${panel_height}`,
@@ -31,7 +31,7 @@ function GameSheet({ pageCount, gamesPerPage, pageSize, year, draftId }) {
         <meta name="robots" content="noindex" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <style>{`@panel { size: ${panelSize}; }`}</style>
+        <style>{`@page { size: ${pageDimensions}; }`}</style>
       </Head>
       <main className={`${font.className}`}>
         {[...Array(pageCount || 0)].map((e, i) => (

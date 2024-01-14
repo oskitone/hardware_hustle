@@ -19,7 +19,7 @@ function RollTablePage({ year, count }) {
     ? parseInt(router.query.count)
     : count;
 
-  const panelSize = `${letter_page_height} ${letter_page_width}`;
+  const pageDimensions = `${letter_page_height} ${letter_page_width}`;
 
   return (
     <>
@@ -28,7 +28,7 @@ function RollTablePage({ year, count }) {
         <meta name="robots" content="noindex" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <style>{`@panel { size: ${panelSize}; }`}</style>
+        <style>{`@page { size: ${pageDimensions}; }`}</style>
       </Head>
       <main className={`${font.className}`}>
         {[...Array(count)].map((e, i) => (
