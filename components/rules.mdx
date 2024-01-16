@@ -64,7 +64,7 @@ Fill out the "{ID_TITLE}" line in the top left of the game sheet, then familiari
 
 ![Hardware Hustle game sheet layout](../screenshot.png)
 
-The player who rolls the second highest die goes first, then proceed clockwise.
+There is no player order, game sheets are filled out simultaneously, and die rolls can be done by any player.
 
 ## How to Play
 
@@ -107,18 +107,20 @@ The <Opportunity /> costs are a table of values, but, for all the phases of your
 To complete the Buy phase:
 
 1. **Roll:**
-    * Roll a die. Its value is the _maximum_ <Opportunity /> you can spend buying this turn.
-    * Based on the max <Opportunity /> you just rolled and how much <Money /> you have in the AM column, decide which parts to buy.
+    * Roll a die. Its value is the _maximum_ <Opportunity /> that each player can spend buying this turn.
+    * Based on the max <Opportunity /> that was just rolled and how much <Money /> you have in the AM column, decide which parts to buy.
 1. **Write:** In the Buy column, write the values for the total <Money /> cost, the parts you bought, and the total <Opportunity /> they used.
 
 Notes:
 
+- The value of the <Opportunity /> roll is shared by all players, and everyone fills in their game sheets simultaneously.
 - You can buy as many or as few parts as you want and even multiples of the same part, as long as you have the required <Opportunity /> and <Money />. (The sum <Opportunity /> must be less than or equal to your roll, and the sum <Money /> must be less than or equal to what you have in the AM column.)
 - You can also choose to buy nothing and skip this phase, though that's a gutsy move on your first turn!
 - Cells are prefixed by their mathematical operation. You're losing <Money /> and <Opportunity />, so those cells have a **-**. You're gaining parts, so they have a **+**. The same **-**/**+** signs are in the Phases table.
 - Unused cells have a gray background to mark they're skipped.
 - Cells with no change can be crossed out or filled with 0.
 - You can spend less <Opportunity /> than you roll, but you can't spend more. You also can't spend more <Money /> than you have available.
+- Don't move on to the next phase until everyone's completed the current one.
 
 ### 3. Make
 
@@ -131,8 +133,8 @@ The Phases table lists the widgets you can make, their outlined <Opportunity /> 
 To complete the Make phase:
 
 1. **Roll:**
-    * Roll a die. Its value is the _maximum_ <Opportunity /> you can spend making this turn.
-    * Based on the max <Opportunity /> you just rolled and which parts you have available, decide which widgets to make.
+    * Roll a die. Its value is the _maximum_ <Opportunity /> that each player can spend making this turn.
+    * Based on the max <Opportunity /> that was just rolled and which parts you have available, decide which widgets to make.
 1. **Write:** In the Make column, write the values for the parts you used, the widgets you made, and the total <Opportunity /> they used.
 
 You can make as many or as few widgets as you want, provided you have the required parts and <Opportunity />. In later turns, you can use parts purchased in previous turns.
@@ -150,8 +152,8 @@ Notice how the Phases table for Sell has you losing widgets but gaining <Money /
 To complete the Sell phase:
 
 1. **Roll:**
-    * Roll a die. Its value is the _maximum_ <Opportunity /> you can spend selling this turn.
-    * Based on the max <Opportunity /> you just rolled and which widgets you have available, decide which widgets to sell.
+    * Roll a die. Its value is the _maximum_ <Opportunity /> that each player can spend selling this turn.
+    * Based on the max <Opportunity /> that was just rolled and which widgets you have available, decide which widgets to sell.
 1. **Write:** In the Sell column, write the values for the <Money /> you made, the widgets you sold, and the total <Opportunity /> they used.
 
 Sell as many or as few widgets as you want, provided you have the required widgets and <Opportunity />. In later turns, you can sell widgets made in previous turns.
@@ -162,10 +164,12 @@ Whew! It's time to wrap up the workday and end your turn.
 
 To complete the PM phase:
 
+{/* TODO: try roll+write format here too */}
+
 1. **Tally:** Finish each row's equation into the final column prefixed with **=**.
 1. **Resolve <Opportunity />:**
-   - If <Opportunity /> is negative, you suffer **burnout** and lose the entire next turn to rest.
-   - Otherwise, **roll for research upgrade**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three phases' actions. See below for more info.
+   1. **Roll for research upgrade**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three phases' actions. See below for more info.
+   1. If <Opportunity /> is negative, you suffer **burnout** and lose the entire next turn to rest.
 1. **Plot:** Draw a dot on the "Money/Turn" graph at your new <Money /> total, then draw a line connecting it to the previous dot.
 
 The Phases table summarises PM's <Opportunity /> resolution:
@@ -180,7 +184,7 @@ Cross out the entire next turn's spreadsheet. You cannot do any of its phases.
 
 #### Research Upgrade
 
-Did you roll less than or equal to your remaining <Opportunity />? Nice! Your research succeeded. Circle the PM column's <Opportunity /> cell to mark its success; otherwise cross it out for failure:
+Was the <Opportunity /> roll less than or equal to your remaining <Opportunity />? Nice! Your research succeeded. Circle the PM column's <Opportunity /> cell to mark its success; otherwise cross it out for failure:
 
 <table>
   <tbody>
@@ -205,7 +209,8 @@ Everything in Make is now <OpportunityX value={1} /> cheaper. The non-researched
 
 Notes:
 
-* PM's <Opportunity /> roll for research upgrade is used differently than the <Opportunity /> roll in the other phases. For Buy/Make/Sell, it's a maximum that you want to roll high; for research, it's a minimum that you want to roll low.
+* Just like in Buy/Make/Sell, the value in PM's <Opportunity /> roll for research upgrade is shared by all players.
+* Its _usage_, however, is different from the other phases. For Buy/Make/Sell, it's a maximum that you want to roll high; for research, it's a minimum that you want to roll low.
 * Because you can't roll higher than six, ending a turn with <OpportunityX value={6} /> or higher means your research attempt automatically wins.
 * Subsequent research upgrades on the same phase action work the same way. Each phase action can be upgraded three times.
 
@@ -247,7 +252,7 @@ Not a super profitable turn, but it ended with a spare part for later and a succ
 
 ## Ending a turn
 
-When your turn is done, hand the die to the next player so they can start their turn.
+Don't move on to the next turn until everyone's completed the current one.
 
 ## Starting a new turn
 
@@ -259,7 +264,9 @@ For skipped turns, fill the **⇢** AM cells on the next playable turn from the 
 
 ## End of the Game
 
-The player at the end with the most money wins. Unused parts and unsold widgets count for nothing, only money. In the case of a tie, the player with the fewest burnouts wins.
+The game ends when all six turn spreadsheets are filled out. The player with the most money wins. Unused parts and unsold widgets count for nothing, only money.
+
+In the case of a tie, the player with the fewest burnouts wins.
 
 ## Solo Mode
 
