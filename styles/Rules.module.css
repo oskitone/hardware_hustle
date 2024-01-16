@@ -124,6 +124,7 @@
   margin: calc(var(--rules-font-size) * 0.25) 0 0;
 }
 
+.rules p,
 .rules li,
 .PhasesTable,
 .Turn,
