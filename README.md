@@ -33,7 +33,7 @@ Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](http
   - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
   - Trim to 7.5"x11"
   - Fold into a 7.5"x5.5" booklet; see page numbers in corners if it's not obvious
-- Roll table
+- Roll table _(skip if you have six-sided dice handy)_
   - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
   - Trim to 7.5"x5.5"
   - Use cardstock for better reusability
