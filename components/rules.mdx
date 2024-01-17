@@ -46,7 +46,7 @@ For 1+ players. Ages 10+. ~20min to play.
 
 Your goal is to profit without burning out. You have six turns to buy parts to make widgets, make widgets from parts, then sell widgets for money to buy more parts, and so on.
 
-Each of those phases takes opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses. At the end of each turn, you can attempt a research upgrade to reduce future <Opportunity /> costs.
+Each of those phases takes opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses and is limited per-phase by a die roll. At the end of each turn, you can attempt a research upgrade to reduce future <Opportunity /> costs.
 
 The six turns are miniature spreadsheets, and the game ends when they're all filled out. The player at the end with the most money wins.
 
@@ -230,15 +230,20 @@ Notes:
 />
 
 1. ##### AM  
-    Started the turn with <MoneyX value={10} /> and <OpportunityX value={12} />
+    Started the turn with <MoneyX value={10} /> and <OpportunityX value={12} />.
 1. ##### Buy  
-    Spent <MoneyX value={5} /> to buy <AX value={1} /> and <BX value={2} /> using <OpportunityX value={2} />
+    Rolled <RollX value={4} />. Spent <MoneyX value={5} /> to buy <AX value={1} /> and <BX value={2} /> parts, using <OpportunityX value={2} />.
 1. ##### Make  
-    Made <ABX value={1} /> using <AX value={1} />, <BX value={1} />, and <OpportunityX value={1} />
+    Rolled <RollX value={1} />. Used <AX value={1} /> and <BX value={1} /> parts to make <ABX value={1} /> widget, using <OpportunityX value={1} />.
 1. ##### Sell  
-    Sold <ABX value={1} /> for <MoneyX value={6} /> using <OpportunityX value={2} />
+    Rolled <RollX value={3} />. Got paid <MoneyX value={6} /> by selling <ABX value={1} /> widget, using <OpportunityX value={2} />
 1. ##### PM  
-    Ended with <MoneyX value={11} />, <BX value={1} />, and <OpportunityX value={8} />, which was more than enough for a research upgrade
+    Rolled <RollX value={6} />. Ended with <MoneyX value={11} />, <BX value={1} />, and <OpportunityX value={8} />, which was more than enough for the research upgrade of the <RollX value={6} /> roll.
+
+
+For Buy/Make/Sell, <Opportunity /> usage was less than or equal to the <Roll />. For PM's research upgrade, <Opportunity /> needed to be greater than or equal to the <Roll />.
+
+Not a super profitable turn, but it ended with a spare part for later and a successful research upgrade. Could've be worse!
 
 ## Ending a turn
 
