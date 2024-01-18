@@ -11,6 +11,11 @@
   /* Mostly hide Rules overflow */
   /* TODO: fix adjacent panels still showing? */
   overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+  flex-shrink: 0;
 }
 
 .panel.letter {
@@ -18,19 +23,33 @@
   height: var(--letter-panel-height);
 }
 
-.panel.zine {
+/* .panel:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  left: 50%;
+  background-color: red;
+} */
+
+.zine {
   width: var(--zine-panel-width);
   height: var(--zine-panel-height);
 }
 
-.double {
-  height: calc(var(--panel-height) * 2);
-  width: var(--panel-height);
+.zine.double {
+  height: calc(var(--zine-panel-height) * 2);
+  width: var(--zine-panel-height);
 }
 
-.landscape {
-  height: var(--panel-width);
-  width: var(--panel-height);
+.zine.subpanel {
+  padding: 0;
+  overflow: visible; /* For Turn IDs */
+
+  height: auto;
+  width: calc(var(--zine-panel-width) * 2 - var(--print-margin) * 2);
+  outline: none;
 }
 
 .landscape.double {
@@ -42,6 +61,14 @@
   display: grid;
   grid-template-columns: 28% auto;
   grid-gap: var(--print-margin);
+}
+
+.zine.split {
+  grid-template-columns: 25% auto;
+}
+
+.panel[side="right"] {
+  justify-content: end;
 }
 
 @media print {

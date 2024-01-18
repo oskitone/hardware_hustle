@@ -7,7 +7,7 @@ import { Front, Back } from "components/page";
 import { getCommitProps } from "common/utils";
 import { letter_page_width, letter_page_height } from "common/dimensions";
 import Panel from "components/panel";
-import RollTable from "components/roll-table";
+import { RollTable } from "components/roll-table";
 
 const font = Open_Sans({ subsets: ["latin"] });
 

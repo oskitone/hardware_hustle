@@ -1,3 +1,5 @@
+// TODO: use GameSheetPanel
+
 import { Open_Sans } from "next/font/google";
 import Head from "next/head";
 
