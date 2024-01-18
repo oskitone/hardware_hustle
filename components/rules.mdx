@@ -44,7 +44,7 @@ For 1+ players. Ages 10+. ~20min to play.
 
 ## Game Overview
 
-Your goal is to profit without burning out. You have six turns to buy parts to make widgets, make widgets from parts, then sell widgets for money to buy more parts, and so on.
+Your goal is to profit without burning out. You have six turns to buy parts to make widgets, make widgets from parts, sell widgets for money to buy more parts, and so on.
 
 Each of those phases takes opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses and is limited per-phase by a die roll. At the end of each turn, you can attempt a research upgrade to reduce future <Opportunity /> costs.
 
@@ -102,7 +102,7 @@ Parts cost <Money /> and <Opportunity />, as listed in the Phases table:
 
 <PhasesTable phases={[ACTIONS.BUY]} className={styles.PhasesTable} />
 
-The <Opportunity /> costs are a table of values, but, for all the phases of your first turn, you'll only use the ones in the first column with the dark outline. To buy a <A />, you need <OpportunityX value={0} /> and <MoneyX value={1} />; to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />; etc. You'll revisit <Opportunity /> costs in the PM phase a little later.
+The <Opportunity /> costs are a table of values, but, for all the phases of your first turn, you'll only use the ones in the leftmost column with the dark outline. To buy a <A />, you need <OpportunityX value={0} /> and <MoneyX value={1} />; to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />; etc. You'll revisit <Opportunity /> costs in the PM phase a little later.
 
 To complete the Buy phase:
 
@@ -170,9 +170,9 @@ To complete the PM phase:
 1. **Resolve <Opportunity />:**
    1. **Roll for research upgrade**. Its value is the <Opportunity /> cost it would take to upgrade _one_ of the previous three phases' actions. See below for more info.
    1. If <Opportunity /> is negative, you suffer **burnout** and lose the entire next turn to rest.
-1. **Plot:** Draw a dot on the "Money/Turn" graph at your new <Money /> total, then draw a line connecting it to the previous dot.
+1. **Plot:** Mark a dot on the "Money/Turn" graph at your new <Money /> total, then draw a line connecting it to the previous dot.
 
-The Phases table summarises PM's <Opportunity /> resolution:
+The Phases table summarizes PM's <Opportunity /> resolution:
 
 <PhasesTable phases={[ACTIONS.PM]} className={styles.PhasesTable} />
 
@@ -184,7 +184,7 @@ Cross out the entire next turn's spreadsheet. You cannot do any of its phases.
 
 #### Research Upgrade
 
-Was the <Opportunity /> roll less than or equal to your remaining <Opportunity />? Nice! Your research succeeded. Circle the PM column's <Opportunity /> cell to mark its success; otherwise cross it out for failure:
+Is your remaining <Opportunity /> greater than or equal to the <Opportunity /> roll? Nice! Your research succeeded. Circle the PM column's <Opportunity /> cell to mark its success; otherwise cross it out for failure:
 
 <table>
   <tbody>
@@ -210,7 +210,7 @@ Everything in Make is now <OpportunityX value={1} /> cheaper. The non-researched
 Notes:
 
 * Just like in Buy/Make/Sell, the value in PM's <Opportunity /> roll for research upgrade is shared by all players.
-* Its _usage_, however, is different from the other phases. For Buy/Make/Sell, it's a maximum that you want to roll high; for research, it's a minimum that you want to roll low.
+* Its usage, however, is different from the other phases. For Buy/Make/Sell, it's a maximum that you want to roll high; for research, it's a minimum that you want to roll low.
 * Because you can't roll higher than six, ending a turn with <OpportunityX value={6} /> or higher means your research attempt automatically wins.
 * Subsequent research upgrades on the same phase action work the same way. Each phase action can be upgraded three times.
 
