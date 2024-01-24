@@ -48,16 +48,29 @@ function Icon({ id, prefix, suffix, className, inline, row }) {
   );
 }
 
-export const Money = () => <Icon id="money" inline />;
-export const Opportunity = () => <Icon id="opportunity" inline />;
-export const A = () => <Icon id="A" inline />;
-export const B = () => <Icon id="B" inline />;
-export const C = () => <Icon id="C" inline />;
-export const D = () => <Icon id="D" inline />;
-export const AB = () => <Icon id="AB" inline />;
-export const ABC = () => <Icon id="ABC" inline />;
-export const ABCD = () => <Icon id="ABCD" inline />;
-export const Roll = () => <Icon id="roll" inline />;
+const makeInlineIcon =
+  (iconId) =>
+  ({ prefix, suffix, className }) =>
+    (
+      <Icon
+        id={iconId}
+        inline
+        prefix={prefix}
+        suffix={suffix}
+        className={className}
+      />
+    );
+
+export const Money = makeInlineIcon("money");
+export const Opportunity = makeInlineIcon("opportunity");
+export const A = makeInlineIcon("A");
+export const B = makeInlineIcon("B");
+export const C = makeInlineIcon("C");
+export const D = makeInlineIcon("D");
+export const AB = makeInlineIcon("AB");
+export const ABC = makeInlineIcon("ABC");
+export const ABCD = makeInlineIcon("ABCD");
+export const Roll = makeInlineIcon("roll");
 
 const makeIconX =
   (iconId) =>
