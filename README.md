@@ -48,14 +48,12 @@ Even still, your constructive feedback is welcome. Please earnestly play at leas
 
 ## Changelog
 
-`prototype_draft_COMMIT_YYMMDD`
-
-* [9b98647](https://github.com/oskitone/hardware_hustle/commit/9b98647)_240124
+* **prototype_draft_00d1aae_240124**
   * shared opportunity rolls
   * continue reading for ~confusing research
   * roll-and-write is every phase
   * misc formatting/readability nits
-* [dcb37bc](https://github.com/oskitone/hardware_hustle/commit/dcb37bc)_240104
+* **prototype_draft_dcb37bc_240104**
   * init
 
 ## Source code
