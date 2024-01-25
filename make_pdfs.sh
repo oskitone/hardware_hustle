@@ -24,6 +24,7 @@ Makes PDFs
 Usage:
 ./make_pdfs.sh
 ./make_pdfs.sh -h                 Show this message and quit
+./make_pdfs.sh -e                 Echo output directory and quit
 ./make_pdfs.sh -d                 Set output directory
                                   Dynamic default, currently \"${dir}\"
 "
@@ -79,9 +80,10 @@ function run() {
     make_screenshot single
 }
 
-while getopts "h?d:" opt; do
+while getopts "h?e?d:" opt; do
     case "$opt" in
         h) help; exit ;;
+        e) echo "$dir"; exit ;;
         d) dir="$OPTARG" ;;
         *) echo; _help; exit ;;
     esac

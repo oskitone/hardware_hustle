@@ -6,7 +6,7 @@
 # set -o errexit # TODO: fix this not running python
 set -o errtrace
 
-dir="output/yuhhhh"
+dir=$(./make_pdfs.sh -e)
 
 function help() {
     echo "\
