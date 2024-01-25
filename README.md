@@ -46,6 +46,18 @@ Even still, your constructive feedback is welcome. Please earnestly play at leas
 
 **Feedback form:** [https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
 
+## Changelog
+
+`prototype_draft_COMMIT_YYMMDD`
+
+* [9b98647](https://github.com/oskitone/hardware_hustle/commit/9b98647)_240124
+  * shared opportunity rolls
+  * continue reading for ~confusing research
+  * roll-and-write is every phase
+  * misc formatting/readability nits
+* [dcb37bc](https://github.com/oskitone/hardware_hustle/commit/dcb37bc)_240104
+  * init
+
 ## Source code
 
 Believe it or not, this game is a [Next.js](https://nextjs.org/) website optimized for print.
