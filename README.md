@@ -79,7 +79,7 @@ If you're <del>on a Mac</del> me on my laptop, to make PDFs:
 
 ## Playtester thanks
 
-Leia M, Paul S, Kris K, Kirk P, Erica S; you?
+Leia M, Paul S, Kris K, Kirk P, Erica S, Donald, Fred, Garrick, Jason D; you?
 
 ## License
 
