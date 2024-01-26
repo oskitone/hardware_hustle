@@ -6,22 +6,26 @@
   flex-direction: column;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
+.grid {
+  display: grid;
+  grid-gap: 1em;
+
+  flex: 1;
 }
 
-.cell {
+.child {
+  display: grid;
+
   border: 1px solid rgb(var(--roll-table-outline-rgb));
-  margin: 0 0 -1px -1px;
+  border-width: 1px 1px 0 0;
+}
 
-  width: 100%;
-  flex-grow: 1;
-
+.child > * {
+  border: 1px solid rgb(var(--roll-table-outline-rgb));
+  border-width: 0 0 1px 1px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .footer {
