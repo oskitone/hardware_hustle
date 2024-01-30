@@ -32,6 +32,10 @@
   margin-bottom: calc(var(--default-font-size) * 1.5);
 }
 
+.sidebar > *:last-child {
+  margin-bottom: 0;
+}
+
 .sidebar h2 {
   margin: 0 0 calc(var(--default-font-size) / 2);
 }

@@ -8,11 +8,11 @@ import styles from "@/styles/Sidebar.module.css";
 
 export const ID_TITLE = "Name";
 
-const Sidebar = ({ turnsData, year, draftId }) => (
+const Sidebar = ({ turnsData, year, draftId, showIdLine, showFooter }) => (
   <div className={styles.sidebar}>
     <Wordmark className={styles.Wordmark} draftId={draftId} />
 
-    <LineInput title={ID_TITLE} className={styles.LineInput} />
+    {showIdLine && <LineInput title={ID_TITLE} className={styles.LineInput} />}
 
     <h2>Phases</h2>
     <PhasesTable className={styles.PhasesTable} />
@@ -24,9 +24,11 @@ const Sidebar = ({ turnsData, year, draftId }) => (
       className={styles.Graph}
     />
 
-    <footer className={styles.footer}>
-      <p>{year} CC BY-SA 4.0 - oskitone.com</p>
-    </footer>
+    {showFooter && (
+      <footer className={styles.footer}>
+        <p>{year} CC BY-SA 4.0 - oskitone.com</p>
+      </footer>
+    )}
   </div>
 );
 
@@ -35,6 +37,9 @@ Sidebar.defaultProps = {
 
   year: undefined,
   draftId: undefined,
+
+  showIdLine: true,
+  showFooter: true,
 };
 
 export default Sidebar;
