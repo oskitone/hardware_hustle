@@ -15,7 +15,11 @@
   --print-margin: 0.25in;
 
   --default-font-size: 12px;
-  --rules-font-size: 9px; /* Eyeballed to fit layout */
+
+  /* Eyeballed to fill pages and fit layout */
+  /* NOTE: PhasesTable's minimum width can break layout */
+  --rules-font-size: 9.1px;
+  --rules-small-font-size: 7px;
 }
 
 * {

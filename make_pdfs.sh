@@ -73,7 +73,6 @@ function run() {
     export_pdf letter
     export_pdf legal
     export_pdf rules
-    export_pdf roll-table
 
     echo
 

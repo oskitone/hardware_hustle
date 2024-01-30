@@ -30,13 +30,9 @@ Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](http
   - Trim individual game sheets to 8"x6"
   - For a nice finish, bind a stack of them to cardboard backing with bookbinding glue
 - Rules
-  - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
-  - Trim to 7.5"x11"
-  - Fold into a 7.5"x5.5" booklet; see page numbers in corners if it's not obvious
-- Roll table _(skip if you have six-sided dice handy)_
-  - Print landscape mode without margins, at 100% scale, and double-sided (flip on short edge)
-  - Trim to 7.5"x5.5"
-  - Use cardstock for better reusability
+  - Print portrait mode without margins, at 100% scale, and double-sided (flip on long edge)
+  - Cut horizontally to 8.5"x5.5"
+  - Fold and staple into a 4.25"x5.5" zine booklet; see corner numbers for page order
 
 ### Playtester feedback welcome
 

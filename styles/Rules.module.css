@@ -12,6 +12,10 @@
   line-height: 1.35;
 
   position: relative;
+
+  /* Long words (cough, URLs) break layout. */
+  /* TODO: obviate */
+  word-break: break-word;
 }
 
 .inner {
@@ -23,7 +27,7 @@
   position: absolute;
   content: "DRAFT";
   color: rgb(var(--ghost-rgb));
-  font-size: 12rem;
+  font-size: 8rem;
   line-height: 1;
   font-weight: 900;
   transform: rotate(45deg);
@@ -45,24 +49,40 @@
 }
 
 .inner[panel="0"] {
-  left: calc((var(--letter-panel-width) - var(--print-margin)) * 0);
+  left: calc((var(--zine-panel-width) - var(--print-margin)) * 0);
 }
 
 .inner[panel="1"] {
-  left: calc((var(--letter-panel-width) - var(--print-margin)) * -1);
+  left: calc((var(--zine-panel-width) - var(--print-margin)) * -1);
 }
 
 .inner[panel="2"] {
-  left: calc((var(--letter-panel-width) - var(--print-margin)) * -2);
+  left: calc((var(--zine-panel-width) - var(--print-margin)) * -2);
 }
 
 .inner[panel="3"] {
-  left: calc((var(--letter-panel-width) - var(--print-margin)) * -3);
+  left: calc((var(--zine-panel-width) - var(--print-margin)) * -3);
+}
+
+.inner[panel="4"] {
+  left: calc((var(--zine-panel-width) - var(--print-margin)) * -4);
+}
+
+.inner[panel="5"] {
+  left: calc((var(--zine-panel-width) - var(--print-margin)) * -5);
+}
+
+.inner[panel="6"] {
+  left: calc((var(--zine-panel-width) - var(--print-margin)) * -6);
+}
+
+.inner[panel="7"] {
+  left: calc((var(--zine-panel-width) - var(--print-margin)) * -7);
 }
 
 .view-all {
   column-count: auto;
-  max-width: calc((var(--letter-panel-width) - var(--print-margin) * 3) / 2);
+  max-width: calc((var(--zine-panel-width) - var(--print-margin) * 3) / 2);
 }
 
 .view-all:before {
@@ -71,7 +91,7 @@
 
 .Wordmark {
   /* Eyeballed to fit on two lines */
-  font-size: calc(var(--default-font-size) * 3.35);
+  font-size: calc(var(--default-font-size) * 2.4);
   margin: 0 0 var(--default-font-size);
 }
 
@@ -128,7 +148,8 @@
 .rules li,
 .PhasesTable,
 .Turn,
-.rules table {
+.rules table,
+.rules dl {
   break-inside: avoid;
 }
 
@@ -195,6 +216,10 @@
 .rules dd {
   margin: 0 0 calc(var(--rules-font-size) * 0.25);
   font-size: 3em;
+}
+
+.rules dt {
+  font-size: var(--rules-small-font-size);
 }
 
 .rules img {
