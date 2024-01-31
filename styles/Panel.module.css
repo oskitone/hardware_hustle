@@ -1,8 +1,6 @@
-/* TODO: visualize staple, move split, adjust header */
-
 .panel {
-  width: var(--panel-width);
-  height: var(--panel-height);
+  width: var(--game-sheet-panel-width);
+  height: var(--game-sheet-panel-height);
 
   padding: var(--print-margin);
 
@@ -16,11 +14,6 @@
 
   display: flex;
   flex-shrink: 0;
-}
-
-.panel.letter {
-  width: var(--letter-panel-width);
-  height: var(--letter-panel-height);
 }
 
 /* .panel:before {
@@ -50,11 +43,6 @@
   height: auto;
   width: calc(var(--zine-panel-width) * 2 - var(--print-margin) * 2);
   outline: none;
-}
-
-.landscape.double {
-  height: var(--panel-width);
-  width: calc(var(--panel-height) * 2);
 }
 
 .split {

@@ -11,8 +11,8 @@ import {
   legal_page_height,
   letter_page_width,
   letter_page_height,
-  panel_width,
-  panel_height,
+  game_sheet_panel_width,
+  game_sheet_panel_height,
 } from "common/dimensions";
 
 const font = Open_Sans({ subsets: ["latin"] });
@@ -21,7 +21,7 @@ function GameSheet({ pageCount, gamesPerPage, pageSize, year, draftId }) {
   const pageDimensions = {
     legal: `${legal_page_width} ${legal_page_height}`,
     letter: `${letter_page_width} ${letter_page_height}`,
-    single: `${panel_width} ${panel_height}`,
+    single: `${game_sheet_panel_width} ${game_sheet_panel_height}`,
   }[pageSize];
 
   return (

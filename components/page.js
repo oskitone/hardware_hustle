@@ -2,11 +2,10 @@ import classnames from "classnames";
 
 import styles from "@/styles/Page.module.css";
 
-function Page({ children, landscape, size }) {
+function Page({ children, size }) {
   return (
     <div
       className={classnames(styles.page, {
-        [styles.landscape]: landscape,
         [styles.full]: size == "full",
         [styles.legal]: size == "legal",
         [styles.letter]: size == "letter",
@@ -19,7 +18,6 @@ function Page({ children, landscape, size }) {
 }
 
 Page.defaultProps = {
-  landscape: false,
   size: "legal",
 };
 

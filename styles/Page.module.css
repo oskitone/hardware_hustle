@@ -12,8 +12,8 @@
 }
 
 .single {
-  width: var(--panel-width);
-  height: var(--panel-height);
+  width: var(--game-sheet-panel-width);
+  height: var(--game-sheet-panel-height);
 }
 
 .letter {
@@ -30,29 +30,12 @@
   padding: var(--print-margin);
 }
 
-.landscape {
-  height: var(--legal-page-width);
-  width: var(--legal-page-height);
-
-  flex-direction: row;
-}
-
-.letter.landscape {
-  width: var(--letter-page-height);
-  height: var(--letter-page-width);
-}
-
 .page:nth-child(odd) {
   justify-content: left;
 }
 
 .page:nth-child(even) {
   align-items: end;
-}
-
-.landscape:nth-child(even) {
-  align-items: start;
-  justify-content: right;
 }
 
 @media print {
