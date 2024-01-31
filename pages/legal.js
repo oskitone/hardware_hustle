@@ -1,10 +1,10 @@
-import GameSheet from "components/game-sheet";
+import GameSheetPage from "components/game-sheet-page";
 import { getCommitProps } from "common/utils";
 export const getStaticProps = async (context) => getCommitProps();
 
 function LegalPage({ year, draftId }) {
   return (
-    <GameSheet
+    <GameSheetPage
       pageSize="legal"
       gamesPerPage={2}
       year={year}
