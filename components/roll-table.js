@@ -9,9 +9,9 @@ const roll = () => MIN + Math.floor(Math.random() * (MAX - MIN + 1));
 export default function RollTable({
   parentColumns,
   parentRows,
+
   childColumns,
   childRows,
-  year,
 }) {
   const [isClient, setIsClient] = useState();
   useEffect(() => {
@@ -41,23 +41,14 @@ export default function RollTable({
       <Grid className={styles.grid} columns={parentColumns} rows={parentRows}>
         <Child />
       </Grid>
-
-      <footer className={styles.footer}>
-        <p>
-          Close your eyes and point somewhere on the table. That's your roll!
-        </p>
-        <p>{year} CC BY-SA 4.0 Oskitone / oskitone.com</p>
-      </footer>
     </div>
   );
 }
 
 RollTable.defaultProps = {
-  parentColumns: 6,
-  parentRows: 3,
+  parentColumns: 2,
+  parentRows: 2,
 
-  childColumns: 3,
-  childRows: 10,
-
-  year: undefined,
+  childColumns: 6,
+  childRows: 8,
 };

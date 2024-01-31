@@ -2,12 +2,14 @@ import { Open_Sans } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import Spread from "components/spread";
-import { getCommitProps } from "common/utils";
 import { letter_page_width, letter_page_height } from "common/dimensions";
-import Panel from "components/panel";
-import Rules from "components/rules.mdx";
 import Page, { Front, Back } from "components/page";
+import Panel from "components/panel";
+import RollTable from "components/roll-table";
+import Rules from "components/rules.mdx";
+import Spread from "components/spread";
+
+import { getCommitProps } from "common/utils";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -33,7 +35,7 @@ function RulesPage({ year, draftId, view }) {
         <Front size="letter" zine>
           <Spread>
             <Panel size="zine">
-              <Rules panel={7} panelCount={8} year={year} draftId={draftId} />
+              <RollTable />
             </Panel>
             <Panel size="zine">
               <Rules panel={0} panelCount={8} year={year} draftId={draftId} />
