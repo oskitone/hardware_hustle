@@ -12,6 +12,8 @@
   line-height: 1.35;
 
   position: relative;
+
+  text-wrap: pretty;
 }
 
 .inner {
