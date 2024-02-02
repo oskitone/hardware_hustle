@@ -52,3 +52,6 @@ RollTable.defaultProps = {
   childColumns: 6,
   childRows: 8,
 };
+
+export const RollTableParents = `${RollTable.defaultProps.parentColumns}x${RollTable.defaultProps.parentRows}`;
+export const RollTableChildren = `${RollTable.defaultProps.childColumns}x${RollTable.defaultProps.childRows}`;

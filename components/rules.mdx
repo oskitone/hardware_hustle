@@ -28,6 +28,7 @@ import Icon, {
   IconsParen
 } from "components/icon";
 import Turn, { ExampleCell, firstTurnSuppliedColumns } from "components/turn";
+import { RollTableParents, RollTableChildren } from "components/roll-table";
 import Wordmark from "components/wordmark";
 
 <Wordmark className={styles.Wordmark} wrap={true} draftId={props.draftId} />
@@ -307,11 +308,11 @@ Solo play is solitaire. Beat your best score.
 
 #### Roll Table
 
-The rule book's back page is a table of randomly generated values that can substitute for physical dice.
+The rule book's back page is a {RollTableParents} table of {RollTableChildren} randomly generated values.
 
-To use it, close your eyes and drop a twirling fingertip or non-marking utensil on it. The touched value is your "roll."
+To use it as a substitute for rolling physical dice, close your eyes and drop a twirling fingertip or non-marking utensil on it. The touched value is your "roll."
 
-If the value is obscured, adopt the next readable value being pointed at. To increase randomness, alternate sections of the table each time.
+If the value is obscured, adopt the next readable value being pointed at. To increase randomness, alternate sections of the table each time you use it.
 
 #### Credits &amp; Feedback
 
