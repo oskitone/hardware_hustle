@@ -1,14 +1,22 @@
+/* TODO: replace with SVG to obviate font hacks */
+
 /* Intentionally over-specific selector here */
 .wordmark .header {
   font-size: 1em; /* Inherit from parent */
 
   text-transform: uppercase;
   font-weight: 900;
-  line-height: 0.78;
   letter-spacing: -0.025em;
 
   margin-left: -0.05em;
   margin: 0 0 calc(var(--default-font-size) / 4);
+
+  /* HACK: perfectly fit to vertical height */
+  line-height: 0.78;
+}
+
+.wordmark .wrap {
+  line-height: calc(0.78 + 0.0625);
 }
 
 .rev {
