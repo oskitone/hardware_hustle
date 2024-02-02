@@ -12,10 +12,6 @@
   line-height: 1.35;
 
   position: relative;
-
-  /* Long words (cough, URLs) break layout. */
-  /* TODO: obviate */
-  word-break: break-word;
 }
 
 .inner {
@@ -225,4 +221,8 @@
 .rules img {
   max-width: 100%;
   border: 1px solid rgb(var(--shaded-rgb));
+}
+
+.rules nowrap {
+  white-space: nowrap;
 }

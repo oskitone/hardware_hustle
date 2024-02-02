@@ -17,7 +17,8 @@
   --default-font-size: 12px;
 
   /* Eyeballed to fill pages and fit layout */
-  /* NOTE: PhasesTable's minimum width can break layout */
+  /* NOTE: minimum width elements will break layout:
+    PhasesTable, Turn, URL or other long words */
   --rules-font-size: 9.1px;
   --rules-small-font-size: 7px;
 }
