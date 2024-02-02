@@ -2,11 +2,11 @@
 
 ![Hardware Hustle](header.jpg)
 
-Hardware Hustle is a tabletop, roll-and-write resource management game about sustainably running a small hardware business.
-
-For 1+ players. Ages 10+. ~20min to play.
+Hardware Hustle is a tabletop, roll-and-write resource management game about sustainably running an indie electronics business.
 
 Buy, make, sell, and research your way to profit without burning out!
+
+_For one or more players. Ages 10+. ~20min to play._
 
 ## Development notes
 
