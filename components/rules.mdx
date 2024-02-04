@@ -339,7 +339,9 @@ export default function Rules({ children, panel, panelCount, year, draftId }) {
         [styles.front]: panel % 2 == 0,
         [styles.back]: panel % 2 == 1
       })}>{panel + 1}/{panelCount}</div>
-      <div className={styles.inner} panel={panel}>
+      <div className={styles.inner} panel={panel} style={{
+        left: `calc((var(--zine-panel-width) - var(--print-margin)) * -${panel})`
+      }}>
         {children}
       </div>
     </div>
