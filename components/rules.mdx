@@ -33,8 +33,6 @@ import Wordmark from "components/wordmark";
 
 <Wordmark className={styles.Wordmark} wrap={true} draftId={props.draftId} />
 
-{/* TODO: standardize "the total <Opportunity /> they cost" language. Consumed? Used? */}
-
 # Rules
 
 ## Introduction
@@ -86,8 +84,7 @@ And its five columns are phases that you fill out from left to right during your
 1. ### PM
    Use remaining <Opportunity /> to research or lose next turn if <Opportunity /> is negative
 
-{/* TODO: try pulling these to front. */}
-(Refer to the *Example Turn* towards the end of the rules for a glimpse of everything in action and an *Icon Glossary* that says what the icons are called.)
+(Refer to the *Appendix*'s *Example First Turn* for a glimpse of everything in action and an *Icon Glossary* that says what the icons are called.)
 
 ### 1. AM
 
@@ -143,8 +140,6 @@ To complete the Make phase:
 You can make as many or as few widgets as you want, provided you have the required parts and <Opportunity />. In later turns, you can use parts purchased in previous turns.
 
 ### 4. Sell
-
-{/* TODO: no/fewer "note"s */}
 
 If you made any widgets, now's a fine time to sell them so you have <Money /> for your next turn's Buy phase.
 
@@ -215,7 +210,33 @@ Notes:
 * Because you can't roll higher than six, ending a turn with <OpportunityX value={6} /> or higher means your research attempt automatically wins.
 * Subsequent research upgrades on the same phase action work the same way. Each phase action can be upgraded three times.
 
-## Example turn
+## Ending a turn
+
+Mark a dot on the "Money/Turn" graph at your new <Money /> total, then draw a line connecting it to the previous dot.
+
+Don't move on to the next turn until all players have completed the current one.
+
+## Starting a new turn
+
+The values in the PM column carry over to the empty cells in the next turn's AM column, as denoted by the **⇢** prefix.
+
+The <Opportunity /> cells, however, are _not_ empty; you have to use the values provided.
+
+For skipped turns, fill the **⇢** AM cells on the next playable turn from the PM cells in the previously played turn.
+
+## End of the Game
+
+The game ends when all six turn spreadsheets are filled out. The player with the most money wins. Unused parts and unsold widgets count for nothing, only money.
+
+In the case of a tie, the player with the fewest burnouts wins. For further ties, players share victory.
+
+## Solo Mode
+
+Solo play is solitaire. Beat your best score.
+
+## Appendix
+
+#### Example First turn
 
 <Turn
   className={styles.Turn}
@@ -246,40 +267,11 @@ Notes:
 1. ##### PM  
     Rolled <RollX value={6} />. Ended with <MoneyX value={11} />, <BX value={1} />, and <OpportunityX value={8} />, which was more than enough for the research upgrade of the <RollX value={6} /> roll.
 
-
 For Buy/Make/Sell, <Opportunity /> usage was less than or equal to the <Roll />. For PM's research upgrade, <Opportunity /> needed to be greater than or equal to the <Roll />.
 
 Not a super profitable turn, but it ended with a spare part for later and a successful research upgrade. Could've be worse!
 
-## Ending a turn
-
-Mark a dot on the "Money/Turn" graph at your new <Money /> total, then draw a line connecting it to the previous dot.
-
-Don't move on to the next turn until all players have completed the current one.
-
-## Starting a new turn
-
-The values in the PM column carry over to the empty cells in the next turn's AM column, as denoted by the **⇢** prefix.
-
-The <Opportunity /> cells, however, are _not_ empty; you have to use the values provided.
-
-For skipped turns, fill the **⇢** AM cells on the next playable turn from the PM cells in the previously played turn.
-
-## End of the Game
-
-The game ends when all six turn spreadsheets are filled out. The player with the most money wins. Unused parts and unsold widgets count for nothing, only money.
-
-In the case of a tie, the player with the fewest burnouts wins. For further ties, players share victory.
-
-## Solo Mode
-
-Solo play is solitaire. Beat your best score.
-
-## Appendix
-
 #### Icon Glossary
-
-{/* TODO: bigger icons? */}
 
 ##### Parts
 
@@ -306,7 +298,7 @@ Solo play is solitaire. Beat your best score.
   <div><dd><Icon id={"roll"} /></dd><dt>Roll</dt></div>
 </dl>
 
-#### Roll Table
+#### Roll Table Usage
 
 The rule book's back page is a {RollTableParents} table of {RollTableChildren} randomly generated values.
 
