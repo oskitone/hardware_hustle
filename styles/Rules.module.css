@@ -106,15 +106,16 @@
   margin-top: calc(var(--rules-font-size) * 1.5);
 }
 
+.rules .ColumnBreak + * {
+  margin-top: 0;
+}
+
 .rules ol h3 {
   margin: calc(var(--rules-font-size) * 0.25) 0 0;
 }
 
-.rules p,
-.rules li,
 .PhasesTable,
 .Turn,
-.rules table,
 .rules dl {
   break-inside: avoid;
 }

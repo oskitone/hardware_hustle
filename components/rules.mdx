@@ -27,7 +27,7 @@ import Icon, {
   RollX,
   IconsParen
 } from "components/icon";
-import { NoWrap } from "common/utils";
+import { ColumnBreak, NoBreak, NoWrap } from "common/utils";
 import Turn, { ExampleCell, firstTurnSuppliedColumns } from "components/turn";
 import { RollTableParents, RollTableChildren } from "components/roll-table";
 import Wordmark from "components/wordmark";
@@ -66,7 +66,7 @@ Fill out the "{ID_TITLE}" line in the top left of the game sheet, then familiari
 
 ![Hardware Hustle game sheet layout](../screenshot.png)
 
-There is no player order, game sheets are filled out simultaneously, and die rolls can be done by any player.
+<NoBreak>There is no player order, game sheets are filled out simultaneously, and die rolls can be done by any player.</NoBreak>
 
 ## How to Play
 
@@ -235,6 +235,8 @@ In the case of a tie, the player with the fewest burnouts wins. For further ties
 
 Solo play is solitaire. Beat your best score.
 
+<ColumnBreak className={styles.ColumnBreak} />
+
 ## Appendix
 
 #### Example First turn
@@ -274,30 +276,32 @@ Not a super profitable turn, but it ended with a spare part for later and a succ
 
 #### Icon Glossary
 
-##### Parts
+<NoBreak>
+  ##### Parts
 
-<dl>
-  <div><dd><Icon id={"A"} /></dd><dt>Enclosure</dt></div>
-  <div><dd><Icon id={"B"} /></dd><dt>Speaker</dt></div>
-  <div><dd><Icon id={"C"} /></dd><dt>Controls</dt></div>
-  <div><dd><Icon id={"D"} /></dd><dt>Processor</dt></div>
-</dl>
+  <dl>
+    <div><dd><Icon id={"A"} /></dd><dt>Enclosure</dt></div>
+    <div><dd><Icon id={"B"} /></dd><dt>Speaker</dt></div>
+    <div><dd><Icon id={"C"} /></dd><dt>Controls</dt></div>
+    <div><dd><Icon id={"D"} /></dd><dt>Processor</dt></div>
+  </dl>
 
-##### Widgets
+  ##### Widgets
 
-<dl>
-  <div><dd><Icon id={"AB"} /></dd><dt>Amplifier</dt></div>
-  <div><dd><Icon id={"ABC"} /></dd><dt>Noisebox</dt></div>
-  <div><dd><Icon id={"ABCD"} /></dd><dt>Synth</dt></div>
-</dl>
+  <dl>
+    <div><dd><Icon id={"AB"} /></dd><dt>Amplifier</dt></div>
+    <div><dd><Icon id={"ABC"} /></dd><dt>Noisebox</dt></div>
+    <div><dd><Icon id={"ABCD"} /></dd><dt>Synth</dt></div>
+  </dl>
 
-##### Other
+  ##### Other
 
-<dl>
-  <div><dd><Icon id={"money"} /></dd><dt>Money</dt></div>
-  <div><dd><Icon id={"opportunity"} /></dd><dt>Opportunity</dt></div>
-  <div><dd><Icon id={"roll"} /></dd><dt>Roll</dt></div>
-</dl>
+  <dl>
+    <div><dd><Icon id={"money"} /></dd><dt>Money</dt></div>
+    <div><dd><Icon id={"opportunity"} /></dd><dt>Opportunity</dt></div>
+    <div><dd><Icon id={"roll"} /></dd><dt>Roll</dt></div>
+  </dl>
+</NoBreak>
 
 #### Roll Table Usage
 

@@ -1,3 +1,5 @@
+import classnames from "classnames";
+
 export const getCommitProps = () => {
   const commit = require("child_process")
     .execSync('git log -n1 --format="%h %ai"')
@@ -32,5 +34,13 @@ export const htmlEntity = (id) => (
 );
 
 export const NoWrap = ({ children }) => (
-  <span style={{ whiteSpace: "nowrap" }}>{children}</span>
+  <span style={{ "white-space": "nowrap" }}>{children}</span>
+);
+
+export const NoBreak = ({ children }) => (
+  <div style={{ "break-inside": "avoid" }}>{children}</div>
+);
+
+export const ColumnBreak = ({ className }) => (
+  <div className={classnames(className)} style={{ "break-after": "column" }} />
 );
