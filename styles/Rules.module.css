@@ -192,7 +192,3 @@
   max-width: 100%;
   border: 1px solid rgb(var(--shaded-rgb));
 }
-
-.rules nowrap {
-  white-space: nowrap;
-}

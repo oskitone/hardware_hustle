@@ -30,3 +30,7 @@ export const htmlEntity = (id) => (
     }}
   />
 );
+
+export const NoWrap = ({ children }) => (
+  <span style={{ whiteSpace: "nowrap" }}>{children}</span>
+);
