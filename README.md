@@ -20,9 +20,11 @@ _For one or more players. Ages 10+. ~20min to play._
 
 ## To play
 
-### Print instructions
+### Assembly instructions
 
 Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](https://oskitone.github.io/hardware_hustle/)
+
+You'll need a basic black-and-white printer, paper trimmer/scissors, and a modicum of patience.
 
 - Game sheets
   - Choose layout for either letter or legal paper size; design is identical but legal is better because you get two game sheets per paper
@@ -34,6 +36,8 @@ Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](http
   - Cut horizontally to 8.5"x5.5"
   - Fold and staple into a 4.25"x5.5" zine booklet; see corner numbers for page order
 
+Designs are optimized for a very specific aesthetic, which I understand can be annoying for print-and-play. Trust that it's intentional and part of the experience.
+
 ### Playtester feedback welcome
 
 As it is in real life, the Hardware Hustle is not for everyone. I had one early playtester tell me its format and rules were so complicated it's basically unplayable (the rules have since been completely rewritten). Another said its format is so straightforward that it doesn't need rules. Who knows, you know?
@@ -44,11 +48,18 @@ Even still, your constructive feedback is welcome. Please earnestly play at leas
 
 ## Changelog
 
+* **prototype_draft_5f092de_240203**
+  * Smaller, "zine" style rulebook
+  * Roll table is now at the end of the rules instead of a separate print
+  * Research attempts use remaining opportunity
+  * Even more tie resolution
+  * Style nits
+  * Appendix
 * **prototype_draft_00d1aae_240124**
-  * shared opportunity rolls
-  * continue reading for ~confusing research
-  * roll-and-write is every phase
-  * misc formatting/readability nits
+  * Shared opportunity rolls
+  * Continue reading for ~confusing research
+  * Roll-and-write is every phase
+  * Misc formatting/readability nits
 * **prototype_draft_dcb37bc_240104**
   * init
 
