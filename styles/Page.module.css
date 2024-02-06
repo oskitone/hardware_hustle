@@ -45,9 +45,4 @@
     /* Rely on Panel for height */
     height: auto;
   }
-
-  /* TODO: fix? IDR what this was for */
-  .page:not(:last-of-type) {
-    page-break-after: always;
-  }
 }
