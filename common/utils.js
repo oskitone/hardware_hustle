@@ -34,13 +34,13 @@ export const htmlEntity = (id) => (
 );
 
 export const NoWrap = ({ children }) => (
-  <span style={{ "white-space": "nowrap" }}>{children}</span>
+  <span style={{ whiteSpace: "nowrap" }}>{children}</span>
 );
 
 export const NoBreak = ({ children }) => (
-  <div style={{ "break-inside": "avoid" }}>{children}</div>
+  <div style={{ breakInside: "avoid" }}>{children}</div>
 );
 
 export const ColumnBreak = ({ className }) => (
-  <div className={classnames(className)} style={{ "break-after": "column" }} />
+  <div className={classnames(className)} style={{ breakAfter: "column" }} />
 );
