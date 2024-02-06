@@ -27,7 +27,7 @@ import Icon, {
   RollX,
   IconsParen
 } from "components/icon";
-import { NoBreak, NoWrap } from "common/utils";
+import { ColumnBreak, NoBreak, NoWrap } from "common/utils";
 import Turn, { ExampleCell, firstTurnSuppliedColumns } from "components/turn";
 import { RollTableParents, RollTableChildren } from "components/roll-table";
 import Wordmark from "components/wordmark";
@@ -242,6 +242,70 @@ In the case of a tie, the player with the fewest burnouts wins. For further ties
 
 Solo play is solitaire. Try to beat your best score.
 
+<ColumnBreak className={styles.ColumnBreak} />
+
+## Advanced:<br />  Game Variants
+
+Mastered the basics and looking for more complexity? Try some or all of these ideas in your next game.
+
+Players agree to which variants to add before starting the game.
+
+#### Triage
+
+All those fancy business school classes finally paid off! You now know how to prioritize phase actions by their urgency, allowing you to focus on what's most important each turn.
+
+Instead of rolling individually for <Opportunity /> in the Buy/Make/Sell phases, roll three times (or three dice all at once) at the start of the turn and assign their values to phases as you like.
+
+The <Opportunity /> roll for PM's research upgrade attempt is still done normally.
+
+#### Open-Source Research
+
+Sometimes new ideas come so easy you just can't keep them to yourself.
+
+Any Research Upgrade attempt you make with <OpportunityX value={6} /> or higher automatically succeeds for you _and_ gives a free research upgrade to all other players.
+
+The other players' upgrade _must_ be in the same phase (Buy, Make, or Sell) as yours but can be in any of its columns.
+
+Limit one research upgrade per turn, per player.
+
+#### Strategic Partnerships
+
+Need to offload excess stock or desperately require parts from somebody else for a build? It can't hurt to ask!
+
+After ending a turn, players may trade money, parts, and/or widgets, in any combination and at rates of their choosing. Everything except <Opportunity /> can be moved between players.
+
+Players have a dialog to work out the details and then write the new values in the next turn's AM column.
+
+#### Automation
+
+Doctors don't recommend it, but you actually can work while resting.
+
+Instead of crossing out the whole turn when you burnout in the previous PM phase, cross out only the starting AM <Opportunity /> value. Then, fill all the <Opportunity /> row's cells with 0.
+
+Do not roll for Buy/Make/Sell, but any action you can perform that takes <Opportunity value={0} /> can be done freely. You cannot attempt a research upgrade in PM.
+
+{/* #### Parts shortage / shared market
+
+There's a global parts shortage in the manufacturing industry. The number of Parts available for purchase is fixed at the beginning of the game. When a Part's supply is exhasted, players can't buy any more.
+
+TODO: starting values
+
+Similarly, there's only so many customers for completed Widgets. When all the customers who want a particular Widget have purchased one, no more can be sold.
+
+TODO: starting values
+
+Track Part availability and customer exhaustion on a separate piece of paper. */}
+
+{/* #### Vanity metrics
+
+Vanity metrics or accolades so you can strive for something besides just money. TODO: define */}
+
+{/* ### Multiplayer cooperative
+
+Co-op mode could be done by everybody starting w/ some debt, maybe in exchange for Research? Then you only win by collectively paying off the debt. */}
+
+<ColumnBreak className={styles.ColumnBreak} />
+
 ## Appendix
 
 #### Example First turn
@@ -311,11 +375,11 @@ Not a super profitable turn, but it ended with a spare part for later and a succ
 #### Roll Table Usage
 
 { /* TODO: make sure page/pages matches actual count */}
-This book's back page is a {RollTableParents} table of {RollTableChildren} randomly generated values.
+This book's back pages are {RollTableParents} tables of {RollTableChildren} randomly generated values.
 
-To use it as a substitute for rolling physical dice, close your eyes and drop a twirling fingertip or non-marking utensil on it. The touched value is your "roll." If the value is obscured, adopt the next readable value being pointed at.
+To use them as a substitute for rolling physical dice, close your eyes and drop a twirling fingertip or non-marking utensil on one of their pages. The touched value is your "roll." If the value is obscured, adopt the next readable value being pointed at.
 
-To increase randomness, alternate sections of the table on each use.
+To increase randomness, alternate pages/sections of the tables on each use.
 
 ## Credits &amp; Feedback
 
