@@ -248,7 +248,7 @@ Solo play is solitaire. Try to beat your best score.
 
 Mastered the basics and looking for more complexity? Try some or all of these ideas in your next game.
 
-Players agree to which variants to add before starting the game.
+All players agree on which variants to add before starting the game.
 
 #### Triage
 
@@ -260,13 +260,15 @@ The <Opportunity /> roll for PM's research upgrade attempt is still done normall
 
 #### Open-Source Research
 
-Sometimes new ideas come so easy you just can't keep them to yourself.
+Sometimes new ideas come so easily you just can't keep them to yourself.
 
 Any Research Upgrade attempt you make with <OpportunityX value={6} /> or higher automatically succeeds for you _and_ gives a free research upgrade to all other players.
 
 The other players' upgrade _must_ be in the same phase (Buy, Make, or Sell) as yours but can be in any of its columns.
 
 Limit one research upgrade per turn, per player.
+
+{/* TODO: clarify ^ */}
 
 #### Strategic Partnerships
 
@@ -278,11 +280,11 @@ Players have a dialog to work out the details and then write the new values in t
 
 #### Automation
 
-Doctors don't recommend it, but you actually can work while resting.
+Doctors don't recommend it, but you actually _can_ work while resting.
 
-Instead of crossing out the whole turn when you burnout in the previous PM phase, cross out only the starting AM <Opportunity /> value. Then, fill all the <Opportunity /> row's cells with 0.
+Instead of crossing out the whole next turn when you burnout in the PM phase, cross out only its starting AM <Opportunity /> value. Then, fill all its <Opportunity /> cells with 0.
 
-Do not roll for Buy/Make/Sell, but any action you can perform that takes <Opportunity value={0} /> can be done freely. You cannot attempt a research upgrade in PM.
+Do not roll for Buy/Make/Sell, but any action you can perform that takes <OpportunityX value={0} /> can be done freely. You cannot attempt a research upgrade in PM.
 
 {/* #### Parts shortage / shared market
 
@@ -380,6 +382,10 @@ This book's back pages are {RollTableParents} tables of {RollTableChildren} rand
 To use them as a substitute for rolling physical dice, close your eyes and drop a twirling fingertip or non-marking utensil on one of their pages. The touched value is your "roll." If the value is obscured, adopt the next readable value being pointed at.
 
 To increase randomness, alternate pages/sections of the tables on each use.
+
+If playing with the "Triage" game variant and need three rolls, use the values to the left and right of your selection. Write them in the margins of your turn so you don't forget them.
+
+<ColumnBreak className={styles.ColumnBreak} />
 
 ## Credits &amp; Feedback
 
