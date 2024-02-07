@@ -34,7 +34,7 @@ function GameSheetPage({ pageCount, gamesPerPage, pageSize, year, draftId }) {
         {[...Array(pageCount || 0)].map((e, i) => (
           <Page size={pageSize} key={i}>
             {[...Array(gamesPerPage || 0)].map((e, ii) => (
-              <GameSheetPanel year={year} draftId={draftId} />
+              <GameSheetPanel year={year} draftId={draftId} key={ii} />
             ))}
           </Page>
         ))}
