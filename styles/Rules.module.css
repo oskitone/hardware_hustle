@@ -191,6 +191,9 @@
 
 .rules img {
   max-width: 100%;
+}
+
+.screenshot {
   border: 1px solid rgb(var(--shaded-rgb));
 
   /* Try to maintain some line consistency between columns */
