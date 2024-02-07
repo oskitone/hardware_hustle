@@ -38,7 +38,7 @@ import Wordmark from "components/wordmark";
 
 ## Introduction
 
-Hardware Hustle is a tabletop, roll-and-write resource management game about sustainably running an indie electronics business.
+Hardware Hustle is a tabletop, <NoWrap>roll-and-write</NoWrap> resource management game about sustainably running an indie electronics business.
 
 Buy, make, sell, and research your way to profit without burning out!
 
@@ -46,11 +46,11 @@ _For one or more players. Ages 10+. ~20min to play._
 
 ## Game Overview
 
-Your goal is to profit without burning out. You have six turns to buy parts to make widgets, make widgets from parts, sell widgets for money to buy more parts, and so on.
+You have six turns to buy parts to make widgets, make widgets from parts, sell widgets for money to buy more parts, and so on.
 
 Each of those phases use opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses and is limited per-phase by a die roll. At the end of each turn, use renaming <Opportunity /> to attempt a research upgrade to reduce future <Opportunity /> costs.
 
-The six turns are miniature spreadsheets, and the game ends when they're all filled out. The player at the end with the most money wins.
+The six turns are miniature spreadsheets, and the game ends when they're all filled out. The player with the most money at the end wins.
 
 ## Components
 
@@ -70,9 +70,9 @@ Fill out the "{ID_TITLE}" line in the top left of the game sheet, then familiari
 
 ## How to Play
 
-The spreadsheet's rows are grouped into money <IconsParen ids={["money"]} />, parts <IconsParen ids={["A", "B", "C", "D"]} />, widgets <IconsParen ids={["AB", "ABC", "ABCD"]} />, and opportunity <IconsParen ids={["opportunity"]} />.
+The spreadsheets' rows are grouped into money <IconsParen ids={["money"]} />, parts <IconsParen ids={["A", "B", "C", "D"]} />, widgets <IconsParen ids={["AB", "ABC", "ABCD"]} />, and opportunity <IconsParen ids={["opportunity"]} />.
 
-And its five columns are phases that you fill out from left to right during your turn.
+And their five columns are phases that you fill out from left to right during your turn.
 
 1. ### AM
    Take stock of what you have and need
@@ -93,17 +93,19 @@ You begin each turn by taking stock of what you have and need at the beginning o
 
 For the game's first turn, there's nothing to do here besides note the starting pre-filled values. You have <MoneyX value={10}/> and <OpportunityX value={12}/>... and you need basically everything else.
 
-(Later turns will have empty cells to fill out, but there still won't be any decision-making or die-rolling. For that reason, AM is not listed in the Phases table on the left of your game sheet.)
+(Later turns will have empty cells to fill out, but there still won't be any decision-making or die-rolling. For those reasons, AM is not listed in the Phases table on the left of your game sheet.)
 
 ### 2. Buy
 
-Before you can make any money selling widgets, you've got to spend money to buy their parts.
+Before you can make any money <IconsParen ids={["money"]} /> selling widgets, you've got to spend money buying their parts.
 
 Parts cost <Money /> and <Opportunity />, as listed in the Phases table:
 
 <PhasesTable phases={[ACTIONS.BUY]} className={styles.PhasesTable} />
 
-The <Opportunity /> costs are a table of values, but, for all the phases of your first turn, you'll only use the ones in the leftmost column with the dark outline. To buy a <A suffix={","} /> you need <OpportunityX value={0} /> and <MoneyX value={1} />; to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />; etc. You'll revisit <Opportunity /> costs in the PM phase a little later.
+The <Opportunity /> costs are a table of values, but, for all the phases of your first turn, you'll only use the ones in the leftmost column with the dark outline.
+
+For example, to buy a <A suffix={","} /> you need <OpportunityX value={0} /> and <MoneyX value={1} />; to buy a <B /> you need <OpportunityX value={1} /> and <MoneyX value={2} />; etc. You'll revisit <Opportunity /> costs in the PM phase a little later.
 
 To complete the Buy phase:
 
@@ -116,7 +118,7 @@ To complete the Buy phase:
 Notes:
 
 - The value of the <Opportunity /> roll is shared by all players, and everyone fills in their game sheets simultaneously.
-- You can buy as many or as few parts as you want and even multiples of the same part, as long as you have the required <Opportunity /> and <Money />. (The sum <Opportunity /> must be less than or equal to your roll, and the sum <Money /> must be less than or equal to what you have in the AM column.)
+- You can buy as many or as few parts as you want and even multiples of the same part, as long as you have the required <Opportunity /> and <Money suffix="." /> (The sum <Opportunity /> must be less than or equal to your roll, and the sum <Money /> must be less than or equal to what you have in the AM column.)
 - You can also choose to buy nothing and skip this phase, though that's a gutsy move on your first turn!
 - Cells are prefixed by their mathematical operation. You're losing <Money /> and <Opportunity />, so those cells have a `-`. You're gaining parts, so they have a `+`. The same `-`/`+` signs are in the Phases table.
 - Unused cells have a gray background to mark they're skipped.
@@ -175,6 +177,8 @@ To complete the PM phase:
 The Phases table summarizes PM's <Opportunity /> resolution:
 
 <PhasesTable phases={[ACTIONS.PM]} className={styles.PhasesTable} />
+
+{/* TODO: try swapping order (here and in PhasesTable) to match ^ instructions */}
 
 #### Burnout
 
@@ -238,7 +242,7 @@ In the case of a tie, the player with the fewest burnouts wins. For further ties
 
 ## Solo Mode
 
-Solo play is solitaire. Beat your best score.
+Solo play is solitaire. Try to beat your best score.
 
 ## Appendix
 
@@ -275,7 +279,7 @@ Solo play is solitaire. Beat your best score.
 
 For Buy/Make/Sell, <Opportunity /> usage was less than or equal to the <Roll />. For PM's research upgrade, <Opportunity /> needed to be greater than or equal to the <Roll />.
 
-Not a super profitable turn, but it ended with a spare part for later and a successful research upgrade. Could've be worse!
+Not a super profitable turn, but it ended with a spare part for later and a successful research upgrade. Could've been a lot worse!
 
 #### Icon Glossary
 
@@ -314,7 +318,7 @@ To use it as a substitute for rolling physical dice, close your eyes and drop a 
 
 If the value is obscured, adopt the next readable value being pointed at. To increase randomness, alternate sections of the table each time you use it.
 
-#### Credits &amp; Feedback
+## Credits &amp; Feedback
 
 Hardware Hustle was designed by Oskitone, maker of DIY electronic musical instruments and soldering kits. Please consider buying your next synthesizer project from oskitone.com.
 
