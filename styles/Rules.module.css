@@ -192,4 +192,7 @@
 .rules img {
   max-width: 100%;
   border: 1px solid rgb(var(--shaded-rgb));
+
+  /* Try to maintain some line consistency between columns */
+  max-height: 9.96rem;
 }
