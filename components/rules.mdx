@@ -178,14 +178,6 @@ The Phases table summarizes PM's <Opportunity /> resolution:
 
 <PhasesTable phases={[ACTIONS.PM]} className={styles.PhasesTable} />
 
-{/* TODO: try swapping order (here and in PhasesTable) to match ^ instructions */}
-
-#### Burnout
-
-You've spent more <Opportunity /> than you had available and have to spend the whole next day recuperating. Hope it was worth it.
-
-Cross out the entire next turn's spreadsheet. You cannot do any of its phases.
-
 #### Research Upgrade
 
 Remember how you've only been using the Phase table's first column of <Opportunity /> values with the dark outline? Here's where that can change.
@@ -219,6 +211,12 @@ Notes:
 * Its usage, however, is different from the other phases. For Buy/Make/Sell, it's a maximum that you want to roll high; for research, it's a minimum that you want to roll low.
 * Because you can't roll higher than six, ending a turn with <OpportunityX value={6} /> or higher means your research attempt automatically wins.
 * Subsequent research upgrades on the same phase action work the same way. Each phase action can be upgraded three times.
+
+#### Burnout
+
+You spent more <Opportunity /> than you had available at the start of the turn? Now you have to spend the whole next day recuperating. Hope it was worth it.
+
+Cross out the entire next turn's spreadsheet. You cannot do any of its phases.
 
 ## Ending a turn
 

@@ -143,15 +143,6 @@ export const ACTIONS = {
     getBody: () => [
       [
         <>
-          <Icon id="opportunity" /> &lt; 0
-        </>,
-        <div key={0} className={styles.pmAction}>
-          <strong>Burnout:</strong> <em>Lose next turn</em>
-        </div>,
-        <></>,
-      ],
-      [
-        <>
           <Icon id="opportunity" /> &ge;
           <Icon id="roll" />
         </>,
@@ -160,6 +151,15 @@ export const ACTIONS = {
           <em>
             Lower <Icon id="opportunity" inline /> cost
           </em>
+        </div>,
+        <></>,
+      ],
+      [
+        <>
+          <Icon id="opportunity" /> &lt; 0
+        </>,
+        <div key={0} className={styles.pmAction}>
+          <strong>Burnout:</strong> <em>Lose next turn</em>
         </div>,
         <></>,
       ],
