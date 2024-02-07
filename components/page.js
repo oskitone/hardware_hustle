@@ -6,7 +6,6 @@ function Page({ children, size }) {
   return (
     <div
       className={classnames(styles.page, {
-        [styles.full]: size == "full",
         [styles.legal]: size == "legal",
         [styles.letter]: size == "letter",
         [styles.single]: size == "single",

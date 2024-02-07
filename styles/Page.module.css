@@ -21,15 +21,6 @@
   height: var(--letter-page-height);
 }
 
-.full {
-  width: auto;
-  height: auto;
-
-  margin: 0;
-
-  padding: var(--print-margin);
-}
-
 .page:nth-child(odd) {
   justify-content: left;
 }

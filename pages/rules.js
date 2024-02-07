@@ -21,17 +21,12 @@ function RulesPage({
   year,
   draftId,
 
-  view,
-
   rulesPanelsCount,
   rollTablePanelsCount,
 
   panelsPerPageSide,
 }) {
   const pageDimensions = `${letter_page_width} ${letter_page_height}`;
-
-  const router = useRouter();
-  view = view || router.query.view;
 
   const getPagedPanelIds = (panelCount) => {
     const pageCount = Math.ceil(panelCount / (panelsPerPageSide * 2));
@@ -80,14 +75,6 @@ function RulesPage({
   ];
 
   function getContent() {
-    if (view == "all") {
-      return (
-        <Page size="full">
-          <Rules />
-        </Page>
-      );
-    }
-
     return (
       <>
         {getPagedPanelIds(panels.length).map((spreadPanelIds, pageId) => (
@@ -118,8 +105,6 @@ function RulesPage({
 RulesPage.defaultProps = {
   year: undefined,
   draftId: undefined,
-
-  view: undefined,
 
   rulesPanelsCount: 7,
   rollTablePanelsCount: 1,
