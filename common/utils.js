@@ -42,5 +42,5 @@ export const NoBreak = ({ children }) => (
 );
 
 export const ColumnBreak = ({ className }) => (
-  <div className={classnames(className)} style={{ breakAfter: "column" }} />
+  <div className={classnames(className)} style={{ breakBefore: "column" }} />
 );
