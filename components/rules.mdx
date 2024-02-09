@@ -266,13 +266,11 @@ Any Research Upgrade attempt you make with <OpportunityX value={6} /> or higher 
 
 The other players' upgrade _must_ be in the same phase (Buy, Make, or Sell) as yours but can be in any of its columns.
 
-Limit one research upgrade per turn, per player.
+Limit one free research upgrade per turn and per player, not counting their own. (In other words, two max.)
 
-{/* TODO: clarify ^ */}
+#### Trading
 
-#### Strategic Partnerships
-
-Need to offload excess stock or desperately require parts from somebody else for a build? It can't hurt to ask!
+Need to offload excess stock or desperately require parts for a build? It can't hurt to ask!
 
 After ending a turn, players may trade money, parts, and/or widgets, in any combination and at rates of their choosing. Everything except <Opportunity /> can be moved between players.
 
@@ -286,25 +284,30 @@ Instead of crossing out the whole next turn when you burnout in the PM phase, cr
 
 Do not roll for Buy/Make/Sell, but any action you can perform that takes <OpportunityX value={0} /> can be done freely. You cannot attempt a research upgrade in PM.
 
-{/* #### Parts shortage / shared market
+#### The Bank
 
-There's a global parts shortage in the manufacturing industry. The number of Parts available for purchase is fixed at the beginning of the game. When a Part's supply is exhasted, players can't buy any more.
+You've qualified for a business loan and can borrow money from the bank, enabling you to go negative when buying parts.
 
-TODO: starting values
+There's no interest, just a fixed fee of <MoneyX value={20} /> at the start of the game.
 
-Similarly, there's only so many customers for completed Widgets. When all the customers who want a particular Widget have purchased one, no more can be sold.
+To accept the loan offer, pay the bank's fee by putting a "-" before the 10 in the first turn's starting <Money /> cell.
 
-TODO: starting values
+If you don't pay, you can't borrow.
 
-Track Part availability and customer exhaustion on a separate piece of paper. */}
+#### Consultants
 
-{/* #### Vanity metrics
+A network of experts has availed themselves for consultant work. Their help, of course, is not free.
 
-Vanity metrics or accolades so you can strive for something besides just money. TODO: define */}
+In addition to rolling for research upgrade attempts, you can now hire a consultant to "buy" upgrades.
 
-{/* ### Multiplayer cooperative
+Hire your consultants after finishing a turn's PM phase of any non-burnout turn and before the next AM. Use them as much as you want, but their fees go up with demand.
 
-Co-op mode could be done by everybody starting w/ some debt, maybe in exchange for Research? Then you only win by collectively paying off the debt. */}
+<Money />: 10, 20, 30, 50, 80, 130, 210, 340, 550
+
+{/* TODO: explain more */}
+{/* TODO: test! */}
+
+Playes keep track of their consultant usage count and subtract the respective fee(s) from the next turn's AM <Money />.
 
 <ColumnBreak className={styles.ColumnBreak} />
 
