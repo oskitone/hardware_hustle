@@ -182,22 +182,11 @@ The Phases table summarizes PM's <Opportunity /> resolution:
 
 Remember how you've only been using the Phase table's first column of <Opportunity /> values with the dark outline? Here's where that can change.
 
-If your remaining <Opportunity /> is greater than or equal to your roll, your research attempt succeeded. Circle the PM column's <Opportunity /> cell to mark its success; otherwise cross it out for failure:
+{/* TODO: try ol of steps here */}
 
-<table>
-  <tbody>
-    <tr>
-      <th>Success: &nbsp;</th>
-      <td><ExampleCell success value={5} /></td>
-    </tr>
-    <tr>
-      <th>Failure: &nbsp;</th>
-      <td><ExampleCell fail value={2} /></td>
-    </tr>
-  </tbody>
-</table>
+If your remaining <Opportunity /> is greater than or equal to your roll, your research attempt succeeded. Circle the PM column's <Opportunity /> cell to mark its success.
 
-Then, if successful, choose _one_ phase action (Buy, Make, or Sell) to spend it on, shade in its outlined column, and then outline the next values to its right.
+Then, choose _one_ phase action (Buy, Make, or Sell) to spend your research on, shade in its outlined column, and outline the next values to its right.
 
 As an example, here's what a successful research upgrade to Make would look like when done:
 
@@ -288,26 +277,44 @@ Do not roll for Buy/Make/Sell, but any action you can perform that takes <Opport
 
 You've qualified for a business loan and can borrow money from the bank, enabling you to go negative when buying parts.
 
-There's no interest, just a fixed fee of <MoneyX value={20} /> at the start of the game.
+How much you can go borrow (ie, how far you can go negative) is based on turn number:
 
-To accept the loan offer, pay the bank's fee by putting a "-" before the 10 in the first turn's starting <Money /> cell.
+* **Turn 1:** <MoneyX value={10} />
+* **Turn 2:** <MoneyX value={20} />
+* **Turn 3:** <MoneyX value={30} />
+* **Turn 4:** <MoneyX value={40} />
+* **Turn 5:** <MoneyX value={50} />
+* **Turn 6:** <MoneyX value={60} />
 
-If you don't pay, you can't borrow.
+To accept their loan offer, pay the bank a fixed, upfront fee of <MoneyX value={20} /> by putting a "-" before the 10 in the first turn's starting <Money /> cell. If you don't pay it, you can't borrow.
 
 #### Consultants
 
-A network of experts has availed themselves for consultant work. Their help, of course, is not free.
+A network of moonlighting experts has availed themselves for consultant work. Their help, of course, is not free.
 
-In addition to rolling for research upgrade attempts, you can now hire a consultant to "buy" upgrades.
+In addition to rolling for research upgrade attempts, you can hire them to "buy" upgrades after your workday is done.
 
-Hire your consultants after finishing a turn's PM phase of any non-burnout turn and before the next AM. Use them as much as you want, but their fees go up with demand.
+After finishing any non-burnout turn's PM phase, subtract their fee(s) from the next turn's AM <Money /> cell, circle the new <Money /> value to mark it's from research, and follow the regular instructions for updating the Phases table.
 
-<Money />: 10, 20, 30, 50, 80, 130, 210, 340, 550
+<NoBreak>
+  **IDEA 1: ~Fibonacci.** Use them as much as you want, but their fees go up per usage. Players keep their own track.
+
+  <Money />: 10, 10, 20, 30, 50, 80, 130, 210, 340
+</NoBreak>
+
+<NoBreak>
+  **IDEA 2: Turn-based.** Use only once per turn, and fee is based on turn number.
+
+  * **Turn 1:** <MoneyX value={10} />
+  * **Turn 2:** <MoneyX value={20} />
+  * **Turn 3:** <MoneyX value={30} />
+  * **Turn 4:** <MoneyX value={40} />
+  * **Turn 5:** <MoneyX value={50} />
+  * **Turn 6:** <MoneyX value={60} />
+</NoBreak>
 
 {/* TODO: explain more */}
 {/* TODO: test! */}
-
-Playes keep track of their consultant usage count and subtract the respective fee(s) from the next turn's AM <Money />.
 
 <ColumnBreak className={styles.ColumnBreak} />
 

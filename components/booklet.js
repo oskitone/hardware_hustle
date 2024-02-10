@@ -98,8 +98,8 @@ Booklet.defaultProps = {
     * Both rulesPanelsCount and gameSheetPanels must be odd
     * Sum of all three is multiple of 4 but ideally 8 to fill paper
   */
-  rulesPanelsCount: 9,
-  rollTablePanelsCount: 3,
+  rulesPanelsCount: 10,
+  rollTablePanelsCount: 2,
   gameSheetPanels: 0,
 
   panelsPerPageSide: 4,

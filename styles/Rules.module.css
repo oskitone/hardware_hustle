@@ -95,8 +95,7 @@
 .rules ol,
 .rules ul,
 .PhasesTable,
-.Turn,
-.rules table {
+.Turn {
   margin: 0 0 var(--rules-font-size);
 }
 
@@ -123,8 +122,7 @@
 .PhasesTable,
 .Turn,
 .rules ol,
-.rules ul,
-.rules table {
+.rules ul {
   page-break-before: avoid;
 }
 
@@ -144,33 +142,6 @@
   border: 0 solid rgb(var(--graph-line-rgb));
   border-width: 1px 0 0 0;
   margin: 2em 0;
-}
-
-.rules table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-.rules table th {
-  text-align: left;
-  font-weight: inherit;
-}
-
-.rules tbody {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.rules tbody tr {
-  display: flex;
-}
-
-.rules tbody th {
-  margin: 0 calc(var(--rules-font-size) * 0.25) 0 0;
-}
-
-.rules tbody td {
-  flex-grow: 1;
 }
 
 .rules dl {
