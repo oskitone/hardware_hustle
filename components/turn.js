@@ -161,6 +161,7 @@ function Turn({
   suppliedColumns,
   researchSuccess,
   autoHeight,
+  zine,
 }) {
   const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
 
@@ -227,6 +228,7 @@ function Turn({
     <div
       className={classnames(className, styles.turn, {
         [styles.autoHeight]: autoHeight,
+        [styles.zine]: zine,
       })}
     >
       <Head>
@@ -301,6 +303,7 @@ Turn.defaultProps = {
   suppliedColumns: defaultSuppliedColumns,
   researchSuccess: undefined,
   autoHeight: false,
+  zine: false,
 };
 
 export default Turn;

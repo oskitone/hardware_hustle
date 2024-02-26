@@ -51,6 +51,14 @@
   grid-gap: var(--print-margin);
 }
 
+.zine.split {
+  grid-template-columns: 25% auto;
+}
+
+.panel[side="right"] {
+  justify-content: end;
+}
+
 @media print {
   .panel {
     outline: none;

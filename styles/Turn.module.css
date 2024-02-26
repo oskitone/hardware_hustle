@@ -22,13 +22,18 @@
 /* NOTE: Eyeballed to fill page */
 /* Ideally it's extracted into parent component so individual uses
    can have arbitrary/implicit heights but that is some work to do. */
-.turn .tbody .th,
-.turn .tbody .td {
+.tbody .th,
+.td {
   height: calc(var(--default-font-size) * 1.34);
 }
 
+.zine .tbody .th,
+.zine .td {
+  height: calc(var(--default-font-size) * 1.19);
+}
+
 .autoHeight .tbody .th,
-.autoHeight .tbody .td {
+.autoHeight .td {
   height: auto;
 }
 

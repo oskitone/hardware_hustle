@@ -1,3 +1,5 @@
+import classnames from "classnames";
+
 import { defaultTurnsData } from "components/turn";
 import Graph from "components/graph";
 import LineInput from "components/line-input";
@@ -8,8 +10,15 @@ import styles from "@/styles/Sidebar.module.css";
 
 export const ID_TITLE = "Name";
 
-const Sidebar = ({ turnsData, year, draftId, showIdLine, showFooter }) => (
-  <div className={styles.sidebar}>
+const Sidebar = ({
+  turnsData,
+  year,
+  draftId,
+  zine,
+  showIdLine,
+  showFooter,
+}) => (
+  <div className={classnames(styles.sidebar, { [styles.zine]: zine })}>
     <Wordmark className={styles.Wordmark} draftId={draftId} />
 
     {showIdLine && <LineInput title={ID_TITLE} className={styles.LineInput} />}
@@ -37,6 +46,8 @@ Sidebar.defaultProps = {
 
   year: undefined,
   draftId: undefined,
+
+  zine: false,
 
   showIdLine: true,
   showFooter: true,
