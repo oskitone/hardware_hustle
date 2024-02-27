@@ -28,16 +28,16 @@ function Index({ year, draftId }) {
             <Wordmark draftId={draftId} className={styles.Wordmark} />
             <ul className={styles.navigation}>
               <li>
-                <Link href="/letter">Game page (letter paper)</Link>
+                <Link href="/letter">Game sheet (letter paper)</Link>
               </li>
               <li>
-                <Link href="/legal">Game page (legal paper)</Link>
+                <Link href="/legal">Game sheet (legal paper)</Link>
               </li>
               <li>
-                <Link href="/single">Game page (single)</Link>
+                <Link href="/single">Game sheet (single)</Link>
               </li>
               <li>
-                <Link href="/rules">Rules (letter paper)</Link>
+                <Link href="/rules">Rules booklet (letter paper)</Link>
               </li>
             </ul>
           </Panel>
