@@ -39,6 +39,9 @@ function Index({ year, draftId }) {
               <li>
                 <Link href="/rules">Rules booklet (letter paper)</Link>
               </li>
+              <li>
+                <Link href="/zine">Zine booklet (letter paper)</Link>
+              </li>
             </ul>
           </Panel>
         </Front>
