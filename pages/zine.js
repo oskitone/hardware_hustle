@@ -22,7 +22,13 @@ const RulesPage = ({ year, draftId }) => {
         <style>{`@page { size: ${pageDimensions}; }`}</style>
       </Head>
       <main className={`${font.className}`}>
-        <Booklet year={year} draftId={draftId} gameSheetPanels={8} />
+        <Booklet
+          year={year}
+          draftId={draftId}
+          rulesPanelsCount={9}
+          rollTablePanelsCount={1}
+          gameSheetPanels={6}
+        />
       </main>
     </>
   );
