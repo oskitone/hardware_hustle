@@ -27,7 +27,7 @@ const RulesPage = ({ year, draftId }) => {
           draftId={draftId}
           rulesPanelsCount={9}
           rollTablePanelsCount={1}
-          gameSheetPanels={6}
+          gameSheetPanels={14}
         />
       </main>
     </>
