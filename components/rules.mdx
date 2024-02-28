@@ -258,14 +258,6 @@ The other players' upgrade _must_ be in the same phase (Buy, Make, or Sell) as y
 
 Limit one free research upgrade per turn and per player, not counting their own. (In other words, two max.)
 
-#### Trading
-
-Need to offload excess stock or desperately require parts for a build? It can't hurt to ask!
-
-After ending a turn, players may trade money, parts, and/or widgets, in any combination and at rates of their choosing. Everything except <Opportunity /> can be moved between players.
-
-Players have a dialog to work out the details and then write the new values in the next turn's AM column.
-
 #### Automation
 
 Doctors don't recommend it, but you actually _can_ work while resting.
@@ -276,52 +268,35 @@ Do not roll for Buy/Make/Sell, but any action you can perform that takes <Opport
 
 #### The Bank
 
-You've qualified for a business loan and can borrow money from the bank, enabling you to go negative when buying parts.
+You've qualified for overdraft protection from the bank, enabling you to go negative when buying parts.
 
-To accept their loan offer, pay a fixed, upfront fee of <MoneyX value={20} /> by putting a <NoWrap>"-"</NoWrap> before the 10 in the first turn's starting <Money /> cell. If you don't pay it, you may not borrow.
+To accept their offer, pay an upfront fee of <MoneyX value={20} /> by putting a <NoWrap>"-"</NoWrap> before the 10 in the first turn's starting <Money /> cell.
 
-You may then borrow from the bank in any Buy phase. How much you can go borrow (ie, how far you can go negative) is based on turn number:
+How much you can overdraw is <NoWrap>10 &times; turn number</NoWrap>: <MoneyX value={ 10 } /> in turn 1, <MoneyX value={ 20 } /> in turn 2, <MoneyX value={ 30 } /> in turn 3, etc.
 
-* **Turn 1:** <MoneyX value={ 10 } />
-* **Turn 2:** <MoneyX value={ 20 } />
-* **Turn 3:** <MoneyX value={ 30 } />
-* **Turn 4:** <MoneyX value={ 40 } />
-* **Turn 5:** <MoneyX value={ 50 } />
-* **Turn 6:** <MoneyX value={ 60 } />
+Overdraft is only for the Buy phase and is independent from AM <Money /> values.
 
 #### Consultants
 
-A network of consultants is available to fast-track your research upgrades.
+A network of consultants is available to fast-track your research, once per turn at <MoneyX value={20} /> an upgrade.
 
-Once per turn in the PM phase, subtract their fee from the turn's final <Money /> cell, circle it to mark its research deduction, and follow the regular instructions for updating the Phases table.
+1. After completing the PM phase and its "Money/Turn" graph update, circle the turn's final <Money /> cell to mark its research effect
+2. Pay the consultants' fee by subtracting 20 from the next turn's AM <Money /> value
+3. Then follow the regular instructions for updating the Phases table
 
-Consultants' research upgrades are in addition to regular rolling attempts.
+Limit one paid research upgrade per turn and per player, not counting regular rolling attempts. (In other words, two max.)
 
-_If using the Bank variant:_ Consultants take cash only, no credit. You may not go negative to pay them.
+Hiring consultants does _not_ require <Opportunity />, so you can do it even if you have none left or are burnt out.
 
-<NoBreak>
-  **IDEA 0: Fixed fee of, say, <MoneyX value={20} />
-</NoBreak>
+_If using the "Bank" game variant:_ Consultants take cash only, no credit. You may not go negative to pay them.
 
-<NoBreak>
-  **IDEA 1: ~Fibonacci.** Fees increase per use. Players keep their own track.
+#### Trading
 
-  <Money />: 10, 10, 20, 30, 50, 80, 130, 210, 340
-</NoBreak>
+Need to offload excess stock or desperately require parts for a build? It can't hurt to ask!
 
-<NoBreak>
-  **IDEA 2: Turn-based.** Use only once per turn, and fee is based on turn number.
+After ending a turn, players may trade money, parts, and/or widgets, in any combination and at rates of their choosing. Everything except <Opportunity /> can be moved between players.
 
-  * **Turn 1:** <MoneyX value={10} />
-  * **Turn 2:** <MoneyX value={20} />
-  * **Turn 3:** <MoneyX value={30} />
-  * **Turn 4:** <MoneyX value={40} />
-  * **Turn 5:** <MoneyX value={50} />
-  * **Turn 6:** <MoneyX value={60} />
-</NoBreak>
-
-{/* TODO: explain more */}
-{/* TODO: test! */}
+Players have a dialog to work out the details (and any conflicts with other game variants!), and then write the new values in the next turn's AM column.
 
 <ColumnBreak className={styles.ColumnBreak} />
 
@@ -400,7 +375,9 @@ To use them as a substitute for rolling physical dice, close your eyes and drop 
 
 To increase randomness, alternate pages/sections of the tables on each use.
 
-If playing with the "Triage" game variant and need three rolls, use the values to the left and right of your selection. Write them in the margins of your turn so you don't forget them.
+_If playing with the "Triage" game variant:_ to get three rolls, use the values to the left and right of your selection. Write them in the margins of your turn so you don't forget them.
+
+{/* TODO: IfZine, cross em out! */}
 
 ## Credits &amp; Feedback
 
