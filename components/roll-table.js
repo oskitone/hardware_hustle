@@ -46,11 +46,11 @@ export default function RollTable({
 }
 
 RollTable.defaultProps = {
-  parentColumns: 2,
-  parentRows: 2,
+  parentColumns: 3,
+  parentRows: 3,
 
-  childColumns: 6,
-  childRows: 8,
+  childColumns: 4,
+  childRows: 5,
 };
 
 export const RollTableParents = `${RollTable.defaultProps.parentColumns}x${RollTable.defaultProps.parentRows}`;
