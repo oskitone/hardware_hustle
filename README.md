@@ -38,6 +38,8 @@ You'll need a basic black-and-white printer, paper trimmer/scissors, and a modic
 
 Designs are optimized for a very specific aesthetic, which I understand can be annoying for print-and-play. Trust that it's intentional and part of the experience.
 
+(The "Zine" PDF is an experimental combo of rules + game sheets. Not sure it makes sense yet, but it's interesting!)
+
 ### Playtester feedback welcome
 
 As it is in real life, the Hardware Hustle is not for everyone. I had one early playtester tell me its format and rules were so complicated it's basically unplayable (the rules have since been completely rewritten). Another said its format is so straightforward that it doesn't need rules. Who knows, you know?
@@ -48,6 +50,9 @@ Even still, your constructive feedback is welcome. Please earnestly play at leas
 
 ## Changelog
 
+* **prototype_draft_9cc636f_240228**
+  * Fix formattting, style, and typo nits
+  * Add QR code to repo and feedback form
 * **prototype_draft_5f092de_240203**
   * Smaller, "zine" style rulebook
   * Roll table is now at the end of the rules instead of a separate print
