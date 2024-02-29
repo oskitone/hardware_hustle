@@ -6,7 +6,7 @@
 # set -o errexit # TODO: fix this not running python
 set -o errtrace
 
-dir=$(./make_pdfs.sh -e)
+dir=$(node make_pdfs.js -e)
 
 function help() {
     echo "\
@@ -46,7 +46,7 @@ function run() {
 
     echo "MAKING PDFS"
     echo "-----------------"
-    ./make_pdfs.sh -d "$dir"
+    node make_pdfs.js -d "$dir"
     echo
 
     echo "BUILDING SITE"

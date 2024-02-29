@@ -79,7 +79,7 @@ Then open [http://localhost:3000](http://localhost:3000) in Chrome. (Note that, 
 If you're <del>on a Mac</del> me on my laptop, to make PDFs:
 
 ```bash
-./make_pdfs.sh
+node make_pdfs.js
 ```
 
 ## Playtester thanks
