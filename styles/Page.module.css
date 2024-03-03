@@ -5,8 +5,6 @@
   width: var(--legal-page-width);
   height: var(--legal-page-height);
 
-  margin: 2em auto;
-
   display: flex;
   flex-direction: column;
 }
@@ -31,8 +29,6 @@
 
 @media print {
   .page {
-    margin: 0;
-
     /* Rely on Panel for height */
     height: auto;
   }

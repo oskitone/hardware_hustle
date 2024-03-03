@@ -33,15 +33,19 @@ const confirmUrl = async (url) => {
   }
 };
 
+const getPageAndBrowser = async (url) => {
+  const browser = await puppeteer.launch({ headless: "new" });
+
+  const page = await browser.newPage();
+  await page.goto(url, { waitUntil: "networkidle2" });
+
+  return { page, browser };
+};
+
 const exportPdf = async (url, outputPath) => {
   console.log(`Exporting ${outputPath}`);
 
-  const browser = await puppeteer.launch({ headless: "new" });
-  const page = await browser.newPage();
-
-  await page.goto(url, {
-    waitUntil: "networkidle2",
-  });
+  const { page, browser } = await getPageAndBrowser(url);
 
   await page.pdf({
     preferCSSPageSize: true,
@@ -52,8 +56,22 @@ const exportPdf = async (url, outputPath) => {
   await browser.close();
 };
 
-// TODO: write
-const makeScreenshot = () => {};
+const makeScreenshot = async (url, outputPath) => {
+  console.log(`Exporting ${outputPath}`);
+
+  const { page, browser } = await getPageAndBrowser(url);
+
+  // TODO: smart dimensions. looks like 96 dpi
+  await page.setViewport({
+    width: 768,
+    height: 576,
+    deviceScaleFactor: 2,
+  });
+
+  await page.screenshot({ path: outputPath });
+
+  await browser.close();
+};
 
 const run = async (url) => {
   await confirmUrl(url);
@@ -90,7 +108,7 @@ const run = async (url) => {
 
   console.log();
 
-  makeScreenshot();
+  makeScreenshot(`${url}/single`, `${dir}/${stub}-single.png`);
 };
 
 run("http://localhost:3000");
