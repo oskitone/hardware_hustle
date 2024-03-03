@@ -10,6 +10,8 @@ const getTimestamp = async () =>
   naiveExec(`git log -n1 --date=unix --format="%ad"`);
 const getCommitHash = async () => naiveExec(`git log -n1 --format="%h"`);
 
+const screenshotPath = "public/screenshot.png";
+
 const help = (dir) => {
   console.log(`\
 Makes PDFs
@@ -20,6 +22,7 @@ Usage:
 ./make_pdfs.sh -e                 Echo output directory and quit
 ./make_pdfs.sh -d                 Set output directory
                                   Dynamic default, currently \"${dir}\"
+./make_pdfs.sh -u                 Update ${screenshotPath}
 `);
 };
 
@@ -33,15 +36,19 @@ const confirmUrl = async (url) => {
   }
 };
 
+const getPageAndBrowser = async (url) => {
+  const browser = await puppeteer.launch({ headless: "new" });
+
+  const page = await browser.newPage();
+  await page.goto(url, { waitUntil: "networkidle2" });
+
+  return { page, browser };
+};
+
 const exportPdf = async (url, outputPath) => {
   console.log(`Exporting ${outputPath}`);
 
-  const browser = await puppeteer.launch({ headless: "new" });
-  const page = await browser.newPage();
-
-  await page.goto(url, {
-    waitUntil: "networkidle2",
-  });
+  const { page, browser } = await getPageAndBrowser(url);
 
   await page.pdf({
     preferCSSPageSize: true,
@@ -52,8 +59,22 @@ const exportPdf = async (url, outputPath) => {
   await browser.close();
 };
 
-// TODO: write
-const makeScreenshot = () => {};
+const makeScreenshot = async (url, outputPath) => {
+  console.log(`Exporting ${outputPath}`);
+
+  const { page, browser } = await getPageAndBrowser(url);
+
+  // TODO: smart dimensions. looks like 96 dpi
+  await page.setViewport({
+    width: 768,
+    height: 576,
+    deviceScaleFactor: 2,
+  });
+
+  await page.screenshot({ path: outputPath });
+
+  await browser.close();
+};
 
 const run = async (url) => {
   await confirmUrl(url);
@@ -90,7 +111,12 @@ const run = async (url) => {
 
   console.log();
 
-  makeScreenshot();
+  await makeScreenshot(`${url}/single`, `${dir}/${stub}-single.png`);
+
+  if (process.argv[2] == "-u") {
+    console.log(`Copying to ${screenshotPath}`);
+    await naiveExec(`cp ${dir}/${stub}-single.png "${screenshotPath}"`);
+  }
 };
 
 run("http://localhost:3000");
