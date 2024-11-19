@@ -27,6 +27,9 @@
   align-items: end;
 }
 
+/* TODO: confirm recent screenshot change didn't get rid of all print CSS
+   https://voussoir.net/writing/css_for_printing */
+
 @media print {
   .page {
     /* Rely on Panel for height */
