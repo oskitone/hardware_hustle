@@ -32,7 +32,7 @@ const confirmUrl = async (url) => {
   } catch (error) {
     console.log(`${url} is not available`);
     console.log(`Try 'npm run dev'`);
-    process.exit;
+    process.exit();
   }
 };
 
