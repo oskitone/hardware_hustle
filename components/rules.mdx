@@ -48,7 +48,7 @@ _For one or more players. Ages 10+. ~20min to play._
 
 You have six turns to buy parts to make widgets, make widgets from parts, sell widgets for money to buy more parts, and so on.
 
-Each of those phases use opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses and is limited per-phase by a die roll. At the end of each turn, use renaming <Opportunity /> to attempt a research upgrade to reduce future <Opportunity /> costs.
+Each of those phases use opportunity <IconsParen ids={["opportunity"]} />, which depletes as the game progresses and is limited per-phase by a die roll. At the end of each turn, use remaining <Opportunity /> to attempt a research upgrade to reduce future <Opportunity /> costs.
 
 The six turns are miniature spreadsheets, and the game ends when they're all filled out. The player with the most money at the end wins.
 
@@ -110,7 +110,7 @@ For example, to buy a <A suffix={","} /> you need <OpportunityX value={0} /> and
 To complete the Buy phase:
 
 1. **Roll:**
-    * Roll a die. Its value is the _maximum_ <Opportunity /> that each player can spend buying this turn.
+    * Roll a die and call out its value. This is the _maximum_ <Opportunity /> that each player can spend buying this turn.
     * Based on the max <Opportunity /> that was just rolled and how much <Money /> you have in the AM column, decide which parts to buy.
 1. **Write:**
     * In the Buy column, write the values for the total <Money /> cost, the parts you bought, and the total <Opportunity /> they used.
@@ -137,7 +137,7 @@ The Phases table lists the widgets you can make, their outlined <Opportunity /> 
 To complete the Make phase:
 
 1. **Roll:**
-    * Roll a die. Its value is the _maximum_ <Opportunity /> that each player can spend making this turn.
+    * Roll a die and call out its value. This is the _maximum_ <Opportunity /> that each player can spend making this turn.
     * Based on the max <Opportunity /> that was just rolled and which parts you have available, decide which widgets to make.
 1. **Write:**
     * In the Make column, write the values for the parts you used, the widgets you made, and the total <Opportunity /> they used.
@@ -155,7 +155,7 @@ Notice how the Phases table for Sell has you losing widgets but gaining <Money /
 To complete the Sell phase:
 
 1. **Roll:**
-    * Roll a die. Its value is the _maximum_ <Opportunity /> that each player can spend selling this turn.
+    * Roll a die and call out its value. This is the _maximum_ <Opportunity /> that each player can spend selling this turn.
     * Based on the max <Opportunity /> that was just rolled and which widgets you have available, decide which widgets to sell.
 1. **Write:**
     * In the Sell column, write the values for the <Money /> you made, the widgets you sold, and the total <Opportunity /> they used.
@@ -169,7 +169,7 @@ Whew! It's time to wrap up the workday and end your turn.
 To complete the PM phase:
 
 1. **Roll:**
-    * Roll a die. Its value is the _minimum_ <Opportunity /> you need remaining to upgrade _one_ of the previous three phases' actions. See below for more info.
+    * Roll a die and call out its value. This is the _minimum_ <Opportunity /> you need remaining to upgrade _one_ of the previous three phases' actions. See below for more info.
 1. **Write:**
     * Tally each row's equation into the final column prefixed with `=`.
     * If your remaining <Opportunity /> is negative, you suffer **burnout** and cross out the entire next turn to rest. Again, see below for more info.
@@ -311,7 +311,7 @@ Not a super profitable turn, but it ended with a spare part for later and a succ
 #### Roll Table Usage
 
 { /* TODO: make sure page/pages matches actual count */}
-The rule book's back page is a {RollTableParents} table of {RollTableChildren} randomly generated values.
+This book's back page is a {RollTableParents} table of {RollTableChildren} randomly generated values.
 
 To use it as a substitute for rolling physical dice, close your eyes and drop a twirling fingertip or non-marking utensil on it. The touched value is your "roll." If the value is obscured, adopt the next readable value being pointed at.
 
