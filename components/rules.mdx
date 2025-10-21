@@ -2,8 +2,8 @@ import classnames from "classnames";
 
 import styles from "@/styles/Rules.module.css";
 
-import { ID_TITLE } from "components/sidebar";
-import PhasesTable, { ACTIONS } from "components/phases-table";
+import { ID_TITLE } from "../components/sidebar";
+import PhasesTable, { ACTIONS } from "../components/phases-table";
 import Icon, {
   Money,
   Opportunity,
@@ -26,11 +26,11 @@ import Icon, {
   ABCDX,
   RollX,
   IconsParen
-} from "components/icon";
-import { ColumnBreak, NoBreak, NoWrap } from "common/utils";
-import Turn, { ExampleCell, firstTurnSuppliedColumns } from "components/turn";
-import { RollTableParents, RollTableChildren } from "components/roll-table";
-import Wordmark from "components/wordmark";
+} from "../components/icon";
+import { ColumnBreak, NoBreak, NoWrap } from "../common/utils";
+import Turn, { ExampleCell, firstTurnSuppliedColumns } from "../components/turn";
+import { RollTableParents, RollTableChildren } from "../components/roll-table";
+import Wordmark from "../components/wordmark";
 
 <Wordmark className={styles.Wordmark} wrap={true} draftId={props.draftId} />
 

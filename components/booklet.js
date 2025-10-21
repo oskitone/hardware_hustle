@@ -1,11 +1,11 @@
 import { range } from "lodash";
 
-import { GameSheetZinePanel } from "components/game-sheet-panel";
-import Page from "components/page";
-import Panel from "components/panel";
-import RollTable from "components/roll-table";
-import Rules from "components/rules.mdx";
-import Spread from "components/spread";
+import { GameSheetZinePanel } from "../components/game-sheet-panel";
+import Page from "../components/page";
+import Panel from "../components/panel";
+import RollTable from "../components/roll-table";
+import Rules from "../components/rules.mdx";
+import Spread from "../components/spread";
 
 function Booklet({
   year,

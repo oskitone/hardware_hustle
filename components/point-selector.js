@@ -1,6 +1,6 @@
 import classnames from "classnames";
 
-import Icon from "components/icon";
+import Icon from "../components/icon";
 
 import styles from "@/styles/PointSelector.module.css";
 

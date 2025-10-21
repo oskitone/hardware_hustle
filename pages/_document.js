@@ -9,7 +9,7 @@ import {
   game_sheet_panel_height,
   zine_panel_width,
   zine_panel_height,
-} from "common/dimensions";
+} from "../common/dimensions";
 
 export default function Document() {
   return (

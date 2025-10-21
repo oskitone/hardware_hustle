@@ -2,10 +2,10 @@ import { Open_Sans } from "next/font/google";
 import Link from "next/link";
 import Head from "next/head";
 
-import { Front } from "components/page";
-import { getCommitProps } from "common/utils";
-import Panel from "components/panel";
-import Wordmark from "components/wordmark";
+import { Front } from "../components/page";
+import { getCommitProps } from "../common/utils";
+import Panel from "../components/panel";
+import Wordmark from "../components/wordmark";
 
 export const getStaticProps = async (context) => getCommitProps();
 

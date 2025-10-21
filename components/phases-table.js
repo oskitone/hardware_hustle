@@ -1,8 +1,8 @@
 import classnames from "classnames";
 
-import { htmlEntity } from "common/utils";
-import Icon from "components/icon";
-import PointSelector from "components/point-selector";
+import { htmlEntity } from "../common/utils";
+import Icon from "../components/icon";
+import PointSelector from "../components/point-selector";
 
 import styles from "@/styles/PhasesTable.module.css";
 

@@ -1,6 +1,6 @@
 import { isUndefined } from "lodash";
 import classnames from "classnames";
-import Icon from "components/icon";
+import Icon from "../components/icon";
 
 import styles from "@/styles/Turn.module.css";
 

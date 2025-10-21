@@ -1,7 +1,7 @@
 import { Open_Sans } from "next/font/google";
 import Head from "next/head";
 
-import Page from "components/page";
+import Page from "../components/page";
 import {
   legal_page_width,
   legal_page_height,
@@ -9,8 +9,8 @@ import {
   letter_page_height,
   game_sheet_panel_width,
   game_sheet_panel_height,
-} from "common/dimensions";
-import GameSheetPanel from "components/game-sheet-panel";
+} from "../common/dimensions";
+import GameSheetPanel from "../components/game-sheet-panel";
 
 const font = Open_Sans({ subsets: ["latin"] });
 

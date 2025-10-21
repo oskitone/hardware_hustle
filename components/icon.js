@@ -1,6 +1,6 @@
 import classnames from "classnames";
 
-import { htmlEntity } from "common/utils";
+import { htmlEntity } from "../common/utils";
 import styles from "@/styles/Icon.module.css";
 
 import {

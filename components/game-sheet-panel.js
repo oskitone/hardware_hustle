@@ -1,6 +1,6 @@
-import Panel from "components/panel";
-import Sidebar from "components/sidebar";
-import TurnGrid from "components/turn-grid";
+import Panel from "../components/panel";
+import Sidebar from "../components/sidebar";
+import TurnGrid from "../components/turn-grid";
 
 const GameSheetPanel = ({
   year,

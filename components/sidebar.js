@@ -1,10 +1,10 @@
 import classnames from "classnames";
 
-import { defaultTurnsData } from "components/turn";
-import Graph from "components/graph";
-import LineInput from "components/line-input";
-import PhasesTable from "components/phases-table";
-import Wordmark from "components/wordmark";
+import { defaultTurnsData } from "../components/turn";
+import Graph from "../components/graph";
+import LineInput from "../components/line-input";
+import PhasesTable from "../components/phases-table";
+import Wordmark from "../components/wordmark";
 
 import styles from "@/styles/Sidebar.module.css";
 

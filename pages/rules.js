@@ -1,9 +1,9 @@
 import { Open_Sans } from "next/font/google";
 import Head from "next/head";
 
-import { letter_page_width, letter_page_height } from "common/dimensions";
-import { getCommitProps } from "common/utils";
-import Booklet from "components/booklet";
+import { letter_page_width, letter_page_height } from "../common/dimensions";
+import { getCommitProps } from "../common/utils";
+import Booklet from "../components/booklet";
 
 const font = Open_Sans({ subsets: ["latin"] });
 

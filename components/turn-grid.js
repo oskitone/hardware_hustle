@@ -2,7 +2,7 @@ import Turn, {
   defaultTurnsData,
   defaultSuppliedColumns,
   firstTurnSuppliedColumns,
-} from "components/turn";
+} from "../components/turn";
 
 import styles from "@/styles/TurnGrid.module.css";
 

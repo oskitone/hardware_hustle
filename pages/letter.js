@@ -1,5 +1,5 @@
-import GameSheetPage from "components/game-sheet-page";
-import { getCommitProps } from "common/utils";
+import GameSheetPage from "../components/game-sheet-page";
+import { getCommitProps } from "../common/utils";
 export const getStaticProps = async (context) => getCommitProps();
 
 function LetterPage({ year, draftId }) {
