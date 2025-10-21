@@ -40,33 +40,29 @@ Designs are optimized for a very specific aesthetic, which I understand can be a
 
 (The "Zine" PDF is an experimental combo of rules + game sheets. Not sure it makes sense yet, but it's interesting!)
 
-### Playtester feedback welcome
+### Playtesting feedback
 
-As it is in real life, the Hardware Hustle is not for everyone. I had one early playtester tell me its format and rules were so complicated it's basically unplayable (the rules have since been completely rewritten). Another said its format is so straightforward that it doesn't need rules. Who knows, you know?
-
-Even still, your constructive feedback is welcome. Please earnestly play at least one entire game before telling me what you think. I'm especially open to feedback on how to make the rules easier to understand.
-
-**Feedback form:** [https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
+Constructive feedback is welcome. Play (at least!) one entire game, then tell me what you think: [https://forms.gle/SubELmMXAjzLFNcR7](https://forms.gle/SubELmMXAjzLFNcR7)
 
 ## Changelog
 
-* **prototype_draft_9cc636f_240228**
-  * Fix formattting, style, and typo nits
-  * Add QR code to repo and feedback form
-* **prototype_draft_5f092de_240203**
-  * Smaller, "zine" style rulebook
-  * Roll table is now at the end of the rules instead of a separate print
-  * Research attempts use remaining opportunity
-  * Even more tie resolution
-  * Style nits
-  * Appendix
-* **prototype_draft_00d1aae_240124**
-  * Shared opportunity rolls
-  * Continue reading for ~confusing research
-  * Roll-and-write is every phase
-  * Misc formatting/readability nits
-* **prototype_draft_dcb37bc_240104**
-  * init
+- **prototype_draft_9cc636f_240228**
+  - Fix formattting, style, and typo nits
+  - Add QR code to repo and feedback form
+- **prototype_draft_5f092de_240203**
+  - Smaller, "zine" style rulebook
+  - Roll table is now at the end of the rules instead of a separate print
+  - Research attempts use remaining opportunity
+  - Even more tie resolution
+  - Style nits
+  - Appendix
+- **prototype_draft_00d1aae_240124**
+  - Shared opportunity rolls
+  - Continue reading for ~confusing research
+  - Roll-and-write is every phase
+  - Misc formatting/readability nits
+- **prototype_draft_dcb37bc_240104**
+  - init
 
 ## Source code
 
