@@ -6,8 +6,8 @@ import Turn, {
 
 import styles from "@/styles/TurnGrid.module.css";
 
-const TurnGrid = ({ turnsData, zine }) => (
-  <div className={`${styles.turnGrid}`}>
+const TurnGrid = ({ turnsData }) => (
+  <div className={styles.turnGrid}>
     {turnsData.map((turnData, i) => (
       <Turn
         key={i}
@@ -16,7 +16,6 @@ const TurnGrid = ({ turnsData, zine }) => (
         suppliedColumns={
           i == 0 ? firstTurnSuppliedColumns : defaultSuppliedColumns
         }
-        zine={zine}
       />
     ))}
   </div>
@@ -24,7 +23,6 @@ const TurnGrid = ({ turnsData, zine }) => (
 
 TurnGrid.defaultProps = {
   turnsData: defaultTurnsData,
-  zine: undefined,
 };
 
 export default TurnGrid;

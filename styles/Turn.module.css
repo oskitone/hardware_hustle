@@ -24,11 +24,6 @@
    can have arbitrary/implicit heights but that is some work to do. */
 .tbody .th,
 .td {
-  height: calc(var(--default-font-size) * 1.34);
-}
-
-.zine .tbody .th,
-.zine .td {
   height: calc(var(--default-font-size) * 1.19);
 }
 

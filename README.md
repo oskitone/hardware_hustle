@@ -27,8 +27,7 @@ Download the latest PDFs from [https://oskitone.github.io/hardware_hustle/](http
 You'll need a basic black-and-white printer, paper trimmer/scissors, and a modicum of patience.
 
 - Game sheets
-  - Choose layout for either letter or legal paper size; design is identical but legal is better because you get two game sheets per paper
-  - Print portrait mode without margins, at 100% scale, and single-sided
+  - Print on letter paper (8.5"x11") in portrait mode without margins, at 100% scale, and single-sided
   - Trim individual game sheets to 8"x6"
   - For a nice finish, bind a stack of them to cardboard backing with bookbinding glue
 - Rules

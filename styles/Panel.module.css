@@ -26,33 +26,29 @@
   background-color: red;
 } */
 
-.zine {
-  width: var(--zine-panel-width);
-  height: var(--zine-panel-height);
+.booklet {
+  width: var(--booklet-panel-width);
+  height: var(--booklet-panel-height);
 }
 
-.zine.double {
-  height: calc(var(--zine-panel-height) * 2);
-  width: var(--zine-panel-height);
+.booklet.double {
+  height: calc(var(--booklet-panel-height) * 2);
+  width: var(--booklet-panel-height);
 }
 
-.zine.subpanel {
+.booklet.subpanel {
   padding: 0;
   overflow: visible; /* For Turn IDs */
 
   height: auto;
-  width: calc(var(--zine-panel-width) * 2 - var(--print-margin) * 2);
+  width: calc(var(--booklet-panel-width) * 2 - var(--print-margin) * 2);
   outline: none;
 }
 
 .split {
   display: grid;
-  grid-template-columns: 28% auto;
-  grid-gap: var(--print-margin);
-}
-
-.zine.split {
   grid-template-columns: 25% auto;
+  grid-gap: var(--print-margin);
 }
 
 .panel[side="right"] {

@@ -7,8 +7,7 @@ function Panel({
 
   double,
   split,
-
-  size,
+  booklet,
 
   className,
 
@@ -20,7 +19,7 @@ function Panel({
       className={classnames(styles.panel, className, {
         [styles.double]: double,
         [styles.split]: split,
-        [styles.zine]: size == "zine",
+        [styles.booklet]: booklet,
         [styles.subpanel]: isSubpanel,
       })}
       side={side}
@@ -33,7 +32,8 @@ function Panel({
 Panel.defaultProps = {
   double: false,
   split: false,
-  size: undefined,
+  booklet: false,
+
   className: undefined,
 
   isSubpanel: false,

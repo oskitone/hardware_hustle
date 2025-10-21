@@ -6,7 +6,6 @@ function Page({ children, size }) {
   return (
     <div
       className={classnames(styles.page, {
-        [styles.legal]: size == "legal",
         [styles.letter]: size == "letter",
         [styles.single]: size == "single",
       })}
@@ -17,7 +16,7 @@ function Page({ children, size }) {
 }
 
 Page.defaultProps = {
-  size: "legal",
+  size: "letter",
 };
 
 export const Front = Page;

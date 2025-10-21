@@ -9,7 +9,6 @@
   letter-spacing: -0.025em;
 
   margin-left: -0.05em;
-  margin: 0 0 calc(var(--default-font-size) / 4);
 
   /* HACK: perfectly fit to vertical height */
   line-height: 0.78;
@@ -17,11 +16,4 @@
 
 .wordmark .wrap {
   line-height: calc(0.78 + 0.0625);
-}
-
-.rev {
-  font-size: calc(var(--default-font-size) * 0.85);
-  line-height: var(--default-font-size);
-  font-weight: 100;
-  font-style: italic;
 }

@@ -390,7 +390,7 @@ github.com/oskitone/hardware_hustle
 
 ---
 
-_{props.draftId}_  
+Prototype draft: _{props.draftId}_  
 _{props.year} CC BY-SA 4.0 - oskitone.com_
 
 export default function Rules({ children, panel, panelCount, year, draftId }) {
@@ -407,7 +407,7 @@ export default function Rules({ children, panel, panelCount, year, draftId }) {
         [styles.back]: panel % 2 == 1
       })}>{panel + 1}/{panelCount}</div>
       <div className={styles.inner} panel={panel} style={{
-        left: `calc((var(--zine-panel-width) - var(--print-margin)) * -${panel})`
+        left: `calc((var(--booklet-panel-width) - var(--print-margin)) * -${panel})`
       }}>
         {children}
       </div>

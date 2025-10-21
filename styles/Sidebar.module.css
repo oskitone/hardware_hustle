@@ -18,22 +18,17 @@
 
 .Wordmark {
   /* Eyeballed to fit on one line */
-  font-size: 1.74em;
-}
-
-.zine .Wordmark {
-  font-size: 1.66em;
+  font-size: 1.67em;
 }
 
 .sidebar h2 {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .Wordmark,
 .PhasesTable,
-.LineInput,
 .Graph {
-  margin-bottom: calc(var(--default-font-size) * 1.5);
+  margin-bottom: calc(var(--default-font-size) * 1.25);
 }
 
 .sidebar > *:last-child {
@@ -45,11 +40,7 @@
 }
 
 .footer {
+  /* Eyeballed to fit on one line */
+  font-size: 0.67em;
   font-weight: 100;
-  font-size: 0.8em;
-}
-
-.footer .rev {
-  font-size: 0.85em;
-  font-style: italic;
 }

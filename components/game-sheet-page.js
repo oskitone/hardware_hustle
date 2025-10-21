@@ -3,8 +3,6 @@ import Head from "next/head";
 
 import Page from "../components/page";
 import {
-  legal_page_width,
-  legal_page_height,
   letter_page_width,
   letter_page_height,
   game_sheet_panel_width,
@@ -16,7 +14,6 @@ const font = Open_Sans({ subsets: ["latin"] });
 
 function GameSheetPage({ pageCount, gamesPerPage, pageSize, year, draftId }) {
   const pageDimensions = {
-    legal: `${legal_page_width} ${legal_page_height}`,
     letter: `${letter_page_width} ${letter_page_height}`,
     single: `${game_sheet_panel_width} ${game_sheet_panel_height}`,
   }[pageSize];
@@ -46,7 +43,7 @@ function GameSheetPage({ pageCount, gamesPerPage, pageSize, year, draftId }) {
 GameSheetPage.defaultProps = {
   pageCount: 1,
   gamesPerPage: 2,
-  pageSize: "legal",
+  pageSize: "letter",
   year: undefined,
   draftId: undefined,
 };

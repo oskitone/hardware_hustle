@@ -12,7 +12,7 @@ export const getCommitProps = () => {
   return {
     props: {
       year: YYYY,
-      draftId: `prototype_draft_${hash}_${[YYYY.slice(-2), MM, DD].join("")}`,
+      draftId: `${hash}_${[YYYY.slice(-2), MM, DD].join("")}`,
     },
   };
 };

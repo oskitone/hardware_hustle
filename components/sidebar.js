@@ -2,7 +2,6 @@ import classnames from "classnames";
 
 import { defaultTurnsData } from "../components/turn";
 import Graph from "../components/graph";
-import LineInput from "../components/line-input";
 import PhasesTable from "../components/phases-table";
 import Wordmark from "../components/wordmark";
 
@@ -10,18 +9,9 @@ import styles from "@/styles/Sidebar.module.css";
 
 export const ID_TITLE = "Name";
 
-const Sidebar = ({
-  turnsData,
-  year,
-  draftId,
-  zine,
-  showIdLine,
-  showFooter,
-}) => (
-  <div className={classnames(styles.sidebar, { [styles.zine]: zine })}>
+const Sidebar = ({ turnsData, year, draftId }) => (
+  <div className={styles.sidebar}>
     <Wordmark className={styles.Wordmark} draftId={draftId} />
-
-    {showIdLine && <LineInput title={ID_TITLE} className={styles.LineInput} />}
 
     <h2>Phases</h2>
     <PhasesTable className={styles.PhasesTable} />
@@ -33,11 +23,11 @@ const Sidebar = ({
       className={styles.Graph}
     />
 
-    {showFooter && (
-      <footer className={styles.footer}>
-        <p>{year} CC BY-SA 4.0 - oskitone.com</p>
-      </footer>
-    )}
+    <footer className={styles.footer}>
+      <p>
+        {year} CC BY-SA 4.0 - oskitone.com - {draftId}
+      </p>
+    </footer>
   </div>
 );
 
@@ -46,11 +36,6 @@ Sidebar.defaultProps = {
 
   year: undefined,
   draftId: undefined,
-
-  zine: false,
-
-  showIdLine: true,
-  showFooter: true,
 };
 
 export default Sidebar;

@@ -48,7 +48,7 @@
 
 .view-all {
   column-count: auto;
-  max-width: calc((var(--zine-panel-width) - var(--print-margin) * 3) / 2);
+  max-width: calc((var(--booklet-panel-width) - var(--print-margin) * 3) / 2);
 }
 
 .view-all:before {
@@ -56,9 +56,8 @@
 }
 
 .Wordmark {
-  /* Eyeballed to fit on two lines */
-  font-size: calc(var(--default-font-size) * 2.4);
-  margin: 0 0 var(--default-font-size);
+  /* Eyeballed to fit on one line */
+  font-size: 3.27em;
 }
 
 .rules h1,

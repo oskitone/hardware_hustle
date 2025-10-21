@@ -1,6 +1,6 @@
 import { range } from "lodash";
 
-import { GameSheetZinePanel } from "../components/game-sheet-panel";
+import { GameSheetBookletPanel } from "../components/game-sheet-panel";
 import Page from "../components/page";
 import Panel from "../components/panel";
 import RollTable from "../components/roll-table";
@@ -45,13 +45,13 @@ function Booklet({
     return output;
   };
 
-  const getGameSheetZinePanelSide = (key) => {
+  const getGameSheetBookletPanelSide = (key) => {
     return key % 2 == 0 ? "left" : "right";
   };
 
   const panels = [
     ...range(rulesPanelsCount).map((panelId, key) => (
-      <Panel size="zine" key={key}>
+      <Panel booklet={true} key={key}>
         <Rules
           panel={panelId}
           panelCount={rulesPanelsCount}
@@ -61,15 +61,15 @@ function Booklet({
       </Panel>
     )),
     ...range(gameSheetPanels).map((key) => (
-      <GameSheetZinePanel
+      <GameSheetBookletPanel
         key={rulesPanelsCount + key}
         year={year}
         draftId={draftId}
-        side={getGameSheetZinePanelSide(key)}
+        side={getGameSheetBookletPanelSide(key)}
       />
     )),
     ...range(rollTablePanelsCount).map((key) => (
-      <Panel size="zine" key={rulesPanelsCount + rollTablePanelsCount + key}>
+      <Panel booklet={true} key={rulesPanelsCount + rollTablePanelsCount + key}>
         <RollTable />
       </Panel>
     )),

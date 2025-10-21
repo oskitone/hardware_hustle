@@ -6,7 +6,7 @@ function LetterPage({ year, draftId }) {
   return (
     <GameSheetPage
       pageSize="letter"
-      gamesPerPage={1}
+      gamesPerPage={2}
       year={year}
       draftId={draftId}
     />

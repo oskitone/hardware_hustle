@@ -2,8 +2,8 @@
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 
-  width: var(--legal-page-width);
-  height: var(--legal-page-height);
+  width: var(--letter-page-width);
+  height: var(--letter-page-height);
 
   display: flex;
   flex-direction: column;

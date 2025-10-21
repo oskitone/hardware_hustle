@@ -2,23 +2,10 @@ import Panel from "../components/panel";
 import Sidebar from "../components/sidebar";
 import TurnGrid from "../components/turn-grid";
 
-const GameSheetPanel = ({
-  year,
-  draftId,
-  side,
-  size,
-  showIdLine,
-  showFooter,
-}) => (
-  <Panel split double isSubpanel={!!side} size={size}>
-    <Sidebar
-      year={year}
-      draftId={draftId}
-      zine={size == "zine"}
-      showIdLine={showIdLine}
-      showFooter={showFooter}
-    />
-    <TurnGrid zine={size == "zine"} />
+const GameSheetPanel = ({ year, draftId, side, booklet }) => (
+  <Panel split double isSubpanel={!!side} booklet={booklet}>
+    <Sidebar year={year} draftId={draftId} />
+    <TurnGrid />
   </Panel>
 );
 
@@ -27,24 +14,19 @@ GameSheetPanel.defaultProps = {
   draftId: undefined,
 
   side: undefined,
-  size: undefined,
-
-  showIdLine: true,
-  showFooter: true,
+  booklet: false,
 };
 
-export const GameSheetZinePanel = ({ side }) => (
-  <Panel side={side} size={"zine"}>
-    <GameSheetPanel
-      side={side}
-      size={"zine"}
-      showIdLine={false}
-      showFooter={false}
-    />
+export const GameSheetBookletPanel = ({ year, draftId, side }) => (
+  <Panel side={side} booklet={true}>
+    <GameSheetPanel year={year} draftId={draftId} side={side} booklet={true} />
   </Panel>
 );
 
-GameSheetZinePanel.defaultProps = {
+GameSheetBookletPanel.defaultProps = {
+  year: undefined,
+  draftId: undefined,
+
   side: undefined,
 };
 
