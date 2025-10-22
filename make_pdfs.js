@@ -6,6 +6,11 @@ const puppeteer = require("puppeteer");
 
 const naiveExec = async (command) => (await exec(command)).stdout.trim();
 
+const {
+  game_sheet_panel_width,
+  game_sheet_panel_height,
+} = require("./common/dimensions.js");
+
 const getTimestamp = async () =>
   naiveExec(`git log -n1 --date=unix --format="%ad"`);
 const getCommitHash = async () => naiveExec(`git log -n1 --format="%h"`);
@@ -64,10 +69,12 @@ const makeScreenshot = async (url, outputPath) => {
 
   const { page, browser } = await getPageAndBrowser(url);
 
-  // TODO: smart dimensions. looks like 96 dpi
+  const DPI = 96;
+  const getDimension = (key) => parseFloat(key) * DPI;
+
   await page.setViewport({
-    width: 768,
-    height: 576,
+    width: getDimension(game_sheet_panel_width),
+    height: getDimension(game_sheet_panel_height),
     deviceScaleFactor: 2,
   });
 
