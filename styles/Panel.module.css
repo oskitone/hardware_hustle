@@ -47,7 +47,7 @@
 
 .split {
   display: grid;
-  grid-template-columns: 25% auto;
+  grid-template-columns: 33% auto;
   grid-gap: var(--print-margin);
 }
 

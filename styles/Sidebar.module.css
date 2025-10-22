@@ -18,7 +18,7 @@
 
 .Wordmark {
   /* Eyeballed to fit on one line */
-  font-size: 1.67em;
+  font-size: 2.2em;
 }
 
 .sidebar h2 {
@@ -41,6 +41,6 @@
 
 .footer {
   /* Eyeballed to fit on one line */
-  font-size: 0.67em;
+  font-size: 0.85em;
   font-weight: 100;
 }
