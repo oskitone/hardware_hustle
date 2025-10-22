@@ -11,6 +11,8 @@ function Booklet({
   year,
   draftId,
 
+  zine,
+
   rulesPanelsCount,
   rollTablePanelsCount,
   gameSheetPanels,
@@ -57,6 +59,8 @@ function Booklet({
           panelCount={rulesPanelsCount}
           year={year}
           draftId={draftId}
+          zine={zine}
+          rollTablePanelsCount={rollTablePanelsCount}
         />
       </Panel>
     )),
@@ -91,6 +95,8 @@ function Booklet({
 Booklet.defaultProps = {
   year: undefined,
   draftId: undefined,
+
+  zine: false,
 
   /*
   For proper layout:

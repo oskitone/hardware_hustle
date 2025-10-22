@@ -2,7 +2,7 @@
 
 ![Hardware Hustle](header.jpg)
 
-Hardware Hustle is a tabletop, roll-and-write resource management game about sustainably running an indie electronics business.
+Hardware Hustle is a tabletop, roll-and-write resource management game about running an indie electronics business.
 
 Buy, make, sell, and research your way to profit without burning out!
 

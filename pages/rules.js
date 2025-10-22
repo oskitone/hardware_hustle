@@ -9,7 +9,7 @@ const font = Open_Sans({ subsets: ["latin"] });
 
 export const getStaticProps = async (context) => getCommitProps();
 
-const RulesPage = ({ year, draftId }) => {
+const RulesPage = ({ rollTablePanelsCount, year, draftId }) => {
   const pageDimensions = `${letter_page_width} ${letter_page_height}`;
 
   return (
@@ -22,7 +22,11 @@ const RulesPage = ({ year, draftId }) => {
         <style>{`@page { size: ${pageDimensions}; }`}</style>
       </Head>
       <main className={`${font.className}`}>
-        <Booklet year={year} draftId={draftId} />
+        <Booklet
+          rollTablePanelsCount={rollTablePanelsCount}
+          year={year}
+          draftId={draftId}
+        />
       </main>
     </>
   );

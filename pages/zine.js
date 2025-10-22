@@ -25,6 +25,7 @@ const RulesPage = ({ year, draftId }) => {
         <Booklet
           year={year}
           draftId={draftId}
+          zine={true}
           rulesPanelsCount={9}
           rollTablePanelsCount={1}
           gameSheetPanels={14}

@@ -34,15 +34,15 @@ import Wordmark from "../components/wordmark";
 
 <Wordmark className={styles.Wordmark} wrap={true} draftId={props.draftId} />
 
-# Rules
+# {props.zine ? "Game Zine" : "Rules"}
 
 ## Introduction
 
-Hardware Hustle is a tabletop, <NoWrap>roll-and-write</NoWrap> resource management game about sustainably running an indie electronics business.
+Hardware Hustle is a tabletop, <NoWrap>roll-and-write</NoWrap> resource management game about running an indie electronics business.
 
 Buy, make, sell, and research your way to profit without burning out!
 
-_For one or more players. Ages 10+. ~20min to play._
+_For one or more players. {props.zine && "(Photocopy a blank game sheet spread for each player.)"} Ages 10+. ~20min to play._
 
 ## Game Overview
 
@@ -56,13 +56,14 @@ The six turns are miniature spreadsheets, and the game ends when they're all fil
 
 Each player will need:
 
-- Hardware Hustle game sheet
-- Six-sided die or "Roll Table" page in rules (see _Appendix_ for usage)
+- Hardware Hustle game sheet{props.zine && "/zine"}
+- Six-sided die, "Roll Table" (see _Appendix_ for usage), or some way to get a random number from 1 to 6
+- Writing utensil
 - Calculator or scratch paper for math (optional)
 
 ## Game Setup
 
-Fill out the "{ID_TITLE}" line in the top left of the game sheet, then familiarize yourself with the rest of its layout: Phases table, Money/Turn graph, and six turn spreadsheets.
+Familiarize yourself with the game sheet's layout: Phases table, Money/Turn graph, and six turn spreadsheets.
 
 <p><img alt="Hardware Hustle game sheet layout" src="../screenshot.png" className={styles.screenshot} /></p>
 
@@ -89,7 +90,7 @@ And their five columns are phases that you fill out from left to right during yo
 
 ### 1. AM
 
-You begin each turn by taking stock of what you have and need at the beginning of the day.
+You begin each turn by taking stock of what you have and what you might need.
 
 For the game's first turn, there's nothing to do here besides note the starting pre-filled values. You have <MoneyX value={10}/> and <OpportunityX value={12}/>... and you need basically everything else.
 
@@ -164,7 +165,7 @@ Sell as many or as few widgets as you want, provided you have the required widge
 
 ### 5. PM
 
-Whew! It's time to wrap up the workday and end your turn.
+Whew! It's time to wrap up the end the turn.
 
 To complete the PM phase:
 
@@ -240,6 +241,8 @@ Mastered the basics and looking for more complexity? Try some or all of these id
 
 All players agree on which variants to add before starting the game.
 
+A word of warning: it'll get tricky, fast!
+
 #### Triage
 
 All those fancy business school classes finally paid off! You now know how to prioritize phase actions by their urgency, allowing you to focus on what's most important each turn.
@@ -272,7 +275,7 @@ You've qualified for overdraft protection from the bank, enabling you to go nega
 
 To accept their offer, pay an upfront fee of <MoneyX value={20} /> by putting a <NoWrap>"-"</NoWrap> before the 10 in the first turn's starting <Money /> cell.
 
-How much you can overdraw is <NoWrap>10 &times; turn number</NoWrap>: <MoneyX value={ 10 } /> in turn 1, <MoneyX value={ 20 } /> in turn 2, <MoneyX value={ 30 } /> in turn 3, etc.
+The maximum amount that can be overdrawn is <NoWrap>10 &times; turn number</NoWrap>: <MoneyX value={ 10 } /> in turn 1, <MoneyX value={ 20 } /> in turn 2, <MoneyX value={ 30 } /> in turn 3, etc. These will all be negative values when marked.
 
 Overdraft is only for the Buy phase and is independent from AM <Money /> values.
 
@@ -280,7 +283,7 @@ Overdraft is only for the Buy phase and is independent from AM <Money /> values.
 
 A network of consultants is available to fast-track your research, once per turn at <MoneyX value={20} /> an upgrade.
 
-1. After completing the PM phase and its "Money/Turn" graph update, circle the turn's final <Money /> cell to mark its research effect
+1. After completing the PM phase and its "Money/Turn" graph update, circle or mark the turn's final <Money /> cell to mark it as research.
 2. Pay the consultants' fee by subtracting 20 from the next turn's AM <Money /> value
 3. Then follow the regular instructions for updating the Phases table
 
@@ -368,8 +371,7 @@ Not a super profitable turn, but it ended with a spare part for later and a succ
 
 #### Roll Table Usage
 
-{ /* TODO: make sure page/pages matches actual count */}
-This book's back pages are {RollTableParents} tables of {RollTableChildren} randomly generated values.
+This book's back {props.rollTablePanelsCount > 1 ? `pages are ${RollTableParents} tables` : `page is a ${RollTableParents} table`} of {RollTableChildren} randomly generated values.
 
 To use them as a substitute for rolling physical dice, close your eyes and drop a twirling fingertip or non-marking utensil on one of their pages. The touched value is your "roll." If the value is obscured, adopt the next readable value being pointed at.
 
@@ -393,7 +395,7 @@ github.com/oskitone/hardware_hustle
 Prototype draft: _{props.draftId}_  
 _{props.year} CC BY-SA 4.0 - oskitone.com_
 
-export default function Rules({ children, panel, panelCount, year, draftId }) {
+export default function Rules({ children, panel, panelCount, rollTablePanelsCount, year, draftId }) {
   return (
     <div className={
         classnames(
