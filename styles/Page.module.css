@@ -7,6 +7,8 @@
 
   display: flex;
   flex-direction: column;
+
+  margin: 2rem auto;
 }
 
 .single {
@@ -34,5 +36,7 @@
   .page {
     /* Rely on Panel for height */
     height: auto;
+
+    margin: 0;
   }
 }
