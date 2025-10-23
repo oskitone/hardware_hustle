@@ -57,7 +57,7 @@ The six turns are miniature spreadsheets, and the game ends when they're all fil
 Each player will need:
 
 - Hardware Hustle game sheet{props.zine && "/zine"}
-- Six-sided die, "Roll Table" (see _Appendix_ for usage), or some way to get a random number from 1 to 6
+- Six-sided die{props.rollTablePanelsCount > 0 && `, "Roll Table" (see Appendix for usage),`} or some way to get a random number from 1 to 6
 - Writing utensil
 - Calculator or scratch paper for math (optional)
 
@@ -369,18 +369,19 @@ Not a super profitable turn, but it ended with a spare part for later and a succ
   </dl>
 </NoBreak>
 
+<div style={{display: props.rollTablePanelsCount > 0 ? "block" : "none"}}>
+
 #### Roll Table Usage
 
-This book's back {props.rollTablePanelsCount > 1 ? `pages are ${RollTableParents} tables` : `page is a ${RollTableParents} table`} of {RollTableChildren} randomly generated values.
+Roll tables are included in this booklet as a {RollTableParents} grid of {RollTableChildren} randomly generated values.
 
-To use them as a substitute for rolling physical dice, close your eyes and drop a twirling fingertip or non-marking utensil on one of their pages. The touched value is your "roll." If the value is obscured, adopt the next readable value being pointed at.
+To use them as a substitute for rolling physical dice, close your eyes and drop a twirling fingertip or writing utensil on the pages. The touched value is your "roll."
 
 To increase randomness, alternate pages/sections of the tables on each use.
 
-_If playing with the "Triage" game variant:_ to get three rolls, use the values to the left and right of your selection. Write them in the margins of your turn so you don't forget them.
+</div>
 
-{/* TODO: IfZine, cross em out! */}
-
+<NoBreak>
 ## Credits &amp; Feedback
 
 Hardware Hustle was designed by Oskitone, maker of DIY electronic musical instruments and soldering kits. Please consider buying your next synthesizer project from oskitone.com.
@@ -389,6 +390,7 @@ This game is published under a <NoWrap>CC BY-SA 4.0</NoWrap> license and is in o
 github.com/oskitone/hardware_hustle
 
 ![Hardware Hustle feedback form QR code](https://quickchart.io/qr?text=https://github.com/oskitone/hardware_hustle&margin=0&size=76&format=svg)
+</NoBreak>
 
 ---
 

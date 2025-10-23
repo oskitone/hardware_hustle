@@ -14,7 +14,7 @@ function Booklet({
   zine,
 
   rulesPanelsCount,
-  rollTablePanelsCount,
+  rollTablePanelsMinCount,
   gameSheetPanels,
 
   panelsPerPageSide,
@@ -51,6 +51,23 @@ function Booklet({
     return key % 2 == 0 ? "left" : "right";
   };
 
+  const rollTablePanelsAfterRules =
+    gameSheetPanels > 0 ? (rulesPanelsCount + 1) % 2 : 0;
+  const rollTablePanelsAfterGameSheets = Math.max(
+    0,
+    rollTablePanelsMinCount - rollTablePanelsAfterRules
+  );
+  const rollTablePanelsAtEnd =
+    (rulesPanelsCount +
+      rollTablePanelsAfterRules +
+      gameSheetPanels +
+      rollTablePanelsAfterGameSheets) %
+    2;
+  const rollTablePanelsCount =
+    rollTablePanelsAfterRules +
+    rollTablePanelsAfterGameSheets +
+    rollTablePanelsAtEnd;
+
   const panels = [
     ...range(rulesPanelsCount).map((panelId, key) => (
       <Panel booklet={true} key={key}>
@@ -64,6 +81,11 @@ function Booklet({
         />
       </Panel>
     )),
+    ...range(rollTablePanelsAfterRules).map((key) => (
+      <Panel booklet={true} key={key}>
+        <RollTable />
+      </Panel>
+    )),
     ...range(gameSheetPanels).map((key) => (
       <GameSheetBookletPanel
         key={rulesPanelsCount + key}
@@ -72,8 +94,13 @@ function Booklet({
         side={getGameSheetBookletPanelSide(key)}
       />
     )),
-    ...range(rollTablePanelsCount).map((key) => (
-      <Panel booklet={true} key={rulesPanelsCount + rollTablePanelsCount + key}>
+    ...range(rollTablePanelsAfterGameSheets).map((key) => (
+      <Panel booklet={true} key={key}>
+        <RollTable />
+      </Panel>
+    )),
+    ...range(rollTablePanelsAtEnd).map((key) => (
+      <Panel booklet={true} key={key}>
         <RollTable />
       </Panel>
     )),
@@ -101,11 +128,9 @@ Booklet.defaultProps = {
   /*
   For proper layout:
     * gameSheetPanels must be a multiple of 2
-    * Both rulesPanelsCount and gameSheetPanels must be odd
-    * Sum of all three is multiple of 4 but ideally 8 to fill paper
   */
-  rulesPanelsCount: 9,
-  rollTablePanelsCount: 3,
+  rulesPanelsCount: 8,
+  rollTablePanelsMinCount: 0,
   gameSheetPanels: 0,
 
   panelsPerPageSide: 4,

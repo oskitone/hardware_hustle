@@ -21,14 +21,13 @@ const RulesPage = ({ year, draftId }) => {
         <link rel="icon" href="/favicon.ico" />
         <style>{`@page { size: ${pageDimensions}; }`}</style>
       </Head>
-      <main className={`${font.className}`}>
+      <main className={font.className}>
         <Booklet
           year={year}
           draftId={draftId}
           zine={true}
-          rulesPanelsCount={9}
-          rollTablePanelsCount={1}
-          gameSheetPanels={14}
+          rollTablePanelsMinCount={1}
+          gameSheetPanels={6}
         />
       </main>
     </>
