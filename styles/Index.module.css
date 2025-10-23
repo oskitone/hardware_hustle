@@ -1,21 +1,17 @@
-.Panel {
-  outline: none; /* HACK! */
-}
-
 .Wordmark {
-  /* Eyeballed to fit on one line */
-  font-size: 3em;
+  font-size: 10em;
 }
 
 .Wordmark,
-.navigation {
+.navigation,
+.description {
   margin-bottom: calc(var(--default-font-size) * 1.5);
 }
 
-.navigation {
-  margin-left: 2em;
+.navigation td {
+  padding: 0 1rem 0 0;
 }
 
-.navigation a {
-  color: inherit;
+.navigation tbody tr:last-child td {
+  padding-bottom: 1rem;
 }

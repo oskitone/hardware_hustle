@@ -7,6 +7,13 @@ import { getCommitProps } from "../common/utils";
 import Panel from "../components/panel";
 import Wordmark from "../components/wordmark";
 
+import {
+  letter_page_width,
+  letter_page_height,
+  game_sheet_panel_width,
+  game_sheet_panel_height,
+} from "../common/dimensions";
+
 export const getStaticProps = async (context) => getCommitProps();
 
 const font = Open_Sans({ subsets: ["latin"] });
@@ -25,21 +32,58 @@ function Index({ year, draftId }) {
       <main className={`${font.className}`}>
         <Front>
           <Panel className={styles.Panel}>
-            <Wordmark draftId={draftId} className={styles.Wordmark} />
-            <ul className={styles.navigation}>
-              <li>
-                <Link href="/single">Game sheet (single)</Link>
-              </li>
-              <li>
-                <Link href="/letter">Game sheet (letter paper)</Link>
-              </li>
-              <li>
-                <Link href="/rules">Rules booklet (letter paper)</Link>
-              </li>
-              <li>
-                <Link href="/zine">Zine booklet (letter paper)</Link>
-              </li>
-            </ul>
+            <div>
+              <Wordmark wrap={true} className={styles.Wordmark} />
+
+              <p className={styles.description}>
+                To be rendered with <code>make_pdfs.js</code>:
+              </p>
+              <table className={styles.navigation}>
+                <tbody>
+                  <tr>
+                    <td>Single game sheet</td>
+                    <td>
+                      <Link href="/single/">/single</Link>
+                    </td>
+                    <td>
+                      {game_sheet_panel_width}&times;{game_sheet_panel_height}
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>Two game sheets</td>
+                    <td>
+                      <Link href="/letter/">/letter</Link>
+                    </td>
+                    <td>
+                      {letter_page_width}&times;{letter_page_height}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Rules booklet</td>
+                    <td>
+                      <Link href="/rules">/rules</Link>
+                    </td>
+                    <td>
+                      {letter_page_width}&times;{letter_page_height}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Game zine booklet</td>
+                    <td>
+                      <Link href="/zine">/zine</Link>
+                    </td>
+                    <td>
+                      {letter_page_width}&times;{letter_page_height}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                {year} CC BY-SA 4.0 - oskitone.com - {draftId}
+              </p>
+            </div>
           </Panel>
         </Front>
       </main>
