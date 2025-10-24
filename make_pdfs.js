@@ -112,6 +112,7 @@ const run = async (url) => {
   // Yes, all PDFs are made simultaneously.
   exportPdf(`${url}/single`, `${dir}/${stub}-single.pdf`);
   exportPdf(`${url}/letter`, `${dir}/${stub}-letter.pdf`);
+  exportPdf(`${url}/ledger`, `${dir}/${stub}-ledger.pdf`);
   exportPdf(`${url}/rules`, `${dir}/${stub}-rules.pdf`);
   exportPdf(`${url}/zine`, `${dir}/${stub}-zine.pdf`);
 

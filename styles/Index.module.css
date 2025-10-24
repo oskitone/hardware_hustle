@@ -4,14 +4,10 @@
 
 .Wordmark,
 .navigation,
-.description {
+.Panel p {
   margin-bottom: calc(var(--default-font-size) * 1.5);
 }
 
 .navigation td {
-  padding: 0 1rem 0 0;
-}
-
-.navigation tbody tr:last-child td {
-  padding-bottom: 1rem;
+  padding: 0 2rem 0 0;
 }

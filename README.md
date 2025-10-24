@@ -28,7 +28,7 @@ You'll need a basic black-and-white printer, paper trimmer/scissors, and a modic
 
 - Game sheets
   - Print on letter paper (8.5"x11") in portrait mode without margins, at 100% scale, and single-sided
-  - Trim individual game sheets to 8"x6"
+  - Trim individual game sheets to 8.5"x5.5"
   - For a nice finish, bind a stack of them to cardboard backing with bookbinding glue
 - Rules
   - Print portrait mode without margins, at 100% scale, and double-sided (flip on long edge)
@@ -37,7 +37,7 @@ You'll need a basic black-and-white printer, paper trimmer/scissors, and a modic
 
 Designs are optimized for a very specific aesthetic, which I understand can be annoying for print-and-play. Trust that it's intentional and part of the experience.
 
-(The "Zine" PDF is an experimental combo of rules + game sheets. Not sure it makes sense yet, but it's interesting!)
+(The "Zine" PDF is an experimental combo of rules + game sheets. "Ledger" is similar but on giant paper, [cut and folded as a mini-zine](https://www.youtube.com/watch?v=Jz0BPgMYqG4).)
 
 ### Playtesting feedback
 

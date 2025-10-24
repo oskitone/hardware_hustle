@@ -11,6 +11,20 @@
   margin: 2rem auto;
 }
 
+.letter {
+  width: var(--letter-page-width);
+  height: var(--letter-page-height);
+}
+
+.ledger {
+  width: var(--ledger-page-width);
+  height: var(--ledger-page-height);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
 .single {
   width: var(--game-sheet-panel-width);
   height: var(--game-sheet-panel-height);
@@ -18,9 +32,8 @@
   margin: 0;
 }
 
-.letter {
-  width: var(--letter-page-width);
-  height: var(--letter-page-height);
+.rules {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .page:nth-child(odd) {

@@ -5,6 +5,8 @@ import Page from "../components/page";
 import {
   letter_page_width,
   letter_page_height,
+  ledger_page_width,
+  ledger_page_height,
   game_sheet_panel_width,
   game_sheet_panel_height,
 } from "../common/dimensions";
@@ -12,9 +14,17 @@ import GameSheetPanel from "../components/game-sheet-panel";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
-function GameSheetPage({ pageCount, gamesPerPage, pageSize, year, draftId }) {
+function GameSheetPage({
+  children,
+  pageCount,
+  gamesPerPage,
+  pageSize,
+  year,
+  draftId,
+}) {
   const pageDimensions = {
     letter: `${letter_page_width} ${letter_page_height}`,
+    ledger: `${ledger_page_width} ${ledger_page_height}`,
     single: `${game_sheet_panel_width} ${game_sheet_panel_height}`,
   }[pageSize];
 
@@ -31,10 +41,16 @@ function GameSheetPage({ pageCount, gamesPerPage, pageSize, year, draftId }) {
         {[...Array(pageCount || 0)].map((e, i) => (
           <Page size={pageSize} key={i}>
             {[...Array(gamesPerPage || 0)].map((e, ii) => (
-              <GameSheetPanel year={year} draftId={draftId} key={ii} />
+              <GameSheetPanel
+                flip={pageSize == "ledger" && ii < gamesPerPage / 2}
+                year={year}
+                draftId={draftId}
+                key={ii}
+              />
             ))}
           </Page>
         ))}
+        {children}
       </main>
     </>
   );

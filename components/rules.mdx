@@ -56,7 +56,7 @@ The six turns are miniature spreadsheets, and the game ends when they're all fil
 
 Each player will need:
 
-- Hardware Hustle game sheet{props.zine && "/zine"}
+- Hardware Hustle game sheet{props.zine && "/zine"} <NoWrap>{props.gameSheetsOnReverseSide && "(See reverse side of paper)"}</NoWrap>
 - Six-sided die{props.rollTablePanelsCount > 0 && `, "Roll Table" (see Appendix for usage),`} or some way to get a random number from 1 to 6
 - Writing utensil
 - Calculator or scratch paper for math (optional)
@@ -397,7 +397,15 @@ github.com/oskitone/hardware_hustle
 Prototype draft: _{props.draftId}_  
 _{props.year} CC BY-SA 4.0 - oskitone.com_
 
-export default function Rules({ children, panel, panelCount, rollTablePanelsCount, year, draftId }) {
+export default function Rules({
+  children,
+  panel,
+  panelCount,
+  gameSheetsOnReverseSide,
+  rollTablePanelsCount,
+  year,
+  draftId
+}) {
   return (
     <div className={
         classnames(

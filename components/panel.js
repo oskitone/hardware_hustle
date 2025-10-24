@@ -8,6 +8,7 @@ function Panel({
   double,
   split,
   booklet,
+  flip,
 
   className,
 
@@ -20,6 +21,7 @@ function Panel({
         [styles.double]: double,
         [styles.split]: split,
         [styles.booklet]: booklet,
+        [styles.flip]: flip,
         [styles.subpanel]: isSubpanel,
       })}
       side={side}
@@ -33,6 +35,7 @@ Panel.defaultProps = {
   double: false,
   split: false,
   booklet: false,
+  flip: false,
 
   className: undefined,
 

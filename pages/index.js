@@ -10,6 +10,8 @@ import Wordmark from "../components/wordmark";
 import {
   letter_page_width,
   letter_page_height,
+  ledger_page_width,
+  ledger_page_height,
   game_sheet_panel_width,
   game_sheet_panel_height,
 } from "../common/dimensions";
@@ -35,13 +37,14 @@ function Index({ year, draftId }) {
             <div>
               <Wordmark wrap={true} className={styles.Wordmark} />
 
-              <p className={styles.description}>
+              <p>
                 To be rendered with <code>make_pdfs.js</code>:
               </p>
+
               <table className={styles.navigation}>
                 <tbody>
                   <tr>
-                    <td>Single game sheet</td>
+                    <td>Single game sheet, half sheet of letter paper</td>
                     <td>
                       <Link href="/single/">/single</Link>
                     </td>
@@ -49,10 +52,8 @@ function Index({ year, draftId }) {
                       {game_sheet_panel_width}&times;{game_sheet_panel_height}
                     </td>
                   </tr>
-                </tbody>
-                <tbody>
                   <tr>
-                    <td>Two game sheets</td>
+                    <td>Four game sheets, double-sided on letter paper</td>
                     <td>
                       <Link href="/letter/">/letter</Link>
                     </td>
@@ -61,7 +62,19 @@ function Index({ year, draftId }) {
                     </td>
                   </tr>
                   <tr>
-                    <td>Rules booklet</td>
+                    <td>
+                      Four game sheets and rules, cut "mini-zine" on ledger
+                      paper
+                    </td>
+                    <td>
+                      <Link href="/ledger/">/ledger</Link>
+                    </td>
+                    <td>
+                      {ledger_page_width}&times;{ledger_page_height}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Rules booklet, staple-bound on letter paper</td>
                     <td>
                       <Link href="/rules">/rules</Link>
                     </td>
@@ -70,7 +83,7 @@ function Index({ year, draftId }) {
                     </td>
                   </tr>
                   <tr>
-                    <td>Game zine booklet</td>
+                    <td>Game zine booklet, staple-bound on letter paper</td>
                     <td>
                       <Link href="/zine">/zine</Link>
                     </td>
@@ -80,6 +93,9 @@ function Index({ year, draftId }) {
                   </tr>
                 </tbody>
               </table>
+              <p>
+                See <code>README.md</code> for printing instructions.
+              </p>
               <p>
                 {year} CC BY-SA 4.0 - oskitone.com - {draftId}
               </p>

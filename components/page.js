@@ -2,12 +2,14 @@ import classnames from "classnames";
 
 import styles from "@/styles/Page.module.css";
 
-function Page({ children, size }) {
+function Page({ children, size, rules }) {
   return (
     <div
       className={classnames(styles.page, {
         [styles.letter]: size == "letter",
+        [styles.ledger]: size == "ledger",
         [styles.single]: size == "single",
+        [styles.rules]: rules,
       })}
     >
       {children}
@@ -17,6 +19,7 @@ function Page({ children, size }) {
 
 Page.defaultProps = {
   size: "letter",
+  rules: false,
 };
 
 export const Front = Page;

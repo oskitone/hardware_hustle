@@ -51,6 +51,10 @@
   grid-gap: var(--print-margin);
 }
 
+.flip {
+  transform: rotate(180deg);
+}
+
 .panel[side="right"] {
   justify-content: end;
 }
