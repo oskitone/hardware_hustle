@@ -87,7 +87,7 @@ export function Cell({
   children,
 
   head,
-  day,
+  id,
 
   inactive,
   standalone,
@@ -111,7 +111,7 @@ export function Cell({
     className: classnames(handwritingFont.variable, {
       [styles.td]: !head && !icon,
       [styles.th]: head || !!icon,
-      [styles.day]: day,
+      [styles.id]: id,
 
       [styles.icon]: !!icon,
       [styles.inactive]: inactive,
@@ -122,7 +122,7 @@ export function Cell({
       [styles.bottomLeft]: bottomLeft,
       [styles.bottomRight]: bottomRight,
 
-      [styles.handwritten]: !day && !head && !icon && !supplied,
+      [styles.handwritten]: !id && !head && !icon && !supplied,
 
       [styles.success]: success,
       [styles.fail]: fail,
@@ -162,7 +162,7 @@ function Turn({
   researchSuccess,
   autoHeight,
 }) {
-  const COLUMNS = ["AM", "Buy", "Make", "Sell", "PM"];
+  const COLUMNS = ["Go", "Buy", "Make", "Sell", "Stop"];
 
   const PARTS_COLUMNS = [
     {},
@@ -231,7 +231,7 @@ function Turn({
     >
       <Head>
         <Row>
-          <Cell head day={true}>
+          <Cell head id={true}>
             {!isUndefined(id) && <span>{id + 1}</span>}
           </Cell>
           {COLUMNS.map((column, i) => (

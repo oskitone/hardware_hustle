@@ -78,7 +78,6 @@ const makeIconX =
     (
       <span className={styles.IconX}>
         <Icon id={iconId} inline />
-        <span className={styles.x}>&times;</span>
         {value}
       </span>
     );

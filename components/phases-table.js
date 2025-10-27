@@ -138,8 +138,8 @@ export const ACTIONS = {
       ],
     ],
   },
-  PM: {
-    title: "PM",
+  END: {
+    title: "End",
     getBody: () => [
       [
         <>
@@ -188,7 +188,7 @@ function PhasesTable({ className, phases, selectedIndexes }) {
 
 PhasesTable.defaultProps = {
   className: undefined,
-  phases: [ACTIONS.BUY, ACTIONS.MAKE, ACTIONS.SELL, ACTIONS.PM],
+  phases: [ACTIONS.BUY, ACTIONS.MAKE, ACTIONS.SELL, ACTIONS.END],
   selectedIndexes: [0, 0, 0],
 };
 

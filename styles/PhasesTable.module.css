@@ -19,9 +19,11 @@
 
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1em;
-  line-height: 1;
   writing-mode: tb-rl;
+
+  /* Eyeballed to fit */
+  font-size: 0.75em;
+  line-height: 0.9;
 
   padding: 0.5em 0.25em;
   color: rgb(var(--background-rgb));

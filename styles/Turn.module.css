@@ -45,17 +45,18 @@
   font-size: 0.85em;
 }
 
-.day {
+.id {
   position: relative;
   font-weight: inherit;
   padding-right: 0.5em;
   display: flex;
 }
 
-.day span {
+.id span {
   background: rgb(var(--foreground-rgb));
   color: rgb(var(--background-rgb));
 
+  /* TODO: fix line-height */
   font-size: 0.8em;
 
   line-height: 0.9em;
